@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.turbo/
+coverage/
+*.log
+
+# Expo / Android (android/ được sinh lại bằng expo prebuild)
+.expo/
+apps/mobile/android/
+apps/mobile/ios/
+*.keystore
+*.jks
+
+# Cloudflare
+.wrangler/
+.dev.vars
+
+# Superpowers workspace
+.superpowers/
+
+.env
+.env.*
+!.env.example
