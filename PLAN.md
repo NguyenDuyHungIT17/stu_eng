@@ -301,3 +301,77 @@ Một việc chỉ được đánh `[x]` khi:
 4. Tính năng thuộc nhóm offline đã thử khi bật chế độ máy bay.
 5. Đã thử trên ít nhất 1 máy thật (tính năng liên quan giọng nói: 2 máy).
 6. Nội dung mới đã qua `validate` và đã được duyệt thủ công.
+
+---
+
+## Nhật ký theo ngày
+
+Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ sprint và mã việc), đang chờ gì.
+
+### Ngày 18/11/2026
+
+**Đã làm (nhánh `feat/sprint-0`, 5 commit, 43 test xanh):**
+
+- Sprint 0: xong 9/24 việc: `S0-01`, `S0-03`, `S0-04`, `S0-05`, `S0-06`, `S0-07`, `S0-10`, `S0-14`, `S0-23`.
+- Monorepo pnpm + Turborepo + Biome, TypeScript 6.0, Expo SDK 58.
+- `packages/shared`: schema Zod cho chat, giải thích, tổng kết, quota, nội dung học.
+- `packages/content`: script kiểm tra nội dung; nội dung mẫu 3 chủ đề, 24 cụm từ, 3 kịch bản, 4 câu xếp trình độ (**chưa duyệt**).
+- `apps/api`: `/health`, `/dev/stream` (chỉ bật ở dev), bộ đếm quota D1, cron dọn bảng `usage`. Đã chạy thử `wrangler dev` ở máy.
+- `apps/mobile`: khung 5 tab, màn **Kiểm tra kỹ thuật** (spike S1, S2, S3, S6, S8), plugin ký APK (đã thử với `expo prebuild` thật), Metro bundle được.
+- CI/CD: `ci.yml`, `android-apk.yml`, `api-deploy.yml`. README hướng dẫn cấu hình.
+- Review độc lập toàn nhánh: 0 Critical, đã sửa 3 Important.
+
+**Còn dở:**
+
+| Sprint | Mã việc          | Đang dở ở đâu                                             | Cần gì để xong                                                |
+| ------ | ---------------- | --------------------------------------------------------- | ------------------------------------------------------------- |
+| 0      | `S0-02`          | App chưa chạy trên development build                      | Android Studio + điện thoại                                   |
+| 0      | `S0-08`          | CI chỉ mới chạy ở máy                                     | Repo GitHub, push code                                        |
+| 0      | `S0-09`          | Chưa tạo keystore                                         | JDK (có sẵn trong Android Studio); bạn tự tạo, sao lưu 2 nơi  |
+| 0      | `S0-11`          | Workflow build APK chưa chạy lần nào                      | Repo GitHub + secrets keystore                                |
+| 0      | `S0-12`, `S0-13` | Migration D1 đã viết, chưa tạo database thật, chưa deploy | Tài khoản Cloudflare                                          |
+| 0      | `S0-15` S1       | Có nút đo trên app và route `/dev/stream`                 | APK + API đã deploy + điện thoại                              |
+| 0      | `S0-16` S2       | Có nút thử STT trên app                                   | 2–3 điện thoại khác hãng                                      |
+| 0      | `S0-17` S3       | Có nút thử TTS trên app                                   | Điện thoại (bật chế độ máy bay)                               |
+| 0      | `S0-18` S4       | Đạt trên D1 ở máy (20 request song song)                  | Tài khoản Cloudflare để thử D1 thật                           |
+| 0      | `S0-19` S5       | Bundle JS đạt                                             | Build native release thành công (`S0-11`)                     |
+| 0      | `S0-20` S6       | Có nút thử FTS5 trên app                                  | Điện thoại                                                    |
+| 0      | `S0-21` S7       | Chưa làm                                                  | 2 khóa API AI miễn phí                                        |
+| 0      | `S0-22` S8       | Chưa làm                                                  | APK + API đã deploy                                           |
+| 0      | `S0-24`          | Chưa làm                                                  | Kết quả các spike                                             |
+| 1      | Toàn bộ          | Chưa bắt đầu (chờ các spike S3, S6)                       | Có thể viết trước phần logic; kiểm tra `S1-18` cần điện thoại |
+
+**Đang chờ bạn:**
+
+- [ ] P-01: xác nhận 6 quyết định tạm ở BRD §10 và **chốt tên package Android** (đang tạm là `com.englishapp.mobile`; chốt trước khi tạo keystore)
+- [ ] P-02: tạo repo GitHub và gửi URL; tạo tài khoản Cloudflare rồi chạy `pnpm exec wrangler login` trong `apps/api`
+- [ ] P-03: đăng ký 2 khóa API AI miễn phí, đặt vào `apps/api/.dev.vars` (không gửi khóa qua chat)
+- [ ] P-04: chuẩn bị ít nhất 1 điện thoại Android (tốt nhất 2–3 máy khác hãng), bật USB debugging
+- [ ] Cài Android Studio trên máy tính (có kèm JDK 17 + Android SDK)
+- [ ] Duyệt 24 cụm từ mẫu trong `packages/content/data/phrases/`
+
+**Lỗi nhỏ để sau (từ review):**
+
+- Bộ đọc SSE chưa xử lý `\r` đơn, BOM, event rỗng (không ảnh hưởng với server Hono).
+- Màn Kiểm tra kỹ thuật thiếu try/catch ở nút liệt kê giọng TTS và nút bắt đầu STT.
+
+**Bước tiếp theo:** khi có repo và Cloudflare thì push code, deploy API. Khi có Android Studio và điện thoại thì chạy app, làm các spike, chốt mốc M0, rồi sang Sprint 1.
+
+---
+
+## Cần chuẩn bị để hoàn thành toàn bộ MVP
+
+Danh sách tổng hợp những thứ ngoài code cần có. Đánh dấu khi đã có.
+
+| #   | Cần có                                                                      | Dùng cho                                 | Sprint       | Đã có |
+| --- | --------------------------------------------------------------------------- | ---------------------------------------- | ------------ | ----- |
+| 1   | Quyết định BRD §10 + tên package Android                                    | Toàn dự án, keystore                     | 0            | [ ]   |
+| 2   | Repo GitHub (free)                                                          | CI, build APK                            | 0            | [ ]   |
+| 3   | Tài khoản Cloudflare (free)                                                 | API, D1                                  | 0, 3a        | [ ]   |
+| 4   | Android Studio (JDK 17 + Android SDK)                                       | Build và chạy app trên máy               | 0 → 4        | [ ]   |
+| 5   | 1 điện thoại Android (tốt nhất 2–3 máy khác hãng)                           | Spike, kiểm tra từng sprint              | 0 → 4        | [ ]   |
+| 6   | Keystore + mật khẩu, sao lưu 2 nơi                                          | Ký APK phát hành                         | 0            | [ ]   |
+| 7   | 2 khóa API AI miễn phí                                                      | Spike S7, hội thoại AI                   | 0, 3a        | [ ]   |
+| 8   | Người duyệt nội dung tiếng Anh                                              | Duyệt cụm từ, kịch bản, câu xếp trình độ | 1, 3a, 3b, 4 | [ ]   |
+| 9   | Nội dung: 60 cụm (S1) → 200 cụm (S4); 3 → 10 kịch bản; ~30 câu xếp trình độ | Học, chat, onboarding                    | 1, 3a, 3b, 4 | [ ]   |
+| 10  | 5–10 người thử + mẫu khảo sát                                               | Mốc M4                                   | 4            | [ ]   |
