@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # Nhúng vào bundle JS lúc build (biến EXPO_PUBLIC_*). Đặt trong Settings → Variables.
-      EXPO_PUBLIC_API_BASE_URL: ${{ startsWith(github.ref, 'refs/tags/') && vars.API_BASE_URL_PROD || vars.API_BASE_URL_DEV }}
+      EXPO_PUBLIC_API_BASE_URL: ${{ startsWith(github.ref, 'refs/tags/') && vars.API_BASE_URL_PROD || !startsWith(github.ref, 'refs/tags/') && vars.API_BASE_URL_DEV || '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -21,6 +21,14 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+      - name: Kiểm tra URL API
+        run: |
+          if [ -z "$EXPO_PUBLIC_API_BASE_URL" ]; then
+            echo "::error::Chưa đặt biến API_BASE_URL_DEV/API_BASE_URL_PROD (Settings → Variables)."; exit 1
+          fi
+          if [[ "$GITHUB_REF" == refs/tags/* && "$EXPO_PUBLIC_API_BASE_URL" != https://* ]]; then
+            echo "::error::Bản phát hành (tag) cần API_BASE_URL_PROD dạng https://"; exit 1
+          fi
       - run: pnpm install --frozen-lockfile
 
       - name: Giải mã keystore (nếu đã cấu hình)
@@ -30,6 +38,8 @@ jobs:
           if [ -n "$KEYSTORE_B64" ]; then
             echo "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/release.keystore"
             echo "ANDROID_KEYSTORE_PATH=$RUNNER_TEMP/release.keystore" >> "$GITHUB_ENV"
+          elif [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            echo "::error::Bản phát hành (tag) bắt buộc ký bằng keystore thật: thiếu ANDROID_KEYSTORE_BASE64."; exit 1
           else
             echo "::warning::Chưa có ANDROID_KEYSTORE_BASE64 — APK sẽ ký bằng debug keystore (chỉ để thử)."
           fi
@@ -47,5 +57,5 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: app-release-${{ github.ref_name }}
+          name: app-release-${{ github.sha }}
           path: apps/mobile/android/app/build/outputs/apk/release/*.apk

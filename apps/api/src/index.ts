@@ -17,9 +17,10 @@ app.onError((err, c) => {
   return c.json({ error: 'internal' }, 500);
 });
 
+export { app };
+
 export default {
   fetch: app.fetch,
-  request: app.request,
   async scheduled(_event: ScheduledController, env: Env) {
     await purgeBefore(env.DB, vnDayKeyOffset(new Date(), -2));
   },

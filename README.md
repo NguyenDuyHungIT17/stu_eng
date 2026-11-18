@@ -86,7 +86,7 @@ pnpm exec wrangler d1 create english-app-quota-dev
 pnpm exec wrangler d1 create english-app-quota-prod
 ```
 
-Chép hai `database_id` vào `apps/api/wrangler.toml` (thay các id `0000…`). Tạo API token (quyền Workers Scripts + D1 Edit) rồi thêm vào GitHub → Settings → Secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
+Chép hai `database_id` vào `apps/api/wrangler.toml` (thay các id `0000…`). **Trước khi làm bước này, workflow `api-deploy` sẽ báo lỗi ở bước migrate D1.** Tạo API token (quyền Workers Scripts + D1 Edit) rồi thêm vào GitHub → Settings → Secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
 
 **2. Keystore ký APK** (làm một lần, **sao lưu ở ít nhất 2 nơi an toàn**; mất keystore là không cập nhật được app đã phát hành)
 

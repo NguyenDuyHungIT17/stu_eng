@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import app from '../index';
+import { app } from '../index';
 
 describe('GET /dev/stream (spike S1)', () => {
   it('stream các sự kiện SSE dạng {"t":...} rồi kết thúc bằng event done', async () => {
@@ -14,5 +14,12 @@ describe('GET /dev/stream (spike S1)', () => {
   it('không tồn tại ở môi trường prod', async () => {
     const res = await app.request('/dev/stream', {}, { APP_ENV: 'prod' });
     expect(res.status).toBe(404);
+  });
+});
+
+describe('GET /dev/stream – chặn theo danh sách cho phép', () => {
+  it('404 khi APP_ENV thiếu hoặc gõ sai (không mặc định mở)', async () => {
+    expect((await app.request('/dev/stream', {}, {})).status).toBe(404);
+    expect((await app.request('/dev/stream', {}, { APP_ENV: 'production' })).status).toBe(404);
   });
 });

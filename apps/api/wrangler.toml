@@ -4,7 +4,7 @@ compatibility_date = "2026-11-01"
 compatibility_flags = ["nodejs_compat"]
 
 [vars]
-APP_ENV = "local"
+APP_ENV = "dev" # wrangler dev ở máy và worker dev trên Cloudflare
 CHAT_PER_DEVICE = "40"
 ASSIST_PER_DEVICE = "20"
 REQ_PER_IP = "150"

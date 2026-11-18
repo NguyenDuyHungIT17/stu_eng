@@ -3,7 +3,7 @@ on:
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths: ["apps/api/**", "packages/**"]
+    paths: ["apps/api/**", "packages/**", "pnpm-lock.yaml", "package.json"]
     tags: ["v*"]
 
 jobs:
