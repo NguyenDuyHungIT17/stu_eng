@@ -105,4 +105,4 @@ GitHub Secrets: `ANDROID_KEYSTORE_BASE64` (nội dung file .b64), `ANDROID_KEYST
 - Nhánh `feat/...`, `fix/...`; merge qua pull request.
 - Commit theo Conventional Commits, kèm mã việc trong PLAN.md: `feat(vocab): phiên ôn FSRS [S1-07]`.
 - Thư mục `apps/mobile/android/` được sinh bởi `expo prebuild`, không commit, không sửa tay; cấu hình native qua `app.config.ts` và config plugin trong `apps/mobile/plugins/`.
-- Package Android tạm thời là `com.englishapp.mobile` — **phải chốt tên chính thức trước khi phát hành**, sau đó không đổi được.
+- Package Android: `com.engoats.mobile` (đã chốt 18/11/2026). **Không đổi sau khi phát hành.**

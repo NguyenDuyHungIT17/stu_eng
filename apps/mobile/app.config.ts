@@ -1,7 +1,7 @@
 import type { ConfigContext, ExpoConfig } from 'expo/config';
 
 // Package Android tạm thời. KHÔNG đổi được sau khi đã phát hành: chốt trước bản gửi người thử.
-const ANDROID_PACKAGE = 'com.englishapp.mobile';
+const ANDROID_PACKAGE = 'com.engoats.mobile';
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,

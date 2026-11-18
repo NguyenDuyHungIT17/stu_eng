@@ -275,15 +275,15 @@ Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử
 
 Ghi mọi thay đổi so với BRD/Thiết kế kỹ thuật phát sinh khi làm.
 
-| Ngày       | Quyết định                                                                                     | Lý do                                                                       | Ảnh hưởng                                                    |
-| ---------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| 18/11/2026 | Áp dụng BRD v1.1 và Thiết kế kỹ thuật v1.1                                                     | Cắt phạm vi MVP, sửa rủi ro kỹ thuật                                        | Xem mục 0 của hai tài liệu                                   |
-| 18/11/2026 | Expo SDK 58, TypeScript 6.0                                                                    | Bản stable mới nhất; template Expo dùng TS 6.0 (TS 7 chưa an toàn với Expo) | —                                                            |
-| 18/11/2026 | Route mobile ở `apps/mobile/src/app`                                                           | Quy ước của Expo SDK 58                                                     | Khác đường dẫn TK §4                                         |
-| 18/11/2026 | Biến môi trường `EXPO_PUBLIC_API_BASE_URL` thay cho `extra` trong app config                   | Cách chuẩn của Expo, tự nhúng lúc bundle                                    | —                                                            |
-| 18/11/2026 | Test API dùng Vitest + `getPlatformProxy()` của wrangler, bỏ `@cloudflare/vitest-pool-workers` | Gói này deprecated, không hợp Vitest 5                                      | Test không chạy trong runtime workerd                        |
-| 18/11/2026 | NativeWind hoãn sang Sprint 1 (khi làm UI thật); Sprint 0 dùng StyleSheet                      | Giảm cấu hình khi chưa có màn hình thật                                     | S0-02 chưa có NativeWind                                     |
-| 18/11/2026 | Android package tạm `com.englishapp.mobile`                                                    | Chưa có tên chính thức                                                      | **Phải chốt trước bản gửi người thử, sau đó không đổi được** |
+| Ngày       | Quyết định                                                                                     | Lý do                                                                       | Ảnh hưởng                             |
+| ---------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------- |
+| 18/11/2026 | Áp dụng BRD v1.1 và Thiết kế kỹ thuật v1.1                                                     | Cắt phạm vi MVP, sửa rủi ro kỹ thuật                                        | Xem mục 0 của hai tài liệu            |
+| 18/11/2026 | Expo SDK 58, TypeScript 6.0                                                                    | Bản stable mới nhất; template Expo dùng TS 6.0 (TS 7 chưa an toàn với Expo) | —                                     |
+| 18/11/2026 | Route mobile ở `apps/mobile/src/app`                                                           | Quy ước của Expo SDK 58                                                     | Khác đường dẫn TK §4                  |
+| 18/11/2026 | Biến môi trường `EXPO_PUBLIC_API_BASE_URL` thay cho `extra` trong app config                   | Cách chuẩn của Expo, tự nhúng lúc bundle                                    | —                                     |
+| 18/11/2026 | Test API dùng Vitest + `getPlatformProxy()` của wrangler, bỏ `@cloudflare/vitest-pool-workers` | Gói này deprecated, không hợp Vitest 5                                      | Test không chạy trong runtime workerd |
+| 18/11/2026 | NativeWind hoãn sang Sprint 1 (khi làm UI thật); Sprint 0 dùng StyleSheet                      | Giảm cấu hình khi chưa có màn hình thật                                     | S0-02 chưa có NativeWind              |
+| 18/11/2026 | Android package `com.engoats.mobile` (bạn đã chốt)                                             | Tên chính thức                                                              | **Không đổi sau khi phát hành**       |
 
 ## Nhật ký tuần
 
