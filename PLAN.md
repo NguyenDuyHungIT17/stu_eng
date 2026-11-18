@@ -1,6 +1,6 @@
 # PLAN – Ứng dụng học tiếng Anh giao tiếp
 
-*Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thiết kế kỹ thuật v1.1. Bắt đầu: 18/11/2026.*
+_Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thiết kế kỹ thuật v1.1. Bắt đầu: 18/11/2026._
 
 ## Cách dùng file này
 
@@ -9,19 +9,19 @@
   - `[ ]` chưa làm · `[~]` đang làm · `[x]` xong · `[-]` bỏ hoặc hoãn (ghi lý do)
 - Một việc chỉ được đánh `[x]` khi đạt **DoD** (cuối file).
 - Cuối mỗi ngày làm việc: cập nhật checkbox. Cuối mỗi tuần: cập nhật **Bảng tổng quan** và **Nhật ký tuần**.
-- Cột *Tham chiếu* trỏ tới mã yêu cầu trong BRD (FR-...) hoặc mục trong Thiết kế kỹ thuật (TK §...).
+- Cột _Tham chiếu_ trỏ tới mã yêu cầu trong BRD (FR-...) hoặc mục trong Thiết kế kỹ thuật (TK §...).
 
 ## Bảng tổng quan
 
-| Sprint | Mục tiêu | Ước tính | Bắt đầu | Kết thúc | Tiến độ | Trạng thái |
-| --- | --- | --- | --- | --- | --- | --- |
-| 0 | Nền móng + spike | 1,5 tuần | | | 0/24 | Chưa bắt đầu |
-| 1 | Từ vựng và ôn tập | 2 tuần | | | 0/18 | Chưa bắt đầu |
-| 2 | Ghi chú và tiến độ | 1 tuần | | | 0/14 | Chưa bắt đầu |
-| 3a | Chat bằng chữ | 1,5 tuần | | | 0/18 | Chưa bắt đầu |
-| 3b | Chat bằng giọng | 1,5 tuần | | | 0/13 | Chưa bắt đầu |
-| 4 | Hoàn thiện MVP | 1,5 tuần | | | 0/17 | Chưa bắt đầu |
-| **MVP** | | **~9 tuần (+20–30% dự phòng)** | | | **0/104** | |
+| Sprint  | Mục tiêu           | Ước tính                       | Bắt đầu | Kết thúc | Tiến độ   | Trạng thái   |
+| ------- | ------------------ | ------------------------------ | ------- | -------- | --------- | ------------ |
+| 0       | Nền móng + spike   | 1,5 tuần                       |         |          | 0/24      | Chưa bắt đầu |
+| 1       | Từ vựng và ôn tập  | 2 tuần                         |         |          | 0/18      | Chưa bắt đầu |
+| 2       | Ghi chú và tiến độ | 1 tuần                         |         |          | 0/14      | Chưa bắt đầu |
+| 3a      | Chat bằng chữ      | 1,5 tuần                       |         |          | 0/18      | Chưa bắt đầu |
+| 3b      | Chat bằng giọng    | 1,5 tuần                       |         |          | 0/13      | Chưa bắt đầu |
+| 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17      | Chưa bắt đầu |
+| **MVP** |                    | **~9 tuần (+20–30% dự phòng)** |         |          | **0/104** |              |
 
 Mốc quan trọng:
 
@@ -35,12 +35,12 @@ Mốc quan trọng:
 
 ## Việc trước khi code
 
-| Mã | Việc | Trạng thái |
-| --- | --- | --- |
-| P-01 | Xác nhận 6 quyết định tạm ở BRD §10 | [ ] |
-| P-02 | Tạo tài khoản GitHub repo, Cloudflare | [ ] |
-| P-03 | Đăng ký khóa API miễn phí của ít nhất 2 nhà cung cấp LLM | [ ] |
-| P-04 | Chuẩn bị 2–3 điện thoại Android khác hãng để test | [ ] |
+| Mã   | Việc                                                     | Trạng thái |
+| ---- | -------------------------------------------------------- | ---------- |
+| P-01 | Xác nhận 6 quyết định tạm ở BRD §10                      | [ ]        |
+| P-02 | Tạo tài khoản GitHub repo, Cloudflare                    | [ ]        |
+| P-03 | Đăng ký khóa API miễn phí của ít nhất 2 nhà cung cấp LLM | [ ]        |
+| P-04 | Chuẩn bị 2–3 điện thoại Android khác hãng để test        | [ ]        |
 
 ---
 
@@ -232,11 +232,11 @@ Mốc quan trọng:
 
 ## Sau MVP (chưa chia việc chi tiết)
 
-| Sprint | Nội dung | Tham chiếu |
-| --- | --- | --- |
-| 5 | Bài nghe, tốc độ, transcript, nối âm/nói tắt, shadowing, bài phản xạ | FR-L-*, FR-S-01..03 |
-| 6 | Rảnh tay, bộ từ tự tạo + enrich, lưu câu AI thành thẻ, ghi chú → thẻ, lịch sử chat, sao lưu, bài tập điền từ/nghe gõ lại, phần nói trong kiểm tra đầu vào | FR-A-01b, FR-V-04b/06/07/08, FR-A-06b/08, FR-N-06, FR-U-03, FR-P-01b |
-| 7 | Đăng nhập, đồng bộ, chấm ngữ điệu, báo cáo tiến bộ, kịch bản tự tạo | P2 |
+| Sprint | Nội dung                                                                                                                                                  | Tham chiếu                                                           |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| 5      | Bài nghe, tốc độ, transcript, nối âm/nói tắt, shadowing, bài phản xạ                                                                                      | FR-L-*, FR-S-01..03                                                  |
+| 6      | Rảnh tay, bộ từ tự tạo + enrich, lưu câu AI thành thẻ, ghi chú → thẻ, lịch sử chat, sao lưu, bài tập điền từ/nghe gõ lại, phần nói trong kiểm tra đầu vào | FR-A-01b, FR-V-04b/06/07/08, FR-A-06b/08, FR-N-06, FR-U-03, FR-P-01b |
+| 7      | Đăng nhập, đồng bộ, chấm ngữ điệu, báo cáo tiến bộ, kịch bản tự tạo                                                                                       | P2                                                                   |
 
 Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử ở M4.
 
@@ -244,46 +244,46 @@ Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử
 
 ## Kết quả spike (Sprint 0)
 
-| Spike | Kết quả | Số liệu/ghi chú | Quyết định |
-| --- | --- | --- | --- |
-| S1 – SSE `expo/fetch` | | | |
-| S2 – STT trên máy thật | | Máy: ... | |
-| S3 – TTS offline | | Giọng có sẵn: ... | |
-| S4 – D1 quota | | Hạn mức free: ... | |
-| S5 – Metro + pnpm | | | |
-| S6 – Drizzle + FTS5 | | | |
-| S7 – Nhà cung cấp LLM | | Hạn mức/độ trễ: ... | |
-| S8 – APK ký từ CI | | | |
+| Spike                  | Kết quả | Số liệu/ghi chú     | Quyết định |
+| ---------------------- | ------- | ------------------- | ---------- |
+| S1 – SSE `expo/fetch`  |         |                     |            |
+| S2 – STT trên máy thật |         | Máy: ...            |            |
+| S3 – TTS offline       |         | Giọng có sẵn: ...   |            |
+| S4 – D1 quota          |         | Hạn mức free: ...   |            |
+| S5 – Metro + pnpm      |         |                     |            |
+| S6 – Drizzle + FTS5    |         |                     |            |
+| S7 – Nhà cung cấp LLM  |         | Hạn mức/độ trễ: ... |            |
+| S8 – APK ký từ CI      |         |                     |            |
 
 ## Kiểm tra nghiệm thu P0 (điền ở Sprint 4)
 
-| Yêu cầu | Tiêu chí | Đạt |
-| --- | --- | --- |
-| FR-V-03 | Thẻ đã ôn không xuất hiện lại trước hạn | [ ] |
-| FR-V-02 | Phát âm offline (khi có giọng) / có hướng dẫn tải giọng | [ ] |
-| FR-V-05 | Số thẻ ôn hôm nay khớp thực tế; số cụm mới ≤ mục tiêu | [ ] |
-| FR-N-07 | Ghi chú tạo offline còn nguyên khi mở lại | [ ] |
-| FR-N-03 | Tìm kiếm < 1 giây với 1.000 ghi chú | [ ] |
-| FR-A-01a | Chữ đầu tiên ≤ 3 giây; AI đọc câu đầu trước khi stream xong | [ ] |
-| FR-A-01a | STT lỗi/không quyền → chuyển gõ chữ, không mất buổi | [ ] |
-| FR-A-04 | Tổng kết chỉ ra lỗi lặp lại của buổi đó | [ ] |
-| FR-A-07 | Hết lượt: thông báo rõ giờ làm mới, tính năng khác vẫn dùng được | [ ] |
-| FR-P-04 | Nhắc học đúng giờ, đổi giờ và tắt được | [ ] |
-| FR-U-05 | Xóa dữ liệu xóa sạch, app về trạng thái ban đầu | [ ] |
+| Yêu cầu  | Tiêu chí                                                         | Đạt |
+| -------- | ---------------------------------------------------------------- | --- |
+| FR-V-03  | Thẻ đã ôn không xuất hiện lại trước hạn                          | [ ] |
+| FR-V-02  | Phát âm offline (khi có giọng) / có hướng dẫn tải giọng          | [ ] |
+| FR-V-05  | Số thẻ ôn hôm nay khớp thực tế; số cụm mới ≤ mục tiêu            | [ ] |
+| FR-N-07  | Ghi chú tạo offline còn nguyên khi mở lại                        | [ ] |
+| FR-N-03  | Tìm kiếm < 1 giây với 1.000 ghi chú                              | [ ] |
+| FR-A-01a | Chữ đầu tiên ≤ 3 giây; AI đọc câu đầu trước khi stream xong      | [ ] |
+| FR-A-01a | STT lỗi/không quyền → chuyển gõ chữ, không mất buổi              | [ ] |
+| FR-A-04  | Tổng kết chỉ ra lỗi lặp lại của buổi đó                          | [ ] |
+| FR-A-07  | Hết lượt: thông báo rõ giờ làm mới, tính năng khác vẫn dùng được | [ ] |
+| FR-P-04  | Nhắc học đúng giờ, đổi giờ và tắt được                           | [ ] |
+| FR-U-05  | Xóa dữ liệu xóa sạch, app về trạng thái ban đầu                  | [ ] |
 
 ## Nhật ký quyết định
 
 Ghi mọi thay đổi so với BRD/Thiết kế kỹ thuật phát sinh khi làm.
 
-| Ngày | Quyết định | Lý do | Ảnh hưởng |
-| --- | --- | --- | --- |
+| Ngày       | Quyết định                                 | Lý do                                | Ảnh hưởng                  |
+| ---------- | ------------------------------------------ | ------------------------------------ | -------------------------- |
 | 18/11/2026 | Áp dụng BRD v1.1 và Thiết kế kỹ thuật v1.1 | Cắt phạm vi MVP, sửa rủi ro kỹ thuật | Xem mục 0 của hai tài liệu |
 
 ## Nhật ký tuần
 
 | Tuần | Đã xong | Vướng mắc | Kế hoạch tuần tới |
-| --- | --- | --- | --- |
-| 1 | | | |
+| ---- | ------- | --------- | ----------------- |
+| 1    |         |           |                   |
 
 ## Định nghĩa hoàn thành (DoD)
 

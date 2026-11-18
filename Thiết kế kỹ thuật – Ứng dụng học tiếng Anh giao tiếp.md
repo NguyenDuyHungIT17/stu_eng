@@ -1,31 +1,31 @@
 # Thiết kế kỹ thuật – Ứng dụng học tiếng Anh giao tiếp
 
-*Kiến trúc, tech stack, cấu trúc source code và kế hoạch triển khai. Phiên bản 1.1, ngày 18/11/2026. Đi kèm BRD v1.1. Tiến độ chi tiết theo dõi trong `PLAN.md`.*
+_Kiến trúc, tech stack, cấu trúc source code và kế hoạch triển khai. Phiên bản 1.1, ngày 18/11/2026. Đi kèm BRD v1.1. Tiến độ chi tiết theo dõi trong `PLAN.md`._
 
 ## 0. Thay đổi so với v1.0
 
-| # | Thay đổi | Lý do |
-| --- | --- | --- |
-| 1 | Quota chuyển từ **Cloudflare KV sang D1** | KV gói free giới hạn số lượt ghi mỗi ngày rất thấp, mỗi khóa chỉ ghi được khoảng 1 lần/giây và không có thao tác nguyên tử; D1 đếm chính xác bằng một câu SQL |
-| 2 | Client SSE dùng **`expo/fetch`** (hỗ trợ đọc stream), có phương án dự phòng | `fetch` mặc định của React Native không đọc được body theo từng đoạn |
-| 3 | Voice loop MVP: **chạm để nói / chạm để ngắt**; STT luôn tắt khi TTS đang đọc | Tránh vọng âm TTS vào mic; chế độ rảnh tay để P1 |
-| 4 | Thêm endpoint `POST /chat/explain` và hạn mức riêng | Đáp ứng FR-A-05, FR-A-10 |
-| 5 | Test mobile dùng **jest-expo**; Vitest chỉ cho `api`, `shared`, `content` | Hệ sinh thái RN/Expo dựa trên Jest |
-| 6 | Bổ sung cấu hình Metro + pnpm, migration Drizzle, ký APK khi `expo prebuild` | Các điểm dễ vướng khi dựng môi trường |
-| 7 | Schema: bỏ `notes.audio_ref`, thêm `notes.source_ref`, bảng `daily_activity`, bảng ảo FTS5 cho ghi chú | Khớp BRD v1.1 (FR-N-03, FR-N-05, FR-P-03) |
-| 8 | Quy tắc seed nội dung theo phiên bản (upsert, không đụng tiến độ học) | Tránh mất dữ liệu khi cập nhật nội dung |
-| 9 | Feedback dùng chế độ trả JSON của nhà cung cấp nếu có | Giảm lỗi JSON sai định dạng |
-| 10 | Sprint 0 có danh sách **spike kiểm chứng** bắt buộc; kế hoạch chia lại thành 3a/3b | Đẩy rủi ro lớn ra sớm |
+| #   | Thay đổi                                                                                               | Lý do                                                                                                                                                         |
+| --- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Quota chuyển từ **Cloudflare KV sang D1**                                                              | KV gói free giới hạn số lượt ghi mỗi ngày rất thấp, mỗi khóa chỉ ghi được khoảng 1 lần/giây và không có thao tác nguyên tử; D1 đếm chính xác bằng một câu SQL |
+| 2   | Client SSE dùng **`expo/fetch`** (hỗ trợ đọc stream), có phương án dự phòng                            | `fetch` mặc định của React Native không đọc được body theo từng đoạn                                                                                          |
+| 3   | Voice loop MVP: **chạm để nói / chạm để ngắt**; STT luôn tắt khi TTS đang đọc                          | Tránh vọng âm TTS vào mic; chế độ rảnh tay để P1                                                                                                              |
+| 4   | Thêm endpoint `POST /chat/explain` và hạn mức riêng                                                    | Đáp ứng FR-A-05, FR-A-10                                                                                                                                      |
+| 5   | Test mobile dùng **jest-expo**; Vitest chỉ cho `api`, `shared`, `content`                              | Hệ sinh thái RN/Expo dựa trên Jest                                                                                                                            |
+| 6   | Bổ sung cấu hình Metro + pnpm, migration Drizzle, ký APK khi `expo prebuild`                           | Các điểm dễ vướng khi dựng môi trường                                                                                                                         |
+| 7   | Schema: bỏ `notes.audio_ref`, thêm `notes.source_ref`, bảng `daily_activity`, bảng ảo FTS5 cho ghi chú | Khớp BRD v1.1 (FR-N-03, FR-N-05, FR-P-03)                                                                                                                     |
+| 8   | Quy tắc seed nội dung theo phiên bản (upsert, không đụng tiến độ học)                                  | Tránh mất dữ liệu khi cập nhật nội dung                                                                                                                       |
+| 9   | Feedback dùng chế độ trả JSON của nhà cung cấp nếu có                                                  | Giảm lỗi JSON sai định dạng                                                                                                                                   |
+| 10  | Sprint 0 có danh sách **spike kiểm chứng** bắt buộc; kế hoạch chia lại thành 3a/3b                     | Đẩy rủi ro lớn ra sớm                                                                                                                                         |
 
 ## 1. Mục tiêu kỹ thuật và ràng buộc
 
-| Hạng mục | Quyết định |
-| --- | --- |
-| Nền tảng | Android (APK), một codebase TypeScript |
-| Chi phí hạ tầng | 0 đồng: chỉ dùng các gói miễn phí |
-| Ưu tiên | Offline-first; chỉ hội thoại AI cần mạng |
-| Đội ngũ | 1 lập trình viên (backend quen thuộc, frontend mobile mới): ưu tiên công cụ ít cấu hình, ít thứ phải tự vận hành |
-| Không cần Docker | Dev, test và build đều chạy không cần container |
+| Hạng mục         | Quyết định                                                                                                       |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Nền tảng         | Android (APK), một codebase TypeScript                                                                           |
+| Chi phí hạ tầng  | 0 đồng: chỉ dùng các gói miễn phí                                                                                |
+| Ưu tiên          | Offline-first; chỉ hội thoại AI cần mạng                                                                         |
+| Đội ngũ          | 1 lập trình viên (backend quen thuộc, frontend mobile mới): ưu tiên công cụ ít cấu hình, ít thứ phải tự vận hành |
+| Không cần Docker | Dev, test và build đều chạy không cần container                                                                  |
 
 **Lưu ý về phiên bản:** không ghi cứng số phiên bản. Khi khởi tạo, dùng bản stable mới nhất của từng công cụ và đối chiếu yêu cầu Node/JDK/Android SDK trong tài liệu chính thức của Expo. Ghi lại các phiên bản đã chọn vào README sau Sprint 0.
 
@@ -65,35 +65,35 @@
 
 ## 3. Tech stack
 
-| Tầng | Công nghệ | Lý do chọn |
-| --- | --- | --- |
-| Monorepo | pnpm workspaces + Turborepo | Chia sẻ code, build có cache. Dùng `node-linker=hoisted` để Metro chạy ổn |
-| Ngôn ngữ | TypeScript chế độ strict | Một ngôn ngữ cho cả app và API |
-| Mobile | Expo (React Native, kiến trúc mới) + development build | Một codebase, có sẵn mic, audio, thông báo |
-| Điều hướng | Expo Router | Routing theo cấu trúc file |
-| UI | NativeWind | Viết nhanh, hỗ trợ dark mode |
-| State UI | Zustand | Nhẹ, ít boilerplate |
-| Gọi API | TanStack Query + `expo/fetch` | Cache, retry; `expo/fetch` đọc được stream SSE |
-| DB cục bộ | expo-sqlite + Drizzle ORM | Offline-first, type-safe, có migration |
-| Tìm kiếm ghi chú | SQLite FTS5 (bảng ảo) | Tìm dưới 1 giây với hàng nghìn ghi chú |
-| Ôn tập ngắt quãng | ts-fsrs | Thuật toán FSRS thuần JS |
-| Nhận diện giọng nói | expo-speech-recognition | Dùng engine của Android, miễn phí |
-| Đọc văn bản | expo-speech | TTS hệ thống, miễn phí |
-| Âm thanh (P1) | expo-audio | Phát và thu âm cho luyện nghe, shadowing |
-| Thông báo | expo-notifications | Nhắc học bằng local notification |
-| Backend | Hono + Zod trên Cloudflare Workers | Gói free, không quản server |
-| Lưu quota | **Cloudflare D1** | Đếm nguyên tử bằng `INSERT ... ON CONFLICT ... RETURNING` |
-| AI | LLM Gateway gọi Gemini/Groq/OpenRouter | Chuẩn OpenAI-compatible, có fallback |
-| Lint, format | Biome | Thay ESLint và Prettier |
-| Test | Vitest (api, shared, content), jest-expo + Testing Library (mobile), Maestro (e2e) | Dùng đúng công cụ cho từng môi trường |
-| CI/CD | GitHub Actions | Build APK không cần cài Android SDK trên máy |
+| Tầng                | Công nghệ                                                                          | Lý do chọn                                                                |
+| ------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Monorepo            | pnpm workspaces + Turborepo                                                        | Chia sẻ code, build có cache. Dùng `node-linker=hoisted` để Metro chạy ổn |
+| Ngôn ngữ            | TypeScript chế độ strict                                                           | Một ngôn ngữ cho cả app và API                                            |
+| Mobile              | Expo (React Native, kiến trúc mới) + development build                             | Một codebase, có sẵn mic, audio, thông báo                                |
+| Điều hướng          | Expo Router                                                                        | Routing theo cấu trúc file                                                |
+| UI                  | NativeWind                                                                         | Viết nhanh, hỗ trợ dark mode                                              |
+| State UI            | Zustand                                                                            | Nhẹ, ít boilerplate                                                       |
+| Gọi API             | TanStack Query + `expo/fetch`                                                      | Cache, retry; `expo/fetch` đọc được stream SSE                            |
+| DB cục bộ           | expo-sqlite + Drizzle ORM                                                          | Offline-first, type-safe, có migration                                    |
+| Tìm kiếm ghi chú    | SQLite FTS5 (bảng ảo)                                                              | Tìm dưới 1 giây với hàng nghìn ghi chú                                    |
+| Ôn tập ngắt quãng   | ts-fsrs                                                                            | Thuật toán FSRS thuần JS                                                  |
+| Nhận diện giọng nói | expo-speech-recognition                                                            | Dùng engine của Android, miễn phí                                         |
+| Đọc văn bản         | expo-speech                                                                        | TTS hệ thống, miễn phí                                                    |
+| Âm thanh (P1)       | expo-audio                                                                         | Phát và thu âm cho luyện nghe, shadowing                                  |
+| Thông báo           | expo-notifications                                                                 | Nhắc học bằng local notification                                          |
+| Backend             | Hono + Zod trên Cloudflare Workers                                                 | Gói free, không quản server                                               |
+| Lưu quota           | **Cloudflare D1**                                                                  | Đếm nguyên tử bằng `INSERT ... ON CONFLICT ... RETURNING`                 |
+| AI                  | LLM Gateway gọi Gemini/Groq/OpenRouter                                             | Chuẩn OpenAI-compatible, có fallback                                      |
+| Lint, format        | Biome                                                                              | Thay ESLint và Prettier                                                   |
+| Test                | Vitest (api, shared, content), jest-expo + Testing Library (mobile), Maestro (e2e) | Dùng đúng công cụ cho từng môi trường                                     |
+| CI/CD               | GitHub Actions                                                                     | Build APK không cần cài Android SDK trên máy                              |
 
 **Tại sao không chọn phương án khác:**
 
-- *Flutter/Kotlin:* phải học thêm ngôn ngữ, mất khả năng dùng chung schema với backend.
-- *Firebase/Supabase làm backend chính:* MVP chưa cần vì dữ liệu nằm trên máy.
-- *Server riêng + Docker:* tốn công vận hành.
-- *KV cho quota (bản v1.0):* hạn mức ghi thấp, không nguyên tử, khóa "toàn cục" bị ghi liên tục.
+- _Flutter/Kotlin:_ phải học thêm ngôn ngữ, mất khả năng dùng chung schema với backend.
+- _Firebase/Supabase làm backend chính:_ MVP chưa cần vì dữ liệu nằm trên máy.
+- _Server riêng + Docker:_ tốn công vận hành.
+- _KV cho quota (bản v1.0):_ hạn mức ghi thấp, không nguyên tử, khóa "toàn cục" bị ghi liên tục.
 
 ## 4. Cấu trúc source code
 
@@ -184,7 +184,7 @@ english-app/
 **Quy tắc tổ chức:**
 
 - Mỗi thư mục trong `features/` tự chứa màn hình con, hook và logic. Feature không import trực tiếp lẫn nhau; dùng chung qua `components/`, `lib/`, `db/`.
-- Truy cập database chỉ qua *repository* trong từng feature.
+- Truy cập database chỉ qua _repository_ trong từng feature.
 - `packages/shared` là nguồn sự thật duy nhất cho dữ liệu trao đổi giữa app và API.
 - `packages/content` có script validate bằng Zod chạy trong CI (đúng schema, không trùng id, tham chiếu `topicId` hợp lệ).
 
@@ -413,14 +413,14 @@ export const QuotaResponse = z.object({
 
 **Kịch bản ở server:** `scenarioId` được map sang prompt bằng file JSON trong `packages/content/scenarios`, được bundle vào Worker lúc build. Server **không nhận prompt từ app** để tránh lạm dụng làm chatbot tự do.
 
-| Endpoint | Chức năng | Quota |
-| --- | --- | --- |
-| `POST /chat` | Stream phản hồi AI (SSE) | Trừ 1 lượt `chat` cho mỗi lượt người học nói |
-| `POST /chat/explain` | Giải thích tiếng Việt một câu (JSON) | Trừ 1 lượt `assist` |
-| `POST /chat/feedback` | Tổng kết cuối buổi (JSON) | Trừ 1 lượt `assist` |
-| `GET /quota` | Số lượt còn lại hôm nay | Không trừ |
-| `GET /health` | Kiểm tra dịch vụ | Không cần `X-Device-Id` |
-| `POST /vocab/enrich` | Gợi ý nghĩa cho cụm từ tự thêm | P1 |
+| Endpoint              | Chức năng                            | Quota                                        |
+| --------------------- | ------------------------------------ | -------------------------------------------- |
+| `POST /chat`          | Stream phản hồi AI (SSE)             | Trừ 1 lượt `chat` cho mỗi lượt người học nói |
+| `POST /chat/explain`  | Giải thích tiếng Việt một câu (JSON) | Trừ 1 lượt `assist`                          |
+| `POST /chat/feedback` | Tổng kết cuối buổi (JSON)            | Trừ 1 lượt `assist`                          |
+| `GET /quota`          | Số lượt còn lại hôm nay              | Không trừ                                    |
+| `GET /health`         | Kiểm tra dịch vụ                     | Không cần `X-Device-Id`                      |
+| `POST /vocab/enrich`  | Gợi ý nghĩa cho cụm từ tự thêm       | P1                                           |
 
 **Hạn mức mặc định (cấu hình qua biến môi trường):** `CHAT_PER_DEVICE=40`, `ASSIST_PER_DEVICE=20`, `REQ_PER_IP=150`, `GLOBAL_DAILY=1500`. Điều chỉnh theo hạn mức thực tế của nhà cung cấp ghi ở Sprint 0.
 
@@ -501,7 +501,13 @@ export async function* streamChat(env: Env, messages: Msg[]) {
       const res = await fetch(`${p.baseUrl}/chat/completions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${p.apiKey}` },
-        body: JSON.stringify({ model: p.model, messages, stream: true, temperature: 0.7, max_tokens: 300 }),
+        body: JSON.stringify({
+          model: p.model,
+          messages,
+          stream: true,
+          temperature: 0.7,
+          max_tokens: 300,
+        }),
         signal: AbortSignal.timeout(15_000),
       });
       if (!res.ok || !res.body) throw new Error(`${p.name}:${res.status}`);
@@ -538,15 +544,15 @@ Prompt giải thích trả JSON `ExplainResponse` bằng tiếng Việt. Prompt 
 
 ### 7.6 Bảo mật và chống lạm dụng
 
-| Lớp | Cách làm |
-| --- | --- |
-| Khóa API | Chỉ nằm trong Workers Secrets |
-| Định danh | `X-Device-Id` (UUID sinh lần đầu cài, lưu ở SecureStore). Ẩn danh, **có thể giả mạo** |
-| Quota | D1: theo thiết bị, theo IP (`CF-Connecting-IP`), ngân sách toàn cục |
-| Phạm vi dùng | Server chỉ nhận `scenarioId`, prompt nằm ở server |
-| Kiểm tra đầu vào | Zod giới hạn độ dài và số lượt |
-| Logging | Không ghi log nội dung hội thoại; chỉ ghi route, mã trạng thái, nhà cung cấp, độ trễ |
-| Xác thực mạnh hơn | Giai đoạn sau: Play Integrity hoặc đăng nhập |
+| Lớp               | Cách làm                                                                              |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| Khóa API          | Chỉ nằm trong Workers Secrets                                                         |
+| Định danh         | `X-Device-Id` (UUID sinh lần đầu cài, lưu ở SecureStore). Ẩn danh, **có thể giả mạo** |
+| Quota             | D1: theo thiết bị, theo IP (`CF-Connecting-IP`), ngân sách toàn cục                   |
+| Phạm vi dùng      | Server chỉ nhận `scenarioId`, prompt nằm ở server                                     |
+| Kiểm tra đầu vào  | Zod giới hạn độ dài và số lượt                                                        |
+| Logging           | Không ghi log nội dung hội thoại; chỉ ghi route, mã trạng thái, nhà cung cấp, độ trễ  |
+| Xác thực mạnh hơn | Giai đoạn sau: Play Integrity hoặc đăng nhập                                          |
 
 ## 8. Chiến lược offline và hiệu năng
 
@@ -558,15 +564,15 @@ Prompt giải thích trả JSON `ExplainResponse` bằng tiếng Việt. Prompt 
 
 ## 9. Kiểm thử và chất lượng
 
-| Loại | Công cụ | Phạm vi |
-| --- | --- | --- |
-| Unit (API, shared) | Vitest | Parse SSE, gateway fallback (có/không token đầu), quota counter (D1 local qua Miniflare), prompt builder, `vnDayKey` |
-| Unit (mobile logic) | jest-expo | `lib/fsrs.ts`, `lib/day.ts`, sentence splitter, chọn thẻ mới/thẻ đến hạn, seed upsert, xếp trình độ |
-| Component | jest-expo + Testing Library RN | Thẻ ôn tập, danh sách ghi chú, trạng thái màn chat |
-| Kiểm tra nội dung | `packages/content/scripts/validate.ts` (Vitest/tsx) | Đúng schema, không trùng id, tham chiếu hợp lệ |
-| E2E | Maestro | Onboarding, học và ôn một thẻ, tạo/tìm ghi chú, chat bằng gõ chữ với API giả lập |
-| Thủ công trên máy thật | 2 đến 3 dòng máy khác hãng | STT, TTS, quyền micro, thông báo, offline |
-| Tĩnh | TypeScript strict + Biome | Chạy trong CI cho mọi pull request |
+| Loại                   | Công cụ                                             | Phạm vi                                                                                                              |
+| ---------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Unit (API, shared)     | Vitest                                              | Parse SSE, gateway fallback (có/không token đầu), quota counter (D1 local qua Miniflare), prompt builder, `vnDayKey` |
+| Unit (mobile logic)    | jest-expo                                           | `lib/fsrs.ts`, `lib/day.ts`, sentence splitter, chọn thẻ mới/thẻ đến hạn, seed upsert, xếp trình độ                  |
+| Component              | jest-expo + Testing Library RN                      | Thẻ ôn tập, danh sách ghi chú, trạng thái màn chat                                                                   |
+| Kiểm tra nội dung      | `packages/content/scripts/validate.ts` (Vitest/tsx) | Đúng schema, không trùng id, tham chiếu hợp lệ                                                                       |
+| E2E                    | Maestro                                             | Onboarding, học và ôn một thẻ, tạo/tìm ghi chú, chat bằng gõ chữ với API giả lập                                     |
+| Thủ công trên máy thật | 2 đến 3 dòng máy khác hãng                          | STT, TTS, quyền micro, thông báo, offline                                                                            |
+| Tĩnh                   | TypeScript strict + Biome                           | Chạy trong CI cho mọi pull request                                                                                   |
 
 **DoD cho mỗi tính năng:** có test cho logic chính; chạy offline nếu thuộc nhóm offline; không lỗi TypeScript/Biome; đã thử trên máy thật; nội dung mới đã qua validate; đánh dấu xong trong `PLAN.md`.
 
@@ -581,7 +587,7 @@ name: android-apk
 on:
   workflow_dispatch: {}
   push:
-    tags: ['v*']
+    tags: ["v*"]
 
 jobs:
   build:
@@ -591,12 +597,12 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22        # đối chiếu yêu cầu Expo
+          node-version: 22 # đối chiếu yêu cầu Expo
           cache: pnpm
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17        # đối chiếu yêu cầu Android Gradle Plugin
+          java-version: 17 # đối chiếu yêu cầu Android Gradle Plugin
       - run: pnpm install --frozen-lockfile
       - name: Giải mã keystore
         run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > apps/mobile/release.keystore
@@ -653,64 +659,64 @@ STT là native module nên **không chạy trong Expo Go**; dùng development bu
 
 Kết quả mỗi spike ghi vào bảng "Kết quả spike" trong `PLAN.md`. Spike thất bại thì chạy phương án dự phòng **trước khi** sang Sprint 1.
 
-| Mã | Câu hỏi cần trả lời | Tiêu chí đạt | Phương án dự phòng |
-| --- | --- | --- | --- |
-| S1 | `expo/fetch` đọc được SSE từ Worker trên APK release? | Token hiện dần trên máy thật | `react-native-sse` hoặc XHR `onprogress` |
-| S2 | STT tiếng Anh giọng Việt trên 2–3 máy khác hãng | Nhận đúng phần lớn câu thử ngắn, có kết quả tạm thời | Ưu tiên gõ chữ; cân nhắc STT cloud ở giai đoạn sau |
-| S3 | TTS tiếng Anh offline có sẵn? Liệt kê được giọng? | Đọc được khi bật chế độ máy bay | Luồng hướng dẫn tải giọng (mục 6.3) |
-| S4 | D1 đếm quota đúng khi gọi đồng thời; hạn mức free thực tế | Không mất lượt khi 20 request song song | Workers Rate Limiting binding hoặc Durable Objects |
-| S5 | Metro + pnpm + workspace package `shared` | App import được `@app/shared` khi chạy và khi build release | Bỏ Turborepo, dùng `nohoist`/copy package |
-| S6 | Drizzle migration + FTS5 trên expo-sqlite | Migration chạy khi khởi động; truy vấn FTS5 có kết quả | Dùng `LIKE` cho tìm kiếm |
-| S7 | Hạn mức free của 2 nhà cung cấp LLM, độ trễ token đầu từ Việt Nam | Ghi số liệu; token đầu trung bình dưới 2 giây | Đổi thứ tự hoặc đổi nhà cung cấp |
-| S8 | APK ký từ GitHub Actions cài lên máy thật | Cài được, mở được, gọi được `/health` | Build local |
+| Mã  | Câu hỏi cần trả lời                                               | Tiêu chí đạt                                                | Phương án dự phòng                                 |
+| --- | ----------------------------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------- |
+| S1  | `expo/fetch` đọc được SSE từ Worker trên APK release?             | Token hiện dần trên máy thật                                | `react-native-sse` hoặc XHR `onprogress`           |
+| S2  | STT tiếng Anh giọng Việt trên 2–3 máy khác hãng                   | Nhận đúng phần lớn câu thử ngắn, có kết quả tạm thời        | Ưu tiên gõ chữ; cân nhắc STT cloud ở giai đoạn sau |
+| S3  | TTS tiếng Anh offline có sẵn? Liệt kê được giọng?                 | Đọc được khi bật chế độ máy bay                             | Luồng hướng dẫn tải giọng (mục 6.3)                |
+| S4  | D1 đếm quota đúng khi gọi đồng thời; hạn mức free thực tế         | Không mất lượt khi 20 request song song                     | Workers Rate Limiting binding hoặc Durable Objects |
+| S5  | Metro + pnpm + workspace package `shared`                         | App import được `@app/shared` khi chạy và khi build release | Bỏ Turborepo, dùng `nohoist`/copy package          |
+| S6  | Drizzle migration + FTS5 trên expo-sqlite                         | Migration chạy khi khởi động; truy vấn FTS5 có kết quả      | Dùng `LIKE` cho tìm kiếm                           |
+| S7  | Hạn mức free của 2 nhà cung cấp LLM, độ trễ token đầu từ Việt Nam | Ghi số liệu; token đầu trung bình dưới 2 giây               | Đổi thứ tự hoặc đổi nhà cung cấp                   |
+| S8  | APK ký từ GitHub Actions cài lên máy thật                         | Cài được, mở được, gọi được `/health`                       | Build local                                        |
 
 ## 12. Kế hoạch triển khai
 
 Chi tiết từng việc, trạng thái và tiêu chí xong nằm trong **`PLAN.md`**. Tóm tắt:
 
-| Sprint | Thời lượng (toàn thời gian) | Kết quả chính |
-| --- | --- | --- |
-| **0. Nền móng + spike** | 1,5 tuần | Monorepo, CI, development build, APK ký từ CI, 8 spike có kết luận |
-| **1. Từ vựng và ôn tập** | 2 tuần | Schema, migration, seed 60 cụm, màn học, 3 kiểu bài tập, phiên ôn FSRS, TTS |
-| **2. Ghi chú và tiến độ** | 1 tuần | CRUD ghi chú, tag, tìm kiếm, ghim, lưu nhanh, streak, thống kê, nhắc học |
-| **3a. Chat bằng chữ** | 1,5 tuần | Gateway, fallback, SSE, quota D1, `/quota`, explain, feedback, 3 kịch bản |
-| **3b. Chat bằng giọng** | 1,5 tuần | Voice controller, cắt câu đọc sớm, chạm để ngắt, chuyển gõ chữ, 10 kịch bản |
-| **4. Hoàn thiện MVP** | 1,5 tuần | Onboarding, xếp trình độ, cài đặt, xóa dữ liệu, trạng thái lỗi/trống, đủ 200 cụm, APK cho người thử |
-| **5. Nghe và nói (P1)** | 3 đến 4 tuần | Bài nghe, tốc độ, transcript, nối âm, shadowing |
-| **6. Nâng cao (P1)** | Tùy | Rảnh tay, bộ từ tự tạo + enrich, lưu câu AI thành thẻ, lịch sử chat, sao lưu |
-| **7. Mở rộng (P2)** | Tùy | Đăng nhập, đồng bộ, chấm ngữ điệu, báo cáo tiến bộ |
+| Sprint                    | Thời lượng (toàn thời gian) | Kết quả chính                                                                                       |
+| ------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------- |
+| **0. Nền móng + spike**   | 1,5 tuần                    | Monorepo, CI, development build, APK ký từ CI, 8 spike có kết luận                                  |
+| **1. Từ vựng và ôn tập**  | 2 tuần                      | Schema, migration, seed 60 cụm, màn học, 3 kiểu bài tập, phiên ôn FSRS, TTS                         |
+| **2. Ghi chú và tiến độ** | 1 tuần                      | CRUD ghi chú, tag, tìm kiếm, ghim, lưu nhanh, streak, thống kê, nhắc học                            |
+| **3a. Chat bằng chữ**     | 1,5 tuần                    | Gateway, fallback, SSE, quota D1, `/quota`, explain, feedback, 3 kịch bản                           |
+| **3b. Chat bằng giọng**   | 1,5 tuần                    | Voice controller, cắt câu đọc sớm, chạm để ngắt, chuyển gõ chữ, 10 kịch bản                         |
+| **4. Hoàn thiện MVP**     | 1,5 tuần                    | Onboarding, xếp trình độ, cài đặt, xóa dữ liệu, trạng thái lỗi/trống, đủ 200 cụm, APK cho người thử |
+| **5. Nghe và nói (P1)**   | 3 đến 4 tuần                | Bài nghe, tốc độ, transcript, nối âm, shadowing                                                     |
+| **6. Nâng cao (P1)**      | Tùy                         | Rảnh tay, bộ từ tự tạo + enrich, lưu câu AI thành thẻ, lịch sử chat, sao lưu                        |
+| **7. Mở rộng (P2)**       | Tùy                         | Đăng nhập, đồng bộ, chấm ngữ điệu, báo cáo tiến bộ                                                  |
 
 **Tổng MVP (Sprint 0–4): khoảng 9 tuần toàn thời gian.** Dự phòng thêm 20 đến 30% cho việc mới học mobile, tức khoảng 11 đến 12 tuần. Làm bán thời gian thì nhân khoảng gấp đôi.
 
 ## 13. Quyết định kiến trúc (ADR)
 
-| # | Quyết định | Lý do | Đánh đổi |
-| --- | --- | --- | --- |
-| 1 | Dữ liệu người dùng lưu trên máy ở MVP | Không tốn hạ tầng, offline, riêng tư | Mất máy là mất dữ liệu nếu chưa có sao lưu |
-| 2 | Backend chỉ làm proxy AI | Giấu khóa, chặn lạm dụng | Thêm một thành phần phải triển khai |
-| 3 | STT/TTS của hệ điều hành | Miễn phí, chạy trên máy | Chất lượng phụ thuộc thiết bị |
-| 4 | Chuẩn OpenAI-compatible cho LLM | Đổi nhà cung cấp bằng cấu hình | Mất tính năng riêng của từng nhà cung cấp |
-| 5 | FSRS thay vì SM-2 | Hiện đại hơn, thuần JS | Phụ thuộc thư viện, đã bọc wrapper |
-| 6 | Nội dung học dạng JSON trong repo | Dễ review, có kiểm tra schema | Cập nhật nội dung phải phát hành bản mới |
-| 7 | Danh tính thiết bị ẩn danh | Không cần đăng nhập | Dễ giả mạo; bù bằng quota IP và ngân sách toàn cục |
-| 8 | **D1 cho quota** (thay KV) | Đếm nguyên tử, hạn mức ghi đủ dùng | Thêm migration D1; truy vấn có độ trễ cao hơn KV một chút |
-| 9 | **Chạm để nói ở MVP** | Tránh vọng âm, STT ổn định hơn | Kém tự nhiên hơn đàm thoại rảnh tay |
-| 10 | **Prompt kịch bản nằm ở server** | App không gửi prompt tùy ý, chống lạm dụng | Thêm kịch bản phải deploy cả API |
-| 11 | **jest-expo cho mobile, Vitest cho phần còn lại** | Dùng đúng công cụ của từng môi trường | Hai test runner trong một repo |
+| #   | Quyết định                                        | Lý do                                      | Đánh đổi                                                  |
+| --- | ------------------------------------------------- | ------------------------------------------ | --------------------------------------------------------- |
+| 1   | Dữ liệu người dùng lưu trên máy ở MVP             | Không tốn hạ tầng, offline, riêng tư       | Mất máy là mất dữ liệu nếu chưa có sao lưu                |
+| 2   | Backend chỉ làm proxy AI                          | Giấu khóa, chặn lạm dụng                   | Thêm một thành phần phải triển khai                       |
+| 3   | STT/TTS của hệ điều hành                          | Miễn phí, chạy trên máy                    | Chất lượng phụ thuộc thiết bị                             |
+| 4   | Chuẩn OpenAI-compatible cho LLM                   | Đổi nhà cung cấp bằng cấu hình             | Mất tính năng riêng của từng nhà cung cấp                 |
+| 5   | FSRS thay vì SM-2                                 | Hiện đại hơn, thuần JS                     | Phụ thuộc thư viện, đã bọc wrapper                        |
+| 6   | Nội dung học dạng JSON trong repo                 | Dễ review, có kiểm tra schema              | Cập nhật nội dung phải phát hành bản mới                  |
+| 7   | Danh tính thiết bị ẩn danh                        | Không cần đăng nhập                        | Dễ giả mạo; bù bằng quota IP và ngân sách toàn cục        |
+| 8   | **D1 cho quota** (thay KV)                        | Đếm nguyên tử, hạn mức ghi đủ dùng         | Thêm migration D1; truy vấn có độ trễ cao hơn KV một chút |
+| 9   | **Chạm để nói ở MVP**                             | Tránh vọng âm, STT ổn định hơn             | Kém tự nhiên hơn đàm thoại rảnh tay                       |
+| 10  | **Prompt kịch bản nằm ở server**                  | App không gửi prompt tùy ý, chống lạm dụng | Thêm kịch bản phải deploy cả API                          |
+| 11  | **jest-expo cho mobile, Vitest cho phần còn lại** | Dùng đúng công cụ của từng môi trường      | Hai test runner trong một repo                            |
 
 ## 14. Rủi ro kỹ thuật và biện pháp
 
-| Rủi ro | Mức độ | Biện pháp |
-| --- | --- | --- |
-| Gói AI miễn phí bị cắt hoặc giảm hạn mức | Cao | Fallback nhiều nhà cung cấp, quota thấp mặc định, ngân sách toàn cục |
-| STT Android không ổn định trên một số máy | Cao | Spike S2, luôn có chế độ gõ chữ |
-| Không đọc được stream SSE trên RN | Cao | Spike S1, có phương án dự phòng |
-| Máy không có giọng TTS offline | Trung bình | Spike S3, hướng dẫn tải giọng lúc onboarding |
-| Metro/pnpm/prebuild gây lỗi môi trường | Trung bình | Spike S5, S8 ngay Sprint 0 |
-| Độ trễ voice loop cao | Trung bình | Đọc theo câu, `max_tokens` thấp, hiển thị "đang nghĩ", chọn nhà cung cấp nhanh nhất làm mặc định |
-| Mất keystore | Cao | Sao lưu ở ít nhất 2 nơi ngay khi tạo |
-| Nội dung AI sinh bị sai | Trung bình | Duyệt thủ công trước khi vào `packages/content` |
-| Một người làm, trễ tiến độ | Cao | Phạm vi MVP đã cắt, theo dõi hằng tuần bằng `PLAN.md`, mỗi sprint ra APK |
+| Rủi ro                                    | Mức độ     | Biện pháp                                                                                        |
+| ----------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------ |
+| Gói AI miễn phí bị cắt hoặc giảm hạn mức  | Cao        | Fallback nhiều nhà cung cấp, quota thấp mặc định, ngân sách toàn cục                             |
+| STT Android không ổn định trên một số máy | Cao        | Spike S2, luôn có chế độ gõ chữ                                                                  |
+| Không đọc được stream SSE trên RN         | Cao        | Spike S1, có phương án dự phòng                                                                  |
+| Máy không có giọng TTS offline            | Trung bình | Spike S3, hướng dẫn tải giọng lúc onboarding                                                     |
+| Metro/pnpm/prebuild gây lỗi môi trường    | Trung bình | Spike S5, S8 ngay Sprint 0                                                                       |
+| Độ trễ voice loop cao                     | Trung bình | Đọc theo câu, `max_tokens` thấp, hiển thị "đang nghĩ", chọn nhà cung cấp nhanh nhất làm mặc định |
+| Mất keystore                              | Cao        | Sao lưu ở ít nhất 2 nơi ngay khi tạo                                                             |
+| Nội dung AI sinh bị sai                   | Trung bình | Duyệt thủ công trước khi vào `packages/content`                                                  |
+| Một người làm, trễ tiến độ                | Cao        | Phạm vi MVP đã cắt, theo dõi hằng tuần bằng `PLAN.md`, mỗi sprint ra APK                         |
 
 ## 15. Quy ước làm việc
 
