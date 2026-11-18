@@ -2,11 +2,13 @@ import { Hono } from 'hono';
 import { vnDayKeyOffset } from './day';
 import type { AppEnv, Env } from './env';
 import { purgeBefore } from './quota/counter';
+import { dev } from './routes/dev';
 import { health } from './routes/health';
 
 const app = new Hono<AppEnv>();
 
 app.route('/', health);
+app.route('/', dev);
 
 app.notFound((c) => c.json({ error: 'not_found' }, 404));
 app.onError((err, c) => {
