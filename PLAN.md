@@ -13,15 +13,15 @@ _Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thi
 
 ## Bảng tổng quan
 
-| Sprint  | Mục tiêu           | Ước tính                       | Bắt đầu | Kết thúc | Tiến độ   | Trạng thái   |
-| ------- | ------------------ | ------------------------------ | ------- | -------- | --------- | ------------ |
-| 0       | Nền móng + spike   | 1,5 tuần                       |         |          | 0/24      | Chưa bắt đầu |
-| 1       | Từ vựng và ôn tập  | 2 tuần                         |         |          | 0/18      | Chưa bắt đầu |
-| 2       | Ghi chú và tiến độ | 1 tuần                         |         |          | 0/14      | Chưa bắt đầu |
-| 3a      | Chat bằng chữ      | 1,5 tuần                       |         |          | 0/18      | Chưa bắt đầu |
-| 3b      | Chat bằng giọng    | 1,5 tuần                       |         |          | 0/13      | Chưa bắt đầu |
-| 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17      | Chưa bắt đầu |
-| **MVP** |                    | **~9 tuần (+20–30% dự phòng)** |         |          | **0/104** |              |
+| Sprint  | Mục tiêu           | Ước tính                       | Bắt đầu | Kết thúc | Tiến độ             | Trạng thái                   |
+| ------- | ------------------ | ------------------------------ | ------- | -------- | ------------------- | ---------------------------- |
+| 0       | Nền móng + spike   | 1,5 tuần                       | 18/11   |          | 9/24 (+11 đang làm) | Chờ chạy spike trên máy thật |
+| 1       | Từ vựng và ôn tập  | 2 tuần                         |         |          | 0/18                | Chưa bắt đầu                 |
+| 2       | Ghi chú và tiến độ | 1 tuần                         |         |          | 0/14                | Chưa bắt đầu                 |
+| 3a      | Chat bằng chữ      | 1,5 tuần                       |         |          | 0/18                | Chưa bắt đầu                 |
+| 3b      | Chat bằng giọng    | 1,5 tuần                       |         |          | 0/13                | Chưa bắt đầu                 |
+| 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17                | Chưa bắt đầu                 |
+| **MVP** |                    | **~9 tuần (+20–30% dự phòng)** |         |          | **0/104**           |                              |
 
 Mốc quan trọng:
 
@@ -50,38 +50,38 @@ Mốc quan trọng:
 
 ### Hạ tầng repo
 
-- [ ] `S0-01` Khởi tạo monorepo: pnpm workspace, `.npmrc` (`node-linker=hoisted`), Turborepo, Biome, `tsconfig` strict dùng chung — TK §11
-- [ ] `S0-02` Tạo `apps/mobile` (Expo + Expo Router + NativeWind), chạy được trên development build — TK §11
-- [ ] `S0-03` Tạo `apps/api` (Hono, Cloudflare Workers), route `GET /health` — TK §7.1
-- [ ] `S0-04` Tạo `packages/shared` (Zod: `Level`, `ChatRequest`), import được từ cả mobile và api
-- [ ] `S0-05` Tạo `packages/content` khung: schema Zod cho topic/phrase/scenario, script `validate.ts`, `version.json`
-- [ ] `S0-06` Cấu hình test: Vitest cho api/shared/content, jest-expo cho mobile; mỗi nơi có 1 test mẫu chạy được
-- [ ] `S0-07` `.gitignore` (android/, .dev.vars, keystore), README hướng dẫn chạy
+- [x] `S0-01` Khởi tạo monorepo: pnpm workspace, `.npmrc` (`node-linker=hoisted`), Turborepo, Biome, `tsconfig` strict dùng chung — TK §11
+- [~] `S0-02` Tạo `apps/mobile` (Expo + Expo Router + NativeWind), chạy được trên development build — TK §11
+- [x] `S0-03` Tạo `apps/api` (Hono, Cloudflare Workers), route `GET /health` — TK §7.1
+- [x] `S0-04` Tạo `packages/shared` (Zod: `Level`, `ChatRequest`), import được từ cả mobile và api
+- [x] `S0-05` Tạo `packages/content` khung: schema Zod cho topic/phrase/scenario, script `validate.ts`, `version.json`
+- [x] `S0-06` Cấu hình test: Vitest cho api/shared/content, jest-expo cho mobile; mỗi nơi có 1 test mẫu chạy được
+- [x] `S0-07` `.gitignore` (android/, .dev.vars, keystore), README hướng dẫn chạy
 
 ### CI/CD
 
-- [ ] `S0-08` `ci.yml`: install, Biome, typecheck, test, validate content — TK §10
+- [~] `S0-08` `ci.yml`: install, Biome, typecheck, test, validate content — TK §10
 - [ ] `S0-09` Tạo keystore, sao lưu 2 nơi, lưu vào GitHub Secrets — TK §10
-- [ ] `S0-10` Config plugin `with-release-signing.js` — TK §10
-- [ ] `S0-11` `android-apk.yml` build APK release đã ký — TK §10
-- [ ] `S0-12` Tạo D1 `dev` và `prod`, migration `0001_usage.sql` — TK §7.2
-- [ ] `S0-13` `api-deploy.yml`: migrate D1 + `wrangler deploy` (dev khi merge, prod khi tag)
-- [ ] `S0-14` Config `API_BASE_URL` theo môi trường trong `app.config.ts`
+- [x] `S0-10` Config plugin `with-release-signing.js` — TK §10
+- [~] `S0-11` `android-apk.yml` build APK release đã ký — TK §10
+- [~] `S0-12` Tạo D1 `dev` và `prod`, migration `0001_usage.sql` — TK §7.2
+- [~] `S0-13` `api-deploy.yml`: migrate D1 + `wrangler deploy` (dev khi merge, prod khi tag)
+- [x] `S0-14` Config `API_BASE_URL` theo môi trường trong `app.config.ts`
 
 ### Spike (ghi kết quả vào bảng "Kết quả spike")
 
-- [ ] `S0-15` **S1** – Stream SSE bằng `expo/fetch` trên APK release — TK §11.1
-- [ ] `S0-16` **S2** – STT tiếng Anh giọng Việt trên 2–3 máy
-- [ ] `S0-17` **S3** – TTS tiếng Anh offline, liệt kê giọng
-- [ ] `S0-18` **S4** – D1 đếm đúng khi 20 request song song; ghi hạn mức free D1/Workers
-- [ ] `S0-19` **S5** – Metro + pnpm + `@app/shared` khi build release
-- [ ] `S0-20` **S6** – Drizzle migration + FTS5 trên expo-sqlite
+- [~] `S0-15` **S1** – Stream SSE bằng `expo/fetch` trên APK release — TK §11.1
+- [~] `S0-16` **S2** – STT tiếng Anh giọng Việt trên 2–3 máy
+- [~] `S0-17` **S3** – TTS tiếng Anh offline, liệt kê giọng
+- [~] `S0-18` **S4** – D1 đếm đúng khi 20 request song song; ghi hạn mức free D1/Workers
+- [~] `S0-19` **S5** – Metro + pnpm + `@app/shared` khi build release
+- [~] `S0-20` **S6** – Drizzle migration + FTS5 trên expo-sqlite
 - [ ] `S0-21` **S7** – Hạn mức free và độ trễ token đầu của 2 nhà cung cấp LLM
 - [ ] `S0-22` **S8** – APK ký từ CI cài được trên máy thật, gọi `/health`
 
 ### Tổng kết sprint
 
-- [ ] `S0-23` Ghi các phiên bản công cụ đã chọn (Node, Expo SDK, JDK) vào README
+- [x] `S0-23` Ghi các phiên bản công cụ đã chọn (Node, Expo SDK, JDK) vào README
 - [ ] `S0-24` Cập nhật Thiết kế kỹ thuật/ADR nếu có spike thất bại → **Mốc M0**
 
 ---
@@ -244,16 +244,16 @@ Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử
 
 ## Kết quả spike (Sprint 0)
 
-| Spike                  | Kết quả | Số liệu/ghi chú     | Quyết định |
-| ---------------------- | ------- | ------------------- | ---------- |
-| S1 – SSE `expo/fetch`  |         |                     |            |
-| S2 – STT trên máy thật |         | Máy: ...            |            |
-| S3 – TTS offline       |         | Giọng có sẵn: ...   |            |
-| S4 – D1 quota          |         | Hạn mức free: ...   |            |
-| S5 – Metro + pnpm      |         |                     |            |
-| S6 – Drizzle + FTS5    |         |                     |            |
-| S7 – Nhà cung cấp LLM  |         | Hạn mức/độ trễ: ... |            |
-| S8 – APK ký từ CI      |         |                     |            |
+| Spike                  | Kết quả             | Số liệu/ghi chú                                                                                                                                 | Quyết định                                                 |
+| ---------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| S1 – SSE `expo/fetch`  | Chờ máy thật        | Tài liệu SDK 58 xác nhận `expo/fetch` hỗ trợ `body.getReader()`. API có `/dev/stream`; app có nút đo ở màn Kiểm tra kỹ thuật                    |                                                            |
+| S2 – STT trên máy thật | Chờ máy thật        | Máy: ...                                                                                                                                        |                                                            |
+| S3 – TTS offline       | Chờ máy thật        | Giọng có sẵn: ...                                                                                                                               |                                                            |
+| S4 – D1 quota          | Đạt (local)         | 20 request song song → đếm đúng 20 (test `counter.test.ts`, D1 local). Còn: kiểm tra hạn mức free D1 thật                                       |                                                            |
+| S5 – Metro + pnpm      | Đạt (bundle JS)     | `expo export --platform android` bundle được, import `@app/content`/`@app/shared` OK, không cần metro.config. Còn: build native release trên CI | Giữ `node-linker=hoisted`; thêm `ws@8` ở gốc cho Miniflare |
+| S6 – Drizzle + FTS5    | Chờ máy thật (FTS5) | Phần Drizzle migration làm ở S1-01                                                                                                              |                                                            |
+| S7 – Nhà cung cấp LLM  | Chưa làm            | Cần khóa API (P-03)                                                                                                                             |                                                            |
+| S8 – APK ký từ CI      | Chưa làm            | `expo prebuild` chạy được ở máy, plugin ký chèn đúng vào `app/build.gradle`. Cần push lên GitHub + secrets                                      |                                                            |
 
 ## Kiểm tra nghiệm thu P0 (điền ở Sprint 4)
 
@@ -275,15 +275,21 @@ Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử
 
 Ghi mọi thay đổi so với BRD/Thiết kế kỹ thuật phát sinh khi làm.
 
-| Ngày       | Quyết định                                 | Lý do                                | Ảnh hưởng                  |
-| ---------- | ------------------------------------------ | ------------------------------------ | -------------------------- |
-| 18/11/2026 | Áp dụng BRD v1.1 và Thiết kế kỹ thuật v1.1 | Cắt phạm vi MVP, sửa rủi ro kỹ thuật | Xem mục 0 của hai tài liệu |
+| Ngày       | Quyết định                                                                                     | Lý do                                                                       | Ảnh hưởng                                                    |
+| ---------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| 18/11/2026 | Áp dụng BRD v1.1 và Thiết kế kỹ thuật v1.1                                                     | Cắt phạm vi MVP, sửa rủi ro kỹ thuật                                        | Xem mục 0 của hai tài liệu                                   |
+| 18/11/2026 | Expo SDK 58, TypeScript 6.0                                                                    | Bản stable mới nhất; template Expo dùng TS 6.0 (TS 7 chưa an toàn với Expo) | —                                                            |
+| 18/11/2026 | Route mobile ở `apps/mobile/src/app`                                                           | Quy ước của Expo SDK 58                                                     | Khác đường dẫn TK §4                                         |
+| 18/11/2026 | Biến môi trường `EXPO_PUBLIC_API_BASE_URL` thay cho `extra` trong app config                   | Cách chuẩn của Expo, tự nhúng lúc bundle                                    | —                                                            |
+| 18/11/2026 | Test API dùng Vitest + `getPlatformProxy()` của wrangler, bỏ `@cloudflare/vitest-pool-workers` | Gói này deprecated, không hợp Vitest 5                                      | Test không chạy trong runtime workerd                        |
+| 18/11/2026 | NativeWind hoãn sang Sprint 1 (khi làm UI thật); Sprint 0 dùng StyleSheet                      | Giảm cấu hình khi chưa có màn hình thật                                     | S0-02 chưa có NativeWind                                     |
+| 18/11/2026 | Android package tạm `com.englishapp.mobile`                                                    | Chưa có tên chính thức                                                      | **Phải chốt trước bản gửi người thử, sau đó không đổi được** |
 
 ## Nhật ký tuần
 
-| Tuần | Đã xong | Vướng mắc | Kế hoạch tuần tới |
-| ---- | ------- | --------- | ----------------- |
-| 1    |         |           |                   |
+| Tuần | Đã xong                                                                                                                                                                                                          | Vướng mắc                                                                                | Kế hoạch tuần tới                                                       |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| 1    | Monorepo, shared/content (schema + validate + 24 cụm mẫu, 3 kịch bản), API (`/health`, `/dev/stream`, D1 quota counter, cron), khung app Expo + màn spike, plugin ký APK, 3 workflow CI/CD, README. 42 test xanh | Máy dev chưa có JDK/Android SDK; chưa có tài khoản Cloudflare/GitHub, khóa LLM, máy test | Làm P-01..P-04, push repo lên GitHub, chạy spike trên máy thật, chốt M0 |
 
 ## Định nghĩa hoàn thành (DoD)
 
