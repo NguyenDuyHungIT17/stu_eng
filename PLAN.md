@@ -352,8 +352,8 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 
 **Lỗi nhỏ để sau (từ review):**
 
-- Bộ đọc SSE chưa xử lý `\r` đơn, BOM, event rỗng (không ảnh hưởng với server Hono).
-- Màn Kiểm tra kỹ thuật thiếu try/catch ở nút liệt kê giọng TTS và nút bắt đầu STT.
+- ~~Bộ đọc SSE chưa xử lý `\r` đơn, BOM, event rỗng~~ → đã sửa 22/11 (`a62ddb2`, thêm 3 test).
+- ~~Màn Kiểm tra kỹ thuật thiếu try/catch ở nút liệt kê giọng TTS và nút bắt đầu STT~~ → đã sửa 22/11 (`a62ddb2`).
 
 **Bước tiếp theo:** khi có repo và Cloudflare thì push code, deploy API. Khi có Android Studio và điện thoại thì chạy app, làm các spike, chốt mốc M0, rồi sang Sprint 1.
 
