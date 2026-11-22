@@ -114,14 +114,18 @@ function SttSpike() {
   useSpeechRecognitionEvent('error', (ev) => add(`LỖI: ${ev.error} – ${ev.message}`));
 
   const start = async () => {
-    const perm = await ExpoSpeechRecognitionModule.requestPermissionsAsync();
-    if (!perm.granted) return add('Không có quyền micro');
-    add(`Engine sẵn sàng: ${ExpoSpeechRecognitionModule.isRecognitionAvailable()}`);
-    add(
-      `Dịch vụ: ${ExpoSpeechRecognitionModule.getSpeechRecognitionServices().join(', ') || '(không có)'}`,
-    );
-    setInterim('');
-    ExpoSpeechRecognitionModule.start({ lang: 'en-US', interimResults: true, continuous: false });
+    try {
+      const perm = await ExpoSpeechRecognitionModule.requestPermissionsAsync();
+      if (!perm.granted) return add('Không có quyền micro');
+      add(`Engine sẵn sàng: ${ExpoSpeechRecognitionModule.isRecognitionAvailable()}`);
+      add(
+        `Dịch vụ: ${ExpoSpeechRecognitionModule.getSpeechRecognitionServices().join(', ') || '(không có)'}`,
+      );
+      setInterim('');
+      ExpoSpeechRecognitionModule.start({ lang: 'en-US', interimResults: true, continuous: false });
+    } catch (e) {
+      add(`LỖI khởi động STT: ${String(e)}`);
+    }
   };
 
   return (
@@ -141,12 +145,16 @@ function SttSpike() {
 function TtsSpike() {
   const [log, setLog] = useState<string[]>([]);
   const listVoices = async () => {
-    const voices = await Speech.getAvailableVoicesAsync();
-    const en = voices.filter((v) => v.language.toLowerCase().startsWith('en'));
-    setLog([
-      `Tổng số giọng: ${voices.length}, tiếng Anh: ${en.length}`,
-      ...en.slice(0, 12).map((v) => `${v.language} · ${v.quality} · ${v.identifier}`),
-    ]);
+    try {
+      const voices = await Speech.getAvailableVoicesAsync();
+      const en = voices.filter((v) => v.language.toLowerCase().startsWith('en'));
+      setLog([
+        `Tổng số giọng: ${voices.length}, tiếng Anh: ${en.length}`,
+        ...en.slice(0, 12).map((v) => `${v.language} · ${v.quality} · ${v.identifier}`),
+      ]);
+    } catch (e) {
+      setLog([`LỖI liệt kê giọng: ${String(e)}`]);
+    }
   };
   const speak = () =>
     Speech.speak('Hi! Could I get the bill, please?', {
