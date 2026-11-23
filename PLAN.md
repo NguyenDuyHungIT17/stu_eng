@@ -455,6 +455,12 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 - Sửa sau khi thử: icon tab bị cắt, tô xanh/đỏ đáp án sau khi kiểm tra, cố định thời gian ở màn kết thúc.
 - Còn: `S2-13` thử thông báo đúng giờ trên 2 máy thật (kể cả khởi động lại máy), `S2-14` APK, người duyệt 465 câu.
 
+**Tối 23/11 (muộn) – chuyển sang hội thoại (`2c7bf6c`):**
+
+- Nội dung: 72 hội thoại / 741 câu, 18 chủ đề × 4 tình huống; mỗi câu then chốt có cụm cần nhớ và (một số) ghi chú cách dùng. **Bản nháp do AI soạn, cần người duyệt.**
+- **Thử trên máy ảo (APK release):** nâng cấp nội dung lên bản 4 OK; trang chính hiện 72 hội thoại; luyện trọn "Chào đồng nghiệp mới": tình huống → nghe cả đoạn (tô sáng câu đang đọc) → nghe-điền 7 câu → nhập vai chọn câu đáp → làm lại câu sai → màn kết thúc liệt kê cụm giao tiếp; trang chính đánh dấu ✓ và hiện 7 câu cần ôn; ôn tập hiện đúng ngữ cảnh; màn xem hội thoại hiện nghĩa từng câu.
+- Sửa: chữ thanh trạng thái màu trắng trên nền sáng.
+
 ---
 
 ## Cần chuẩn bị để hoàn thành toàn bộ MVP
