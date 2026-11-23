@@ -1,23 +1,33 @@
 import { router } from 'expo-router';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Screen } from '@/components/screen';
+import { useState } from 'react';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { cardShadow, useColors } from '@/components/theme';
-import { Avatar, Badge } from '@/components/ui';
+import { ProgressBar } from '@/components/ui';
 import { useDb } from '@/db/client';
 import { getDailyMinutesGoal } from '@/db/settings';
-import { LEARNER, speakerColor } from '@/features/dialogue/bubbles';
-import { type DialogueSummary, listSections, nextDialogue } from '@/features/dialogue/repository';
+import {
+  type DialogueSummary,
+  listSections,
+  nextDialogue,
+  type TopicSection,
+} from '@/features/dialogue/repository';
+import { topicIcon } from '@/features/dialogue/topic-icons';
 import { getStats } from '@/features/progress/stats';
 import { countDueToday } from '@/features/review/repository';
 import { useFocusQuery } from '@/lib/use-focus-query';
 
+const LEVELS = ['A1', 'A2', 'B1', 'B2'] as const;
+
 /**
- * Trang chính: hội thoại nên luyện tiếp, câu cần ôn, và thư viện hội thoại theo chủ đề.
- * Mọi hội thoại đều mở sẵn, người học chọn tình huống mình cần.
+ * Trang chính gọn trong một màn hình: luyện tiếp, ôn lại, rồi chọn trình độ → lưới chủ đề.
+ * Danh sách tình huống của từng chủ đề nằm ở màn chủ đề.
  */
 export default function HomeScreen() {
   const db = useDb();
   const c = useColors();
+  const insets = useSafeAreaInsets();
+  const [level, setLevel] = useState<string | null>(null);
   const data = useFocusQuery(() => {
     const now = Date.now();
     const sections = listSections(db);
@@ -32,24 +42,21 @@ export default function HomeScreen() {
 
   if (!data) return <View style={{ flex: 1, backgroundColor: c.bg }} />;
   const { stats, next } = data;
-  const doneCount = data.sections.reduce((n, s) => n + s.dialogues.filter((d) => d.done).length, 0);
-  const total = data.sections.reduce((n, s) => n + s.dialogues.length, 0);
+  const nextLevel = data.sections.find((s) => s.id === next?.topicId)?.level ?? 'A1';
+  const current = level ?? nextLevel;
+  const topics = data.sections.filter((s) => s.level === current);
 
   return (
-    <Screen tab>
+    <View style={[styles.root, { backgroundColor: c.bg, paddingTop: insets.top + 10 }]}>
       <View style={styles.header}>
-        <View style={{ flex: 1 }}>
-          <Text style={{ color: c.muted, fontSize: 14 }}>Luyện giao tiếp</Text>
-          <Text style={[styles.hello, { color: c.text }]}>Hôm nay nói gì nhỉ? 👋</Text>
+        <Text style={[styles.hello, { color: c.text }]}>Hôm nay nói gì nhỉ? 👋</Text>
+        <View style={styles.chips}>
+          <Chip text={`🔥 ${stats.streak.current}`} active={stats.streak.todayDone} />
+          <Chip
+            text={`⏱ ${stats.todayMinutes}/${data.minutesGoal}′`}
+            active={stats.todayMinutes >= data.minutesGoal}
+          />
         </View>
-      </View>
-      <View style={styles.chips}>
-        <Chip text={`🔥 ${stats.streak.current} ngày`} active={stats.streak.todayDone} />
-        <Chip
-          text={`⏱ ${stats.todayMinutes}/${data.minutesGoal} phút`}
-          active={stats.todayMinutes >= data.minutesGoal}
-        />
-        <Chip text={`💬 ${doneCount}/${total} hội thoại`} active={false} />
       </View>
 
       {next ? <NextCard d={next} /> : null}
@@ -60,31 +67,41 @@ export default function HomeScreen() {
           onPress={() => router.push('/review')}
           style={[styles.review, { backgroundColor: c.surface }, cardShadow(c)]}
         >
-          <View style={[styles.reviewIcon, { backgroundColor: c.accentSoft }]}>
-            <Text style={{ fontSize: 22 }}>🔁</Text>
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={{ color: c.text, fontSize: 16, fontWeight: '700' }}>
-              Ôn lại câu đã học
-            </Text>
-            <Text style={{ color: c.muted }}>{data.due} câu đến hạn, luyện trong ngữ cảnh</Text>
-          </View>
-          <Text style={{ color: c.accent, fontSize: 22 }}>›</Text>
+          <Text style={{ fontSize: 20 }}>🔁</Text>
+          <Text style={{ color: c.text, fontWeight: '600', flex: 1 }}>
+            Ôn lại {data.due} câu đã học
+          </Text>
+          <Text style={{ color: c.accent, fontSize: 20 }}>›</Text>
         </Pressable>
       ) : null}
 
-      {data.sections.map((s) => (
-        <View key={s.id} style={styles.section}>
-          <View style={styles.sectionHead}>
-            <Text style={[styles.sectionTitle, { color: c.text }]}>{s.title}</Text>
-            <Badge text={s.level} />
-          </View>
-          {s.dialogues.map((d) => (
-            <DialogueRow key={d.id} d={d} />
-          ))}
-        </View>
-      ))}
-    </Screen>
+      <View style={styles.levelRow}>
+        {LEVELS.map((l) => {
+          const on = l === current;
+          return (
+            <Pressable
+              key={l}
+              accessibilityRole="tab"
+              accessibilityState={{ selected: on }}
+              onPress={() => setLevel(l)}
+              style={[styles.level, { backgroundColor: on ? c.primary : c.surface }]}
+            >
+              <Text style={{ color: on ? c.onPrimary : c.muted, fontWeight: '700' }}>{l}</Text>
+            </Pressable>
+          );
+        })}
+      </View>
+
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={styles.grid}
+        showsVerticalScrollIndicator={false}
+      >
+        {topics.map((t) => (
+          <TopicTile key={t.id} t={t} />
+        ))}
+      </ScrollView>
+    </View>
   );
 }
 
@@ -100,92 +117,96 @@ function Chip({ text, active }: { text: string; active: boolean }) {
 function NextCard({ d }: { d: DialogueSummary }) {
   const c = useColors();
   return (
-    <View style={[styles.next, { backgroundColor: c.primary }]}>
-      <Text style={{ color: '#FFFFFFB3', fontWeight: '600', fontSize: 13 }}>
-        {d.learned > 0 ? 'Luyện tiếp' : 'Tình huống tiếp theo'} · {d.level}
-      </Text>
-      <Text style={styles.nextTitle}>{d.title}</Text>
-      <Text style={styles.nextSituation} numberOfLines={3}>
-        {d.situationVi}
-      </Text>
-      <View style={styles.pair}>
-        <Avatar name={d.speakers.a.name} color={c.accent} size={30} />
-        <Text style={{ color: '#FFFFFF', flexShrink: 1 }}>
-          {d.speakers.a.name} và {d.speakers.b.name} (bạn)
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`Luyện: ${d.title}`}
+      onPress={() => router.push({ pathname: '/lesson', params: { dialogue: d.id } })}
+      style={({ pressed }) => [
+        styles.next,
+        { backgroundColor: c.primary, opacity: pressed ? 0.9 : 1 },
+      ]}
+    >
+      <View style={{ flex: 1, gap: 4 }}>
+        <Text style={styles.nextKicker}>
+          {topicIcon(d.topicId)} {d.learned > 0 ? 'Luyện tiếp' : 'Tình huống tiếp theo'}
+        </Text>
+        <Text style={styles.nextTitle} numberOfLines={1}>
+          {d.title}
+        </Text>
+        <Text style={styles.nextSituation} numberOfLines={2}>
+          {d.situationVi}
         </Text>
       </View>
-      <Pressable
-        accessibilityRole="button"
-        onPress={() => router.push({ pathname: '/lesson', params: { dialogue: d.id } })}
-        style={({ pressed }) => [styles.nextBtn, { opacity: pressed ? 0.85 : 1 }]}
-      >
-        <Text style={{ color: c.primary, fontWeight: '700', fontSize: 16 }}>Bắt đầu luyện</Text>
-      </Pressable>
-    </View>
+      <View style={styles.playCircle}>
+        <Text style={{ color: c.primary, fontSize: 20, marginLeft: 3 }}>▶</Text>
+      </View>
+    </Pressable>
   );
 }
 
-function DialogueRow({ d }: { d: DialogueSummary }) {
+function TopicTile({ t }: { t: TopicSection }) {
   const c = useColors();
+  const done = t.dialogues.filter((d) => d.done).length;
+  const started = t.dialogues.some((d) => d.learned > 0);
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={`${d.title}${d.done ? ', đã luyện' : ''}`}
-      onPress={() => router.push({ pathname: '/dialogue/[id]', params: { id: d.id } })}
+      accessibilityLabel={`${t.title}, ${done} trên ${t.dialogues.length} tình huống`}
+      onPress={() => router.push({ pathname: '/topic/[id]', params: { id: t.id } })}
       style={({ pressed }) => [
-        styles.row,
+        styles.tile,
         { backgroundColor: c.surface, opacity: pressed ? 0.8 : 1 },
         cardShadow(c),
       ]}
     >
-      <View style={styles.avatars}>
-        <Avatar name={d.speakers.a.name} color={speakerColor(c, 'a')} size={30} />
-        <View style={styles.avatarB}>
-          <Avatar name={d.speakers.b.name} color={speakerColor(c, LEARNER)} size={30} />
-        </View>
-      </View>
-      <View style={{ flex: 1, gap: 2 }}>
-        <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{d.title}</Text>
-        <Text style={{ color: c.muted, fontSize: 13 }} numberOfLines={2}>
-          {d.situationVi}
+      <Text style={styles.tileIcon}>{topicIcon(t.id)}</Text>
+      <Text style={[styles.tileTitle, { color: c.text }]} numberOfLines={2}>
+        {t.title}
+      </Text>
+      <View style={styles.tileFoot}>
+        <ProgressBar
+          value={t.dialogues.length ? done / t.dialogues.length : 0}
+          color={done === t.dialogues.length && done > 0 ? c.ok : c.primary}
+        />
+        <Text style={{ color: started ? c.primary : c.muted, fontSize: 12, fontWeight: '600' }}>
+          {done}/{t.dialogues.length}
         </Text>
       </View>
-      <Text style={{ color: d.done ? c.ok : c.muted, fontSize: 13, fontWeight: '600' }}>
-        {d.done ? '✓' : d.learned > 0 ? `${d.learned}/${d.keyLines}` : ''}
-      </Text>
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-  header: { flexDirection: 'row', alignItems: 'center' },
-  hello: { fontSize: 24, fontWeight: '700' },
-  chips: { flexDirection: 'row', gap: 8, flexWrap: 'wrap' },
-  chip: { borderRadius: 999, paddingHorizontal: 12, paddingVertical: 6 },
-  next: { borderRadius: 22, padding: 18, gap: 8 },
-  nextTitle: { color: '#FFFFFF', fontSize: 22, fontWeight: '700' },
-  nextSituation: { color: '#FFFFFFE6', fontSize: 15, lineHeight: 22 },
-  pair: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 2 },
-  nextBtn: {
-    marginTop: 6,
+  root: { flex: 1, paddingHorizontal: 16, gap: 12 },
+  header: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  hello: { fontSize: 22, fontWeight: '700', flex: 1 },
+  chips: { flexDirection: 'row', gap: 6 },
+  chip: { borderRadius: 999, paddingHorizontal: 10, paddingVertical: 5 },
+  next: { borderRadius: 20, padding: 16, flexDirection: 'row', alignItems: 'center', gap: 12 },
+  nextKicker: { color: '#FFFFFFB3', fontWeight: '600', fontSize: 13 },
+  nextTitle: { color: '#FFFFFF', fontSize: 20, fontWeight: '700' },
+  nextSituation: { color: '#FFFFFFE0', fontSize: 14, lineHeight: 20 },
+  playCircle: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
     backgroundColor: '#FFFFFF',
-    borderRadius: 14,
-    minHeight: 48,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  review: { borderRadius: 18, padding: 14, flexDirection: 'row', alignItems: 'center', gap: 12 },
-  reviewIcon: {
-    width: 44,
-    height: 44,
-    borderRadius: 14,
+  review: {
+    borderRadius: 16,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    gap: 10,
   },
-  section: { gap: 10, marginTop: 8 },
-  sectionHead: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  sectionTitle: { fontSize: 19, fontWeight: '700' },
-  row: { borderRadius: 16, padding: 12, flexDirection: 'row', alignItems: 'center', gap: 12 },
-  avatars: { width: 48, height: 40 },
-  avatarB: { position: 'absolute', right: 0, bottom: 0 },
+  levelRow: { flexDirection: 'row', gap: 8 },
+  level: { flex: 1, borderRadius: 12, paddingVertical: 9, alignItems: 'center' },
+  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, paddingBottom: 12, paddingTop: 2 },
+  tile: { width: '31.5%', borderRadius: 16, padding: 12, gap: 6, minHeight: 112 },
+  tileIcon: { fontSize: 26 },
+  tileTitle: { fontSize: 14, fontWeight: '600', lineHeight: 19, flex: 1 },
+  tileFoot: { flexDirection: 'row', alignItems: 'center', gap: 6 },
 });
