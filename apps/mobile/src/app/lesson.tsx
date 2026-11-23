@@ -6,8 +6,9 @@ import { type DialogueWithLines, getDialogue } from '@/features/dialogue/reposit
 import { buildDialogueLesson, type LessonState } from '@/features/lesson/engine';
 import { LessonPlayer } from '@/features/lesson/player';
 import { hasEnglishVoice } from '@/services/tts';
+import { isSpeechInputAvailable } from '@/services/use-speech-input';
 
-/** Luyện một đoạn hội thoại: tình huống → nghe → điền → nhập vai. */
+/** Luyện một đoạn hội thoại: tình huống → nghe → điền → nhập vai chọn câu → nhập vai nói. */
 export default function LessonScreen() {
   const { dialogue: id } = useLocalSearchParams<{ dialogue: string }>();
   const db = useDb();
@@ -24,7 +25,11 @@ export default function LessonScreen() {
       // Engine TTS đã được khởi động lúc mở app; chờ tối đa 2 giây.
       const canListen = await hasEnglishVoice(2000);
       if (alive)
-        setReady({ dialogue, state: buildDialogueLesson(dialogue?.lines ?? []), canListen });
+        setReady({
+          dialogue,
+          state: buildDialogueLesson(dialogue?.lines ?? [], { canSpeak: isSpeechInputAvailable() }),
+          canListen,
+        });
     })();
     return () => {
       alive = false;

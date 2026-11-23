@@ -7,14 +7,14 @@ import { cardShadow, useColors } from '@/components/theme';
 import { Avatar } from '@/components/ui';
 import { useDb } from '@/db/client';
 import { LEARNER, speakerColor } from '@/features/dialogue/bubbles';
+import { ChatReveal } from '@/features/dialogue/chat-reveal';
 import { getDialogue, type Line } from '@/features/dialogue/repository';
-import { TurnViewer } from '@/features/dialogue/turn-viewer';
 import { saveFromPhrase } from '@/features/notes/repository';
 import { hasEnglishVoice, stop } from '@/services/tts';
 
 /**
- * Xem một đoạn hội thoại trên một màn hình (không cuộn): tình huống tóm tắt, xem từng lượt
- * nói, nghe cả đoạn, nhấn giữ câu để lưu vào sổ tay, rồi bắt đầu luyện.
+ * Xem một đoạn hội thoại: tình huống tóm tắt, câu hiện dần như tin nhắn (hết đoạn thì đọc lại
+ * được cả bài), nhấn giữ câu để lưu vào sổ tay, rồi bắt đầu luyện.
  */
 export default function DialogueScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -22,7 +22,7 @@ export default function DialogueScreen() {
   const c = useColors();
   const insets = useSafeAreaInsets();
   const dialogue = useMemo(() => getDialogue(db, id), [db, id]);
-  const [canListen, setCanListen] = useState(false);
+  const [canListen, setCanListen] = useState<boolean | null>(null);
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
@@ -70,12 +70,17 @@ export default function DialogueScreen() {
         </View>
       </Pressable>
 
-      <TurnViewer
-        lines={dialogue.lines}
-        speakers={dialogue.speakers}
-        canListen={canListen}
-        onLongPressLine={save}
-      />
+      {canListen === null ? (
+        <View style={{ flex: 1 }} />
+      ) : (
+        <ChatReveal
+          lines={dialogue.lines}
+          speakers={dialogue.speakers}
+          canListen={canListen}
+          autoPlay
+          onLongPressLine={save}
+        />
+      )}
       <Text style={{ color: c.muted, textAlign: 'center', fontSize: 12 }}>
         Chạm câu để nghe lại · Nhấn giữ để lưu vào sổ tay
       </Text>

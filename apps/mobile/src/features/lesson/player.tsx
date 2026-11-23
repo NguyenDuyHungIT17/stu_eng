@@ -8,6 +8,7 @@ import { ProgressBar } from '@/components/ui';
 import { useDb } from '@/db/client';
 import { useStudyTimer } from '@/features/progress/use-study-timer';
 import { syncReminders } from '@/services/notifications';
+import { useSpeechInput } from '@/services/use-speech-input';
 import { useDialoguePlayback } from '../dialogue/bubbles';
 import {
   blankDistractors,
@@ -31,7 +32,14 @@ import {
   sameSentence,
   tokenize,
 } from './engine';
-import { BuildStep, ChooseReplyStep, FillBlankStep, ListenAllStep, SceneStep } from './steps';
+import {
+  BuildStep,
+  ChooseReplyStep,
+  FillBlankStep,
+  ListenAllStep,
+  SceneStep,
+  SpeakStep,
+} from './steps';
 
 const PRAISE = ['Chính xác!', 'Đúng rồi!', 'Tốt lắm!', 'Chuẩn!'];
 
@@ -63,6 +71,7 @@ export function LessonPlayer({
   const [picked, setPicked] = useState<number[]>([]);
   const [result, setResult] = useState<null | { correct: boolean }>(null);
   const [error, setError] = useState<string | null>(null);
+  const speech = useSpeechInput();
 
   const step = currentStep(state);
   const stepKey = step ? `${state.index}-${step.kind}-${step.line?.id ?? ''}` : 'done';
@@ -104,7 +113,7 @@ export function LessonPlayer({
   useEffect(() => {
     if (!step || !canListen) return;
     if (step.kind === 'fill_blank' && step.line) playback.playLine(step.line);
-    else if (step.kind === 'choose_reply') {
+    else if (step.kind === 'choose_reply' || step.kind === 'speak_line') {
       const prev = context[context.length - 1];
       if (prev) playback.playLine(prev);
     }
@@ -118,7 +127,8 @@ export function LessonPlayer({
 
   const commit = (next: LessonState) => {
     const id = finishedLineAt(next, state.index);
-    if (id && step) {
+    // Chỉ câu then chốt (có cụm cần nhớ) mới có thẻ ôn.
+    if (id && step?.line?.blank) {
       try {
         recordReview(db, {
           phraseId: id,
@@ -131,6 +141,8 @@ export function LessonPlayer({
       }
     }
     playback.stop();
+    speech.stop();
+    speech.reset();
     setState(next);
     setChosen(null);
     setPicked([]);
@@ -225,8 +237,20 @@ export function LessonPlayer({
         onPlay={playback.playLine}
       />
     );
+  else if (step.kind === 'speak_line' && line)
+    body = (
+      <SpeakStep
+        line={line}
+        context={context.slice(-1)}
+        speakers={speakers}
+        speech={speech}
+        onPlay={playback.playLine}
+        canListen={canListen}
+      />
+    );
 
-  const graded = line !== null;
+  const speaking = step.kind === 'speak_line';
+  const graded = line !== null && !speaking;
   const canCheck = step.kind === 'build_sentence' ? picked.length > 0 : chosen !== null;
 
   return (
@@ -286,7 +310,17 @@ export function LessonPlayer({
             ) : null}
           </View>
         ) : null}
-        {!graded ? (
+        {speaking ? (
+          speech.final !== null && !speech.listening ? (
+            <Button title="Tiếp tục" onPress={() => commit(advance(state))} />
+          ) : (
+            <Button
+              title="Bỏ qua câu này"
+              variant="secondary"
+              onPress={() => commit(advance(state))}
+            />
+          )
+        ) : !graded ? (
           <Button title="Tiếp tục" onPress={() => commit(advance(state))} />
         ) : result ? (
           <Button

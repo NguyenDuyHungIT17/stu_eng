@@ -10,11 +10,19 @@ import type { Line } from '../dialogue/repository';
  *   3. `fill_blank`  — lần lượt từng câu then chốt: nghe câu, chọn cụm còn thiếu.
  *   4. Nhập vai: với mỗi câu then chốt của vai người học (b), chọn câu đáp đúng
  *      (`choose_reply`) hoặc ghép câu (`build_sentence`) nếu là câu mở đầu.
+ *   5. Nhập vai nói (`speak_line`, khi máy nhận diện được giọng nói): đi lại cả hội thoại,
+ *      người học tự nói từng câu của mình. Không chấm vào điểm, chỉ chấm độ khớp để luyện.
  * Phiên ôn: mỗi câu đến hạn 1 bài trong ngữ cảnh hội thoại, xoay vòng các kiểu.
  * Trả lời sai: bài quay lại cuối hàng (tối đa MAX_RETRIES). Mức FSRS suy từ số lần sai.
  */
 
-export type StepKind = 'scene' | 'listen_all' | 'fill_blank' | 'choose_reply' | 'build_sentence';
+export type StepKind =
+  | 'scene'
+  | 'listen_all'
+  | 'fill_blank'
+  | 'choose_reply'
+  | 'build_sentence'
+  | 'speak_line';
 
 export type Step = { kind: StepKind; line: Line | null; retry: number };
 
@@ -49,7 +57,11 @@ function roleplayKind(l: Line): StepKind {
 }
 
 /** Bài học một đoạn hội thoại (các câu theo thứ tự `lineNo`). */
-export function buildDialogueLesson(lines: Line[], learner: 'a' | 'b' = 'b'): LessonState {
+export function buildDialogueLesson(
+  lines: Line[],
+  opts: { learner?: 'a' | 'b'; canSpeak?: boolean } = {},
+): LessonState {
+  const learner = opts.learner ?? 'b';
   const key = lines.filter(isKey);
   const steps: Step[] = [
     { kind: 'scene', line: null, retry: 0 },
@@ -58,6 +70,11 @@ export function buildDialogueLesson(lines: Line[], learner: 'a' | 'b' = 'b'): Le
     ...key
       .filter((l) => l.speaker === learner)
       .map((line): Step => ({ kind: roleplayKind(line), line, retry: 0 })),
+    ...(opts.canSpeak
+      ? lines
+          .filter((l) => l.speaker === learner)
+          .map((line): Step => ({ kind: 'speak_line', line, retry: 0 }))
+      : []),
   ];
   return initial(steps);
 }
@@ -87,7 +104,7 @@ export function progress(s: LessonState): number {
   return s.steps.length === 0 ? 1 : Math.min(1, s.index / s.steps.length);
 }
 
-/** Bước không chấm điểm (tình huống, nghe trọn bài): chỉ đi tiếp. */
+/** Bước không chấm điểm (tình huống, nghe trọn bài, luyện nói): chỉ đi tiếp. */
 export function advance(s: LessonState): LessonState {
   return { ...s, index: s.index + 1 };
 }
@@ -97,10 +114,16 @@ export function answer(s: LessonState, correct: boolean): LessonState {
   const step = currentStep(s);
   if (!step?.line) return s;
   const id = step.line.id;
-  const steps =
-    !correct && step.retry < MAX_RETRIES
-      ? [...s.steps, { ...step, retry: step.retry + 1 }]
-      : s.steps;
+  let steps = s.steps;
+  if (!correct && step.retry < MAX_RETRIES) {
+    // Làm lại trước vòng nhập vai nói (nói là phần cuối, sau khi đã luyện đủ).
+    const retry = { ...step, retry: step.retry + 1 };
+    const speakAt = s.steps.findIndex((x, i) => i > s.index && x.kind === 'speak_line');
+    steps =
+      speakAt < 0
+        ? [...s.steps, retry]
+        : [...s.steps.slice(0, speakAt), retry, ...s.steps.slice(speakAt)];
+  }
   return {
     steps,
     index: s.index + 1,

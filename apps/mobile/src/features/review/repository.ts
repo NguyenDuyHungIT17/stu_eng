@@ -19,7 +19,8 @@ export type ExerciseType =
   | 'fill_blank'
   | 'choose_reply'
   | 'scene'
-  | 'listen_all';
+  | 'listen_all'
+  | 'speak_line';
 export type DueCard = { phrase: Phrase; card: CardState };
 
 const visible = and(isNull(phrases.deletedAt), isNull(topics.deletedAt));

@@ -9,7 +9,7 @@ import type { Line, Speakers } from './repository';
 export const LEARNER = 'b' as const;
 
 /** Hai giọng khác nhau cho hai người nói (cùng giọng máy, khác cao độ). */
-const PITCH: Record<string, number> = { a: 1.08, b: 0.88 };
+export const PITCH: Record<string, number> = { a: 1.08, b: 0.88 };
 
 export const speakerColor = (c: Colors, speaker: string | null) =>
   speaker === LEARNER ? c.primary : c.accent;

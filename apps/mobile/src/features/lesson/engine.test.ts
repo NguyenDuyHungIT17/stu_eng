@@ -64,6 +64,13 @@ describe('buildDialogueLesson', () => {
     expect(steps(buildDialogueLesson(lines))).toContain('build_sentence:0');
   });
 
+  it('máy nghe được giọng nói: thêm vòng nhập vai nói mọi câu của người học', () => {
+    const lines = [line(0, 'a'), line(1, 'b'), line(2, 'a'), line(3, 'b', null)];
+    const s = steps(buildDialogueLesson(lines, { canSpeak: true }));
+    expect(s.slice(-2)).toEqual(['speak_line:1', 'speak_line:3']);
+    expect(steps(buildDialogueLesson(lines))).not.toContain('speak_line:1');
+  });
+
   it('câu mở đầu quá dài thì nghe-điền thêm lần nữa', () => {
     const long = 'one two three four five six seven eight nine ten eleven twelve thirteen key';
     const lines = [line(0, 'b', 'key', long), line(1, 'a')];
@@ -89,6 +96,13 @@ describe('answer / advance', () => {
     expect(isDone(s)).toBe(true);
     expect(s.mistakes).toEqual({ 'd-l0': 1 });
     expect(accuracy(s)).toBeCloseTo(2 / 3);
+  });
+
+  it('câu làm lại xếp trước vòng nhập vai nói', () => {
+    let s = buildDialogueLesson([line(0, 'a'), line(1, 'b')], { canSpeak: true });
+    s = advance(advance(s)); // tình huống, nghe
+    s = answer(s, false); // điền câu 0 sai
+    expect(steps(s).slice(-3)).toEqual(['choose_reply:1', 'fill_blank:0', 'speak_line:1']);
   });
 
   it(`sai quá ${MAX_RETRIES} lần thì không quay lại nữa`, () => {

@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { cardShadow, useColors } from '@/components/theme';
 import { Avatar, Badge, OutlineButton } from '@/components/ui';
+import { type ScoredWord, scoreSpeech } from '@/lib/speech-score';
+import type { SpeechInput } from '@/services/use-speech-input';
 import { Bubble, LEARNER, speakerColor } from '../dialogue/bubbles';
+import { ChatReveal } from '../dialogue/chat-reveal';
 import type { Dialogue, Line, Speakers } from '../dialogue/repository';
-import { TurnViewer } from '../dialogue/turn-viewer';
 import { splitBlank } from './engine';
 
 type PlayLine = (l: Line, slow?: boolean) => void;
@@ -73,7 +76,7 @@ export function SceneStep({ dialogue }: { dialogue: Dialogue }) {
   );
 }
 
-/** Bước 2: nghe trọn hội thoại, từng lượt một (không cần cuộn). */
+/** Bước 2: nghe trọn hội thoại; câu hiện dần như tin nhắn, hết đoạn thì đọc lại được. */
 export function ListenAllStep({
   lines,
   speakers,
@@ -86,7 +89,7 @@ export function ListenAllStep({
   return (
     <View style={{ flex: 1, gap: 8 }}>
       <Heading text="Nghe đoạn hội thoại" />
-      <TurnViewer lines={lines} speakers={speakers} canListen={canListen} autoPlay />
+      <ChatReveal lines={lines} speakers={speakers} canListen={canListen} autoPlay />
     </View>
   );
 }
@@ -305,4 +308,124 @@ const styles = StyleSheet.create({
   },
   bank: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
   tile: { borderWidth: 1.5, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 8 },
+  micArea: { alignItems: 'center', gap: 8, paddingVertical: 6 },
+  mic: { width: 84, height: 84, borderRadius: 42, alignItems: 'center', justifyContent: 'center' },
 });
+
+/** Ô chữ câu mẫu, tô xanh từ đã nói đúng, mờ từ còn thiếu. */
+function ScoredSentence({ words }: { words: ScoredWord[] }) {
+  const c = useColors();
+  return (
+    <Text style={{ fontSize: 17, lineHeight: 26 }}>
+      {words.map((w, i) => (
+        <Text
+          // biome-ignore lint/suspicious/noArrayIndexKey: từ có thể lặp, vị trí là khóa ổn định
+          key={i}
+          style={{
+            color: w.ok ? c.ok : c.danger,
+            fontWeight: w.ok ? '600' : '400',
+            textDecorationLine: w.ok ? 'none' : 'underline',
+          }}
+        >
+          {w.word}{' '}
+        </Text>
+      ))}
+    </Text>
+  );
+}
+
+/** Nhập vai nói: nghe câu của người kia, tự nói câu của mình, xem độ khớp với câu mẫu. */
+export function SpeakStep({
+  line,
+  context,
+  speakers,
+  speech,
+  onPlay,
+  canListen,
+}: {
+  line: Line;
+  context: Line[];
+  speakers: Speakers;
+  speech: SpeechInput;
+  onPlay: PlayLine;
+  canListen: boolean;
+}) {
+  const c = useColors();
+  const [hint, setHint] = useState(false);
+  const who = line.speaker === 'a' ? speakers.a : speakers.b;
+  const result = speech.final !== null ? scoreSpeech(line.text, speech.final) : null;
+  return (
+    <View style={styles.gap}>
+      <Heading text={`Đến lượt bạn (${who.name}) nói`} />
+      {context.map((l) => (
+        <Bubble key={l.id} line={l} speakers={speakers} onPress={() => onPlay(l)} />
+      ))}
+      <View style={[styles.card, { backgroundColor: c.primarySoft }]}>
+        <Text style={{ color: c.muted, fontSize: 13 }}>Ý bạn muốn nói</Text>
+        <Text style={{ color: c.text, fontSize: 17, lineHeight: 24 }}>{line.meaningVi}</Text>
+        {hint ? (
+          <Text style={{ color: c.primary, fontSize: 16, lineHeight: 23, marginTop: 4 }}>
+            {line.text}
+          </Text>
+        ) : (
+          <Pressable accessibilityRole="button" onPress={() => setHint(true)}>
+            <Text style={{ color: c.primary, fontWeight: '600', marginTop: 4 }}>
+              {line.blank ? `Gợi ý: “${line.blank}…” · xem cả câu` : 'Xem câu gợi ý'}
+            </Text>
+          </Pressable>
+        )}
+      </View>
+
+      <View style={styles.micArea}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={speech.listening ? 'Dừng nghe' : 'Bấm để nói'}
+          onPress={speech.listening ? speech.stop : () => void speech.start()}
+          style={[
+            styles.mic,
+            { backgroundColor: speech.listening ? c.accent : c.primary },
+            cardShadow(c),
+          ]}
+        >
+          <Text style={{ fontSize: 34 }}>{speech.listening ? '■' : '🎙️'}</Text>
+        </Pressable>
+        <Text style={{ color: c.muted }}>
+          {speech.listening
+            ? 'Đang nghe… nói xong chạm để dừng'
+            : result
+              ? 'Chạm để nói lại'
+              : 'Chạm micro rồi nói câu của bạn'}
+        </Text>
+        {speech.listening && speech.transcript ? (
+          <Text style={{ color: c.text, fontStyle: 'italic', textAlign: 'center' }}>
+            “{speech.transcript}”
+          </Text>
+        ) : null}
+        {speech.error ? (
+          <Text style={{ color: c.danger, textAlign: 'center' }}>{speech.error}</Text>
+        ) : null}
+      </View>
+
+      {result && !speech.listening ? (
+        <View
+          style={[
+            styles.card,
+            { backgroundColor: result.passed ? c.okSoft : c.accentSoft, gap: 6 },
+          ]}
+        >
+          <Text style={{ color: result.passed ? c.ok : c.accent, fontWeight: '700', fontSize: 16 }}>
+            {result.passed ? '✓ Tốt lắm!' : 'Gần được rồi, thử lại nhé'} · khớp{' '}
+            {Math.round(result.score * 100)}%
+          </Text>
+          <Text style={{ color: c.muted, fontSize: 13 }}>Bạn nói: “{speech.final}”</Text>
+          <ScoredSentence words={result.words} />
+          {canListen ? (
+            <Pressable accessibilityRole="button" onPress={() => onPlay(line)}>
+              <Text style={{ color: c.primary, fontWeight: '600' }}>🔊 Nghe câu mẫu</Text>
+            </Pressable>
+          ) : null}
+        </View>
+      ) : null}
+    </View>
+  );
+}
