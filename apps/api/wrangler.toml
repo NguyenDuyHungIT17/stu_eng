@@ -1,5 +1,6 @@
 name = "english-app-api"
 main = "src/index.ts"
+account_id = "d49c8beaa7239ffba8eddd424e65ac87" # không bí mật; token mới là bí mật (GitHub Secrets)
 compatibility_date = "2026-11-01"
 compatibility_flags = ["nodejs_compat"]
 

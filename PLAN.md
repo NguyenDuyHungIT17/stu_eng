@@ -381,7 +381,7 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 | #   | Việc                                                                                                                                                                | Mã                        | Ai làm                     |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | -------------------------- |
 | 1   | Commit `react-native.config.js`, push nhánh `eng_hungnd`                                                                                                            | `S0-02`                   | Claude/bạn                 |
-| 2   | Thêm secrets Cloudflare vào GitHub (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`)                                                                                | `S0-13`                   | Bạn                        |
+| 2   | Thêm secret `CLOUDFLARE_API_TOKEN` vào GitHub (Account ID và URL dev đã để trong code, 23/11)                                                                       | `S0-13`                   | Bạn                        |
 | 3   | Mở PR `eng_hungnd` → `main`, sửa đến khi `ci.yml` xanh, merge                                                                                                       | `S0-08`                   | Claude/bạn                 |
 | 4   | Merge kích hoạt `api-deploy.yml` → API dev deploy, kiểm tra `GET /health`                                                                                           | `S0-13`, `S0-12`          | Tự động                    |
 | 5   | Tạo keystore release (`keytool`), sao lưu 2 nơi, thêm 4 secrets `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD` | `S0-09`                   | Bạn (Claude hướng dẫn)     |
@@ -407,7 +407,7 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 
 **Checklist cập nhật:** #1 xong, #10 xong; #4 deploy dev đã làm tay (workflow vẫn cần chạy sau merge).
 
-**Đang chờ bạn:** GitHub Variable `API_BASE_URL_DEV`, secrets Cloudflare (#2), mở PR và merge (#3), keystore (#5), điện thoại thật, 2 khóa LLM, 6 quyết định BRD §10.
+**Đang chờ bạn:** secret `CLOUDFLARE_API_TOKEN` (#2; Account ID và URL dev đã đưa vào code vì không bí mật), mở PR và merge (#3), keystore (#5), điện thoại thật, 2 khóa LLM, 6 quyết định BRD §10.
 
 ---
 

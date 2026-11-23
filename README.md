@@ -86,7 +86,7 @@ pnpm exec wrangler d1 create english-app-quota-dev
 pnpm exec wrangler d1 create english-app-quota-prod
 ```
 
-Chép hai `database_id` vào `apps/api/wrangler.toml` (thay các id `0000…`). **Trước khi làm bước này, workflow `api-deploy` sẽ báo lỗi ở bước migrate D1.** Tạo API token (quyền Workers Scripts + D1 Edit) rồi thêm vào GitHub → Settings → Secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
+Chép hai `database_id` vào `apps/api/wrangler.toml` (thay các id `0000…`). **Trước khi làm bước này, workflow `api-deploy` sẽ báo lỗi ở bước migrate D1.** Tạo API token (quyền Workers Scripts + D1 Edit) rồi thêm vào GitHub → Settings → Secrets: `CLOUDFLARE_API_TOKEN` (`account_id` đã có sẵn trong `wrangler.toml`, không bí mật).
 
 **2. Keystore ký APK** (làm một lần, **sao lưu ở ít nhất 2 nơi an toàn**; mất keystore là không cập nhật được app đã phát hành)
 
@@ -98,7 +98,7 @@ base64 -w0 release.keystore > release.keystore.b64
 
 GitHub Secrets: `ANDROID_KEYSTORE_BASE64` (nội dung file .b64), `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS` (`english-app`), `ANDROID_KEY_PASSWORD`. Chưa có keystore thì APK vẫn build được nhưng ký bằng debug keystore (chỉ để thử).
 
-**3. URL API cho app**: GitHub → Settings → Variables: `API_BASE_URL_DEV`, `API_BASE_URL_PROD` (URL Workers sau khi deploy).
+**3. URL API cho app**: URL dev đã đặt mặc định trong `android-apk.yml`. Bản phát hành (tag) cần GitHub → Settings → Variables: `API_BASE_URL_PROD` (URL Worker prod sau khi deploy). Có thể ghi đè URL dev bằng `API_BASE_URL_DEV`.
 
 ## Quy ước
 

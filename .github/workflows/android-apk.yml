@@ -8,8 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # Nhúng vào bundle JS lúc build (biến EXPO_PUBLIC_*). Đặt trong Settings → Variables.
-      EXPO_PUBLIC_API_BASE_URL: ${{ startsWith(github.ref, 'refs/tags/') && vars.API_BASE_URL_PROD || !startsWith(github.ref, 'refs/tags/') && vars.API_BASE_URL_DEV || '' }}
+      # Nhúng vào bundle JS lúc build (biến EXPO_PUBLIC_*). URL không bí mật nên để mặc định ở đây;
+      # có thể ghi đè bằng Settings → Variables (API_BASE_URL_DEV / API_BASE_URL_PROD).
+      EXPO_PUBLIC_API_BASE_URL: ${{ startsWith(github.ref, 'refs/tags/') && vars.API_BASE_URL_PROD || !startsWith(github.ref, 'refs/tags/') && (vars.API_BASE_URL_DEV || 'https://english-app-api.nguyenduyhungit17.workers.dev') || '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
