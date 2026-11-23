@@ -66,6 +66,8 @@ export const notes = sqliteTable(
     pinned: integer('pinned', { mode: 'boolean' }).notNull().default(false),
     source: text('source').notNull().default('manual'), // manual | vocab | chat
     sourceRef: text('source_ref'), // phraseId hoặc chatMessageId
+    /** body + tags đã chuẩn hóa (chữ thường, bỏ dấu) để tìm kiếm không phân biệt dấu. */
+    searchText: text('search_text').notNull().default(''),
     createdAt: integer('created_at').notNull(),
     updatedAt: integer('updated_at').notNull(),
   },
