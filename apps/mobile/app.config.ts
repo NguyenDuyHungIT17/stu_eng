@@ -35,6 +35,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     'expo-sqlite',
+    ['expo-notifications', { color: '#14A38B' }],
     [
       'expo-speech-recognition',
       {

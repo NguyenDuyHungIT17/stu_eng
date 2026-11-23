@@ -9,7 +9,13 @@ import { createId } from '@/lib/id';
 /** Ôn tập ngắt quãng. Xem Thiết kế kỹ thuật §6.1, BRD FR-V-03, FR-V-05. */
 
 export type Phrase = typeof phrases.$inferSelect;
-export type ExerciseType = 'flip' | 'choose_meaning' | 'listen_choose';
+export type ExerciseType =
+  | 'flip'
+  | 'intro'
+  | 'choose_meaning'
+  | 'choose_text'
+  | 'listen_choose'
+  | 'build_sentence';
 export type DueCard = { phrase: Phrase; card: CardState };
 
 const visible = and(isNull(phrases.deletedAt), isNull(topics.deletedAt));

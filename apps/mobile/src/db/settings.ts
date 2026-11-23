@@ -11,6 +11,8 @@ export const SettingKey = {
   ttsVoice: 'tts_voice',
   ttsRate: 'tts_rate',
   dailyMinutesGoal: 'daily_minutes_goal',
+  reminderEnabled: 'reminder_enabled',
+  reminderTime: 'reminder_time',
 } as const;
 export type SettingKey = (typeof SettingKey)[keyof typeof SettingKey];
 
@@ -67,4 +69,28 @@ export function getTtsPrefs(db: Db): { voice: string | null; rate: number | unde
     voice: getSetting(db, SettingKey.ttsVoice),
     rate: Number.isFinite(rate) && rate > 0 ? rate : undefined,
   };
+}
+
+/** Nhắc học hằng ngày (FR-P-04). Mặc định bật lúc 20:00. */
+export type ReminderPrefs = { enabled: boolean; hour: number; minute: number };
+export const DEFAULT_REMINDER: ReminderPrefs = { enabled: true, hour: 20, minute: 0 };
+export const REMINDER_HOUR_CHOICES = [7, 12, 18, 20, 21] as const;
+
+export function getReminderPrefs(db: Db): ReminderPrefs {
+  const enabled = getSetting(db, SettingKey.reminderEnabled);
+  const m = /^(\d{1,2}):(\d{2})$/.exec(getSetting(db, SettingKey.reminderTime) ?? '');
+  const hour = m ? Number(m[1]) : DEFAULT_REMINDER.hour;
+  const minute = m ? Number(m[2]) : DEFAULT_REMINDER.minute;
+  const valid = hour < 24 && minute < 60;
+  return {
+    enabled: enabled === null ? DEFAULT_REMINDER.enabled : enabled === '1',
+    hour: valid ? hour : DEFAULT_REMINDER.hour,
+    minute: valid ? minute : DEFAULT_REMINDER.minute,
+  };
+}
+
+export function setReminderPrefs(db: Db, prefs: ReminderPrefs): void {
+  setSetting(db, SettingKey.reminderEnabled, prefs.enabled ? '1' : '0');
+  const mm = String(prefs.minute).padStart(2, '0');
+  setSetting(db, SettingKey.reminderTime, `${prefs.hour}:${mm}`);
 }

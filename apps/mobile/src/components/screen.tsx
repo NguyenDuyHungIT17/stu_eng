@@ -1,11 +1,17 @@
 import type { ReactNode } from 'react';
 import { ScrollView, StyleSheet, Text } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useColors } from './theme';
 
-export function Screen({ children }: { children: ReactNode }) {
+/** Màn cuộn được. `tab`: màn trong tab không có thanh tiêu đề, chừa chỗ thanh trạng thái. */
+export function Screen({ children, tab }: { children: ReactNode; tab?: boolean }) {
   const c = useColors();
+  const insets = useSafeAreaInsets();
   return (
-    <ScrollView style={{ backgroundColor: c.bg }} contentContainerStyle={styles.content}>
+    <ScrollView
+      style={{ backgroundColor: c.bg }}
+      contentContainerStyle={[styles.content, tab ? { paddingTop: insets.top + 12 } : null]}
+    >
       {children}
     </ScrollView>
   );
@@ -22,7 +28,7 @@ export function Body({ children, muted }: { children: ReactNode; muted?: boolean
 }
 
 const styles = StyleSheet.create({
-  content: { padding: 16, gap: 12 },
-  title: { fontSize: 22, fontWeight: '700' },
-  body: { fontSize: 16, lineHeight: 22 },
+  content: { padding: 16, gap: 14, paddingBottom: 32 },
+  title: { fontSize: 24, fontWeight: '800' },
+  body: { fontSize: 16, lineHeight: 23 },
 });

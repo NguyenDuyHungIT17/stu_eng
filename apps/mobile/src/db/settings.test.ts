@@ -2,12 +2,15 @@ import {
   DEFAULT_DAILY_MINUTES_GOAL,
   DEFAULT_DAILY_NEW_LIMIT,
   DEFAULT_LEVEL,
+  DEFAULT_REMINDER,
   getDailyMinutesGoal,
   getDailyNewLimit,
   getLevel,
+  getReminderPrefs,
   getSetting,
   getTtsPrefs,
   SettingKey,
+  setReminderPrefs,
   setSetting,
 } from './settings';
 import { createTestDb } from './test-db';
@@ -46,5 +49,14 @@ describe('settings', () => {
     expect(getDailyNewLimit(db)).toBe(5);
     expect(getDailyMinutesGoal(db)).toBe(20);
     expect(getTtsPrefs(db)).toEqual({ voice: 'en-us-x-sfg', rate: 0.75 });
+  });
+
+  it('nhắc học: mặc định, lưu/đọc lại, giờ hỏng thì dùng mặc định', () => {
+    const db = createTestDb();
+    expect(getReminderPrefs(db)).toEqual(DEFAULT_REMINDER);
+    setReminderPrefs(db, { enabled: false, hour: 7, minute: 5 });
+    expect(getReminderPrefs(db)).toEqual({ enabled: false, hour: 7, minute: 5 });
+    setSetting(db, SettingKey.reminderTime, '25:00');
+    expect(getReminderPrefs(db)).toMatchObject({ hour: 20, minute: 0 });
   });
 });

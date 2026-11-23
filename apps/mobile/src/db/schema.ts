@@ -51,7 +51,7 @@ export const reviewLogs = sqliteTable(
     id: text('id').primaryKey(),
     phraseId: text('phrase_id').notNull(),
     rating: integer('rating').notNull(), // 1 Again, 2 Hard, 3 Good, 4 Easy
-    exerciseType: text('exercise_type').notNull(), // flip | choose_meaning | listen_choose
+    exerciseType: text('exercise_type').notNull(), // xem ExerciseType trong features/review/repository.ts
     reviewedAt: integer('reviewed_at').notNull(),
   },
   (t) => [index('review_logs_phrase_idx').on(t.phraseId)],

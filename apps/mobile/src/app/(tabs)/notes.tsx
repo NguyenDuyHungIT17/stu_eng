@@ -1,7 +1,9 @@
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { FlatList, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button } from '@/components/button';
+import { Title } from '@/components/screen';
 import { useColors } from '@/components/theme';
 import { Card, Row } from '@/components/ui';
 import { useDb } from '@/db/client';
@@ -14,6 +16,7 @@ const SOURCE_LABEL = { manual: '', vocab: '📚 Từ vựng', chat: '💬 Hội 
 export default function NotesScreen() {
   const db = useDb();
   const c = useColors();
+  const insets = useSafeAreaInsets();
   const [query, setQuery] = useState('');
   const [tag, setTag] = useState<string | null>(null);
   const data = useFocusQuery(
@@ -26,14 +29,15 @@ export default function NotesScreen() {
 
   return (
     <View style={[styles.root, { backgroundColor: c.bg }]}>
-      <View style={styles.header}>
+      <View style={[styles.header, { paddingTop: insets.top + 12 }]}>
+        <Title>Sổ tay</Title>
         <TextInput
           value={query}
           onChangeText={setQuery}
           placeholder="Tìm ghi chú (không cần dấu)…"
           placeholderTextColor={c.muted}
           accessibilityLabel="Tìm ghi chú"
-          style={[styles.search, { color: c.text, backgroundColor: c.card }]}
+          style={[styles.search, { color: c.text, backgroundColor: c.card, borderColor: c.border }]}
           clearButtonMode="while-editing"
         />
         {data && data.tags.length > 0 ? (
@@ -53,6 +57,7 @@ export default function NotesScreen() {
         ) : null}
         <Button
           title="＋ Ghi chú mới"
+          variant="secondary"
           onPress={() => router.push({ pathname: '/notes/[id]', params: { id: 'new' } })}
         />
       </View>
@@ -91,7 +96,7 @@ function NoteRow({ note }: { note: Note }) {
           <Text style={{ color: c.muted, fontSize: 13 }}>{SOURCE_LABEL[note.source]}</Text>
         ) : null}
         {note.tags.map((t) => (
-          <Text key={t} style={{ color: c.primary, fontSize: 13 }}>
+          <Text key={t} style={{ color: c.blue, fontSize: 13, fontWeight: '700' }}>
             #{t}
           </Text>
         ))}
@@ -117,10 +122,13 @@ function Chip({
       onPress={onPress}
       style={[
         styles.chip,
-        { borderColor: c.primary, backgroundColor: selected ? c.primary : 'transparent' },
+        {
+          borderColor: selected ? c.blue : c.border,
+          backgroundColor: selected ? c.selectedBg : c.card,
+        },
       ]}
     >
-      <Text style={{ color: selected ? '#FFFFFF' : c.primary }}>{label}</Text>
+      <Text style={{ color: selected ? c.blue : c.text, fontWeight: '700' }}>{label}</Text>
     </Pressable>
   );
 }
@@ -128,7 +136,13 @@ function Chip({
 const styles = StyleSheet.create({
   root: { flex: 1 },
   header: { padding: 16, paddingBottom: 8, gap: 10 },
-  search: { borderRadius: 10, paddingHorizontal: 12, paddingVertical: 10, fontSize: 16 },
-  chip: { borderWidth: 1, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 6 },
+  search: {
+    borderRadius: 14,
+    borderWidth: 2,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    fontSize: 16,
+  },
+  chip: { borderWidth: 2, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 6 },
   list: { padding: 16, paddingTop: 4, gap: 10 },
 });
