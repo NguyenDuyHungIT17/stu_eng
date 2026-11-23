@@ -17,7 +17,7 @@ _Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thi
 | ------- | ------------------ | ------------------------------ | ------- | -------- | -------------------- | --------------------------------------------------- |
 | 0       | Nền móng + spike   | 1,5 tuần                       | 18/11   |          | 10/24 (+11 đang làm) | Chờ secrets GitHub, PR vào main, keystore, máy thật |
 | 1       | Từ vựng và ôn tập  | 2 tuần                         | 23/11   |          | 0/18 (+17 code xong) | Chờ PR, duyệt nội dung, thử máy thật                |
-| 2       | Ghi chú và tiến độ | 1 tuần                         |         |          | 0/14                 | Chưa bắt đầu                                        |
+| 2       | Ghi chú và tiến độ | 1 tuần                         | 23/11   |          | 0/14 (+11 code xong) | Còn: thông báo nhắc học, máy thật                   |
 | 3a      | Chat bằng chữ      | 1,5 tuần                       |         |          | 0/18                 | Chưa bắt đầu                                        |
 | 3b      | Chat bằng giọng    | 1,5 tuần                       |         |          | 0/13                 | Chưa bắt đầu                                        |
 | 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17                 | Chưa bắt đầu                                        |
@@ -128,20 +128,20 @@ Mốc quan trọng:
 
 ### Ghi chú
 
-- [ ] `S2-01` Repository notes: thêm, sửa, xóa, ghim + test — FR-N-01, FR-N-04
-- [ ] `S2-02` Bảng FTS5 + trigger (hoặc `LIKE` theo kết quả spike S6) + test tìm kiếm — FR-N-03
-- [ ] `S2-03` Danh sách ghi chú ảo hóa, ghim lên đầu, ô tìm kiếm — FR-N-03, FR-N-04
-- [ ] `S2-04` Màn sửa ghi chú, gắn tag, lọc theo tag — FR-N-01, FR-N-02
-- [ ] `S2-05` Lưu nhanh từ thẻ từ vựng (`source=vocab`, `sourceRef`) — FR-N-05
-- [ ] `S2-06` Nút đọc lại bằng TTS cho ghi chú có nguồn — FR-N-05
-- [ ] `S2-07` Kiểm tra 1.000 ghi chú: tìm kiếm dưới 1 giây — BRD §4.2
+- [~] `S2-01` Repository notes: thêm, sửa, xóa, ghim + test — FR-N-01, FR-N-04 _(23/11: code + test (`a6ab269`))_
+- [~] `S2-02` Bảng FTS5 + trigger (hoặc `LIKE` theo kết quả spike S6) + test tìm kiếm — FR-N-03 _(23/11: spike S6: FTS5 có, nhưng MVP dùng cột `search_text` bỏ dấu + `LIKE` (tìm không dấu); test (`a6ab269`))_
+- [~] `S2-03` Danh sách ghi chú ảo hóa, ghim lên đầu, ô tìm kiếm — FR-N-03, FR-N-04 _(23/11: code (`608a822`), FlatList)_
+- [~] `S2-04` Màn sửa ghi chú, gắn tag, lọc theo tag — FR-N-01, FR-N-02 _(23/11: code (`608a822`))_
+- [~] `S2-05` Lưu nhanh từ thẻ từ vựng (`source=vocab`, `sourceRef`) — FR-N-05 _(23/11: code + test `saveFromPhrase` (`608a822`))_
+- [~] `S2-06` Nút đọc lại bằng TTS cho ghi chú có nguồn — FR-N-05 _(23/11: code (`608a822`): dòng đầu ghi chú có nguồn là câu tiếng Anh)_
+- [~] `S2-07` Kiểm tra 1.000 ghi chú: tìm kiếm dưới 1 giây — BRD §4.2 _(23/11: test 1.000 ghi chú < 1 s trên better-sqlite3 (`a6ab269`); còn đo trên máy thật)_
 
 ### Tiến độ và nhắc học
 
-- [ ] `S2-08` Tính streak từ `daily_activity` (theo BRD §5.1) + test — FR-P-03
-- [ ] `S2-09` Đếm thời gian học (`studySeconds`) khi ở màn học/ôn/chat
-- [ ] `S2-10` Màn thống kê: streak, số cụm đã thuộc, số phút, số buổi nói — FR-P-03
-- [ ] `S2-11` Mục tiêu ngày (số cụm mới, số phút) trên trang chủ — FR-P-02
+- [~] `S2-08` Tính streak từ `daily_activity` (theo BRD §5.1) + test — FR-P-03 _(23/11: code + test (`a6ab269`))_
+- [~] `S2-09` Đếm thời gian học (`studySeconds`) khi ở màn học/ôn/chat _(23/11: code + test (`6101e8a`), đếm ở màn ôn; màn chat thêm ở Sprint 3a)_
+- [~] `S2-10` Màn thống kê: streak, số cụm đã thuộc, số phút, số buổi nói — FR-P-03 _(23/11: code + test (`6101e8a`), hiện trên Trang chủ)_
+- [~] `S2-11` Mục tiêu ngày (số cụm mới, số phút) trên trang chủ — FR-P-02 _(23/11: code (`6101e8a`), chọn trong Cài đặt)_
 - [ ] `S2-12` `services/notifications.ts`: nhắc học hằng ngày, đổi giờ, tắt — FR-P-04
 - [ ] `S2-13` Kiểm tra thông báo đúng giờ trên 2 máy (kể cả sau khi khởi động lại máy)
 - [ ] `S2-14` Build APK cuối sprint
@@ -430,6 +430,14 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 | `S1-04`         | Người duyệt 60 cụm (IPA, nghĩa, ví dụ) trong `packages/content/data/phrases/` |
 | `S1-01`…`S1-17` | Mở PR `eng_hungnd` → `main`, CI xanh, merge; thử trên máy thật (DoD)          |
 | `S1-18`         | APK + điện thoại, bật chế độ máy bay, học và ôn một phiên → **M1**            |
+
+**Sprint 2 (cùng ngày, sau khi Sprint 1 chạy trên máy ảo):**
+
+- Logic: streak, ghi chú (thêm/sửa/xóa/ghim, tag, nguồn), tìm kiếm không dấu, đếm thời gian học, thống kê (`a6ab269`, `6101e8a`).
+- Giao diện: tab Ghi chú, màn sửa, lưu nhanh từ thẻ cụm, Trang chủ có streak/phút/thống kê, Cài đặt chọn mục tiêu (`608a822`, `6101e8a`).
+- Còn: `S2-12` thông báo nhắc học (cần cài `expo-notifications`, build lại native), `S2-13` thử trên 2 máy, `S2-14` APK.
+
+**Thử trên máy ảo (APK release, 23/11):** mở app → migration + seed OK; học 10 cụm mới (1 thẻ Quên quay lại cuối phiên) → màn kết thúc đúng; Trang chủ cập nhật 10 thẻ cần ôn / 0 cụm mới; tab Học hiện 10/20. Phát hiện và sửa: phiên ôn chờ ~5 s vì engine TTS (`6581cdd`), thanh tab thiếu icon.
 
 ---
 
