@@ -42,3 +42,9 @@ export async function listEnglishVoices(): Promise<EnglishVoice[]> {
     return [];
   }
 }
+
+/** Máy có giọng tiếng Anh không; quá `timeoutMs` thì coi như không (không chặn giao diện). */
+export async function hasEnglishVoice(timeoutMs: number): Promise<boolean> {
+  const timeout = new Promise<boolean>((resolve) => setTimeout(() => resolve(false), timeoutMs));
+  return Promise.race([listEnglishVoices().then((v) => v.length > 0), timeout]);
+}

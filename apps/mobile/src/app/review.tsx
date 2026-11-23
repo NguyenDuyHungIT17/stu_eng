@@ -28,7 +28,7 @@ import {
 } from '@/features/review/session';
 import { listTopics } from '@/features/vocab/repository';
 import type { Rating } from '@/lib/fsrs';
-import { listEnglishVoices } from '@/services/tts';
+import { hasEnglishVoice } from '@/services/tts';
 import { useTts } from '@/services/use-tts';
 
 /** Phiên học/ôn (FR-V-03, FR-V-04a): thẻ đến hạn trước, cụm mới sau. Chạy hoàn toàn offline. */
@@ -41,8 +41,6 @@ export default function ReviewScreen() {
   useEffect(() => {
     let alive = true;
     void (async () => {
-      const canListen = (await listEnglishVoices()).length > 0;
-      if (!alive) return;
       try {
         const now = Date.now();
         const due = getDueCards(db, now).map((c) => c.phrase);
@@ -51,9 +49,13 @@ export default function ReviewScreen() {
           level: getLevel(db),
         });
         const poolSize = listTopics(db).reduce((n, t) => n + t.phraseCount, 0);
+        // Bài nghe chỉ dùng cho thẻ ôn. Engine TTS khởi động có thể mất vài giây:
+        // chỉ hỏi khi cần, và chờ tối đa 2 giây (hết giờ thì bỏ bài nghe trong phiên này).
+        const canListen = due.length > 0 && (await hasEnglishVoice(2000));
+        if (!alive) return;
         setSession(buildSession(due, fresh, { canListen, poolSize }));
       } catch (e) {
-        setError(String(e));
+        if (alive) setError(String(e));
       }
     })();
     return () => {
