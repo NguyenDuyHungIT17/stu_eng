@@ -17,7 +17,7 @@ _Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thi
 | ------- | ------------------ | ------------------------------ | ------- | -------- | -------------------- | --------------------------------------------------- |
 | 0       | Nền móng + spike   | 1,5 tuần                       | 18/11   |          | 10/24 (+11 đang làm) | Chờ secrets GitHub, PR vào main, keystore, máy thật |
 | 1       | Từ vựng và ôn tập  | 2 tuần                         | 23/11   |          | 0/18 (+17 code xong) | Chờ PR, duyệt nội dung, thử máy thật                |
-| 2       | Ghi chú và tiến độ | 1 tuần                         | 23/11   |          | 0/14 (+11 code xong) | Còn: thông báo nhắc học, máy thật                   |
+| 2       | Ghi chú và tiến độ | 1 tuần                         | 23/11   |          | 0/14 (+12 code xong) | Còn: thử thông báo trên 2 máy, APK                  |
 | 3a      | Chat bằng chữ      | 1,5 tuần                       |         |          | 0/18                 | Chưa bắt đầu                                        |
 | 3b      | Chat bằng giọng    | 1,5 tuần                       |         |          | 0/13                 | Chưa bắt đầu                                        |
 | 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17                 | Chưa bắt đầu                                        |
@@ -142,7 +142,7 @@ Mốc quan trọng:
 - [~] `S2-09` Đếm thời gian học (`studySeconds`) khi ở màn học/ôn/chat _(23/11: code + test (`6101e8a`), đếm ở màn ôn; màn chat thêm ở Sprint 3a)_
 - [~] `S2-10` Màn thống kê: streak, số cụm đã thuộc, số phút, số buổi nói — FR-P-03 _(23/11: code + test (`6101e8a`), hiện trên Trang chủ)_
 - [~] `S2-11` Mục tiêu ngày (số cụm mới, số phút) trên trang chủ — FR-P-02 _(23/11: code (`6101e8a`), chọn trong Cài đặt)_
-- [ ] `S2-12` `services/notifications.ts`: nhắc học hằng ngày, đổi giờ, tắt — FR-P-04
+- [~] `S2-12` `services/notifications.ts`: nhắc học hằng ngày, đổi giờ, tắt — FR-P-04 _(23/11: code + test (`12670fc`): lên lịch 7 ngày, bỏ hôm nay nếu đã học; chọn giờ/tắt trong Hồ sơ)_
 - [ ] `S2-13` Kiểm tra thông báo đúng giờ trên 2 máy (kể cả sau khi khởi động lại máy)
 - [ ] `S2-14` Build APK cuối sprint
 
@@ -289,6 +289,10 @@ Ghi mọi thay đổi so với BRD/Thiết kế kỹ thuật phát sinh khi làm
 | 23/11/2026 | Trình độ mặc định `B2` (mở toàn bộ nội dung) cho đến khi có bài xếp trình độ                                    | Mặc định A1 chỉ có vài cụm, người học hết bài ngay                          | Sửa khi làm onboarding (Sprint 4)     |
 | 23/11/2026 | Tiếp tục dùng StyleSheet, chưa thêm NativeWind                                                                  | Tránh thêm cấu hình Babel/Metro khi chưa thử được trên máy thật             | Xem lại ở Sprint 4                    |
 | 23/11/2026 | Phiên ôn: thẻ chấm "Quên" quay lại cuối phiên (tối đa 2 lần) dạng lật thẻ                                       | Củng cố ngay trong phiên, không kéo dài vô hạn                              | `features/review/session.ts`          |
+| 23/11/2026 | Giao diện kiểu lộ trình (chặng = chủ đề, bài = 5 câu), bài học từng bước; bỏ thanh tự chấm 4 mức, mức FSRS suy ra từ số lần sai (0 → Được, 1 → Khó, ≥2 → Quên) | Bạn yêu cầu giao diện thân thiện, bớt thứ thừa | Thay `session.ts`/`exercises.tsx` bằng `features/lesson/*`; mục tiêu "cụm mới/ngày" không còn chặn học |
+| 23/11/2026 | Thêm bài ghép câu (chạm ô chữ) và chọn câu tiếng Anh từ nghĩa | Hợp với câu giao tiếp dài | `ExerciseType` thêm `intro`, `choose_text`, `build_sentence` |
+| 23/11/2026 | Nội dung lên 18 chủ đề / 465 câu (phần lớn 6–15 từ), contentVersion 3 | Bạn yêu cầu thêm nhiều câu dài | **Bản nháp do AI soạn, cần người duyệt** |
+| 23/11/2026 | 4 tab: Học, Luyện nói, Sổ tay, Hồ sơ; trang spike ẩn (nhấn giữ số phiên bản) | Bớt thứ thừa trên màn chính | — |
 
 ## Nhật ký tuần
 
@@ -427,7 +431,7 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 
 | Mã              | Cần gì                                                                        |
 | --------------- | ----------------------------------------------------------------------------- |
-| `S1-04`         | Người duyệt 60 cụm (IPA, nghĩa, ví dụ) trong `packages/content/data/phrases/` |
+| `S1-04`         | Người duyệt 465 câu (IPA, nghĩa, ví dụ) trong `packages/content/data/phrases/` |
 | `S1-01`…`S1-17` | Mở PR `eng_hungnd` → `main`, CI xanh, merge; thử trên máy thật (DoD)          |
 | `S1-18`         | APK + điện thoại, bật chế độ máy bay, học và ôn một phiên → **M1**            |
 
@@ -438,6 +442,16 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 - Còn: `S2-12` thông báo nhắc học (cần cài `expo-notifications`, build lại native), `S2-13` thử trên 2 máy, `S2-14` APK.
 
 **Thử trên máy ảo (APK release, 23/11):** mở app → migration + seed OK; học 10 cụm mới (1 thẻ Quên quay lại cuối phiên) → màn kết thúc đúng; Trang chủ cập nhật 10 thẻ cần ôn / 0 cụm mới; tab Học hiện 10/20. Phát hiện và sửa: phiên ôn chờ ~5 s vì engine TTS (`6581cdd`), thanh tab thiếu icon.
+
+
+**Tối 23/11 – giao diện mới, nội dung, nhắc học (`7b00bee`, `12670fc`):**
+
+- Nội dung: 18 chủ đề, 465 câu (phần lớn 6–15 từ), contentVersion 3. Máy ảo đang có dữ liệu cũ nâng cấp lên bản 3 không mất tiến độ (10 câu đã học vẫn giữ).
+- Giao diện: Trang chủ là lộ trình (chặng = chủ đề, bài = 5 câu, nút tròn uốn lượn, bài xong màu vàng, bài hiện tại có nhãn BẮT ĐẦU); bài học từng bước có thanh tiến độ, nút KIỂM TRA, dải đúng/sai, câu sai quay lại cuối bài, màn kết thúc (độ chính xác, số câu, thời gian). 4 tab: Học, Luyện nói, Sổ tay, Hồ sơ.
+- `S2-12`: xin quyền thông báo lúc mở app, lên lịch 7 lời nhắc (`dumpsys alarm` thấy đủ lịch), đổi giờ/tắt trong Hồ sơ.
+- **Thử trên máy ảo (APK release):** học trọn bài 3 chặng 1 gồm giới thiệu, chọn nghĩa, ghép câu, nghe chọn, làm lại câu sai → màn kết thúc 67%; Trang chủ cập nhật 3 bài xong, bài 4 là bài hiện tại; Hồ sơ hiện thống kê đúng. Bài nghe đã hiện (bản sửa khởi động TTS sớm `34b1aa4` có tác dụng).
+- Sửa sau khi thử: icon tab bị cắt, tô xanh/đỏ đáp án sau khi kiểm tra, cố định thời gian ở màn kết thúc.
+- Còn: `S2-13` thử thông báo đúng giờ trên 2 máy thật (kể cả khởi động lại máy), `S2-14` APK, người duyệt 465 câu.
 
 ---
 

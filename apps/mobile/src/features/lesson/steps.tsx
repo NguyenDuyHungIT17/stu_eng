@@ -61,6 +61,7 @@ export function ChoiceStep({
   chosen,
   locked,
   onChoose,
+  correctId,
 }: {
   title: string;
   prompt: React.ReactNode;
@@ -69,8 +70,18 @@ export function ChoiceStep({
   chosen: string | null;
   locked: boolean;
   onChoose: (id: string) => void;
+  /** Sau khi kiểm tra: id đáp án đúng, để tô xanh đáp án đúng và đỏ đáp án sai. */
+  correctId?: string;
 }) {
   const c = useColors();
+  const tint = (id: string) =>
+    correctId === undefined
+      ? undefined
+      : id === correctId
+        ? c.ok
+        : id === chosen
+          ? c.danger
+          : undefined;
   return (
     <View style={styles.gap}>
       <Text style={[styles.heading, { color: c.text }]}>{title}</Text>
@@ -80,7 +91,8 @@ export function ChoiceStep({
           <View key={o.id} style={styles.optionRow}>
             <OutlineButton
               title={label(o)}
-              selected={chosen === o.id}
+              selected={chosen === o.id || (correctId !== undefined && o.id === correctId)}
+              color={tint(o.id)}
               disabled={locked}
               onPress={() => onChoose(o.id)}
             />

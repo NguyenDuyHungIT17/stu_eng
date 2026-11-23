@@ -47,6 +47,7 @@ export function LessonPlayer({
   const insets = useSafeAreaInsets();
   useStudyTimer(db);
   const startedAt = useRef(Date.now());
+  const finishedAt = useRef<number | null>(null);
   const [state, setState] = useState(initial);
   const [chosen, setChosen] = useState<string | null>(null);
   const [picked, setPicked] = useState<number[]>([]);
@@ -126,7 +127,8 @@ export function LessonPlayer({
   };
 
   if (done) {
-    const secs = Math.round((Date.now() - startedAt.current) / 1000);
+    finishedAt.current ??= Date.now();
+    const secs = Math.round((finishedAt.current - startedAt.current) / 1000);
     return (
       <Finish
         title={finishTitle}
@@ -180,6 +182,7 @@ export function LessonPlayer({
           chosen={chosen}
           locked={result !== null}
           onChoose={setChosen}
+          correctId={result ? step.phrase.id : undefined}
         />
       );
       break;
@@ -193,6 +196,7 @@ export function LessonPlayer({
           chosen={chosen}
           locked={result !== null}
           onChoose={setChosen}
+          correctId={result ? step.phrase.id : undefined}
         />
       );
       break;
@@ -206,6 +210,7 @@ export function LessonPlayer({
           chosen={chosen}
           locked={result !== null}
           onChoose={setChosen}
+          correctId={result ? step.phrase.id : undefined}
         />
       );
       break;

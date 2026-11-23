@@ -75,7 +75,7 @@ export function OutlineButton({
         {
           borderColor: selected ? tint : c.border,
           borderBottomColor: selected ? tint : c.borderDark,
-          backgroundColor: selected ? c.selectedBg : c.card,
+          backgroundColor: selected ? (color ? `${tint}22` : c.selectedBg) : c.card,
         },
         pressed ? styles.pressed : null,
       ]}
