@@ -78,5 +78,125 @@
     "example": "It was great talking to you. Let's keep in touch.",
     "register": "neutral",
     "level": "A2"
+  },
+  {
+    "id": "good-morning",
+    "topicId": "greetings",
+    "text": "Good morning!",
+    "ipa": "/ɡʊd ˈmɔːrnɪŋ/",
+    "meaningVi": "Chào buổi sáng!",
+    "example": "Good morning! Did you sleep well?",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "how-are-you",
+    "topicId": "greetings",
+    "text": "How are you?",
+    "ipa": "/haʊ ɑːr juː/",
+    "meaningVi": "Bạn có khỏe không?",
+    "example": "Hi Anna, how are you?",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "im-fine-thanks",
+    "topicId": "greetings",
+    "text": "I'm fine, thanks. And you?",
+    "ipa": "/aɪm faɪn θæŋks ænd juː/",
+    "meaningVi": "Tôi khỏe, cảm ơn. Còn bạn?",
+    "example": "\"How are you?\" \"I'm fine, thanks. And you?\"",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "my-name-is",
+    "topicId": "greetings",
+    "text": "My name is...",
+    "ipa": "/maɪ neɪm ɪz/",
+    "meaningVi": "Tên tôi là...",
+    "example": "Hello, my name is Minh.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "see-you-tomorrow",
+    "topicId": "greetings",
+    "text": "See you tomorrow!",
+    "ipa": "/siː juː təˈmɑːroʊ/",
+    "meaningVi": "Hẹn gặp lại ngày mai!",
+    "example": "I have to go now. See you tomorrow!",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "have-a-nice-day",
+    "topicId": "greetings",
+    "text": "Have a nice day!",
+    "ipa": "/hæv ə naɪs deɪ/",
+    "meaningVi": "Chúc một ngày tốt lành!",
+    "example": "Thanks for your help. Have a nice day!",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "whats-up",
+    "topicId": "greetings",
+    "text": "What's up?",
+    "ipa": "/wʌts ʌp/",
+    "meaningVi": "Có gì mới không? / Sao rồi?",
+    "example": "Hey Ben, what's up?",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "how-was-your-weekend",
+    "topicId": "greetings",
+    "text": "How was your weekend?",
+    "ipa": "/haʊ wʌz jʊr ˈwiːkend/",
+    "meaningVi": "Cuối tuần của bạn thế nào?",
+    "example": "Morning! How was your weekend?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "pleased-to-meet-you",
+    "topicId": "greetings",
+    "text": "Pleased to meet you.",
+    "ipa": "/pliːzd tə miːt juː/",
+    "meaningVi": "Hân hạnh được gặp anh/chị.",
+    "example": "Pleased to meet you, Mr. Brown.",
+    "register": "formal",
+    "level": "A2"
+  },
+  {
+    "id": "what-brings-you-here",
+    "topicId": "greetings",
+    "text": "What brings you here?",
+    "ipa": "/wʌt brɪŋz juː hɪr/",
+    "meaningVi": "Điều gì đưa bạn đến đây?",
+    "example": "Hi, I'm Tom. What brings you here?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "take-care",
+    "topicId": "greetings",
+    "text": "Take care!",
+    "ipa": "/teɪk ker/",
+    "meaningVi": "Bảo trọng nhé! / Giữ gìn sức khỏe!",
+    "example": "Bye for now, take care!",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "say-hi-to",
+    "topicId": "greetings",
+    "text": "Say hi to... for me.",
+    "ipa": "/seɪ haɪ tə ... fɔːr miː/",
+    "meaningVi": "Gửi lời chào của tôi tới...",
+    "example": "See you! Say hi to your family for me.",
+    "register": "casual",
+    "level": "A2"
   }
 ]

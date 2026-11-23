@@ -78,5 +78,125 @@
     "example": "Here's twenty. Keep the change.",
     "register": "casual",
     "level": "A2"
+  },
+  {
+    "id": "do-you-have-a-reservation",
+    "topicId": "restaurant",
+    "text": "Do you have a reservation?",
+    "ipa": "/duː juː hæv ə ˌrezərˈveɪʃn/",
+    "meaningVi": "Anh/chị có đặt bàn trước không?",
+    "example": "Good evening. Do you have a reservation?",
+    "register": "formal",
+    "level": "A2"
+  },
+  {
+    "id": "id-like-to-order",
+    "topicId": "restaurant",
+    "text": "I'd like to order, please.",
+    "ipa": "/aɪd laɪk tə ˈɔːrdər pliːz/",
+    "meaningVi": "Tôi muốn gọi món.",
+    "example": "Excuse me, I'd like to order, please.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "can-i-have-some-water",
+    "topicId": "restaurant",
+    "text": "Can I have some water?",
+    "ipa": "/kæn aɪ hæv sʌm ˈwɔːtər/",
+    "meaningVi": "Cho tôi xin ít nước được không?",
+    "example": "Can I have some water, please?",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "a-coffee-please",
+    "topicId": "restaurant",
+    "text": "A coffee, please.",
+    "ipa": "/ə ˈkɔːfi pliːz/",
+    "meaningVi": "Cho tôi một ly cà phê.",
+    "example": "Hi! A coffee, please. With milk.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "how-much-is-it",
+    "topicId": "restaurant",
+    "text": "How much is it?",
+    "ipa": "/haʊ mʌtʃ ɪz ɪt/",
+    "meaningVi": "Cái này bao nhiêu tiền?",
+    "example": "This sandwich looks good. How much is it?",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "is-this-spicy",
+    "topicId": "restaurant",
+    "text": "Is this spicy?",
+    "ipa": "/ɪz ðɪs ˈspaɪsi/",
+    "meaningVi": "Món này có cay không?",
+    "example": "Is this soup spicy? I can't eat spicy food.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "can-i-pay-by-card",
+    "topicId": "restaurant",
+    "text": "Can I pay by card?",
+    "ipa": "/kæn aɪ peɪ baɪ kɑːrd/",
+    "meaningVi": "Tôi trả bằng thẻ được không?",
+    "example": "Can I pay by card, or cash only?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "no-ice-please",
+    "topicId": "restaurant",
+    "text": "No ice, please.",
+    "ipa": "/noʊ aɪs pliːz/",
+    "meaningVi": "Không đá nhé.",
+    "example": "An orange juice, no ice, please.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "this-isnt-what-i-ordered",
+    "topicId": "restaurant",
+    "text": "This isn't what I ordered.",
+    "ipa": "/ðɪs ˈɪznt wʌt aɪ ˈɔːrdərd/",
+    "meaningVi": "Đây không phải món tôi gọi.",
+    "example": "Excuse me, this isn't what I ordered.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "could-we-split-the-bill",
+    "topicId": "restaurant",
+    "text": "Could we split the bill?",
+    "ipa": "/kʊd wiː splɪt ðə bɪl/",
+    "meaningVi": "Chúng tôi chia hóa đơn được không?",
+    "example": "Could we split the bill, please? Three ways.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "it-was-delicious",
+    "topicId": "restaurant",
+    "text": "It was delicious.",
+    "ipa": "/ɪt wʌz dɪˈlɪʃəs/",
+    "meaningVi": "Món ăn rất ngon.",
+    "example": "Thank you, it was delicious!",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "can-i-get-a-box",
+    "topicId": "restaurant",
+    "text": "Can I get a box for this?",
+    "ipa": "/kæn aɪ ɡet ə bɑːks fɔːr ðɪs/",
+    "meaningVi": "Cho tôi hộp để mang phần này về nhé?",
+    "example": "I'm full. Can I get a box for this?",
+    "register": "casual",
+    "level": "A2"
   }
 ]

@@ -78,5 +78,125 @@
     "example": "Sorry to interrupt, but we're running out of time.",
     "register": "formal",
     "level": "B1"
+  },
+  {
+    "id": "thanks-for-joining",
+    "topicId": "meetings",
+    "text": "Thanks for joining.",
+    "ipa": "/θæŋks fɔːr ˈdʒɔɪnɪŋ/",
+    "meaningVi": "Cảm ơn mọi người đã tham gia.",
+    "example": "Hi everyone, thanks for joining.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "can-everyone-hear-me",
+    "topicId": "meetings",
+    "text": "Can everyone hear me?",
+    "ipa": "/kæn ˈevriwʌn hɪr miː/",
+    "meaningVi": "Mọi người nghe rõ tôi không?",
+    "example": "Can everyone hear me? Great, let's start.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "youre-on-mute",
+    "topicId": "meetings",
+    "text": "You're on mute.",
+    "ipa": "/jʊr ɑːn mjuːt/",
+    "meaningVi": "Bạn đang tắt mic.",
+    "example": "Sorry, Linh, you're on mute.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "could-you-repeat-that",
+    "topicId": "meetings",
+    "text": "Could you repeat that, please?",
+    "ipa": "/kʊd juː rɪˈpiːt ðæt pliːz/",
+    "meaningVi": "Bạn nhắc lại được không?",
+    "example": "Sorry, the line is bad. Could you repeat that, please?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "i-agree-with",
+    "topicId": "meetings",
+    "text": "I agree with...",
+    "ipa": "/aɪ əˈɡriː wɪð/",
+    "meaningVi": "Tôi đồng ý với...",
+    "example": "I agree with Nam. We should test it first.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "im-not-sure-about-that",
+    "topicId": "meetings",
+    "text": "I'm not sure about that.",
+    "ipa": "/aɪm nɑːt ʃʊr əˈbaʊt ðæt/",
+    "meaningVi": "Tôi không chắc về điều đó.",
+    "example": "Hmm, I'm not sure about that. It may take longer.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "what-do-you-think",
+    "topicId": "meetings",
+    "text": "What do you think?",
+    "ipa": "/wʌt duː juː θɪŋk/",
+    "meaningVi": "Bạn nghĩ sao?",
+    "example": "That's my plan. What do you think?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "lets-move-on",
+    "topicId": "meetings",
+    "text": "Let's move on to the next item.",
+    "ipa": "/lets muːv ɑːn tə ðə nekst ˈaɪtəm/",
+    "meaningVi": "Chúng ta chuyển sang mục tiếp theo.",
+    "example": "OK, let's move on to the next item: the budget.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "whats-the-deadline",
+    "topicId": "meetings",
+    "text": "What's the deadline?",
+    "ipa": "/wʌts ðə ˈdedlaɪn/",
+    "meaningVi": "Hạn chót là khi nào?",
+    "example": "Sounds good. What's the deadline?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "ill-get-back-to-you",
+    "topicId": "meetings",
+    "text": "I'll get back to you on that.",
+    "ipa": "/aɪl ɡet bæk tə juː ɑːn ðæt/",
+    "meaningVi": "Tôi sẽ trả lời bạn về việc đó sau.",
+    "example": "Good question. I'll get back to you on that.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "does-that-make-sense",
+    "topicId": "meetings",
+    "text": "Does that make sense?",
+    "ipa": "/dʌz ðæt meɪk sens/",
+    "meaningVi": "Như vậy có dễ hiểu không?",
+    "example": "We release on Friday, then fix bugs. Does that make sense?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "lets-wrap-up",
+    "topicId": "meetings",
+    "text": "Let's wrap up.",
+    "ipa": "/lets ræp ʌp/",
+    "meaningVi": "Chúng ta kết thúc nhé.",
+    "example": "We're almost out of time. Let's wrap up.",
+    "register": "casual",
+    "level": "B1"
   }
 ]
