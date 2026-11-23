@@ -44,10 +44,10 @@ export default function ProfileScreen() {
 
   const tiles = stats
     ? [
-        { icon: '🔥', value: stats.streak.current, label: 'Ngày liên tiếp', color: c.orange },
+        { icon: '🔥', value: stats.streak.current, label: 'Ngày liên tiếp', color: c.accent },
         { icon: '⭐', value: stats.mastered, label: 'Câu đã thuộc', color: c.gold },
         { icon: '📚', value: stats.started, label: 'Câu đã học', color: c.primary },
-        { icon: '⏱', value: stats.totalMinutes, label: 'Phút đã học', color: c.blue },
+        { icon: '⏱', value: stats.totalMinutes, label: 'Phút đã học', color: c.primary },
       ]
     : [];
 

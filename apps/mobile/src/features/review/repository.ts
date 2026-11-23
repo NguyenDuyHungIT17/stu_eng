@@ -15,7 +15,11 @@ export type ExerciseType =
   | 'choose_meaning'
   | 'choose_text'
   | 'listen_choose'
-  | 'build_sentence';
+  | 'build_sentence'
+  | 'fill_blank'
+  | 'choose_reply'
+  | 'scene'
+  | 'listen_all';
 export type DueCard = { phrase: Phrase; card: CardState };
 
 const visible = and(isNull(phrases.deletedAt), isNull(topics.deletedAt));

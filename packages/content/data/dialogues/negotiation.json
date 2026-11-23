@@ -1,0 +1,337 @@
+[
+  {
+    "id": "ng-supplier-price",
+    "topicId": "negotiation",
+    "title": "Thương lượng giá với nhà cung cấp",
+    "level": "B2",
+    "situationVi": "Bạn (Minh) là chuyên viên mua hàng của một nhà máy may. Bạn gọi video cho đại diện nhà cung cấp vải ở Thái Lan để đàm phán giá cho đơn hàng lớn.",
+    "speakers": {
+      "a": {
+        "name": "Somchai",
+        "roleVi": "Đại diện bán hàng nhà cung cấp"
+      },
+      "b": {
+        "name": "Minh",
+        "roleVi": "Bạn, chuyên viên mua hàng"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Thanks for the quote, Somchai. To be honest, the price is higher than we expected.",
+        "meaningVi": "Cảm ơn anh đã gửi báo giá, Somchai. Thành thật mà nói, giá cao hơn chúng tôi dự kiến.",
+        "blank": "higher than we expected"
+      },
+      {
+        "speaker": "a",
+        "text": "I understand, but our quality is much better than cheaper suppliers.",
+        "meaningVi": "Tôi hiểu, nhưng chất lượng của chúng tôi tốt hơn nhiều so với các nhà cung cấp giá rẻ.",
+        "blank": "our quality is much better"
+      },
+      {
+        "speaker": "b",
+        "text": "We agree on quality. But we're ordering twenty thousand meters this time.",
+        "meaningVi": "Chúng tôi đồng ý về chất lượng. Nhưng lần này chúng tôi đặt hai mươi nghìn mét.",
+        "blank": "We agree on quality"
+      },
+      {
+        "speaker": "b",
+        "text": "Is there any room for a volume discount?",
+        "meaningVi": "Có thể giảm giá theo số lượng không anh?",
+        "blank": "Is there any room for",
+        "noteVi": "\"Is there any room for...\" = có thể linh động về...; cách hỏi mềm mỏng khi đàm phán."
+      },
+      {
+        "speaker": "a",
+        "text": "We could do five percent, but that's really our limit.",
+        "meaningVi": "Chúng tôi có thể giảm năm phần trăm, nhưng đó thật sự là giới hạn.",
+        "blank": "that's really our limit"
+      },
+      {
+        "speaker": "b",
+        "text": "Could you meet us halfway? We were hoping for ten.",
+        "meaningVi": "Anh có thể nhượng bộ một nửa được không? Chúng tôi mong được mười phần trăm.",
+        "blank": "meet us halfway",
+        "noteVi": "\"Meet someone halfway\" = mỗi bên nhường một nửa."
+      },
+      {
+        "speaker": "a",
+        "text": "What if you paid thirty percent upfront?",
+        "meaningVi": "Nếu bên anh trả trước ba mươi phần trăm thì sao?",
+        "blank": "What if you paid"
+      },
+      {
+        "speaker": "a",
+        "text": "Then I could offer eight percent.",
+        "meaningVi": "Khi đó tôi có thể giảm tám phần trăm."
+      },
+      {
+        "speaker": "b",
+        "text": "That could work. Let me run it by my finance manager first.",
+        "meaningVi": "Có thể được. Để tôi trao đổi với trưởng phòng tài chính trước.",
+        "blank": "Let me run it by",
+        "noteVi": "\"Run something by someone\" = hỏi ý kiến ai đó trước khi quyết định."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. I'll hold this offer until Friday.",
+        "meaningVi": "Được. Tôi sẽ giữ mức giá này đến thứ Sáu.",
+        "blank": "hold this offer until Friday"
+      }
+    ]
+  },
+  {
+    "id": "ng-client-deadline",
+    "topicId": "negotiation",
+    "title": "Thương lượng thời hạn với khách hàng",
+    "level": "B2",
+    "situationVi": "Khách hàng Úc muốn đẩy sớm ngày bàn giao website. Bạn (Thảo), quản lý dự án ở công ty phần mềm Đà Nẵng, gọi điện để thương lượng một phương án khả thi.",
+    "speakers": {
+      "a": {
+        "name": "Chris",
+        "roleVi": "Khách hàng, giám đốc marketing"
+      },
+      "b": {
+        "name": "Thảo",
+        "roleVi": "Bạn, quản lý dự án"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Thảo, we really need the site live by the fifteenth, not the thirtieth.",
+        "meaningVi": "Thảo, chúng tôi thật sự cần website chạy trước ngày mười lăm, không phải ba mươi.",
+        "blank": "we really need the site live"
+      },
+      {
+        "speaker": "b",
+        "text": "I see. Can I ask what's driving the earlier date?",
+        "meaningVi": "Tôi hiểu. Cho tôi hỏi lý do gì khiến anh cần ngày sớm hơn?",
+        "blank": "what's driving the earlier date",
+        "noteVi": "Hỏi lý do thật của đối phương giúp tìm phương án đôi bên cùng có lợi."
+      },
+      {
+        "speaker": "a",
+        "text": "We've got a trade show on the sixteenth, and we want to promote it there.",
+        "meaningVi": "Chúng tôi có hội chợ thương mại vào ngày mười sáu và muốn quảng bá website ở đó.",
+        "blank": "We've got a trade show"
+      },
+      {
+        "speaker": "b",
+        "text": "That makes sense. Delivering everything by then isn't realistic, though.",
+        "meaningVi": "Hợp lý ạ. Tuy nhiên, bàn giao toàn bộ trước ngày đó là không thực tế.",
+        "blank": "isn't realistic, though"
+      },
+      {
+        "speaker": "b",
+        "text": "What if we launched the core pages first and the rest later?",
+        "meaningVi": "Nếu chúng tôi ra mắt các trang chính trước và phần còn lại sau thì sao?",
+        "blank": "What if we launched"
+      },
+      {
+        "speaker": "a",
+        "text": "Which pages would be ready?",
+        "meaningVi": "Những trang nào sẽ sẵn sàng?"
+      },
+      {
+        "speaker": "b",
+        "text": "The homepage, product pages, and contact form. That covers what visitors need.",
+        "meaningVi": "Trang chủ, trang sản phẩm và biểu mẫu liên hệ. Đủ những gì khách truy cập cần.",
+        "blank": "That covers what visitors need"
+      },
+      {
+        "speaker": "a",
+        "text": "Okay, but would that cost us extra?",
+        "meaningVi": "Được, nhưng như vậy có tốn thêm chi phí không?",
+        "blank": "would that cost us extra"
+      },
+      {
+        "speaker": "b",
+        "text": "No extra cost, as long as we get your content by Friday.",
+        "meaningVi": "Không tốn thêm, miễn là chúng tôi nhận được nội dung từ anh trước thứ Sáu.",
+        "blank": "as long as we get your content",
+        "noteVi": "\"As long as\" = miễn là; dùng để đặt điều kiện khi nhượng bộ."
+      },
+      {
+        "speaker": "a",
+        "text": "Deal. I'll make sure my team sends it over.",
+        "meaningVi": "Chốt vậy. Tôi sẽ bảo nhóm gửi qua.",
+        "blank": "I'll make sure my team sends it over"
+      },
+      {
+        "speaker": "b",
+        "text": "Great. I'll send you an updated timeline this afternoon.",
+        "meaningVi": "Tuyệt. Chiều nay tôi sẽ gửi anh tiến độ cập nhật.",
+        "blank": "an updated timeline"
+      }
+    ]
+  },
+  {
+    "id": "ng-salary-raise",
+    "topicId": "negotiation",
+    "title": "Đề nghị tăng lương",
+    "level": "B2",
+    "situationVi": "Sau đợt đánh giá năm, bạn (Nam) hẹn gặp riêng quản lý trực tiếp, chị Julia, để đề nghị tăng lương dựa trên kết quả công việc.",
+    "speakers": {
+      "a": {
+        "name": "Julia",
+        "roleVi": "Quản lý trực tiếp"
+      },
+      "b": {
+        "name": "Nam",
+        "roleVi": "Bạn, kỹ sư phần mềm"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Thanks for making time, Julia. I'd like to talk about my compensation.",
+        "meaningVi": "Cảm ơn chị đã dành thời gian, chị Julia. Em muốn trao đổi về chế độ lương thưởng của mình.",
+        "blank": "I'd like to talk about my compensation",
+        "noteVi": "\"Compensation\" trang trọng hơn \"salary\", bao gồm cả lương và thưởng."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure, go ahead. What's on your mind?",
+        "meaningVi": "Được, em cứ nói. Em đang nghĩ gì vậy?",
+        "blank": "What's on your mind"
+      },
+      {
+        "speaker": "b",
+        "text": "Over the past year, I've taken on the payments project and mentored two juniors.",
+        "meaningVi": "Trong năm qua, em đã đảm nhận dự án thanh toán và kèm cặp hai bạn mới.",
+        "blank": "I've taken on"
+      },
+      {
+        "speaker": "b",
+        "text": "Given that, I think a fifteen percent raise would be fair.",
+        "meaningVi": "Từ đó, em nghĩ mức tăng mười lăm phần trăm là hợp lý.",
+        "blank": "Given that, I think",
+        "noteVi": "Đưa ra thành tích trước, sau đó mới nêu con số."
+      },
+      {
+        "speaker": "a",
+        "text": "I appreciate your work, Nam. But fifteen is above our usual range.",
+        "meaningVi": "Chị đánh giá cao công việc của em, Nam. Nhưng mười lăm phần trăm vượt khung thông thường.",
+        "blank": "above our usual range"
+      },
+      {
+        "speaker": "a",
+        "text": "The standard increase this year is around six percent.",
+        "meaningVi": "Mức tăng tiêu chuẩn năm nay là khoảng sáu phần trăm."
+      },
+      {
+        "speaker": "b",
+        "text": "I understand. I checked the market, and similar roles pay quite a bit more.",
+        "meaningVi": "Em hiểu. Em đã tìm hiểu thị trường, và các vị trí tương tự được trả cao hơn khá nhiều.",
+        "blank": "similar roles pay quite a bit more"
+      },
+      {
+        "speaker": "b",
+        "text": "Would you be open to a smaller raise now and a review in six months?",
+        "meaningVi": "Chị có cân nhắc mức tăng thấp hơn bây giờ và xem xét lại sau sáu tháng không?",
+        "blank": "Would you be open to"
+      },
+      {
+        "speaker": "a",
+        "text": "That's reasonable. I could push for ten percent now.",
+        "meaningVi": "Hợp lý đấy. Chị có thể đề xuất mười phần trăm ngay bây giờ.",
+        "blank": "I could push for",
+        "noteVi": "\"Push for\" = cố gắng đề xuất, vận động cho điều gì."
+      },
+      {
+        "speaker": "b",
+        "text": "That sounds fair. Could we put the review date in writing?",
+        "meaningVi": "Nghe hợp lý ạ. Mình có thể ghi ngày xem xét lại bằng văn bản không chị?",
+        "blank": "put the review date in writing"
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. I'll confirm everything by email after I talk to HR.",
+        "meaningVi": "Tất nhiên. Chị sẽ xác nhận mọi thứ qua email sau khi trao đổi với nhân sự.",
+        "blank": "confirm everything by email"
+      }
+    ]
+  },
+  {
+    "id": "ng-closing-the-deal",
+    "topicId": "negotiation",
+    "title": "Chốt hợp đồng",
+    "level": "B2",
+    "situationVi": "Sau nhiều vòng đàm phán, bạn (Mai), giám đốc kinh doanh của một công ty phân phối, họp lần cuối với đối tác Hàn Quốc để chốt hợp đồng độc quyền.",
+    "speakers": {
+      "a": {
+        "name": "Mr. Park",
+        "roleVi": "Giám đốc phát triển kinh doanh"
+      },
+      "b": {
+        "name": "Mai",
+        "roleVi": "Bạn, giám đốc kinh doanh"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "I think we're very close now. Shall we go over the final terms?",
+        "meaningVi": "Tôi nghĩ chúng ta đã rất gần thỏa thuận rồi. Chúng ta xem lại các điều khoản cuối nhé?",
+        "blank": "go over the final terms"
+      },
+      {
+        "speaker": "a",
+        "text": "Yes. We've agreed on price and a two-year exclusive contract.",
+        "meaningVi": "Vâng. Chúng ta đã thống nhất giá và hợp đồng độc quyền hai năm.",
+        "blank": "We've agreed on price"
+      },
+      {
+        "speaker": "b",
+        "text": "Right. The only open point is the payment terms.",
+        "meaningVi": "Đúng vậy. Điểm duy nhất còn bỏ ngỏ là điều khoản thanh toán.",
+        "blank": "The only open point is",
+        "noteVi": "\"Open point\" = vấn đề chưa thống nhất."
+      },
+      {
+        "speaker": "a",
+        "text": "We'd prefer payment within thirty days of delivery.",
+        "meaningVi": "Chúng tôi muốn được thanh toán trong vòng ba mươi ngày sau khi giao hàng.",
+        "blank": "within thirty days of delivery"
+      },
+      {
+        "speaker": "b",
+        "text": "We usually work on sixty days. Could we settle on forty-five?",
+        "meaningVi": "Chúng tôi thường áp dụng sáu mươi ngày. Ta chốt ở bốn mươi lăm ngày được không?",
+        "blank": "Could we settle on",
+        "noteVi": "\"Settle on\" = thống nhất chọn một phương án."
+      },
+      {
+        "speaker": "a",
+        "text": "Forty-five is fine, if you commit to a minimum order each quarter.",
+        "meaningVi": "Bốn mươi lăm ngày cũng được, nếu bên chị cam kết số lượng đặt hàng tối thiểu mỗi quý.",
+        "blank": "commit to a minimum order"
+      },
+      {
+        "speaker": "b",
+        "text": "We can live with that. So, do we have a deal?",
+        "meaningVi": "Chúng tôi chấp nhận được. Vậy chúng ta thống nhất chứ?",
+        "blank": "do we have a deal"
+      },
+      {
+        "speaker": "a",
+        "text": "We have a deal. It's been a pleasure working this out with you.",
+        "meaningVi": "Thống nhất. Rất vui được cùng chị đi đến thỏa thuận này.",
+        "blank": "It's been a pleasure"
+      },
+      {
+        "speaker": "b",
+        "text": "Likewise. Our legal team will send the draft contract by Wednesday.",
+        "meaningVi": "Tôi cũng vậy. Bộ phận pháp lý của chúng tôi sẽ gửi bản thảo hợp đồng trước thứ Tư.",
+        "blank": "send the draft contract"
+      },
+      {
+        "speaker": "a",
+        "text": "Great. We'll review it and aim to sign next week.",
+        "meaningVi": "Tuyệt. Chúng tôi sẽ xem xét và cố gắng ký vào tuần sau.",
+        "blank": "aim to sign next week"
+      }
+    ]
+  }
+]

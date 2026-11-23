@@ -37,7 +37,10 @@ export default function NotesScreen() {
           placeholder="Tìm ghi chú (không cần dấu)…"
           placeholderTextColor={c.muted}
           accessibilityLabel="Tìm ghi chú"
-          style={[styles.search, { color: c.text, backgroundColor: c.card, borderColor: c.border }]}
+          style={[
+            styles.search,
+            { color: c.text, backgroundColor: c.surface, borderColor: c.border },
+          ]}
           clearButtonMode="while-editing"
         />
         {data && data.tags.length > 0 ? (
@@ -96,7 +99,7 @@ function NoteRow({ note }: { note: Note }) {
           <Text style={{ color: c.muted, fontSize: 13 }}>{SOURCE_LABEL[note.source]}</Text>
         ) : null}
         {note.tags.map((t) => (
-          <Text key={t} style={{ color: c.blue, fontSize: 13, fontWeight: '700' }}>
+          <Text key={t} style={{ color: c.primary, fontSize: 13, fontWeight: '700' }}>
             #{t}
           </Text>
         ))}
@@ -123,12 +126,12 @@ function Chip({
       style={[
         styles.chip,
         {
-          borderColor: selected ? c.blue : c.border,
-          backgroundColor: selected ? c.selectedBg : c.card,
+          borderColor: selected ? c.primary : c.border,
+          backgroundColor: selected ? c.primarySoft : c.surface,
         },
       ]}
     >
-      <Text style={{ color: selected ? c.blue : c.text, fontWeight: '700' }}>{label}</Text>
+      <Text style={{ color: selected ? c.primary : c.text, fontWeight: '700' }}>{label}</Text>
     </Pressable>
   );
 }

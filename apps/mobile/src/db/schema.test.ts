@@ -14,6 +14,7 @@ describe('migration', () => {
       'chat_messages',
       'chat_sessions',
       'daily_activity',
+      'dialogues',
       'notes',
       'phrases',
       'review_cards',

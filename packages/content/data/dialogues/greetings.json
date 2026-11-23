@@ -1,0 +1,318 @@
+[
+  {
+    "id": "gr-new-colleague",
+    "topicId": "greetings",
+    "title": "Chào đồng nghiệp mới",
+    "level": "A1",
+    "situationVi": "Ngày đầu đi làm ở công ty có nhiều người nước ngoài. Bạn (Lan) gặp Tom, đồng nghiệp người Úc, ở máy pha cà phê buổi sáng.",
+    "speakers": {
+      "a": {
+        "name": "Tom",
+        "roleVi": "Đồng nghiệp người Úc"
+      },
+      "b": {
+        "name": "Lan",
+        "roleVi": "Bạn, nhân viên mới"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hi there! I don't think we've met. I'm Tom.",
+        "meaningVi": "Chào bạn! Hình như mình chưa gặp nhau. Mình là Tom.",
+        "blank": "I don't think we've met",
+        "noteVi": "Cách mở lời tự nhiên khi gặp người lạ ở nơi làm việc."
+      },
+      {
+        "speaker": "b",
+        "text": "Hi Tom, nice to meet you. I'm Lan. It's my first day today.",
+        "meaningVi": "Chào Tom, rất vui được gặp anh. Mình là Lan. Hôm nay là ngày đầu tiên của mình.",
+        "blank": "It's my first day"
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, welcome aboard! Which team are you on?",
+        "meaningVi": "Ồ, chào mừng bạn! Bạn ở nhóm nào?",
+        "blank": "Which team are you on",
+        "noteVi": "\"Welcome aboard\" = chào mừng thành viên mới."
+      },
+      {
+        "speaker": "b",
+        "text": "I'm on the marketing team. How about you?",
+        "meaningVi": "Mình ở nhóm marketing. Còn anh?",
+        "blank": "How about you"
+      },
+      {
+        "speaker": "a",
+        "text": "I'm in sales, just next door. Let me know if you need anything.",
+        "meaningVi": "Mình ở bộ phận bán hàng, ngay phòng bên cạnh. Cần gì cứ nói với mình nhé.",
+        "blank": "Let me know if you need anything"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks, that's really kind of you.",
+        "meaningVi": "Cảm ơn anh, anh tốt quá.",
+        "blank": "that's really kind of you"
+      },
+      {
+        "speaker": "a",
+        "text": "No problem. See you around, Lan!",
+        "meaningVi": "Không có gì. Gặp lại sau nhé, Lan!",
+        "blank": "See you around"
+      },
+      {
+        "speaker": "b",
+        "text": "See you!",
+        "meaningVi": "Hẹn gặp lại!"
+      }
+    ]
+  },
+  {
+    "id": "gr-airport-pickup",
+    "topicId": "greetings",
+    "title": "Đón khách ở sân bay",
+    "level": "A1",
+    "situationVi": "Công ty cử bạn (Minh) ra sân bay Nội Bài đón David, khách hàng người Anh lần đầu sang Việt Nam. Hai người chưa gặp nhau bao giờ, chỉ trao đổi qua email.",
+    "speakers": {
+      "a": {
+        "name": "David",
+        "roleVi": "Khách hàng người Anh"
+      },
+      "b": {
+        "name": "Minh",
+        "roleVi": "Bạn, nhân viên ra đón khách"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Excuse me, are you Mr. David Clark?",
+        "meaningVi": "Xin lỗi, anh có phải là anh David Clark không ạ?",
+        "blank": "Excuse me, are you",
+        "noteVi": "Dùng khi đón người lạ: hỏi lịch sự để xác nhận đúng người."
+      },
+      {
+        "speaker": "a",
+        "text": "Yes, that's me. You must be Minh.",
+        "meaningVi": "Vâng, là tôi đây. Chắc anh là Minh nhỉ.",
+        "blank": "You must be",
+        "noteVi": "\"You must be...\" = chắc hẳn bạn là..., dùng khi đoán tên người mình đang chờ gặp."
+      },
+      {
+        "speaker": "b",
+        "text": "That's right. Welcome to Hanoi! It's great to finally meet you.",
+        "meaningVi": "Đúng rồi ạ. Chào mừng anh đến Hà Nội! Rất vui vì cuối cùng cũng được gặp anh.",
+        "blank": "It's great to finally meet you",
+        "noteVi": "Thêm \"finally\" khi trước đó đã liên lạc qua email/điện thoại nhưng chưa gặp mặt."
+      },
+      {
+        "speaker": "a",
+        "text": "Likewise. Thanks for coming to pick me up.",
+        "meaningVi": "Tôi cũng vậy. Cảm ơn anh đã ra đón tôi.",
+        "blank": "Thanks for coming to pick me up"
+      },
+      {
+        "speaker": "b",
+        "text": "My pleasure. How was your flight?",
+        "meaningVi": "Không có gì ạ. Chuyến bay của anh thế nào?",
+        "blank": "How was your flight"
+      },
+      {
+        "speaker": "a",
+        "text": "Long, but not too bad. I slept most of the way.",
+        "meaningVi": "Dài, nhưng không tệ lắm. Tôi ngủ gần như suốt chuyến."
+      },
+      {
+        "speaker": "b",
+        "text": "Good to hear. Can I help you with your bags?",
+        "meaningVi": "Vậy thì tốt quá. Để tôi xách hành lý giúp anh nhé?",
+        "blank": "Can I help you with"
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, that's okay, I've got it. Thanks anyway.",
+        "meaningVi": "Ồ, không sao đâu, tôi tự xách được. Dù sao cũng cảm ơn anh."
+      },
+      {
+        "speaker": "b",
+        "text": "No problem. The car is just outside. This way, please.",
+        "meaningVi": "Dạ vâng. Xe đang đợi ngay bên ngoài. Mời anh đi lối này.",
+        "blank": "This way, please"
+      },
+      {
+        "speaker": "a",
+        "text": "Great, let's go. I'm starving!",
+        "meaningVi": "Tuyệt, mình đi thôi. Tôi đói lắm rồi!"
+      }
+    ]
+  },
+  {
+    "id": "gr-old-friend",
+    "topicId": "greetings",
+    "title": "Tình cờ gặp lại bạn cũ",
+    "level": "A2",
+    "situationVi": "Bạn (Thảo) đang đi trung tâm thương mại thì tình cờ gặp Sarah, cô bạn người Mỹ từng học trao đổi cùng lớp đại học với bạn ba năm trước.",
+    "speakers": {
+      "a": {
+        "name": "Sarah",
+        "roleVi": "Bạn học cũ người Mỹ"
+      },
+      "b": {
+        "name": "Thảo",
+        "roleVi": "Bạn"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Thao? Oh my gosh, is that you?",
+        "meaningVi": "Thảo à? Trời ơi, có phải cậu không đấy?"
+      },
+      {
+        "speaker": "b",
+        "text": "Sarah! I can't believe it! What a surprise!",
+        "meaningVi": "Sarah! Không thể tin được! Bất ngờ quá!",
+        "blank": "What a surprise",
+        "noteVi": "Câu cảm thán tự nhiên khi gặp ai đó không ngờ tới."
+      },
+      {
+        "speaker": "a",
+        "text": "It's been ages! How have you been?",
+        "meaningVi": "Lâu lắm rồi nhỉ! Dạo này cậu thế nào?",
+        "blank": "How have you been",
+        "noteVi": "Dùng \"How have you been?\" khi lâu ngày không gặp, thay vì \"How are you?\"."
+      },
+      {
+        "speaker": "b",
+        "text": "Pretty good, thanks. Busy with work, but I can't complain. And you?",
+        "meaningVi": "Khá ổn, cảm ơn cậu. Bận việc nhưng cũng chẳng có gì phải than. Còn cậu?",
+        "blank": "I can't complain"
+      },
+      {
+        "speaker": "a",
+        "text": "I'm good! I moved back to Vietnam last month for a new job.",
+        "meaningVi": "Mình ổn! Tháng trước mình chuyển về Việt Nam làm công việc mới."
+      },
+      {
+        "speaker": "b",
+        "text": "No way! That's amazing. Where are you working now?",
+        "meaningVi": "Thật á! Tuyệt quá. Giờ cậu làm ở đâu?",
+        "blank": "Where are you working now"
+      },
+      {
+        "speaker": "a",
+        "text": "At an English center in Cau Giay. I'm teaching adults.",
+        "meaningVi": "Ở một trung tâm tiếng Anh ở Cầu Giấy. Mình dạy người lớn."
+      },
+      {
+        "speaker": "b",
+        "text": "That sounds great. We should catch up properly sometime.",
+        "meaningVi": "Nghe hay đấy. Hôm nào mình phải ngồi nói chuyện đàng hoàng mới được.",
+        "blank": "We should catch up",
+        "noteVi": "\"Catch up\" = gặp nhau kể chuyện cho nhau nghe sau thời gian dài không gặp."
+      },
+      {
+        "speaker": "a",
+        "text": "Definitely! Are you free for coffee this weekend?",
+        "meaningVi": "Nhất định rồi! Cuối tuần này cậu rảnh đi cà phê không?",
+        "blank": "Are you free for coffee"
+      },
+      {
+        "speaker": "b",
+        "text": "Sunday works for me. Let me get your number.",
+        "meaningVi": "Chủ nhật thì mình được. Cho mình xin số điện thoại nhé.",
+        "blank": "Sunday works for me"
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. It's so good to see you again!",
+        "meaningVi": "Được chứ. Gặp lại cậu vui thật đấy!",
+        "blank": "It's so good to see you again"
+      },
+      {
+        "speaker": "b",
+        "text": "You too! See you on Sunday.",
+        "meaningVi": "Mình cũng vậy! Hẹn gặp cậu chủ nhật nhé."
+      }
+    ]
+  },
+  {
+    "id": "gr-video-call",
+    "topicId": "greetings",
+    "title": "Mở đầu cuộc gọi video",
+    "level": "A2",
+    "situationVi": "Bạn (Huy) có cuộc họp online với Anna, đối tác người Đức. Trước khi vào nội dung chính, hai người chào hỏi và nói chuyện xã giao vài câu.",
+    "speakers": {
+      "a": {
+        "name": "Anna",
+        "roleVi": "Đối tác người Đức"
+      },
+      "b": {
+        "name": "Huy",
+        "roleVi": "Bạn, nhân viên dự án"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hi Anna, good morning! Can you hear me okay?",
+        "meaningVi": "Chào chị Anna, chào buổi sáng! Chị nghe rõ tôi không?",
+        "blank": "Can you hear me okay",
+        "noteVi": "Câu mở đầu quen thuộc của các cuộc gọi online."
+      },
+      {
+        "speaker": "a",
+        "text": "Yes, loud and clear. Well, good afternoon for you, I guess!",
+        "meaningVi": "Có, nghe rất rõ. À, với anh thì chắc là chào buổi chiều nhỉ!",
+        "blank": "loud and clear",
+        "noteVi": "\"Loud and clear\" = nghe rất rõ."
+      },
+      {
+        "speaker": "b",
+        "text": "Ha, yes, it's 3 p.m. here. How's your week going so far?",
+        "meaningVi": "Haha, vâng, ở đây là 3 giờ chiều rồi. Tuần này của chị thế nào rồi?",
+        "blank": "How's your week going so far"
+      },
+      {
+        "speaker": "a",
+        "text": "Quite busy, to be honest. But it's Friday tomorrow, so that helps.",
+        "meaningVi": "Nói thật là khá bận. Nhưng mai là thứ Sáu rồi nên cũng đỡ.",
+        "blank": "to be honest"
+      },
+      {
+        "speaker": "b",
+        "text": "I know what you mean. Any plans for the weekend?",
+        "meaningVi": "Tôi hiểu mà. Cuối tuần chị có kế hoạch gì không?",
+        "blank": "Any plans for the weekend"
+      },
+      {
+        "speaker": "a",
+        "text": "Just relaxing at home, I think. It's been really cold in Berlin.",
+        "meaningVi": "Chắc chỉ ở nhà nghỉ ngơi thôi. Dạo này Berlin lạnh lắm."
+      },
+      {
+        "speaker": "b",
+        "text": "Oh, I'm jealous. It's still pretty hot here in Saigon.",
+        "meaningVi": "Ồ, tôi lại thấy ghen tị đấy. Ở Sài Gòn vẫn còn nóng lắm.",
+        "noteVi": "\"I'm jealous\" ở đây là nói đùa thân thiện, không mang nghĩa tiêu cực."
+      },
+      {
+        "speaker": "a",
+        "text": "Lucky you! Anyway, shall we get started?",
+        "meaningVi": "Sướng thế! Thôi, mình bắt đầu nhé?",
+        "blank": "shall we get started"
+      },
+      {
+        "speaker": "b",
+        "text": "Sure. Let me share my screen first.",
+        "meaningVi": "Vâng. Để tôi chia sẻ màn hình trước đã.",
+        "blank": "Let me share my screen"
+      },
+      {
+        "speaker": "a",
+        "text": "Okay, I can see it now. Go ahead.",
+        "meaningVi": "Được rồi, tôi thấy rồi. Anh bắt đầu đi."
+      }
+    ]
+  }
+]

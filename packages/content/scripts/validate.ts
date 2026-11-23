@@ -12,8 +12,9 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
+const lines = (bundle.dialogues as { lines: unknown[] }[]).reduce((n, d) => n + d.lines.length, 0);
 console.log(
-  `Nội dung hợp lệ: ${bundle.topics.length} chủ đề, ${bundle.phrases.length} cụm từ ` +
-    `(${bundle.phraseFiles.length} file), ${bundle.scenarios.length} kịch bản, ` +
+  `Nội dung hợp lệ: ${bundle.topics.length} chủ đề, ${bundle.dialogues.length} hội thoại, ` +
+    `${lines} câu (${bundle.dialogueFiles.length} file), ${bundle.scenarios.length} kịch bản, ` +
     `${bundle.placement.length} câu xếp trình độ.`,
 );

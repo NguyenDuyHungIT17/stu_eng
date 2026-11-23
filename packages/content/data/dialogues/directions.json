@@ -1,0 +1,329 @@
+[
+  {
+    "id": "dr-lost-in-london",
+    "topicId": "directions",
+    "title": "Bị lạc, hỏi đường ra ga",
+    "level": "A2",
+    "situationVi": "Bạn (Lan) đi du lịch ở London và bị lạc khi tìm đường ra ga tàu King's Cross. Bạn hỏi một người phụ nữ đang đi bộ trên phố.",
+    "speakers": {
+      "a": {
+        "name": "Emma",
+        "roleVi": "Người dân London"
+      },
+      "b": {
+        "name": "Lan",
+        "roleVi": "Bạn, khách du lịch"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Excuse me, sorry to bother you. I think I'm lost.",
+        "meaningVi": "Xin lỗi, phiền chị một chút. Hình như tôi bị lạc rồi.",
+        "blank": "sorry to bother you",
+        "noteVi": "Câu mở lời lịch sự khi làm phiền người lạ trên đường."
+      },
+      {
+        "speaker": "a",
+        "text": "No worries. Where are you trying to get to?",
+        "meaningVi": "Không sao đâu. Bạn đang muốn đi đến đâu?",
+        "blank": "Where are you trying to get to"
+      },
+      {
+        "speaker": "b",
+        "text": "King's Cross Station. Is it far from here?",
+        "meaningVi": "Ga King's Cross. Nó có xa đây không ạ?",
+        "blank": "Is it far from here"
+      },
+      {
+        "speaker": "a",
+        "text": "Not really, it's about a ten-minute walk.",
+        "meaningVi": "Không xa lắm, đi bộ khoảng mười phút.",
+        "blank": "a ten-minute walk"
+      },
+      {
+        "speaker": "b",
+        "text": "Great. Could you tell me how to get there?",
+        "meaningVi": "Tốt quá. Chị có thể chỉ tôi cách đi đến đó không?",
+        "blank": "how to get there"
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. Go straight down this road and turn left at the traffic lights.",
+        "meaningVi": "Được chứ. Đi thẳng con đường này rồi rẽ trái ở chỗ đèn giao thông.",
+        "blank": "turn left at the traffic lights"
+      },
+      {
+        "speaker": "b",
+        "text": "Straight on, then left at the lights. And after that?",
+        "meaningVi": "Đi thẳng, rồi rẽ trái ở đèn. Sau đó thì sao ạ?",
+        "noteVi": "Nhắc lại chỉ dẫn để kiểm tra mình hiểu đúng, người bản xứ cũng hay làm vậy."
+      },
+      {
+        "speaker": "a",
+        "text": "Keep going for a few minutes. You can't miss it.",
+        "meaningVi": "Đi tiếp vài phút nữa. Bạn sẽ thấy ngay thôi.",
+        "blank": "You can't miss it",
+        "noteVi": "\"You can't miss it\" = dễ thấy lắm, không thể nhầm được."
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you so much, that's really helpful.",
+        "meaningVi": "Cảm ơn chị nhiều, chị giúp tôi nhiều lắm.",
+        "blank": "that's really helpful"
+      },
+      {
+        "speaker": "a",
+        "text": "You're welcome. Enjoy your trip!",
+        "meaningVi": "Không có gì. Chúc bạn chuyến đi vui vẻ!"
+      }
+    ]
+  },
+  {
+    "id": "dr-taxi-to-hotel",
+    "topicId": "directions",
+    "title": "Đi taxi về khách sạn",
+    "level": "A2",
+    "situationVi": "Bạn (Minh) vừa đến Singapore công tác. Bạn đặt Grab từ sân bay Changi về khách sạn và nói chuyện với tài xế trên xe.",
+    "speakers": {
+      "a": {
+        "name": "Raj",
+        "roleVi": "Tài xế Grab"
+      },
+      "b": {
+        "name": "Minh",
+        "roleVi": "Bạn, khách đi công tác"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hi, are you Minh? Let me help you with your bag.",
+        "meaningVi": "Chào anh, anh là Minh phải không? Để tôi giúp anh cất hành lý.",
+        "blank": "Let me help you with your bag"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, that's me. Thanks a lot.",
+        "meaningVi": "Vâng, tôi đây. Cảm ơn anh nhiều."
+      },
+      {
+        "speaker": "a",
+        "text": "You're going to the Hotel Bencoolen, right?",
+        "meaningVi": "Anh đi đến khách sạn Bencoolen, đúng không?"
+      },
+      {
+        "speaker": "b",
+        "text": "That's right. How long will it take to get there?",
+        "meaningVi": "Đúng rồi. Mất bao lâu để đến đó vậy anh?",
+        "blank": "How long will it take",
+        "noteVi": "Câu hỏi thời gian di chuyển, dùng được với taxi, xe buýt, tàu."
+      },
+      {
+        "speaker": "a",
+        "text": "About twenty-five minutes, if the traffic isn't too bad.",
+        "meaningVi": "Khoảng hai lăm phút, nếu đường không kẹt lắm.",
+        "blank": "if the traffic isn't too bad"
+      },
+      {
+        "speaker": "b",
+        "text": "Okay. Could you turn the air conditioning down a bit?",
+        "meaningVi": "Vâng. Anh có thể giảm điều hòa xuống một chút được không?",
+        "blank": "turn the air conditioning down",
+        "noteVi": "\"Turn ... down/up\" = vặn nhỏ/to (điều hòa, nhạc, âm lượng)."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure, no problem. Is this your first time in Singapore?",
+        "meaningVi": "Được chứ. Đây là lần đầu anh đến Singapore à?",
+        "blank": "Is this your first time"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, I'm here for work. Just three days.",
+        "meaningVi": "Vâng, tôi sang đây công tác. Chỉ ba ngày thôi.",
+        "blank": "I'm here for work"
+      },
+      {
+        "speaker": "a",
+        "text": "Here we are. The entrance is just over there.",
+        "meaningVi": "Đến nơi rồi. Lối vào ở ngay đằng kia.",
+        "blank": "Here we are"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks for the ride. Have a good day!",
+        "meaningVi": "Cảm ơn anh đã chở tôi. Chúc anh một ngày tốt lành!"
+      }
+    ]
+  },
+  {
+    "id": "dr-metro-ticket",
+    "topicId": "directions",
+    "title": "Mua vé tàu điện ngầm",
+    "level": "A2",
+    "situationVi": "Bạn (Mai) đang du lịch ở Seoul và không biết dùng máy bán vé tàu điện ngầm. Bạn hỏi nhân viên nhà ga để mua vé đi Myeongdong.",
+    "speakers": {
+      "a": {
+        "name": "Jisoo",
+        "roleVi": "Nhân viên nhà ga"
+      },
+      "b": {
+        "name": "Mai",
+        "roleVi": "Bạn, khách du lịch"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hi, could you help me? I don't know how to use this machine.",
+        "meaningVi": "Chào anh, anh giúp tôi được không? Tôi không biết dùng cái máy này.",
+        "blank": "I don't know how to use"
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. Where would you like to go?",
+        "meaningVi": "Tất nhiên rồi. Chị muốn đi đâu?",
+        "blank": "Where would you like to go"
+      },
+      {
+        "speaker": "b",
+        "text": "To Myeongdong. Do I need to change trains?",
+        "meaningVi": "Đi Myeongdong. Tôi có phải đổi tàu không?",
+        "blank": "Do I need to change trains",
+        "noteVi": "\"Change trains\" = chuyển tàu, đổi tuyến."
+      },
+      {
+        "speaker": "a",
+        "text": "No, it's a direct line. Just take Line 4.",
+        "meaningVi": "Không, đi thẳng luôn. Chị chỉ cần đi Tuyến số 4.",
+        "blank": "it's a direct line"
+      },
+      {
+        "speaker": "b",
+        "text": "Great. How much is a single ticket?",
+        "meaningVi": "Tốt quá. Một vé một chiều bao nhiêu tiền?",
+        "blank": "How much is a single ticket",
+        "noteVi": "\"Single ticket\" = vé một chiều, \"return ticket\" = vé khứ hồi."
+      },
+      {
+        "speaker": "a",
+        "text": "It's fourteen hundred won. You can pay by card or cash.",
+        "meaningVi": "Một nghìn bốn trăm won. Chị có thể trả bằng thẻ hoặc tiền mặt.",
+        "blank": "pay by card or cash"
+      },
+      {
+        "speaker": "b",
+        "text": "Okay, I'll pay cash. Which platform should I go to?",
+        "meaningVi": "Vâng, tôi trả tiền mặt. Tôi nên ra sân ga nào?",
+        "blank": "Which platform should I go to"
+      },
+      {
+        "speaker": "a",
+        "text": "Platform two, down those stairs. It's four stops from here.",
+        "meaningVi": "Sân ga số hai, đi xuống cầu thang kia. Cách đây bốn ga.",
+        "blank": "four stops from here"
+      },
+      {
+        "speaker": "b",
+        "text": "Four stops. Got it. Thanks for your help!",
+        "meaningVi": "Bốn ga. Tôi hiểu rồi. Cảm ơn anh đã giúp!"
+      },
+      {
+        "speaker": "a",
+        "text": "My pleasure. Have a nice day!",
+        "meaningVi": "Rất hân hạnh. Chúc chị một ngày vui vẻ!"
+      }
+    ]
+  },
+  {
+    "id": "dr-tourist-in-hanoi",
+    "topicId": "directions",
+    "title": "Chỉ đường cho khách Tây ở Hà Nội",
+    "level": "A2",
+    "situationVi": "Bạn (Huy) đang ngồi uống cà phê ở phố cổ Hà Nội. Một du khách người Mỹ cầm bản đồ đến hỏi đường ra Hồ Hoàn Kiếm.",
+    "speakers": {
+      "a": {
+        "name": "Jake",
+        "roleVi": "Du khách người Mỹ"
+      },
+      "b": {
+        "name": "Huy",
+        "roleVi": "Bạn, người Hà Nội"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Excuse me, do you speak English?",
+        "meaningVi": "Xin lỗi, anh có nói được tiếng Anh không?",
+        "blank": "do you speak English"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, a little. Can I help you?",
+        "meaningVi": "Có, một chút. Tôi giúp gì được anh?",
+        "blank": "Can I help you"
+      },
+      {
+        "speaker": "a",
+        "text": "I'm looking for Hoan Kiem Lake. Am I going the right way?",
+        "meaningVi": "Tôi đang tìm Hồ Hoàn Kiếm. Tôi đi có đúng đường không?",
+        "blank": "Am I going the right way",
+        "noteVi": "Câu hỏi để kiểm tra mình có đi đúng hướng không."
+      },
+      {
+        "speaker": "b",
+        "text": "Actually, it's the other way. You need to go back.",
+        "meaningVi": "Thật ra là hướng ngược lại. Anh cần quay lại.",
+        "blank": "it's the other way"
+      },
+      {
+        "speaker": "a",
+        "text": "Oh no! Is it easy to find?",
+        "meaningVi": "Ôi không! Có dễ tìm không anh?",
+        "blank": "Is it easy to find"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes. Walk to the end of this street, then turn right.",
+        "meaningVi": "Có. Anh đi đến cuối con phố này, rồi rẽ phải.",
+        "blank": "Walk to the end of this street"
+      },
+      {
+        "speaker": "a",
+        "text": "Right at the end. And then?",
+        "meaningVi": "Rẽ phải ở cuối phố. Rồi sao nữa?"
+      },
+      {
+        "speaker": "b",
+        "text": "The lake is on your left, next to a big bank.",
+        "meaningVi": "Hồ ở bên tay trái anh, cạnh một ngân hàng lớn.",
+        "blank": "on your left",
+        "noteVi": "\"On your left/right\" = ở bên tay trái/phải của anh, dùng khi chỉ đường."
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks! And be careful crossing the street, right?",
+        "meaningVi": "Cảm ơn! Và phải cẩn thận khi qua đường, đúng không?"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes! Walk slowly and don't stop. The motorbikes will go around you.",
+        "meaningVi": "Đúng vậy! Đi chậm và đừng dừng lại. Xe máy sẽ đi vòng qua anh.",
+        "blank": "Walk slowly and don't stop"
+      },
+      {
+        "speaker": "a",
+        "text": "Good tip! Thanks a lot, man.",
+        "meaningVi": "Mẹo hay đấy! Cảm ơn anh nhiều nhé."
+      },
+      {
+        "speaker": "b",
+        "text": "No problem. Enjoy Hanoi!",
+        "meaningVi": "Không có gì. Chúc anh vui ở Hà Nội!",
+        "blank": "Enjoy Hanoi"
+      }
+    ]
+  }
+]

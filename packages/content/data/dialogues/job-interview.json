@@ -1,0 +1,339 @@
+[
+  {
+    "id": "ji-tell-me-about-yourself",
+    "topicId": "job-interview",
+    "title": "Giới thiệu bản thân",
+    "level": "B2",
+    "situationVi": "Bạn (Minh) phỏng vấn trực tuyến cho vị trí chuyên viên phân tích dữ liệu tại một công ty thương mại điện tử Singapore. Người phỏng vấn mở đầu bằng câu hỏi quen thuộc.",
+    "speakers": {
+      "a": {
+        "name": "Rachel",
+        "roleVi": "Trưởng phòng tuyển dụng"
+      },
+      "b": {
+        "name": "Minh",
+        "roleVi": "Bạn, ứng viên"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Thanks for joining us, Minh. Can you hear me okay?",
+        "meaningVi": "Cảm ơn anh đã tham gia, Minh. Anh nghe tôi rõ không?",
+        "blank": "Can you hear me okay"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, loud and clear. Thanks for having me today.",
+        "meaningVi": "Vâng, rất rõ ạ. Cảm ơn chị đã mời tôi hôm nay.",
+        "blank": "Thanks for having me",
+        "noteVi": "Câu cảm ơn lịch sự khi bắt đầu buổi phỏng vấn hoặc cuộc họp."
+      },
+      {
+        "speaker": "a",
+        "text": "Great. So, to start off, could you walk me through your background?",
+        "meaningVi": "Tốt. Để bắt đầu, anh có thể kể sơ qua về quá trình làm việc của mình không?",
+        "blank": "walk me through your background",
+        "noteVi": "\"Walk me through\" = trình bày lần lượt từng bước; thường gặp trong phỏng vấn."
+      },
+      {
+        "speaker": "b",
+        "text": "Sure. I've been working as a data analyst for about four years now.",
+        "meaningVi": "Vâng. Tôi đã làm chuyên viên phân tích dữ liệu được khoảng bốn năm.",
+        "blank": "I've been working as"
+      },
+      {
+        "speaker": "b",
+        "text": "Currently, I'm with a retail chain in Ho Chi Minh City, focusing on customer analytics.",
+        "meaningVi": "Hiện tại tôi làm cho một chuỗi bán lẻ ở TP.HCM, tập trung vào phân tích khách hàng.",
+        "blank": "focusing on customer analytics"
+      },
+      {
+        "speaker": "a",
+        "text": "And what made you interested in this role?",
+        "meaningVi": "Vậy điều gì khiến anh quan tâm đến vị trí này?",
+        "blank": "what made you interested in"
+      },
+      {
+        "speaker": "b",
+        "text": "I'm looking to work on a larger scale, and your platform has millions of users.",
+        "meaningVi": "Tôi muốn làm việc ở quy mô lớn hơn, và nền tảng của quý công ty có hàng triệu người dùng.",
+        "blank": "I'm looking to work on",
+        "noteVi": "\"I'm looking to...\" = tôi đang mong muốn; nghe chủ động hơn \"I want to\"."
+      },
+      {
+        "speaker": "a",
+        "text": "That makes sense. What would you say is your biggest strength?",
+        "meaningVi": "Hợp lý. Anh nghĩ điểm mạnh lớn nhất của mình là gì?",
+        "blank": "your biggest strength"
+      },
+      {
+        "speaker": "b",
+        "text": "I'd say it's turning complex data into simple stories that managers can act on.",
+        "meaningVi": "Tôi nghĩ đó là khả năng biến dữ liệu phức tạp thành câu chuyện đơn giản để quản lý có thể hành động.",
+        "blank": "I'd say it's",
+        "noteVi": "\"I'd say...\" giúp câu trả lời tự tin nhưng không khoe khoang."
+      },
+      {
+        "speaker": "a",
+        "text": "That's exactly what we need here. Let's dig into that a bit more.",
+        "meaningVi": "Đó chính xác là điều chúng tôi cần. Hãy cùng đi sâu hơn một chút.",
+        "blank": "Let's dig into that"
+      }
+    ]
+  },
+  {
+    "id": "ji-past-experience",
+    "topicId": "job-interview",
+    "title": "Kể về một dự án đã làm",
+    "level": "B2",
+    "situationVi": "Vòng phỏng vấn thứ hai tại văn phòng một công ty phần mềm Nhật ở Hà Nội. Quản lý kỹ thuật hỏi bạn (Lan) về một dự án khó trong quá khứ.",
+    "speakers": {
+      "a": {
+        "name": "Kenji",
+        "roleVi": "Quản lý kỹ thuật"
+      },
+      "b": {
+        "name": "Lan",
+        "roleVi": "Bạn, ứng viên vị trí trưởng nhóm dự án"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Can you tell me about a challenging project you've worked on?",
+        "meaningVi": "Chị có thể kể về một dự án đầy thử thách mà chị từng làm không?",
+        "blank": "a challenging project you've worked on"
+      },
+      {
+        "speaker": "b",
+        "text": "Of course. Last year, I led a team migrating our billing system to the cloud.",
+        "meaningVi": "Vâng. Năm ngoái, tôi dẫn dắt một nhóm chuyển hệ thống thanh toán lên điện toán đám mây.",
+        "blank": "I led a team"
+      },
+      {
+        "speaker": "a",
+        "text": "What made it so challenging?",
+        "meaningVi": "Điều gì khiến nó khó khăn đến vậy?"
+      },
+      {
+        "speaker": "b",
+        "text": "We had a tight deadline, and the old system had almost no documentation.",
+        "meaningVi": "Thời hạn rất gấp, và hệ thống cũ gần như không có tài liệu.",
+        "blank": "We had a tight deadline"
+      },
+      {
+        "speaker": "a",
+        "text": "How did you handle that?",
+        "meaningVi": "Chị đã xử lý việc đó thế nào?",
+        "blank": "How did you handle that",
+        "noteVi": "Câu hỏi hành vi kinh điển; nên trả lời theo cấu trúc STAR: tình huống, nhiệm vụ, hành động, kết quả."
+      },
+      {
+        "speaker": "b",
+        "text": "I broke the work into two-week phases and set up daily check-ins with the team.",
+        "meaningVi": "Tôi chia công việc thành các giai đoạn hai tuần và tổ chức họp nhanh hằng ngày với nhóm.",
+        "blank": "broke the work into"
+      },
+      {
+        "speaker": "b",
+        "text": "I also brought in a senior engineer who'd built the original system.",
+        "meaningVi": "Tôi cũng mời một kỹ sư lâu năm từng xây dựng hệ thống gốc tham gia.",
+        "blank": "brought in a senior engineer"
+      },
+      {
+        "speaker": "a",
+        "text": "And what was the outcome?",
+        "meaningVi": "Và kết quả ra sao?",
+        "blank": "what was the outcome"
+      },
+      {
+        "speaker": "b",
+        "text": "We went live two days early, with zero downtime for our customers.",
+        "meaningVi": "Chúng tôi vận hành chính thức sớm hai ngày, không gián đoạn dịch vụ nào với khách hàng.",
+        "blank": "We went live two days early",
+        "noteVi": "\"Go live\" = chính thức đưa vào vận hành."
+      },
+      {
+        "speaker": "a",
+        "text": "Impressive. What would you do differently next time?",
+        "meaningVi": "Ấn tượng đấy. Lần sau chị sẽ làm gì khác đi?",
+        "blank": "What would you do differently"
+      },
+      {
+        "speaker": "b",
+        "text": "I'd involve the finance team earlier. Their feedback came in quite late.",
+        "meaningVi": "Tôi sẽ để bộ phận tài chính tham gia sớm hơn. Phản hồi của họ đến khá muộn.",
+        "blank": "I'd involve the finance team earlier"
+      }
+    ]
+  },
+  {
+    "id": "ji-weakness-question",
+    "topicId": "job-interview",
+    "title": "Câu hỏi về điểm yếu",
+    "level": "B2",
+    "situationVi": "Bạn (Huy) đang phỏng vấn vị trí chuyên viên marketing tại một tập đoàn đa quốc gia. Giám đốc nhân sự hỏi câu khó: điểm yếu của bạn là gì.",
+    "speakers": {
+      "a": {
+        "name": "Sarah",
+        "roleVi": "Giám đốc nhân sự"
+      },
+      "b": {
+        "name": "Huy",
+        "roleVi": "Bạn, ứng viên"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Now, every candidate gets this one. What's your greatest weakness?",
+        "meaningVi": "Giờ đến câu ứng viên nào cũng gặp. Điểm yếu lớn nhất của anh là gì?",
+        "blank": "What's your greatest weakness"
+      },
+      {
+        "speaker": "b",
+        "text": "Honestly, I used to find it hard to say no to extra requests.",
+        "meaningVi": "Thành thật mà nói, trước đây tôi thấy khó từ chối các yêu cầu thêm.",
+        "blank": "I used to find it hard to",
+        "noteVi": "Dùng \"used to\" để cho thấy điểm yếu thuộc về quá khứ và bạn đã cải thiện."
+      },
+      {
+        "speaker": "a",
+        "text": "Interesting. How did that affect your work?",
+        "meaningVi": "Thú vị đấy. Điều đó ảnh hưởng đến công việc của anh thế nào?",
+        "blank": "How did that affect your work"
+      },
+      {
+        "speaker": "b",
+        "text": "I sometimes took on too much, and my main projects slipped a little.",
+        "meaningVi": "Đôi khi tôi nhận quá nhiều việc, và các dự án chính bị chậm một chút.",
+        "blank": "I sometimes took on too much"
+      },
+      {
+        "speaker": "a",
+        "text": "And what are you doing about it?",
+        "meaningVi": "Vậy anh đang làm gì để khắc phục?"
+      },
+      {
+        "speaker": "b",
+        "text": "I've started prioritizing my tasks every Monday and checking with my manager.",
+        "meaningVi": "Tôi bắt đầu sắp xếp thứ tự ưu tiên công việc mỗi thứ Hai và trao đổi với quản lý.",
+        "blank": "I've started prioritizing my tasks"
+      },
+      {
+        "speaker": "b",
+        "text": "Now, if something new comes up, I ask what should move down the list.",
+        "meaningVi": "Giờ nếu có việc mới phát sinh, tôi hỏi việc nào nên được lùi lại.",
+        "blank": "if something new comes up"
+      },
+      {
+        "speaker": "a",
+        "text": "That sounds like a healthy approach. Has it made a difference?",
+        "meaningVi": "Nghe có vẻ là cách làm hợp lý. Nó có tạo ra khác biệt không?",
+        "blank": "Has it made a difference"
+      },
+      {
+        "speaker": "b",
+        "text": "Definitely. I've hit every deadline this quarter, and I feel less stressed.",
+        "meaningVi": "Chắc chắn rồi. Tôi đã hoàn thành đúng hạn mọi việc trong quý này và thấy bớt căng thẳng hơn.",
+        "blank": "I've hit every deadline",
+        "noteVi": "\"Hit a deadline\" = kịp hạn chót; ngược lại là \"miss a deadline\"."
+      },
+      {
+        "speaker": "a",
+        "text": "Good to hear. Self-awareness matters a lot in this team.",
+        "meaningVi": "Vui khi nghe vậy. Sự tự nhận thức rất quan trọng trong nhóm này.",
+        "blank": "Self-awareness matters a lot"
+      }
+    ]
+  },
+  {
+    "id": "ji-questions-and-salary",
+    "topicId": "job-interview",
+    "title": "Đặt câu hỏi và bàn về lương",
+    "level": "B2",
+    "situationVi": "Cuối buổi phỏng vấn vị trí kế toán trưởng tại một công ty logistics châu Âu ở TP.HCM. Người phỏng vấn mời bạn (Mai) đặt câu hỏi, rồi chuyển sang chuyện lương.",
+    "speakers": {
+      "a": {
+        "name": "David",
+        "roleVi": "Giám đốc tài chính"
+      },
+      "b": {
+        "name": "Mai",
+        "roleVi": "Bạn, ứng viên"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "We're almost out of time. Do you have any questions for us?",
+        "meaningVi": "Chúng ta sắp hết giờ. Chị có câu hỏi nào cho chúng tôi không?",
+        "blank": "Do you have any questions for us"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, a couple. What would success look like in the first six months?",
+        "meaningVi": "Vâng, tôi có vài câu. Thành công trong sáu tháng đầu sẽ trông như thế nào ạ?",
+        "blank": "What would success look like",
+        "noteVi": "Câu hỏi hay để thể hiện bạn quan tâm đến kết quả công việc."
+      },
+      {
+        "speaker": "a",
+        "text": "Mainly closing the books on time and cleaning up our reporting process.",
+        "meaningVi": "Chủ yếu là khóa sổ đúng hạn và chuẩn hóa lại quy trình báo cáo.",
+        "blank": "closing the books on time"
+      },
+      {
+        "speaker": "b",
+        "text": "That's helpful. And how is the finance team structured?",
+        "meaningVi": "Thông tin rất hữu ích. Còn bộ phận tài chính được tổ chức thế nào ạ?",
+        "blank": "how is the finance team structured"
+      },
+      {
+        "speaker": "a",
+        "text": "You'd manage three accountants and report directly to me.",
+        "meaningVi": "Chị sẽ quản lý ba kế toán viên và báo cáo trực tiếp cho tôi.",
+        "blank": "report directly to me"
+      },
+      {
+        "speaker": "a",
+        "text": "Before we wrap up, what are your salary expectations?",
+        "meaningVi": "Trước khi kết thúc, mức lương mong muốn của chị là bao nhiêu?",
+        "blank": "what are your salary expectations"
+      },
+      {
+        "speaker": "b",
+        "text": "Based on my experience and the market, I'm looking at around fifty million a month.",
+        "meaningVi": "Dựa trên kinh nghiệm và thị trường, tôi mong muốn khoảng năm mươi triệu một tháng.",
+        "blank": "I'm looking at around",
+        "noteVi": "Nêu con số kèm lý do (kinh nghiệm, thị trường) để nghe thuyết phục hơn."
+      },
+      {
+        "speaker": "a",
+        "text": "That's a little above our range, to be honest.",
+        "meaningVi": "Thành thật mà nói, con số đó hơi cao hơn khung lương của chúng tôi.",
+        "blank": "a little above our range"
+      },
+      {
+        "speaker": "b",
+        "text": "I understand. I'm open to discussing the full package, including bonuses.",
+        "meaningVi": "Tôi hiểu. Tôi sẵn sàng trao đổi về toàn bộ chế độ đãi ngộ, bao gồm cả thưởng.",
+        "blank": "I'm open to discussing",
+        "noteVi": "\"Package\" = trọn gói đãi ngộ: lương, thưởng, bảo hiểm, phép năm..."
+      },
+      {
+        "speaker": "a",
+        "text": "Fair enough. We'll be in touch by the end of next week.",
+        "meaningVi": "Hợp lý. Chúng tôi sẽ liên hệ lại trước cuối tuần sau.",
+        "blank": "We'll be in touch"
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you. I really enjoyed our conversation today.",
+        "meaningVi": "Cảm ơn anh. Tôi rất thích cuộc trò chuyện hôm nay.",
+        "blank": "I really enjoyed our conversation"
+      }
+    ]
+  }
+]

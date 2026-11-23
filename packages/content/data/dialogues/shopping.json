@@ -1,0 +1,307 @@
+[
+  {
+    "id": "sh-trying-on-jacket",
+    "topicId": "shopping",
+    "title": "Thử áo khoác ở cửa hàng",
+    "level": "A2",
+    "situationVi": "Bạn (Thảo) đi công tác ở London vào mùa đông và cần mua gấp một chiếc áo khoác. Bạn vào một cửa hàng quần áo và hỏi nhân viên bán hàng.",
+    "speakers": {
+      "a": { "name": "Olivia", "roleVi": "Nhân viên bán hàng" },
+      "b": { "name": "Thảo", "roleVi": "Bạn, khách hàng" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hi there! Can I help you with anything?",
+        "meaningVi": "Xin chào! Chị cần em giúp gì không ạ?"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, please. I'm looking for a warm winter jacket.",
+        "meaningVi": "Vâng. Tôi đang tìm một chiếc áo khoác mùa đông thật ấm.",
+        "blank": "I'm looking for",
+        "noteVi": "Câu cơ bản nhất khi vào cửa hàng và biết mình muốn mua gì."
+      },
+      {
+        "speaker": "a",
+        "text": "These ones are very popular. What size are you?",
+        "meaningVi": "Mấy chiếc này bán chạy lắm ạ. Chị mặc cỡ nào?",
+        "blank": "What size are you"
+      },
+      {
+        "speaker": "b",
+        "text": "I'm not sure about UK sizes. Probably a small?",
+        "meaningVi": "Tôi không rành cỡ của Anh lắm. Chắc là cỡ S?",
+        "blank": "I'm not sure about UK sizes",
+        "noteVi": "Cỡ quần áo mỗi nước khác nhau, cứ hỏi lại cho chắc."
+      },
+      {
+        "speaker": "a",
+        "text": "Here's a small in black. The fitting rooms are just over there.",
+        "meaningVi": "Đây là cỡ S màu đen ạ. Phòng thử đồ ngay đằng kia."
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks. Can I try it on?",
+        "meaningVi": "Cảm ơn. Tôi mặc thử được không?",
+        "blank": "Can I try it on"
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. How does it fit?",
+        "meaningVi": "Tất nhiên ạ. Chị mặc thấy vừa không?",
+        "blank": "How does it fit"
+      },
+      {
+        "speaker": "b",
+        "text": "It's a bit tight around the shoulders. Do you have it in a medium?",
+        "meaningVi": "Hơi chật ở vai. Có cỡ M không em?",
+        "blank": "Do you have it in a medium",
+        "noteVi": "\"Do you have it in + cỡ/màu?\" dùng để hỏi cỡ hoặc màu khác."
+      },
+      {
+        "speaker": "a",
+        "text": "Let me check. Yes, here you go.",
+        "meaningVi": "Để em xem ạ. Có đây chị."
+      },
+      {
+        "speaker": "b",
+        "text": "This one fits perfectly. I'll take it.",
+        "meaningVi": "Chiếc này vừa khít. Tôi lấy chiếc này.",
+        "blank": "I'll take it"
+      }
+    ]
+  },
+  {
+    "id": "sh-paying-at-checkout",
+    "topicId": "shopping",
+    "title": "Thanh toán ở quầy thu ngân",
+    "level": "A2",
+    "situationVi": "Bạn (Nam) đang du lịch ở Sydney và mua quà lưu niệm cho gia đình. Bạn ra quầy thu ngân để trả tiền.",
+    "speakers": {
+      "a": { "name": "Ben", "roleVi": "Nhân viên thu ngân" },
+      "b": { "name": "Nam", "roleVi": "Bạn, khách du lịch" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hi, how's your day going?",
+        "meaningVi": "Chào anh, hôm nay của anh thế nào?",
+        "noteVi": "Nhân viên ở Úc, Mỹ hay hỏi câu này cho thân thiện; chỉ cần đáp ngắn rồi hỏi lại."
+      },
+      {
+        "speaker": "b",
+        "text": "Pretty good, thanks. Just these three things, please.",
+        "meaningVi": "Khá tốt, cảm ơn. Tôi lấy ba món này thôi.",
+        "blank": "Just these three things, please"
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. That comes to forty-five dollars.",
+        "meaningVi": "Vâng. Tổng cộng là bốn mươi lăm đô.",
+        "blank": "That comes to"
+      },
+      {
+        "speaker": "b",
+        "text": "Can I pay by card?",
+        "meaningVi": "Tôi trả bằng thẻ được không?",
+        "blank": "Can I pay by card"
+      },
+      {
+        "speaker": "a",
+        "text": "Absolutely. Just tap your card on the machine.",
+        "meaningVi": "Được chứ. Anh chạm thẻ vào máy là được.",
+        "blank": "tap your card on the machine"
+      },
+      {
+        "speaker": "b",
+        "text": "Done. Could I get a gift bag for this one?",
+        "meaningVi": "Xong rồi. Cho tôi xin một túi quà cho món này được không?",
+        "blank": "Could I get a gift bag"
+      },
+      {
+        "speaker": "a",
+        "text": "No problem. Would you like the receipt in the bag?",
+        "meaningVi": "Không vấn đề gì. Anh có muốn để hóa đơn vào túi không?",
+        "blank": "Would you like the receipt"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, please, just in case I need to return something.",
+        "meaningVi": "Có, cảm ơn, phòng khi tôi cần trả lại món nào đó.",
+        "blank": "just in case I need to",
+        "noteVi": "\"Just in case\" = phòng khi, đề phòng."
+      },
+      {
+        "speaker": "a",
+        "text": "Here you go. Enjoy the rest of your trip!",
+        "meaningVi": "Của anh đây. Chúc anh đi chơi vui vẻ!"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks, you too. Have a nice day!",
+        "meaningVi": "Cảm ơn, bạn cũng vậy. Chúc một ngày tốt lành!"
+      }
+    ]
+  },
+  {
+    "id": "sh-market-bargaining",
+    "topicId": "shopping",
+    "title": "Mặc cả với khách du lịch ở chợ",
+    "level": "A2",
+    "situationVi": "Bạn (Mai) bán khăn lụa ở chợ Bến Thành. Jack, một khách du lịch người Mỹ, dừng lại xem hàng và muốn trả giá.",
+    "speakers": {
+      "a": { "name": "Jack", "roleVi": "Khách du lịch người Mỹ" },
+      "b": { "name": "Mai", "roleVi": "Bạn, người bán hàng" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hello! Please have a look. These scarves are pure silk.",
+        "meaningVi": "Xin chào! Mời anh xem hàng. Mấy chiếc khăn này là lụa thật đấy."
+      },
+      {
+        "speaker": "a",
+        "text": "They're beautiful. How much is this blue one?",
+        "meaningVi": "Đẹp quá. Chiếc màu xanh này bao nhiêu tiền?",
+        "blank": "How much is this blue one"
+      },
+      {
+        "speaker": "b",
+        "text": "That one is three hundred thousand dong, about twelve dollars.",
+        "meaningVi": "Chiếc đó ba trăm nghìn đồng, khoảng mười hai đô.",
+        "noteVi": "Nên quy đổi sang đô la để khách dễ hình dung giá."
+      },
+      {
+        "speaker": "a",
+        "text": "Hmm, that's a bit expensive. Can you do two hundred?",
+        "meaningVi": "Hừm, hơi đắt. Hai trăm nghìn được không?",
+        "blank": "Can you do two hundred",
+        "noteVi": "\"Can you do + giá?\" là cách trả giá thông dụng trong văn nói."
+      },
+      {
+        "speaker": "b",
+        "text": "Sorry, that's too low. The quality is really good. Feel it.",
+        "meaningVi": "Xin lỗi, giá đó thấp quá. Chất lượng tốt lắm. Anh sờ thử xem.",
+        "blank": "that's too low"
+      },
+      {
+        "speaker": "a",
+        "text": "It does feel nice. What if I buy two?",
+        "meaningVi": "Đúng là sờ thích thật. Nếu tôi mua hai chiếc thì sao?",
+        "blank": "What if I buy two"
+      },
+      {
+        "speaker": "b",
+        "text": "If you buy two, I can give you a discount. Five hundred for both.",
+        "meaningVi": "Nếu anh mua hai chiếc, tôi bớt cho. Năm trăm nghìn cả hai.",
+        "blank": "I can give you a discount"
+      },
+      {
+        "speaker": "a",
+        "text": "How about four hundred and fifty? That's my final offer.",
+        "meaningVi": "Bốn trăm năm mươi nghìn được không? Đó là giá cuối của tôi.",
+        "blank": "That's my final offer"
+      },
+      {
+        "speaker": "b",
+        "text": "Okay, okay. Four fifty, just for you. Which colour would you like?",
+        "meaningVi": "Thôi được. Bốn trăm rưỡi, vì là anh đấy. Anh muốn lấy màu nào?",
+        "blank": "Which colour would you like"
+      },
+      {
+        "speaker": "a",
+        "text": "The blue one and the red one, please.",
+        "meaningVi": "Lấy chiếc xanh và chiếc đỏ nhé."
+      },
+      {
+        "speaker": "b",
+        "text": "Good choice! I'll wrap them up for you.",
+        "meaningVi": "Chọn đẹp lắm! Để tôi gói lại cho anh."
+      }
+    ]
+  },
+  {
+    "id": "sh-returning-shoes",
+    "topicId": "shopping",
+    "title": "Đổi trả giày bị lỗi",
+    "level": "A2",
+    "situationVi": "Bạn (Minh) đang du học ở Mỹ. Đôi giày chạy bộ bạn mua tuần trước đã bị bong đế, nên bạn mang ra cửa hàng để đổi hoặc trả lại.",
+    "speakers": {
+      "a": { "name": "Rachel", "roleVi": "Nhân viên quầy chăm sóc khách hàng" },
+      "b": { "name": "Minh", "roleVi": "Bạn, du học sinh" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hi, welcome to customer service. How can I help?",
+        "meaningVi": "Xin chào, đây là quầy chăm sóc khách hàng. Tôi giúp gì được cho bạn?"
+      },
+      {
+        "speaker": "b",
+        "text": "Hi. I'd like to return these running shoes, please.",
+        "meaningVi": "Chào chị. Tôi muốn trả lại đôi giày chạy bộ này.",
+        "blank": "I'd like to return",
+        "noteVi": "\"I'd like to...\" lịch sự hơn \"I want to...\" khi yêu cầu điều gì."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. Is there a problem with them?",
+        "meaningVi": "Vâng. Đôi giày có vấn đề gì à?",
+        "blank": "Is there a problem with them"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, the sole is coming off. I've only worn them twice.",
+        "meaningVi": "Vâng, đế giày đang bị bong ra. Tôi mới đi có hai lần.",
+        "blank": "the sole is coming off"
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, I'm sorry about that. Do you have the receipt?",
+        "meaningVi": "Ồ, tôi rất tiếc. Bạn có mang hóa đơn không?",
+        "blank": "Do you have the receipt"
+      },
+      {
+        "speaker": "b",
+        "text": "Here it is. I bought them last Tuesday.",
+        "meaningVi": "Đây ạ. Tôi mua hôm thứ Ba tuần trước."
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks. Would you prefer a refund or an exchange?",
+        "meaningVi": "Cảm ơn bạn. Bạn muốn hoàn tiền hay đổi đôi khác?",
+        "blank": "a refund or an exchange",
+        "noteVi": "\"Refund\" = hoàn tiền; \"exchange\" = đổi sang món khác."
+      },
+      {
+        "speaker": "b",
+        "text": "I actually like the shoes. Could I exchange them for a new pair?",
+        "meaningVi": "Thật ra tôi thích đôi giày này. Tôi đổi lấy một đôi mới được không?",
+        "blank": "exchange them for a new pair"
+      },
+      {
+        "speaker": "a",
+        "text": "Let me see if we have your size in stock. One moment.",
+        "meaningVi": "Để tôi xem cỡ của bạn còn hàng không. Chờ một chút nhé.",
+        "blank": "have your size in stock"
+      },
+      {
+        "speaker": "b",
+        "text": "Sure, take your time.",
+        "meaningVi": "Vâng, chị cứ từ từ."
+      },
+      {
+        "speaker": "a",
+        "text": "Good news! We've got one pair left in size nine.",
+        "meaningVi": "Tin vui đây! Chúng tôi còn một đôi cỡ chín."
+      },
+      {
+        "speaker": "b",
+        "text": "That's great. Thank you so much for your help.",
+        "meaningVi": "Tuyệt quá. Cảm ơn chị rất nhiều vì đã giúp.",
+        "blank": "Thank you so much for your help"
+      }
+    ]
+  }
+]

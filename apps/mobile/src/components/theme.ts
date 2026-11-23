@@ -1,56 +1,49 @@
 import { useColorScheme } from 'react-native';
 
 /**
- * Bảng màu tươi, thân thiện: nền trắng, nút "khối" có viền dưới đậm, màu xanh ngọc làm chủ đạo.
- * `xxxDark` là màu viền dưới (tạo cảm giác nút nổi). `xxxBg` là nền nhạt cho thông báo đúng/sai.
+ * Giao diện kiểu ứng dụng nhắn tin: nền xám rất nhạt, thẻ trắng đổ bóng nhẹ, màu chàm
+ * (indigo) làm chủ đạo, san hô làm điểm nhấn. Không dùng nút "khối" hay chữ in hoa.
  */
 const light = {
-  bg: '#FFFFFF',
-  text: '#3C3C3C',
-  muted: '#8A8F98',
-  card: '#FFFFFF',
-  border: '#E3E5E8',
-  borderDark: '#CED2D6',
-  primary: '#14A38B',
-  primaryDark: '#0E7C69',
-  blue: '#2F8FE0',
-  blueDark: '#1F6DB0',
-  ok: '#3BAA3B',
-  okDark: '#2B862B',
-  okBg: '#DDF5D4',
-  danger: '#E5484D',
-  dangerDark: '#B9363A',
-  dangerBg: '#FFE1E1',
-  gold: '#F6B400',
-  goldDark: '#C99300',
-  orange: '#FF8A1F',
-  locked: '#E3E5E8',
-  lockedDark: '#C4C8CD',
-  selectedBg: '#DDF0FC',
+  bg: '#F4F5F9',
+  surface: '#FFFFFF',
+  text: '#1E2230',
+  muted: '#6B7183',
+  border: '#E3E6EE',
+  primary: '#4B4FD6',
+  primarySoft: '#ECEDFC',
+  accent: '#F2705E',
+  accentSoft: '#FDEDEA',
+  ok: '#14975A',
+  okSoft: '#E2F5EA',
+  danger: '#D9474B',
+  dangerSoft: '#FCEBEB',
+  gold: '#E09A0B',
+  /** Bong bóng của người kia (bên trái) và của bạn (bên phải). */
+  bubbleOther: '#FFFFFF',
+  bubbleMe: '#4B4FD6',
+  onPrimary: '#FFFFFF',
+  shadow: '#1E2230',
 };
 const dark: typeof light = {
-  bg: '#131F24',
-  text: '#EEF1F3',
-  muted: '#93A0A8',
-  card: '#1B2A31',
-  border: '#2F3F47',
-  borderDark: '#22313A',
-  primary: '#2BC4A8',
-  primaryDark: '#1C8F7A',
-  blue: '#4BA9F0',
-  blueDark: '#2F7DBA',
-  ok: '#58C458',
-  okDark: '#3F9A3F',
-  okBg: '#1E3A24',
-  danger: '#F06A6E',
-  dangerDark: '#C04E52',
-  dangerBg: '#3F2224',
-  gold: '#FFC93C',
-  goldDark: '#C99A20',
-  orange: '#FF9F45',
-  locked: '#37464F',
-  lockedDark: '#26343C',
-  selectedBg: '#1D3A4F',
+  bg: '#12141C',
+  surface: '#1C1F2B',
+  text: '#ECEEF5',
+  muted: '#9AA0B4',
+  border: '#2C3042',
+  primary: '#8487F2',
+  primarySoft: '#262A4A',
+  accent: '#F58C7C',
+  accentSoft: '#3A2522',
+  ok: '#4CC98A',
+  okSoft: '#183428',
+  danger: '#F07174',
+  dangerSoft: '#3A1F22',
+  gold: '#F2B43C',
+  bubbleOther: '#232737',
+  bubbleMe: '#5A5EE0',
+  onPrimary: '#FFFFFF',
+  shadow: '#000000',
 };
 
 export type Colors = typeof light;
@@ -59,10 +52,11 @@ export function useColors(): Colors {
   return useColorScheme() === 'dark' ? dark : light;
 }
 
-/** Màu cho từng chặng trên lộ trình (xoay vòng). */
-export const UNIT_COLORS: { main: keyof Colors; dark: keyof Colors }[] = [
-  { main: 'primary', dark: 'primaryDark' },
-  { main: 'blue', dark: 'blueDark' },
-  { main: 'orange', dark: 'goldDark' },
-  { main: 'ok', dark: 'okDark' },
-];
+/** Bóng đổ nhẹ cho thẻ. */
+export const cardShadow = (c: Colors) => ({
+  shadowColor: c.shadow,
+  shadowOpacity: 0.06,
+  shadowRadius: 10,
+  shadowOffset: { width: 0, height: 3 },
+  elevation: 2,
+});

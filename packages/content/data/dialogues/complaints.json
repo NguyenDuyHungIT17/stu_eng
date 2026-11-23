@@ -1,0 +1,290 @@
+[
+  {
+    "id": "cp-wrong-order",
+    "topicId": "complaints",
+    "title": "Nhận sai món đặt hàng",
+    "level": "B1",
+    "situationVi": "Bạn (Minh) đang công tác ở Úc, đặt đồ ăn về khách sạn nhưng nhận sai món. Bạn gọi cho Jake, nhân viên của nhà hàng, để phản ánh.",
+    "speakers": {
+      "a": { "name": "Jake", "roleVi": "Nhân viên nhà hàng" },
+      "b": { "name": "Minh", "roleVi": "Bạn, khách hàng" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Good evening, Bondi Kitchen. How can I help you?",
+        "meaningVi": "Chào buổi tối, Bondi Kitchen xin nghe. Tôi có thể giúp gì cho anh?"
+      },
+      {
+        "speaker": "b",
+        "text": "Hi, I'm calling about an order I just received. I think there's been a mistake.",
+        "meaningVi": "Chào anh, tôi gọi về đơn hàng vừa nhận. Tôi nghĩ có nhầm lẫn gì đó.",
+        "blank": "I think there's been a mistake",
+        "noteVi": "Câu mở đầu khiếu nại nhẹ nhàng, không đổ lỗi trực tiếp."
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, I'm sorry about that. Could I have your order number?",
+        "meaningVi": "Ồ, tôi xin lỗi. Anh cho tôi xin mã đơn hàng được không?"
+      },
+      {
+        "speaker": "b",
+        "text": "Sure, it's 4572. I ordered a chicken salad, but I got a beef burger.",
+        "meaningVi": "Vâng, là 4572. Tôi đặt salad gà nhưng lại nhận được burger bò.",
+        "blank": "I ordered a chicken salad, but",
+        "noteVi": "\"I ordered X, but I got Y\" nêu vấn đề rõ ràng, ngắn gọn."
+      },
+      {
+        "speaker": "a",
+        "text": "I see. It looks like the orders got mixed up in the kitchen.",
+        "meaningVi": "Tôi hiểu rồi. Có vẻ trong bếp đã làm lẫn các đơn với nhau.",
+        "blank": "the orders got mixed up"
+      },
+      {
+        "speaker": "b",
+        "text": "The problem is I don't eat beef, so I can't really keep it.",
+        "meaningVi": "Vấn đề là tôi không ăn thịt bò, nên tôi không giữ lại được.",
+        "blank": "The problem is"
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. We'll send the right order straight away, free of charge.",
+        "meaningVi": "Tất nhiên rồi. Chúng tôi sẽ gửi ngay đúng món cho anh, miễn phí.",
+        "blank": "free of charge"
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you. How long will it take to get here?",
+        "meaningVi": "Cảm ơn anh. Mất bao lâu thì đồ ăn đến nơi?"
+      },
+      {
+        "speaker": "a",
+        "text": "About twenty minutes. Again, I do apologise for the trouble.",
+        "meaningVi": "Khoảng hai mươi phút. Một lần nữa, tôi thành thật xin lỗi vì sự phiền phức.",
+        "blank": "I do apologise for the trouble"
+      },
+      {
+        "speaker": "b",
+        "text": "That's okay. Thanks for sorting it out so quickly.",
+        "meaningVi": "Không sao đâu. Cảm ơn anh đã xử lý nhanh như vậy.",
+        "blank": "Thanks for sorting it out"
+      }
+    ]
+  },
+  {
+    "id": "cp-noisy-neighbour",
+    "topicId": "complaints",
+    "title": "Nhắc hàng xóm ồn ào",
+    "level": "B1",
+    "situationVi": "Bạn (Thảo) đang du học ở Anh, sống trong một chung cư. Hàng xóm Ben mở nhạc to đến khuya nhiều đêm liền, nên bạn sang gõ cửa nói chuyện.",
+    "speakers": {
+      "a": { "name": "Ben", "roleVi": "Hàng xóm cùng tầng" },
+      "b": { "name": "Thảo", "roleVi": "Bạn, du học sinh" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Oh, hi. You live next door, right?",
+        "meaningVi": "Ồ, chào bạn. Bạn sống ở phòng bên cạnh đúng không?"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, I'm Thao. Sorry to bother you so late, but do you have a minute?",
+        "meaningVi": "Vâng, mình là Thảo. Xin lỗi làm phiền bạn muộn thế này, bạn có rảnh một phút không?",
+        "blank": "do you have a minute"
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. Is everything okay?",
+        "meaningVi": "Được chứ. Mọi chuyện ổn chứ?"
+      },
+      {
+        "speaker": "b",
+        "text": "Well, the music's been quite loud the last few nights.",
+        "meaningVi": "À, mấy đêm vừa rồi nhạc hơi to.",
+        "blank": "the music's been quite loud",
+        "noteVi": "\"Quite\" và \"Well,...\" giúp lời phàn nàn nghe mềm mỏng hơn."
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, really? I had no idea you could hear it.",
+        "meaningVi": "Ồ, thật à? Mình không biết là bạn nghe thấy đấy.",
+        "blank": "I had no idea"
+      },
+      {
+        "speaker": "b",
+        "text": "The walls are pretty thin. I've got exams this week, so I need to sleep early.",
+        "meaningVi": "Tường khá mỏng. Tuần này mình có bài thi nên cần ngủ sớm.",
+        "blank": "The walls are pretty thin"
+      },
+      {
+        "speaker": "a",
+        "text": "I'm really sorry. I'll keep it down from now on.",
+        "meaningVi": "Mình thật sự xin lỗi. Từ giờ mình sẽ vặn nhỏ lại.",
+        "blank": "I'll keep it down",
+        "noteVi": "\"Keep it down\" = giữ yên lặng, giảm tiếng ồn."
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks. Would you mind turning it off after eleven?",
+        "meaningVi": "Cảm ơn bạn. Bạn có thể tắt nhạc sau 11 giờ được không?",
+        "blank": "turning it off after eleven"
+      },
+      {
+        "speaker": "a",
+        "text": "No problem at all. And if it's too loud again, just knock.",
+        "meaningVi": "Không vấn đề gì. Nếu lại ồn quá thì cứ gõ cửa nhé."
+      },
+      {
+        "speaker": "b",
+        "text": "I appreciate that. Have a good night, Ben.",
+        "meaningVi": "Cảm ơn bạn nhé. Chúc ngủ ngon, Ben.",
+        "blank": "I appreciate that"
+      }
+    ]
+  },
+  {
+    "id": "cp-broken-item-refund",
+    "topicId": "complaints",
+    "title": "Đổi trả đồ bị hỏng",
+    "level": "B1",
+    "situationVi": "Bạn (Nam) mua máy pha cà phê ở một cửa hàng điện máy tại Singapore, dùng được hai ngày thì hỏng. Bạn mang lại quầy chăm sóc khách hàng để xin hoàn tiền.",
+    "speakers": {
+      "a": { "name": "Grace", "roleVi": "Nhân viên chăm sóc khách hàng" },
+      "b": { "name": "Nam", "roleVi": "Bạn, khách hàng" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hi there. What can I do for you today?",
+        "meaningVi": "Xin chào. Hôm nay tôi có thể giúp gì cho anh?"
+      },
+      {
+        "speaker": "b",
+        "text": "I bought this coffee machine on Saturday, and it's stopped working.",
+        "meaningVi": "Tôi mua máy pha cà phê này hôm thứ Bảy, giờ nó không chạy nữa.",
+        "blank": "it's stopped working"
+      },
+      {
+        "speaker": "a",
+        "text": "I'm sorry to hear that. What seems to be the problem?",
+        "meaningVi": "Tôi rất tiếc. Có vẻ máy bị làm sao vậy anh?",
+        "blank": "What seems to be the problem",
+        "noteVi": "Câu hỏi chuẩn của nhân viên dịch vụ, nên nghe quen để trả lời."
+      },
+      {
+        "speaker": "b",
+        "text": "It turns on, but no water comes out. And it makes a strange noise.",
+        "meaningVi": "Máy bật lên được, nhưng không ra nước. Mà còn kêu tiếng lạ nữa.",
+        "blank": "it makes a strange noise"
+      },
+      {
+        "speaker": "a",
+        "text": "Do you have the receipt with you?",
+        "meaningVi": "Anh có mang theo hóa đơn không?"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, here it is. I'd like a full refund, please.",
+        "meaningVi": "Có, đây ạ. Tôi muốn được hoàn lại toàn bộ tiền.",
+        "blank": "I'd like a full refund",
+        "noteVi": "\"I'd like...\" nêu yêu cầu rõ ràng mà vẫn lịch sự."
+      },
+      {
+        "speaker": "a",
+        "text": "We can offer you a replacement or a refund. Which would you prefer?",
+        "meaningVi": "Chúng tôi có thể đổi máy mới hoặc hoàn tiền. Anh muốn chọn cách nào?",
+        "blank": "Which would you prefer"
+      },
+      {
+        "speaker": "b",
+        "text": "I'd rather have the refund, to be honest. I've lost confidence in this model.",
+        "meaningVi": "Thật lòng thì tôi muốn hoàn tiền hơn. Tôi không còn tin dòng máy này nữa.",
+        "blank": "I'd rather have the refund"
+      },
+      {
+        "speaker": "a",
+        "text": "That's fine. The money will go back to your card in three to five days.",
+        "meaningVi": "Được ạ. Tiền sẽ được hoàn về thẻ của anh trong ba đến năm ngày."
+      },
+      {
+        "speaker": "b",
+        "text": "Great. Could I get a copy of the refund slip?",
+        "meaningVi": "Tốt quá. Cho tôi xin một bản phiếu hoàn tiền được không?",
+        "blank": "Could I get a copy"
+      }
+    ]
+  },
+  {
+    "id": "cp-airline-delay",
+    "topicId": "complaints",
+    "title": "Chuyến bay bị hoãn",
+    "level": "B1",
+    "situationVi": "Bạn (Lan) đi công tác Seoul, chuyến bay nối chuyến ở Bangkok bị hoãn bốn tiếng. Bạn ra quầy hãng bay hỏi Kevin, nhân viên mặt đất, về chuyến bay và quyền lợi của mình.",
+    "speakers": {
+      "a": { "name": "Kevin", "roleVi": "Nhân viên quầy hãng hàng không" },
+      "b": { "name": "Lan", "roleVi": "Bạn, hành khách đi công tác" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Excuse me, my flight to Seoul has been delayed by four hours.",
+        "meaningVi": "Xin lỗi anh, chuyến bay của tôi đi Seoul bị hoãn bốn tiếng.",
+        "blank": "has been delayed by four hours"
+      },
+      {
+        "speaker": "a",
+        "text": "Yes, I'm very sorry. There's a technical issue with the aircraft.",
+        "meaningVi": "Vâng, tôi rất xin lỗi. Máy bay đang gặp sự cố kỹ thuật."
+      },
+      {
+        "speaker": "b",
+        "text": "I understand, but I have an important meeting first thing tomorrow.",
+        "meaningVi": "Tôi hiểu, nhưng sáng sớm mai tôi có cuộc họp quan trọng.",
+        "blank": "first thing tomorrow",
+        "noteVi": "\"I understand, but...\" thể hiện thông cảm trước khi nêu vấn đề của mình."
+      },
+      {
+        "speaker": "a",
+        "text": "Let me check if there's an earlier flight for you.",
+        "meaningVi": "Để tôi kiểm tra xem có chuyến nào sớm hơn cho chị không."
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you. Is there any chance of getting a seat on another airline?",
+        "meaningVi": "Cảm ơn anh. Có khả năng nào đổi sang hãng khác không?",
+        "blank": "Is there any chance of",
+        "noteVi": "Cách hỏi khéo về một khả năng không chắc chắn."
+      },
+      {
+        "speaker": "a",
+        "text": "Unfortunately, they're all full tonight. But you're entitled to a meal voucher.",
+        "meaningVi": "Rất tiếc, tối nay các hãng đều hết chỗ. Nhưng chị được nhận một phiếu ăn.",
+        "blank": "you're entitled to"
+      },
+      {
+        "speaker": "b",
+        "text": "Okay. And will I be compensated for the delay?",
+        "meaningVi": "Vâng. Vậy tôi có được bồi thường vì chuyến bay bị hoãn không?",
+        "blank": "will I be compensated"
+      },
+      {
+        "speaker": "a",
+        "text": "You can fill in a claim form online. I'll give you the link.",
+        "meaningVi": "Chị có thể điền đơn yêu cầu bồi thường trên mạng. Tôi sẽ đưa chị đường link.",
+        "blank": "fill in a claim form"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks. Could you also make sure my bag goes to Seoul?",
+        "meaningVi": "Cảm ơn anh. Anh có thể kiểm tra giúp hành lý của tôi sẽ được chuyển tới Seoul không?"
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. It's checked through to your final destination.",
+        "meaningVi": "Tất nhiên rồi. Hành lý đã được chuyển thẳng tới điểm đến cuối cùng của chị.",
+        "blank": "checked through to your final destination"
+      }
+    ]
+  }
+]

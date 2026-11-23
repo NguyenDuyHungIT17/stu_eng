@@ -1,32 +1,29 @@
 import { router } from 'expo-router';
-import { type ComponentRef, useRef } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { type Colors, UNIT_COLORS, useColors } from '@/components/theme';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Screen } from '@/components/screen';
+import { cardShadow, useColors } from '@/components/theme';
+import { Avatar, Badge } from '@/components/ui';
 import { useDb } from '@/db/client';
 import { getDailyMinutesGoal } from '@/db/settings';
-import { getPath, type LessonNode, type Unit } from '@/features/lesson/path';
+import { LEARNER, speakerColor } from '@/features/dialogue/bubbles';
+import { type DialogueSummary, listSections, nextDialogue } from '@/features/dialogue/repository';
 import { getStats } from '@/features/progress/stats';
 import { countDueToday } from '@/features/review/repository';
 import { useFocusQuery } from '@/lib/use-focus-query';
 
-/** Lệch ngang của các nút bài học: đường đi uốn lượn. */
-const OFFSETS = [0, 44, 70, 44, 0, -44, -70, -44];
-
 /**
- * Trang chủ = lộ trình học: mỗi chủ đề là một chặng, mỗi bài 5 câu.
- * Trên cùng: chuỗi ngày, phút học hôm nay, nút ôn tập khi có câu đến hạn.
+ * Trang chính: hội thoại nên luyện tiếp, câu cần ôn, và thư viện hội thoại theo chủ đề.
+ * Mọi hội thoại đều mở sẵn, người học chọn tình huống mình cần.
  */
 export default function HomeScreen() {
   const db = useDb();
   const c = useColors();
-  const insets = useSafeAreaInsets();
-  const scroll = useRef<ComponentRef<typeof ScrollView>>(null);
-  const scrolled = useRef(false);
   const data = useFocusQuery(() => {
     const now = Date.now();
+    const sections = listSections(db);
     return {
-      path: getPath(db),
+      sections,
+      next: nextDialogue(sections),
       due: countDueToday(db, now),
       stats: getStats(db, now),
       minutesGoal: getDailyMinutesGoal(db),
@@ -34,239 +31,161 @@ export default function HomeScreen() {
   });
 
   if (!data) return <View style={{ flex: 1, backgroundColor: c.bg }} />;
-  const { path, stats } = data;
-  const cur = path.current;
+  const { stats, next } = data;
+  const doneCount = data.sections.reduce((n, s) => n + s.dialogues.filter((d) => d.done).length, 0);
+  const total = data.sections.reduce((n, s) => n + s.dialogues.length, 0);
 
   return (
-    <View style={{ flex: 1, backgroundColor: c.bg }}>
-      <View
-        style={[
-          styles.topBar,
-          { paddingTop: insets.top + 8, borderColor: c.border, backgroundColor: c.bg },
-        ]}
-      >
-        <Text style={styles.topItem}>🇬🇧</Text>
-        <Text
-          style={[styles.topItem, { color: stats.streak.todayDone ? c.orange : c.muted }]}
-          accessibilityLabel={`Chuỗi ${stats.streak.current} ngày`}
-        >
-          🔥 {stats.streak.current}
-        </Text>
-        <Text
-          style={[
-            styles.topItem,
-            { color: stats.todayMinutes >= data.minutesGoal ? c.ok : c.blue },
-          ]}
-          accessibilityLabel={`${stats.todayMinutes} trên ${data.minutesGoal} phút hôm nay`}
-        >
-          ⏱ {stats.todayMinutes}/{data.minutesGoal}′
-        </Text>
-        <Text style={[styles.topItem, { color: c.gold }]} accessibilityLabel="Câu đã thuộc">
-          ⭐ {stats.mastered}
-        </Text>
+    <Screen tab>
+      <View style={styles.header}>
+        <View style={{ flex: 1 }}>
+          <Text style={{ color: c.muted, fontSize: 14 }}>Luyện giao tiếp</Text>
+          <Text style={[styles.hello, { color: c.text }]}>Hôm nay nói gì nhỉ? 👋</Text>
+        </View>
+      </View>
+      <View style={styles.chips}>
+        <Chip text={`🔥 ${stats.streak.current} ngày`} active={stats.streak.todayDone} />
+        <Chip
+          text={`⏱ ${stats.todayMinutes}/${data.minutesGoal} phút`}
+          active={stats.todayMinutes >= data.minutesGoal}
+        />
+        <Chip text={`💬 ${doneCount}/${total} hội thoại`} active={false} />
       </View>
 
-      <ScrollView ref={scroll} contentContainerStyle={styles.content}>
-        {data.due > 0 ? (
-          <Pressable
-            accessibilityRole="button"
-            onPress={() => router.push('/review')}
-            style={({ pressed }) => [
-              styles.review,
-              { backgroundColor: c.blue, borderBottomColor: c.blueDark },
-              pressed ? styles.pressed : null,
-            ]}
-          >
-            <Text style={styles.reviewIcon}>🧠</Text>
-            <View style={{ flex: 1 }}>
-              <Text style={styles.reviewTitle}>Ôn tập ngay</Text>
-              <Text style={styles.reviewSub}>{data.due} câu đang chờ bạn ôn lại</Text>
-            </View>
-            <Text style={styles.reviewArrow}>›</Text>
-          </Pressable>
-        ) : null}
+      {next ? <NextCard d={next} /> : null}
 
-        {path.units.map((u, ui) => (
-          <UnitBlock
-            key={u.id}
-            unit={u}
-            number={ui + 1}
-            colors={c}
-            current={cur}
-            onCurrentLayout={(y) => {
-              if (scrolled.current) return;
-              scrolled.current = true;
-              scroll.current?.scrollTo({ y: Math.max(0, y - 160), animated: false });
-            }}
-          />
-        ))}
-        {path.units.length > 0 && !cur ? (
-          <Text style={[styles.allDone, { color: c.gold }]}>🏁 Bạn đã học hết lộ trình!</Text>
-        ) : null}
-      </ScrollView>
+      {data.due > 0 ? (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => router.push('/review')}
+          style={[styles.review, { backgroundColor: c.surface }, cardShadow(c)]}
+        >
+          <View style={[styles.reviewIcon, { backgroundColor: c.accentSoft }]}>
+            <Text style={{ fontSize: 22 }}>🔁</Text>
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text style={{ color: c.text, fontSize: 16, fontWeight: '700' }}>
+              Ôn lại câu đã học
+            </Text>
+            <Text style={{ color: c.muted }}>{data.due} câu đến hạn, luyện trong ngữ cảnh</Text>
+          </View>
+          <Text style={{ color: c.accent, fontSize: 22 }}>›</Text>
+        </Pressable>
+      ) : null}
+
+      {data.sections.map((s) => (
+        <View key={s.id} style={styles.section}>
+          <View style={styles.sectionHead}>
+            <Text style={[styles.sectionTitle, { color: c.text }]}>{s.title}</Text>
+            <Badge text={s.level} />
+          </View>
+          {s.dialogues.map((d) => (
+            <DialogueRow key={d.id} d={d} />
+          ))}
+        </View>
+      ))}
+    </Screen>
+  );
+}
+
+function Chip({ text, active }: { text: string; active: boolean }) {
+  const c = useColors();
+  return (
+    <View style={[styles.chip, { backgroundColor: active ? c.okSoft : c.surface }]}>
+      <Text style={{ color: active ? c.ok : c.text, fontWeight: '600', fontSize: 13 }}>{text}</Text>
     </View>
   );
 }
 
-function UnitBlock({
-  unit,
-  number,
-  colors: c,
-  current,
-  onCurrentLayout,
-}: {
-  unit: Unit;
-  number: number;
-  colors: Colors;
-  current: LessonNode | null;
-  onCurrentLayout: (y: number) => void;
-}) {
-  const tone = UNIT_COLORS[(number - 1) % UNIT_COLORS.length] ?? UNIT_COLORS[0];
-  const main = c[tone?.main ?? 'primary'];
-  const edge = c[tone?.dark ?? 'primaryDark'];
-  const unitTop = useRef(0);
-  const reached = current === null || unitIndexBefore(unit, current);
-
+function NextCard({ d }: { d: DialogueSummary }) {
+  const c = useColors();
   return (
-    <View onLayout={(e) => (unitTop.current = e.nativeEvent.layout.y)}>
+    <View style={[styles.next, { backgroundColor: c.primary }]}>
+      <Text style={{ color: '#FFFFFFB3', fontWeight: '600', fontSize: 13 }}>
+        {d.learned > 0 ? 'Luyện tiếp' : 'Tình huống tiếp theo'} · {d.level}
+      </Text>
+      <Text style={styles.nextTitle}>{d.title}</Text>
+      <Text style={styles.nextSituation} numberOfLines={3}>
+        {d.situationVi}
+      </Text>
+      <View style={styles.pair}>
+        <Avatar name={d.speakers.a.name} color={c.accent} size={30} />
+        <Text style={{ color: '#FFFFFF', flexShrink: 1 }}>
+          {d.speakers.a.name} và {d.speakers.b.name} (bạn)
+        </Text>
+      </View>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={`Chặng ${number}: ${unit.title}. Xem danh sách câu`}
-        onPress={() => router.push({ pathname: '/topic/[id]', params: { id: unit.id } })}
-        style={[
-          styles.unitHead,
-          reached
-            ? { backgroundColor: main, borderBottomColor: edge }
-            : { backgroundColor: c.locked, borderBottomColor: c.lockedDark },
-        ]}
+        onPress={() => router.push({ pathname: '/lesson', params: { dialogue: d.id } })}
+        style={({ pressed }) => [styles.nextBtn, { opacity: pressed ? 0.85 : 1 }]}
       >
-        <View style={{ flex: 1 }}>
-          <Text style={[styles.unitKicker, { color: reached ? '#FFFFFFCC' : c.muted }]}>
-            CHẶNG {number} · {unit.level} · {unit.learned}/{unit.phraseCount} CÂU
-          </Text>
-          <Text style={[styles.unitTitle, { color: reached ? '#FFFFFF' : c.muted }]}>
-            {unit.title}
-          </Text>
-        </View>
-        <Text style={styles.unitBook}>📖</Text>
+        <Text style={{ color: c.primary, fontWeight: '700', fontSize: 16 }}>Bắt đầu luyện</Text>
       </Pressable>
-
-      <View style={styles.nodes}>
-        {unit.lessons.map((l, i) => {
-          const isCurrent = current?.topicId === l.topicId && current.index === l.index;
-          const open = l.done || isCurrent;
-          const dx = OFFSETS[i % OFFSETS.length] ?? 0;
-          return (
-            <View
-              key={l.index}
-              style={{ transform: [{ translateX: dx }], alignItems: 'center' }}
-              onLayout={
-                isCurrent
-                  ? (e) => onCurrentLayout(unitTop.current + e.nativeEvent.layout.y)
-                  : undefined
-              }
-            >
-              {isCurrent ? (
-                <View
-                  style={[styles.startBubble, { borderColor: c.border, backgroundColor: c.bg }]}
-                >
-                  <Text style={[styles.startText, { color: main }]}>
-                    {l.learned > 0 ? 'HỌC TIẾP' : 'BẮT ĐẦU'}
-                  </Text>
-                </View>
-              ) : null}
-              <Pressable
-                accessibilityRole="button"
-                accessibilityLabel={`Bài ${l.index + 1}${l.done ? ', đã xong' : isCurrent ? ', bài hiện tại' : ', chưa mở'}`}
-                accessibilityState={{ disabled: !open }}
-                disabled={!open}
-                onPress={() =>
-                  router.push({
-                    pathname: '/lesson',
-                    params: { topic: l.topicId, n: String(l.index) },
-                  })
-                }
-                style={({ pressed }) => [
-                  styles.node,
-                  isCurrent ? styles.nodeCurrent : null,
-                  l.done
-                    ? { backgroundColor: c.gold, borderBottomColor: c.goldDark }
-                    : isCurrent
-                      ? { backgroundColor: main, borderBottomColor: edge }
-                      : { backgroundColor: c.locked, borderBottomColor: c.lockedDark },
-                  pressed ? styles.pressed : null,
-                ]}
-              >
-                <Text style={styles.nodeIcon}>{l.done ? '✓' : isCurrent ? '★' : '🔒'}</Text>
-              </Pressable>
-            </View>
-          );
-        })}
-      </View>
     </View>
   );
 }
 
-/** Chặng này đã tới (có bài xong hoặc chứa bài hiện tại). */
-function unitIndexBefore(unit: Unit, current: LessonNode): boolean {
-  return unit.lessons.some(
-    (l) => l.done || (l.topicId === current.topicId && l.index === current.index),
+function DialogueRow({ d }: { d: DialogueSummary }) {
+  const c = useColors();
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`${d.title}${d.done ? ', đã luyện' : ''}`}
+      onPress={() => router.push({ pathname: '/dialogue/[id]', params: { id: d.id } })}
+      style={({ pressed }) => [
+        styles.row,
+        { backgroundColor: c.surface, opacity: pressed ? 0.8 : 1 },
+        cardShadow(c),
+      ]}
+    >
+      <View style={styles.avatars}>
+        <Avatar name={d.speakers.a.name} color={speakerColor(c, 'a')} size={30} />
+        <View style={styles.avatarB}>
+          <Avatar name={d.speakers.b.name} color={speakerColor(c, LEARNER)} size={30} />
+        </View>
+      </View>
+      <View style={{ flex: 1, gap: 2 }}>
+        <Text style={{ color: c.text, fontSize: 16, fontWeight: '600' }}>{d.title}</Text>
+        <Text style={{ color: c.muted, fontSize: 13 }} numberOfLines={2}>
+          {d.situationVi}
+        </Text>
+      </View>
+      <Text style={{ color: d.done ? c.ok : c.muted, fontSize: 13, fontWeight: '600' }}>
+        {d.done ? '✓' : d.learned > 0 ? `${d.learned}/${d.keyLines}` : ''}
+      </Text>
+    </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-  topBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingBottom: 10,
-    borderBottomWidth: 2,
-  },
-  topItem: { fontSize: 18, fontWeight: '800' },
-  content: { padding: 16, gap: 18, paddingBottom: 48 },
-  review: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-    borderRadius: 18,
-    borderBottomWidth: 5,
-    padding: 16,
-  },
-  reviewIcon: { fontSize: 34 },
-  reviewTitle: { color: '#FFFFFF', fontSize: 19, fontWeight: '800' },
-  reviewSub: { color: '#FFFFFFDD', fontSize: 14 },
-  reviewArrow: { color: '#FFFFFF', fontSize: 34, fontWeight: '800' },
-  pressed: { transform: [{ translateY: 3 }], borderBottomWidth: 2 },
-  unitHead: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 18,
-    borderBottomWidth: 5,
-    paddingHorizontal: 16,
-    paddingVertical: 14,
-  },
-  unitKicker: { fontSize: 12, fontWeight: '800', letterSpacing: 0.6 },
-  unitTitle: { fontSize: 20, fontWeight: '800', marginTop: 2 },
-  unitBook: { fontSize: 26 },
-  nodes: { alignItems: 'center', gap: 18, paddingVertical: 22 },
-  node: {
-    width: 72,
-    height: 66,
-    borderRadius: 36,
-    borderBottomWidth: 7,
+  header: { flexDirection: 'row', alignItems: 'center' },
+  hello: { fontSize: 24, fontWeight: '700' },
+  chips: { flexDirection: 'row', gap: 8, flexWrap: 'wrap' },
+  chip: { borderRadius: 999, paddingHorizontal: 12, paddingVertical: 6 },
+  next: { borderRadius: 22, padding: 18, gap: 8 },
+  nextTitle: { color: '#FFFFFF', fontSize: 22, fontWeight: '700' },
+  nextSituation: { color: '#FFFFFFE6', fontSize: 15, lineHeight: 22 },
+  pair: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 2 },
+  nextBtn: {
+    marginTop: 6,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 14,
+    minHeight: 48,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  nodeCurrent: { width: 84, height: 76, borderRadius: 42 },
-  nodeIcon: { fontSize: 28, color: '#FFFFFF', fontWeight: '900' },
-  startBubble: {
-    borderWidth: 2,
-    borderRadius: 12,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    marginBottom: 8,
+  review: { borderRadius: 18, padding: 14, flexDirection: 'row', alignItems: 'center', gap: 12 },
+  reviewIcon: {
+    width: 44,
+    height: 44,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  startText: { fontWeight: '800', letterSpacing: 0.6 },
-  allDone: { textAlign: 'center', fontSize: 20, fontWeight: '800' },
+  section: { gap: 10, marginTop: 8 },
+  sectionHead: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  sectionTitle: { fontSize: 19, fontWeight: '700' },
+  row: { borderRadius: 16, padding: 12, flexDirection: 'row', alignItems: 'center', gap: 12 },
+  avatars: { width: 48, height: 40 },
+  avatarB: { position: 'absolute', right: 0, bottom: 0 },
 });

@@ -1,135 +1,139 @@
 import { Rating } from '@/lib/fsrs';
-import type { Phrase } from '../review/repository';
+import type { Line } from '../dialogue/repository';
 import {
   accuracy,
   advance,
   answer,
-  buildLesson,
+  buildDialogueLesson,
   buildReview,
   buildTiles,
   currentStep,
-  finishedPhraseAt,
+  finishedLineAt,
   isDone,
   MAX_RETRIES,
   progress,
   ratingFor,
   sameSentence,
+  splitBlank,
   tokenize,
 } from './engine';
 
-const p = (id: string, text = `text ${id}`): Phrase => ({
-  id,
+const line = (
+  lineNo: number,
+  speaker: 'a' | 'b',
+  blank: string | null = 'key',
+  text = `text key ${lineNo}`,
+): Line => ({
+  id: `d-l${lineNo}`,
   topicId: 't',
   text,
   ipa: null,
-  meaningVi: `nghĩa ${id}`,
+  meaningVi: `nghĩa ${lineNo}`,
   example: null,
   register: null,
   level: 'A1',
-  sortOrder: 0,
+  sortOrder: lineNo,
   isCustom: false,
   deletedAt: null,
+  dialogueId: 'd',
+  lineNo,
+  speaker,
+  blank,
+  noteVi: null,
 });
 
-const rng = () => 0.42;
+const steps = (s: { steps: { kind: string; line: Line | null }[] }) =>
+  s.steps.map((x) => (x.line ? `${x.kind}:${x.line.lineNo}` : x.kind));
 
-describe('buildLesson', () => {
-  it('mỗi cụm: giới thiệu rồi chọn nghĩa; cuối bài một vòng luyện trộn', () => {
-    const s = buildLesson([p('a'), p('b')], { canListen: false, rng });
-    expect(s.steps.slice(0, 4).map((x) => `${x.kind}:${x.phrase.id}`)).toEqual([
-      'intro:a',
-      'choose_meaning:a',
-      'intro:b',
-      'choose_meaning:b',
+describe('buildDialogueLesson', () => {
+  it('tình huống → nghe cả bài → điền từng câu then chốt → nhập vai câu của người học', () => {
+    const lines = [line(0, 'a'), line(1, 'b'), line(2, 'a', null), line(3, 'b')];
+    expect(steps(buildDialogueLesson(lines))).toEqual([
+      'scene',
+      'listen_all',
+      'fill_blank:0',
+      'fill_blank:1',
+      'fill_blank:3',
+      'choose_reply:1',
+      'choose_reply:3',
     ]);
-    expect(s.steps.slice(4).map((x) => x.kind)).toEqual(['build_sentence', 'build_sentence']);
-    expect(new Set(s.steps.slice(4).map((x) => x.phrase.id))).toEqual(new Set(['a', 'b']));
   });
 
-  it('có giọng đọc thì vòng cuối xen bài nghe', () => {
-    const s = buildLesson([p('a'), p('b')], { canListen: true, rng });
-    expect(s.steps.slice(4).map((x) => x.kind)).toEqual(['build_sentence', 'listen_choose']);
+  it('người học nói câu mở đầu: ghép câu thay cho chọn câu đáp', () => {
+    const lines = [line(0, 'b'), line(1, 'a')];
+    expect(steps(buildDialogueLesson(lines))).toContain('build_sentence:0');
   });
 
-  it('chỉ một cụm thì không có trắc nghiệm (thiếu đáp án nhiễu)', () => {
-    const s = buildLesson([p('a')], { canListen: false, rng });
-    expect(s.steps.map((x) => x.kind)).toEqual(['intro', 'build_sentence']);
+  it('câu mở đầu quá dài thì nghe-điền thêm lần nữa', () => {
+    const long = 'one two three four five six seven eight nine ten eleven twelve thirteen key';
+    const lines = [line(0, 'b', 'key', long), line(1, 'a')];
+    expect(steps(buildDialogueLesson(lines)).slice(-1)).toEqual(['fill_blank:0']);
   });
 });
 
 describe('buildReview', () => {
-  it('xoay vòng kiểu bài, bỏ bài nghe khi không có giọng', () => {
-    const s = buildReview([p('a'), p('b'), p('c'), p('d')], { canListen: false, poolSize: 10 });
-    expect(s.steps.map((x) => x.kind)).toEqual([
-      'build_sentence',
-      'choose_meaning',
-      'choose_text',
-      'build_sentence',
-    ]);
-  });
-
-  it('kho quá nhỏ thì chỉ ghép câu', () => {
-    const s = buildReview([p('a')], { canListen: true, poolSize: 1 });
-    expect(s.steps.map((x) => x.kind)).toEqual(['build_sentence']);
+  it('xoay vòng các kiểu bài có thể dùng cho từng câu', () => {
+    const s = buildReview([line(0, 'a'), line(1, 'b'), line(2, 'a')]);
+    expect(steps(s)).toEqual(['fill_blank:0', 'choose_reply:1', 'build_sentence:2']);
   });
 });
 
 describe('answer / advance', () => {
   it('trả lời sai: bài quay lại cuối hàng, đếm lỗi', () => {
-    let s = buildReview([p('a'), p('b')], { canListen: false, poolSize: 10 });
+    let s = buildReview([line(0, 'a'), line(1, 'b')]);
     s = answer(s, false);
     expect(s.steps).toHaveLength(3);
-    expect(currentStep(s)?.phrase.id).toBe('b');
     s = answer(s, true);
-    expect(currentStep(s)).toMatchObject({ phrase: { id: 'a' }, retry: 1 });
+    expect(currentStep(s)).toMatchObject({ line: { lineNo: 0 }, retry: 1 });
     s = answer(s, true);
     expect(isDone(s)).toBe(true);
-    expect(s.mistakes).toEqual({ a: 1 });
+    expect(s.mistakes).toEqual({ 'd-l0': 1 });
     expect(accuracy(s)).toBeCloseTo(2 / 3);
   });
 
   it(`sai quá ${MAX_RETRIES} lần thì không quay lại nữa`, () => {
-    let s = buildReview([p('a')], { canListen: false, poolSize: 1 });
+    let s = buildReview([line(0, 'a')]);
     for (let i = 0; i <= MAX_RETRIES; i++) s = answer(s, false);
     expect(isDone(s)).toBe(true);
-    expect(s.mistakes.a).toBe(MAX_RETRIES + 1);
   });
 
-  it('bước giới thiệu chỉ đi tiếp, không tính điểm', () => {
-    let s = buildLesson([p('a')], { canListen: false, rng });
-    s = advance(s);
-    expect(s.answered).toBe(0);
-    expect(progress(s)).toBe(0.5);
-  });
-
-  it('answer khi đã xong không đổi gì', () => {
-    const s = buildReview([], { canListen: false, poolSize: 0 });
-    expect(answer(s, true)).toBe(s);
-    expect(progress(s)).toBe(1);
+  it('bước tình huống/nghe chỉ đi tiếp, answer không áp dụng', () => {
+    const s0 = buildDialogueLesson([line(0, 'a')]);
+    expect(answer(s0, true)).toBe(s0);
+    const s1 = advance(s0);
+    expect(s1.answered).toBe(0);
+    expect(progress(s1)).toBeCloseTo(1 / 3);
   });
 });
 
-describe('finishedPhraseAt', () => {
-  it('chỉ trả id khi đó là bước cuối của cụm trong phiên', () => {
-    const s = buildLesson([p('a'), p('b')], { canListen: false, rng });
-    expect(finishedPhraseAt(s, 0)).toBeNull();
-    const lastA = s.steps.map((x) => x.phrase.id).lastIndexOf('a');
-    expect(finishedPhraseAt(s, lastA)).toBe('a');
-    expect(finishedPhraseAt(s, 99)).toBeNull();
+describe('finishedLineAt', () => {
+  it('chỉ trả id ở bước cuối của câu trong phiên', () => {
+    const s = buildDialogueLesson([line(0, 'a'), line(1, 'b')]);
+    const idx = steps(s);
+    expect(finishedLineAt(s, 0)).toBeNull(); // scene
+    expect(finishedLineAt(s, idx.indexOf('fill_blank:1'))).toBeNull();
+    expect(finishedLineAt(s, idx.indexOf('choose_reply:1'))).toBe('d-l1');
+    expect(finishedLineAt(s, idx.indexOf('fill_blank:0'))).toBe('d-l0');
   });
 });
 
-describe('ratingFor', () => {
-  it('suy mức chấm từ số lần sai', () => {
+describe('tiện ích', () => {
+  it('ratingFor', () => {
     expect(ratingFor(0)).toBe(Rating.Good);
     expect(ratingFor(1)).toBe(Rating.Hard);
-    expect(ratingFor(3)).toBe(Rating.Again);
+    expect(ratingFor(2)).toBe(Rating.Again);
   });
-});
 
-describe('ghép câu', () => {
-  it('tokenize giữ dấu câu dính với từ', () => {
-    expect(tokenize("  Nice to meet you,  I'm Lan. ")).toEqual([
+  it('splitBlank', () => {
+    expect(splitBlank("Hi! I don't think we've met.", "I don't think")).toEqual({
+      before: 'Hi! ',
+      after: " we've met.",
+    });
+    expect(splitBlank('abc', 'x')).toEqual({ before: 'abc', after: '' });
+  });
+
+  it('ghép câu: tokenize, sameSentence, buildTiles', () => {
+    expect(tokenize(" Nice to  meet you, I'm Lan. ")).toEqual([
       'Nice',
       'to',
       'meet',
@@ -137,18 +141,10 @@ describe('ghép câu', () => {
       "I'm",
       'Lan.',
     ]);
-  });
-
-  it('sameSentence bỏ qua hoa/thường, dấu câu, kiểu nháy', () => {
-    expect(sameSentence(['nice', 'to', 'meet', 'you'], tokenize('Nice to meet you.'))).toBe(true);
     expect(sameSentence(['I’m', 'fine'], ["I'm", 'fine!'])).toBe(true);
-    expect(sameSentence(['to', 'nice', 'meet', 'you'], tokenize('Nice to meet you.'))).toBe(false);
-  });
-
-  it('buildTiles: đủ chữ của câu + chữ nhiễu không trùng', () => {
-    const tiles = buildTiles('Nice to meet you', ['See you later', 'Good morning'], rng, 3);
-    expect(tiles).toHaveLength(7);
-    for (const w of ['Nice', 'to', 'meet', 'you']) expect(tiles).toContain(w);
+    expect(sameSentence(['fine', "I'm"], ["I'm", 'fine'])).toBe(false);
+    const tiles = buildTiles('Nice to meet you', ['See you later'], () => 0.3, 3);
+    expect(tiles).toHaveLength(6);
     expect(tiles.filter((t) => t.toLowerCase() === 'you')).toHaveLength(1);
   });
 });

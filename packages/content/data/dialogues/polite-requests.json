@@ -1,0 +1,284 @@
+[
+  {
+    "id": "pr-ask-favour",
+    "topicId": "polite-requests",
+    "title": "Nhờ đồng nghiệp xem giúp email",
+    "level": "B1",
+    "situationVi": "Bạn (Mai) cần gửi email quan trọng cho khách hàng nước ngoài. Bạn nhờ Anna, đồng nghiệp người Anh ngồi cạnh, đọc giúp trước khi gửi.",
+    "speakers": {
+      "a": { "name": "Anna", "roleVi": "Đồng nghiệp người Anh" },
+      "b": { "name": "Mai", "roleVi": "Bạn, nhân viên kinh doanh" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hi Anna, are you busy right now? Could I ask you a favour?",
+        "meaningVi": "Chào Anna, giờ chị có bận không? Em nhờ chị một việc được không?",
+        "blank": "Could I ask you a favour",
+        "noteVi": "Mở lời nhờ vả lịch sự; người Anh viết \"favour\", người Mỹ viết \"favor\"."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure, Mai. What do you need?",
+        "meaningVi": "Được chứ Mai. Em cần gì?"
+      },
+      {
+        "speaker": "b",
+        "text": "Would you mind reading this email before I send it to the client?",
+        "meaningVi": "Chị đọc giúp em email này trước khi em gửi cho khách được không?",
+        "blank": "Would you mind reading",
+        "noteVi": "\"Would you mind + V-ing\" rất lịch sự; đồng ý thì trả lời \"Not at all\"."
+      },
+      {
+        "speaker": "a",
+        "text": "Not at all. Is it the one about the new prices?",
+        "meaningVi": "Không sao đâu. Có phải email về bảng giá mới không?",
+        "blank": "Not at all"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes. I just want to make sure it doesn't sound too direct.",
+        "meaningVi": "Vâng ạ. Em chỉ muốn chắc là giọng văn không quá thẳng.",
+        "blank": "I just want to make sure"
+      },
+      {
+        "speaker": "a",
+        "text": "It's pretty good. Maybe change \"You must reply\" to \"Could you reply\".",
+        "meaningVi": "Viết khá ổn đấy. Có lẽ em nên đổi \"You must reply\" thành \"Could you reply\"."
+      },
+      {
+        "speaker": "b",
+        "text": "Ah, that sounds much softer. Anything else?",
+        "meaningVi": "À, như vậy nghe nhẹ nhàng hơn hẳn. Còn gì nữa không chị?",
+        "blank": "that sounds much softer"
+      },
+      {
+        "speaker": "a",
+        "text": "No, the rest is fine. I think you're good to go.",
+        "meaningVi": "Không, phần còn lại ổn rồi. Chị nghĩ em gửi được rồi đấy.",
+        "blank": "you're good to go"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks so much, Anna. I really appreciate it.",
+        "meaningVi": "Cảm ơn chị nhiều lắm, Anna. Em thật sự rất cảm kích.",
+        "blank": "I really appreciate it"
+      },
+      {
+        "speaker": "a",
+        "text": "Anytime, Mai. Good luck with the client!",
+        "meaningVi": "Lúc nào cũng được mà, Mai. Chúc em suôn sẻ với khách nhé!"
+      }
+    ]
+  },
+  {
+    "id": "pr-borrow-charger",
+    "topicId": "polite-requests",
+    "title": "Mượn sạc laptop",
+    "level": "B1",
+    "situationVi": "Bạn (Nam) quên sạc laptop ở nhà mà máy sắp hết pin trước buổi họp. Bạn hỏi mượn sạc của Chris, đồng nghiệp người Canada.",
+    "speakers": {
+      "a": { "name": "Chris", "roleVi": "Đồng nghiệp người Canada" },
+      "b": { "name": "Nam", "roleVi": "Bạn, kỹ sư phần mềm" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hey Chris, sorry to bother you. Do you have a laptop charger?",
+        "meaningVi": "Này Chris, xin lỗi làm phiền anh. Anh có sạc laptop không?",
+        "blank": "sorry to bother you"
+      },
+      {
+        "speaker": "a",
+        "text": "I do. What kind of laptop have you got?",
+        "meaningVi": "Có đấy. Máy của anh loại gì?"
+      },
+      {
+        "speaker": "b",
+        "text": "It's a Dell. I left my charger at home this morning.",
+        "meaningVi": "Máy Dell. Sáng nay tôi để quên sạc ở nhà.",
+        "blank": "I left my charger at home",
+        "noteVi": "Dùng \"leave something at home\" cho việc để quên đồ ở đâu đó, không dùng \"forget at home\"."
+      },
+      {
+        "speaker": "a",
+        "text": "Lucky you, mine's a Dell too. Here you go.",
+        "meaningVi": "May cho anh đấy, máy tôi cũng là Dell. Đây này."
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks! Is it okay if I borrow it until lunch?",
+        "meaningVi": "Cảm ơn anh! Tôi mượn đến giờ ăn trưa được không?",
+        "blank": "Is it okay if I borrow it",
+        "noteVi": "\"Borrow\" = mượn (mình nhận), \"lend\" = cho mượn (mình đưa)."
+      },
+      {
+        "speaker": "a",
+        "text": "No worries. I don't need it until this afternoon.",
+        "meaningVi": "Không sao. Đến chiều tôi mới cần dùng.",
+        "blank": "No worries"
+      },
+      {
+        "speaker": "b",
+        "text": "Great. I'll bring it back to your desk before twelve.",
+        "meaningVi": "Tốt quá. Tôi sẽ mang trả lại bàn anh trước 12 giờ.",
+        "blank": "I'll bring it back"
+      },
+      {
+        "speaker": "a",
+        "text": "Perfect. Good luck with your meeting.",
+        "meaningVi": "Được rồi. Chúc anh họp suôn sẻ."
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks, you're a lifesaver!",
+        "meaningVi": "Cảm ơn anh, anh đúng là cứu tinh!",
+        "blank": "you're a lifesaver"
+      }
+    ]
+  },
+  {
+    "id": "pr-ask-permission",
+    "topicId": "polite-requests",
+    "title": "Xin phép sếp về sớm",
+    "level": "B1",
+    "situationVi": "Con bạn bị sốt và nhà trường gọi điện. Bạn (Lan) vào phòng xin phép Rachel, quản lý người Mỹ, cho về sớm chiều nay.",
+    "speakers": {
+      "a": { "name": "Rachel", "roleVi": "Quản lý trực tiếp (Mỹ)" },
+      "b": { "name": "Lan", "roleVi": "Bạn, kế toán" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hi Rachel, have you got a minute?",
+        "meaningVi": "Chào chị Rachel, chị có rảnh một phút không ạ?",
+        "blank": "have you got a minute"
+      },
+      {
+        "speaker": "a",
+        "text": "Sure, Lan. Come in. What's up?",
+        "meaningVi": "Được chứ Lan. Vào đi. Có chuyện gì vậy?"
+      },
+      {
+        "speaker": "b",
+        "text": "My son's school just called. He has a fever.",
+        "meaningVi": "Trường của con trai em vừa gọi. Cháu bị sốt."
+      },
+      {
+        "speaker": "a",
+        "text": "Oh no, I'm sorry to hear that.",
+        "meaningVi": "Ôi, chị rất tiếc khi nghe vậy.",
+        "blank": "I'm sorry to hear that"
+      },
+      {
+        "speaker": "b",
+        "text": "Would it be possible for me to leave at two today?",
+        "meaningVi": "Hôm nay em có thể về lúc hai giờ được không ạ?",
+        "blank": "Would it be possible for me to",
+        "noteVi": "Cách xin phép trang trọng, phù hợp khi nói với cấp trên."
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. Family comes first. Is the report finished?",
+        "meaningVi": "Tất nhiên rồi. Gia đình là trên hết. Báo cáo xong chưa em?",
+        "blank": "Family comes first"
+      },
+      {
+        "speaker": "b",
+        "text": "Almost. I'll finish the last part from home tonight.",
+        "meaningVi": "Gần xong rồi ạ. Tối nay em sẽ làm nốt phần cuối ở nhà.",
+        "blank": "I'll finish the last part from home"
+      },
+      {
+        "speaker": "a",
+        "text": "There's no rush. Tomorrow morning is fine.",
+        "meaningVi": "Không gấp đâu. Sáng mai cũng được.",
+        "blank": "There's no rush"
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you, Rachel. I'll keep my phone on in case anything comes up.",
+        "meaningVi": "Cảm ơn chị Rachel. Em sẽ để điện thoại mở phòng khi có việc gì.",
+        "blank": "in case anything comes up",
+        "noteVi": "\"Come up\" = (việc) phát sinh bất ngờ."
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks. I hope he feels better soon.",
+        "meaningVi": "Cảm ơn em. Mong cháu sớm khỏe lại."
+      }
+    ]
+  },
+  {
+    "id": "pr-decline-offer-help",
+    "topicId": "polite-requests",
+    "title": "Từ chối khéo và đề nghị giúp cách khác",
+    "level": "B1",
+    "situationVi": "Tom, đồng nghiệp người Úc, nhờ bạn (Huy) làm thay bài thuyết trình chiều thứ Sáu. Bạn đã kín lịch nên từ chối khéo nhưng đề nghị giúp theo cách khác.",
+    "speakers": {
+      "a": { "name": "Tom", "roleVi": "Đồng nghiệp người Úc" },
+      "b": { "name": "Huy", "roleVi": "Bạn, chuyên viên dự án" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Huy, could you possibly do the client presentation for me on Friday?",
+        "meaningVi": "Huy ơi, liệu anh có thể thuyết trình với khách thay tôi vào thứ Sáu không?",
+        "blank": "could you possibly",
+        "noteVi": "Thêm \"possibly\" làm lời nhờ nhẹ nhàng, khiêm tốn hơn."
+      },
+      {
+        "speaker": "b",
+        "text": "I'd love to help, but I'm afraid I'm fully booked on Friday.",
+        "meaningVi": "Tôi rất muốn giúp, nhưng e là thứ Sáu tôi kín lịch rồi.",
+        "blank": "I'm afraid I'm fully booked",
+        "noteVi": "\"I'd love to, but I'm afraid...\" là cấu trúc từ chối lịch sự phổ biến."
+      },
+      {
+        "speaker": "a",
+        "text": "Ah, okay. I've got a dentist appointment I can't move.",
+        "meaningVi": "À, vậy à. Tôi có lịch hẹn nha sĩ không dời được."
+      },
+      {
+        "speaker": "b",
+        "text": "That's a shame. What time is the presentation?",
+        "meaningVi": "Tiếc thật. Buổi thuyết trình lúc mấy giờ?",
+        "blank": "That's a shame"
+      },
+      {
+        "speaker": "a",
+        "text": "Three o'clock. It's only about thirty minutes.",
+        "meaningVi": "Ba giờ chiều. Chỉ khoảng ba mươi phút thôi."
+      },
+      {
+        "speaker": "b",
+        "text": "Have you thought about asking Linh? She knows the client well.",
+        "meaningVi": "Anh đã nghĩ đến việc nhờ Linh chưa? Cô ấy biết rõ khách hàng này.",
+        "blank": "Have you thought about asking"
+      },
+      {
+        "speaker": "a",
+        "text": "Good point. I'll check with her this afternoon.",
+        "meaningVi": "Ý hay đấy. Chiều nay tôi sẽ hỏi cô ấy."
+      },
+      {
+        "speaker": "b",
+        "text": "And if it helps, I can review the slides with you tomorrow.",
+        "meaningVi": "Còn nếu có ích, mai tôi có thể cùng anh xem lại slide.",
+        "blank": "if it helps, I can review"
+      },
+      {
+        "speaker": "a",
+        "text": "That would be great. Thanks, Huy.",
+        "meaningVi": "Vậy thì tuyệt quá. Cảm ơn anh, Huy.",
+        "blank": "That would be great"
+      },
+      {
+        "speaker": "b",
+        "text": "No problem. Sorry I can't do more.",
+        "meaningVi": "Không có gì. Xin lỗi vì tôi không giúp được nhiều hơn.",
+        "blank": "Sorry I can't do more"
+      }
+    ]
+  }
+]

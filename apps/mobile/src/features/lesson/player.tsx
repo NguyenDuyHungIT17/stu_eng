@@ -3,20 +3,27 @@ import { type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button } from '@/components/button';
-import { useColors } from '@/components/theme';
+import { cardShadow, useColors } from '@/components/theme';
 import { ProgressBar } from '@/components/ui';
 import { useDb } from '@/db/client';
 import { useStudyTimer } from '@/features/progress/use-study-timer';
 import { syncReminders } from '@/services/notifications';
-import { useTts } from '@/services/use-tts';
-import { pickDistractors, recordReview, shuffle } from '../review/repository';
+import { useDialoguePlayback } from '../dialogue/bubbles';
+import {
+  blankDistractors,
+  contextBefore,
+  type DialogueWithLines,
+  getDialogue,
+  replyDistractors,
+} from '../dialogue/repository';
+import { recordReview, shuffle } from '../review/repository';
 import {
   accuracy,
   advance,
   answer,
   buildTiles,
   currentStep,
-  finishedPhraseAt,
+  finishedLineAt,
   isDone,
   type LessonState,
   progress,
@@ -24,26 +31,29 @@ import {
   sameSentence,
   tokenize,
 } from './engine';
-import { BuildStep, ChoiceStep, IntroStep, SpeakButtons } from './steps';
+import { BuildStep, ChooseReplyStep, FillBlankStep, ListenAllStep, SceneStep } from './steps';
 
-const PRAISE = ['Tuyệt vời!', 'Chính xác!', 'Giỏi lắm!', 'Hay quá!', 'Chuẩn luôn!'];
+const PRAISE = ['Chính xác!', 'Đúng rồi!', 'Tốt lắm!', 'Chuẩn!'];
 
 /**
- * Chạy một bài học/phiên ôn: thanh tiến độ, từng bước, nút KIỂM TRA, dải phản hồi đúng/sai,
- * màn kết thúc. Mỗi cụm được ghi vào FSRS khi xong bước cuối của nó trong phiên.
+ * Chạy một bài hội thoại hoặc phiên ôn. Mỗi bước hiển thị trong khung chat; nút "Kiểm tra"
+ * ở dưới, kết quả hiện ngay trong khung kèm nghĩa và ghi chú cách dùng.
+ * Mỗi câu được ghi vào FSRS khi xong bước cuối của nó trong phiên.
  */
 export function LessonPlayer({
   initial,
+  dialogue: lessonDialogue,
   canListen,
   finishTitle,
 }: {
   initial: LessonState;
+  /** Bài học một hội thoại; phiên ôn thì null (mỗi câu tự tra hội thoại của nó). */
+  dialogue: DialogueWithLines | null;
   canListen: boolean;
   finishTitle: string;
 }) {
   const db = useDb();
   const c = useColors();
-  const tts = useTts();
   const insets = useSafeAreaInsets();
   useStudyTimer(db);
   const startedAt = useRef(Date.now());
@@ -52,33 +62,54 @@ export function LessonPlayer({
   const [chosen, setChosen] = useState<string | null>(null);
   const [picked, setPicked] = useState<number[]>([]);
   const [result, setResult] = useState<null | { correct: boolean }>(null);
+  const [showMeaning, setShowMeaning] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const step = currentStep(state);
-  const stepKey = step ? `${state.index}-${step.phrase.id}-${step.kind}` : 'done';
+  const stepKey = step ? `${state.index}-${step.kind}-${step.line?.id ?? ''}` : 'done';
 
-  // Đáp án nhiễu / ô chữ: tính một lần cho mỗi bước.
+  // Hội thoại chứa câu hiện tại (phiên ôn: tra theo dialogueId, có cache).
+  const cache = useRef(new Map<string, DialogueWithLines | null>());
+  const dialogue = useMemo(() => {
+    if (lessonDialogue) return lessonDialogue;
+    const id = step?.line?.dialogueId;
+    if (!id) return null;
+    if (!cache.current.has(id)) cache.current.set(id, getDialogue(db, id));
+    return cache.current.get(id) ?? null;
+  }, [lessonDialogue, step?.line?.dialogueId, db]);
+
+  const lines = dialogue?.lines ?? [];
+  const playback = useDialoguePlayback(lines, canListen);
+
+  // Đáp án / ô chữ: tính một lần cho mỗi bước.
   // biome-ignore lint/correctness/useExhaustiveDependencies: chỉ tính lại khi sang bước mới
   const extras = useMemo(() => {
-    if (!step || step.kind === 'intro') return { options: [], tiles: [] };
-    if (step.kind === 'build_sentence') {
-      const others = pickDistractors(db, step.phrase.id, 2).map((p) => p.text);
-      return { options: [], tiles: buildTiles(step.phrase.text, others) };
-    }
-    return {
-      options: shuffle([step.phrase, ...pickDistractors(db, step.phrase.id, 3)]),
-      tiles: [],
-    };
+    const l = step?.line;
+    if (!l) return { blanks: [], replies: [], tiles: [] };
+    if (step.kind === 'fill_blank')
+      return {
+        blanks: shuffle([l.blank ?? '', ...blankDistractors(db, l, 3)]),
+        replies: [],
+        tiles: [],
+      };
+    if (step.kind === 'choose_reply')
+      return { blanks: [], replies: shuffle([l, ...replyDistractors(db, l, 2)]), tiles: [] };
+    const others = replyDistractors(db, l, 2).map((p) => p.text);
+    return { blanks: [], replies: [], tiles: buildTiles(l.text, others) };
   }, [stepKey, db]);
 
-  const speak = (text: string, slow?: boolean) => {
-    if (canListen) tts.speak(text, { slow });
-  };
+  const context = step?.line ? contextBefore(lines, step.line.lineNo ?? 0, 3) : [];
 
-  // Tự đọc ở bước giới thiệu và bài nghe.
-  // biome-ignore lint/correctness/useExhaustiveDependencies: chỉ đọc một lần khi sang bước mới
+  // Tự phát: cả đoạn ở bước nghe; câu đích ở bài nghe-điền; câu trước ở bài nhập vai.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: chỉ phát một lần khi sang bước mới
   useEffect(() => {
-    if (step && (step.kind === 'intro' || step.kind === 'listen_choose')) speak(step.phrase.text);
+    if (!step || !canListen) return;
+    if (step.kind === 'listen_all') playback.playFrom(0);
+    else if (step.kind === 'fill_blank' && step.line) playback.playLine(step.line);
+    else if (step.kind === 'choose_reply') {
+      const prev = context[context.length - 1];
+      if (prev) playback.playLine(prev);
+    }
   }, [stepKey]);
 
   const done = isDone(state);
@@ -88,7 +119,7 @@ export function LessonPlayer({
   }, [done]);
 
   const commit = (next: LessonState) => {
-    const id = finishedPhraseAt(next, state.index);
+    const id = finishedLineAt(next, state.index);
     if (id && step) {
       try {
         recordReview(db, {
@@ -101,7 +132,7 @@ export function LessonPlayer({
         setError(`Không lưu được kết quả: ${String(e)}`);
       }
     }
-    tts.stop();
+    playback.stop();
     setState(next);
     setChosen(null);
     setPicked([]);
@@ -109,115 +140,111 @@ export function LessonPlayer({
   };
 
   const check = () => {
-    if (!step) return;
+    const l = step?.line;
+    if (!l) return;
     const correct =
       step.kind === 'build_sentence'
         ? sameSentence(
             picked.map((i) => extras.tiles[i] ?? ''),
-            tokenize(step.phrase.text),
+            tokenize(l.text),
           )
-        : chosen === step.phrase.id;
+        : step.kind === 'fill_blank'
+          ? chosen === l.blank
+          : chosen === l.id;
     setResult({ correct });
-    if (correct) speak(step.phrase.text);
+    playback.playLine(l);
   };
 
   const exit = () => {
-    tts.stop();
+    playback.stop();
     router.back();
   };
 
   if (done) {
     finishedAt.current ??= Date.now();
-    const secs = Math.round((finishedAt.current - startedAt.current) / 1000);
     return (
       <Finish
         title={finishTitle}
         accuracy={accuracy(state)}
-        phrases={new Set(state.steps.map((s) => s.phrase.id)).size}
-        seconds={secs}
+        keyPhrases={[
+          ...new Set(state.steps.map((s) => s.line?.blank).filter((b): b is string => !!b)),
+        ]}
+        seconds={Math.round((finishedAt.current - startedAt.current) / 1000)}
         onDone={exit}
+        top={insets.top}
         bottom={insets.bottom}
       />
     );
   }
   if (!step) return null;
 
+  const speakers = dialogue?.speakers ?? {
+    a: { name: 'A', roleVi: '' },
+    b: { name: 'B', roleVi: '' },
+  };
+  const line = step.line;
+  let body: ReactNode = null;
+  if (step.kind === 'scene' && dialogue) body = <SceneStep dialogue={dialogue} />;
+  else if (step.kind === 'listen_all')
+    body = (
+      <ListenAllStep
+        lines={lines}
+        speakers={speakers}
+        playing={playback.playing}
+        showMeaning={showMeaning}
+        onToggleMeaning={() => setShowMeaning((v) => !v)}
+        onPlayAll={() => playback.playFrom(0)}
+        onStop={playback.stop}
+        onPlayLine={playback.playLine}
+        canListen={canListen}
+      />
+    );
+  else if (step.kind === 'fill_blank' && line)
+    body = (
+      <FillBlankStep
+        line={line}
+        context={context.slice(-2)}
+        speakers={speakers}
+        options={extras.blanks}
+        chosen={chosen}
+        correct={result ? (line.blank ?? null) : null}
+        onChoose={setChosen}
+        onPlay={playback.playLine}
+        canListen={canListen}
+      />
+    );
+  else if (step.kind === 'choose_reply' && line)
+    body = (
+      <ChooseReplyStep
+        line={line}
+        context={context}
+        speakers={speakers}
+        options={extras.replies}
+        chosen={chosen}
+        checked={result !== null}
+        onChoose={setChosen}
+        onPlay={playback.playLine}
+      />
+    );
+  else if (step.kind === 'build_sentence' && line)
+    body = (
+      <BuildStep
+        line={line}
+        context={context.slice(-1)}
+        speakers={speakers}
+        tiles={extras.tiles}
+        picked={picked}
+        locked={result !== null}
+        onChange={setPicked}
+        onPlay={playback.playLine}
+      />
+    );
+
+  const graded = line !== null;
   const canCheck = step.kind === 'build_sentence' ? picked.length > 0 : chosen !== null;
-  let body: ReactNode;
-  switch (step.kind) {
-    case 'intro':
-      body = <IntroStep phrase={step.phrase} onSpeak={speak} />;
-      break;
-    case 'build_sentence':
-      body = (
-        <BuildStep
-          phrase={step.phrase}
-          tiles={extras.tiles}
-          picked={picked}
-          locked={result !== null}
-          onChange={setPicked}
-        />
-      );
-      break;
-    case 'choose_meaning':
-      body = (
-        <ChoiceStep
-          title="Câu này nghĩa là gì?"
-          prompt={
-            <View style={styles.promptRow}>
-              {canListen ? (
-                <Pressable
-                  accessibilityRole="button"
-                  accessibilityLabel="Nghe"
-                  onPress={() => speak(step.phrase.text)}
-                >
-                  <Text style={styles.inlineSpeaker}>🔊</Text>
-                </Pressable>
-              ) : null}
-              <Text style={[styles.prompt, { color: c.text }]}>{step.phrase.text}</Text>
-            </View>
-          }
-          options={extras.options}
-          label={(p) => p.meaningVi}
-          chosen={chosen}
-          locked={result !== null}
-          onChoose={setChosen}
-          correctId={result ? step.phrase.id : undefined}
-        />
-      );
-      break;
-    case 'choose_text':
-      body = (
-        <ChoiceStep
-          title="Chọn câu tiếng Anh đúng"
-          prompt={<Text style={[styles.prompt, { color: c.text }]}>{step.phrase.meaningVi}</Text>}
-          options={extras.options}
-          label={(p) => p.text}
-          chosen={chosen}
-          locked={result !== null}
-          onChoose={setChosen}
-          correctId={result ? step.phrase.id : undefined}
-        />
-      );
-      break;
-    case 'listen_choose':
-      body = (
-        <ChoiceStep
-          title="Bạn nghe thấy câu nào?"
-          prompt={<SpeakButtons text={step.phrase.text} onSpeak={speak} />}
-          options={extras.options}
-          label={(p) => p.text}
-          chosen={chosen}
-          locked={result !== null}
-          onChoose={setChosen}
-          correctId={result ? step.phrase.id : undefined}
-        />
-      );
-      break;
-  }
 
   return (
-    <View style={[styles.root, { backgroundColor: c.bg, paddingTop: insets.top + 8 }]}>
+    <View style={[styles.root, { backgroundColor: c.bg, paddingTop: insets.top + 6 }]}>
       <View style={styles.top}>
         <Pressable
           accessibilityRole="button"
@@ -227,54 +254,58 @@ export function LessonPlayer({
         >
           <Text style={[styles.close, { color: c.muted }]}>✕</Text>
         </Pressable>
-        <ProgressBar value={progress(state)} />
+        <View style={{ flex: 1, gap: 4 }}>
+          <Text numberOfLines={1} style={{ color: c.muted, fontSize: 13, fontWeight: '600' }}>
+            {dialogue?.title ?? 'Ôn tập'}
+          </Text>
+          <ProgressBar value={progress(state)} />
+        </View>
       </View>
       <ScrollView contentContainerStyle={styles.body} key={stepKey}>
         {step.retry > 0 ? (
-          <Text style={{ color: c.orange, fontWeight: '800' }}>↺ LỖI TRƯỚC — THỬ LẠI NHÉ</Text>
+          <Text style={{ color: c.accent, fontWeight: '600' }}>↺ Thử lại câu bạn làm sai</Text>
         ) : null}
         {body}
         {error ? <Text style={{ color: c.danger }}>{error}</Text> : null}
       </ScrollView>
 
-      {result ? (
-        <View
-          style={[
-            styles.sheet,
-            {
-              backgroundColor: result.correct ? c.okBg : c.dangerBg,
-              paddingBottom: insets.bottom + 16,
-            },
-          ]}
-        >
-          <Text style={[styles.sheetTitle, { color: result.correct ? c.ok : c.danger }]}>
-            {result.correct ? `✔ ${PRAISE[state.index % PRAISE.length]}` : '✘ Chưa đúng rồi'}
-          </Text>
-          {!result.correct ? (
-            <>
-              <Text style={{ color: c.danger, fontWeight: '800' }}>Đáp án đúng:</Text>
-              <Text style={{ color: c.danger, fontSize: 16 }}>
-                {step.kind === 'choose_meaning' ? step.phrase.meaningVi : step.phrase.text}
+      <View
+        style={[
+          styles.footer,
+          { backgroundColor: c.surface, paddingBottom: insets.bottom + 14 },
+          cardShadow(c),
+        ]}
+      >
+        {result && line ? (
+          <View style={styles.feedback}>
+            <Text style={[styles.fbTitle, { color: result.correct ? c.ok : c.danger }]}>
+              {result.correct
+                ? `✓ ${PRAISE[state.index % PRAISE.length]}`
+                : '✗ Chưa đúng — câu đúng là:'}
+            </Text>
+            <Text style={{ color: c.text, fontSize: 16, lineHeight: 23, fontWeight: '600' }}>
+              {line.text}
+            </Text>
+            <Text style={{ color: c.muted, lineHeight: 21 }}>{line.meaningVi}</Text>
+            {line.noteVi ? (
+              <Text style={[styles.note, { color: c.text, backgroundColor: c.primarySoft }]}>
+                💡 {line.noteVi}
               </Text>
-            </>
-          ) : step.kind === 'choose_meaning' || step.kind === 'build_sentence' ? null : (
-            <Text style={{ color: c.ok, fontSize: 16 }}>{step.phrase.meaningVi}</Text>
-          )}
+            ) : null}
+          </View>
+        ) : null}
+        {!graded ? (
+          <Button title="Tiếp tục" onPress={() => commit(advance(state))} />
+        ) : result ? (
           <Button
             title="Tiếp tục"
             variant={result.correct ? 'ok' : 'danger'}
             onPress={() => commit(answer(state, result.correct))}
           />
-        </View>
-      ) : (
-        <View style={[styles.footer, { paddingBottom: insets.bottom + 16, borderColor: c.border }]}>
-          {step.kind === 'intro' ? (
-            <Button title="Tiếp tục" onPress={() => commit(advance(state))} />
-          ) : (
-            <Button title="Kiểm tra" variant="ok" disabled={!canCheck} onPress={check} />
-          )}
-        </View>
-      )}
+        ) : (
+          <Button title="Kiểm tra" disabled={!canCheck} onPress={check} />
+        )}
+      </View>
     </View>
   );
 }
@@ -282,47 +313,57 @@ export function LessonPlayer({
 function Finish({
   title,
   accuracy: acc,
-  phrases,
+  keyPhrases,
   seconds,
   onDone,
+  top,
   bottom,
 }: {
   title: string;
   accuracy: number;
-  phrases: number;
+  keyPhrases: string[];
   seconds: number;
   onDone: () => void;
+  top: number;
   bottom: number;
 }) {
   const c = useColors();
   const time = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
-  const tiles = [
-    { label: 'CHÍNH XÁC', value: `${Math.round(acc * 100)}%`, color: c.ok },
-    { label: 'SỐ CÂU', value: String(phrases), color: c.blue },
-    { label: 'THỜI GIAN', value: time, color: c.gold },
-  ];
   return (
-    <View
-      style={[styles.root, styles.finish, { backgroundColor: c.bg, paddingBottom: bottom + 16 }]}
-    >
-      <View style={styles.finishCenter}>
-        <Text style={styles.trophy}>🏆</Text>
-        <Text style={[styles.finishTitle, { color: c.gold }]}>{title}</Text>
-        <View style={styles.statRow}>
-          {tiles.map((t) => (
+    <View style={[styles.root, { backgroundColor: c.bg, paddingTop: top + 24 }]}>
+      <ScrollView contentContainerStyle={styles.body}>
+        <Text style={{ fontSize: 56, textAlign: 'center' }}>💬</Text>
+        <Text style={[styles.finishTitle, { color: c.text }]}>{title}</Text>
+        <View style={styles.stats}>
+          {[
+            { label: 'Chính xác', value: `${Math.round(acc * 100)}%`, color: c.ok },
+            { label: 'Thời gian', value: time, color: c.primary },
+          ].map((s) => (
             <View
-              key={t.label}
-              style={[styles.stat, { borderColor: t.color, backgroundColor: t.color }]}
+              key={s.label}
+              style={[styles.stat, { backgroundColor: c.surface }, cardShadow(c)]}
             >
-              <Text style={styles.statLabel}>{t.label}</Text>
-              <View style={[styles.statInner, { backgroundColor: c.bg }]}>
-                <Text style={[styles.statValue, { color: t.color }]}>{t.value}</Text>
-              </View>
+              <Text style={{ color: s.color, fontSize: 26, fontWeight: '700' }}>{s.value}</Text>
+              <Text style={{ color: c.muted }}>{s.label}</Text>
             </View>
           ))}
         </View>
+        {keyPhrases.length > 0 ? (
+          <View style={[styles.recap, { backgroundColor: c.surface }, cardShadow(c)]}>
+            <Text style={{ color: c.text, fontWeight: '700', fontSize: 16 }}>
+              Cụm giao tiếp bạn vừa luyện
+            </Text>
+            {keyPhrases.map((p) => (
+              <Text key={p} style={{ color: c.text, fontSize: 15 }}>
+                • {p}
+              </Text>
+            ))}
+          </View>
+        ) : null}
+      </ScrollView>
+      <View style={{ paddingHorizontal: 16, paddingBottom: bottom + 14 }}>
+        <Button title="Xong" onPress={onDone} />
       </View>
-      <Button title="Tiếp tục" onPress={onDone} />
     </View>
   );
 }
@@ -330,27 +371,20 @@ function Finish({
 const styles = StyleSheet.create({
   root: { flex: 1 },
   top: { flexDirection: 'row', alignItems: 'center', gap: 14, paddingHorizontal: 16 },
-  close: { fontSize: 26, fontWeight: '700' },
-  body: { padding: 16, gap: 14, paddingBottom: 24 },
-  promptRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-  inlineSpeaker: { fontSize: 28 },
-  prompt: { fontSize: 22, fontWeight: '700', lineHeight: 30, flexShrink: 1 },
-  footer: { paddingHorizontal: 16, paddingTop: 14, borderTopWidth: 2 },
-  sheet: { paddingHorizontal: 16, paddingTop: 16, gap: 8 },
-  sheetTitle: { fontSize: 22, fontWeight: '800' },
-  finish: { padding: 16, justifyContent: 'space-between' },
-  finishCenter: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 18 },
-  trophy: { fontSize: 96 },
-  finishTitle: { fontSize: 28, fontWeight: '800', textAlign: 'center' },
-  statRow: { flexDirection: 'row', gap: 10 },
-  stat: { flex: 1, borderWidth: 2, borderRadius: 16, overflow: 'hidden' },
-  statLabel: {
-    color: '#FFFFFF',
-    fontWeight: '800',
-    fontSize: 12,
-    textAlign: 'center',
-    paddingVertical: 4,
+  close: { fontSize: 22, fontWeight: '600' },
+  body: { padding: 16, gap: 12, paddingBottom: 24 },
+  footer: {
+    paddingHorizontal: 16,
+    paddingTop: 14,
+    gap: 12,
+    borderTopLeftRadius: 22,
+    borderTopRightRadius: 22,
   },
-  statInner: { borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
-  statValue: { fontSize: 22, fontWeight: '800' },
+  feedback: { gap: 6 },
+  fbTitle: { fontSize: 18, fontWeight: '700' },
+  note: { borderRadius: 12, padding: 10, fontSize: 14, lineHeight: 20, overflow: 'hidden' },
+  finishTitle: { fontSize: 24, fontWeight: '700', textAlign: 'center' },
+  stats: { flexDirection: 'row', gap: 12 },
+  stat: { flex: 1, borderRadius: 16, padding: 16, alignItems: 'center', gap: 2 },
+  recap: { borderRadius: 16, padding: 16, gap: 6 },
 });

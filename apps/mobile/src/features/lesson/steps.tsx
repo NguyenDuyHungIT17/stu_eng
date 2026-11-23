@@ -1,99 +1,263 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { useColors } from '@/components/theme';
-import { OutlineButton } from '@/components/ui';
-import type { Phrase } from '../review/repository';
+import { cardShadow, useColors } from '@/components/theme';
+import { Avatar, Badge, OutlineButton } from '@/components/ui';
+import { Bubble, LEARNER, speakerColor } from '../dialogue/bubbles';
+import type { Dialogue, Line, Speakers } from '../dialogue/repository';
+import { splitBlank } from './engine';
 
-type Speak = (text: string, slow?: boolean) => void;
+type PlayLine = (l: Line, slow?: boolean) => void;
 
-/** Nút loa tròn lớn (+ nút đọc chậm). */
-export function SpeakButtons({ text, onSpeak }: { text: string; onSpeak: Speak }) {
+function Heading({ text }: { text: string }) {
+  const c = useColors();
+  return <Text style={[styles.heading, { color: c.text }]}>{text}</Text>;
+}
+
+/** Hàng nút nghe lại / nghe chậm cho một câu. */
+export function ListenRow({ line, onPlay }: { line: Line; onPlay: PlayLine }) {
   const c = useColors();
   return (
-    <View style={styles.speakRow}>
-      <Pressable
-        accessibilityRole="button"
-        accessibilityLabel="Nghe"
-        onPress={() => onSpeak(text)}
-        style={[styles.speakBig, { backgroundColor: c.blue, borderBottomColor: c.blueDark }]}
-      >
-        <Text style={styles.speakIcon}>🔊</Text>
-      </Pressable>
-      <Pressable
-        accessibilityRole="button"
-        accessibilityLabel="Nghe chậm"
-        onPress={() => onSpeak(text, true)}
-        style={[styles.speakSmall, { backgroundColor: c.blue, borderBottomColor: c.blueDark }]}
-      >
-        <Text style={styles.speakIconSmall}>🐢</Text>
-      </Pressable>
+    <View style={styles.listenRow}>
+      {[
+        { label: '🔊 Nghe', slow: false },
+        { label: '🐢 Chậm', slow: true },
+      ].map((b) => (
+        <Pressable
+          key={b.label}
+          accessibilityRole="button"
+          onPress={() => onPlay(line, b.slow)}
+          style={[styles.pill, { backgroundColor: c.primarySoft }]}
+        >
+          <Text style={{ color: c.primary, fontWeight: '600' }}>{b.label}</Text>
+        </Pressable>
+      ))}
     </View>
   );
 }
 
-/** Giới thiệu cụm mới. */
-export function IntroStep({ phrase, onSpeak }: { phrase: Phrase; onSpeak: Speak }) {
+/** Bước 1: tình huống và hai nhân vật. */
+export function SceneStep({ dialogue }: { dialogue: Dialogue }) {
+  const c = useColors();
+  const people = [
+    { key: 'a', ...dialogue.speakers.a },
+    { key: 'b', ...dialogue.speakers.b },
+  ];
+  return (
+    <View style={styles.gap}>
+      <Text style={[styles.kicker, { color: c.accent }]}>Tình huống</Text>
+      <Text style={[styles.title, { color: c.text }]}>{dialogue.title}</Text>
+      <View style={[styles.card, { backgroundColor: c.surface }, cardShadow(c)]}>
+        <Text style={{ color: c.text, fontSize: 16, lineHeight: 24 }}>
+          📍 {dialogue.situationVi}
+        </Text>
+      </View>
+      {people.map((p) => (
+        <View key={p.key} style={[styles.person, { backgroundColor: c.surface }, cardShadow(c)]}>
+          <Avatar name={p.name} color={speakerColor(c, p.key)} size={44} />
+          <View style={{ flex: 1 }}>
+            <Text style={{ color: c.text, fontSize: 17, fontWeight: '700' }}>
+              {p.name}
+              {p.key === LEARNER ? ' (bạn)' : ''}
+            </Text>
+            <Text style={{ color: c.muted }}>{p.roleVi}</Text>
+          </View>
+        </View>
+      ))}
+      <View style={styles.levelRow}>
+        <Badge text={dialogue.level} color={c.primary} />
+        <Text style={{ color: c.muted, flexShrink: 1 }}>
+          Bạn sẽ nghe cả đoạn, rồi luyện từng câu trong ngữ cảnh.
+        </Text>
+      </View>
+    </View>
+  );
+}
+
+/** Bước 2: nghe trọn hội thoại, bật/tắt nghĩa tiếng Việt, chạm câu để nghe lại. */
+export function ListenAllStep({
+  lines,
+  speakers,
+  playing,
+  showMeaning,
+  onToggleMeaning,
+  onPlayAll,
+  onStop,
+  onPlayLine,
+  canListen,
+}: {
+  lines: Line[];
+  speakers: Speakers;
+  playing: number | null;
+  showMeaning: boolean;
+  onToggleMeaning: () => void;
+  onPlayAll: () => void;
+  onStop: () => void;
+  onPlayLine: PlayLine;
+  canListen: boolean;
+}) {
   const c = useColors();
   return (
     <View style={styles.gap}>
-      <Text style={[styles.label, { color: c.primary }]}>✨ CÂU MỚI</Text>
-      <View style={styles.introRow}>
-        <SpeakButtons text={phrase.text} onSpeak={onSpeak} />
+      <Heading text="Nghe đoạn hội thoại" />
+      <View style={styles.listenRow}>
+        {canListen ? (
+          <Pressable
+            accessibilityRole="button"
+            onPress={playing === null ? onPlayAll : onStop}
+            style={[styles.pill, { backgroundColor: c.primary }]}
+          >
+            <Text style={{ color: c.onPrimary, fontWeight: '600' }}>
+              {playing === null ? '▶ Nghe cả đoạn' : '■ Dừng'}
+            </Text>
+          </Pressable>
+        ) : null}
+        <Pressable
+          accessibilityRole="button"
+          accessibilityState={{ selected: showMeaning }}
+          onPress={onToggleMeaning}
+          style={[styles.pill, { backgroundColor: showMeaning ? c.primarySoft : c.surface }]}
+        >
+          <Text style={{ color: c.primary, fontWeight: '600' }}>
+            {showMeaning ? 'Ẩn nghĩa' : 'Hiện nghĩa'}
+          </Text>
+        </Pressable>
       </View>
-      <Text style={[styles.big, { color: c.text }]}>{phrase.text}</Text>
-      {phrase.ipa ? <Text style={{ color: c.muted, fontSize: 15 }}>{phrase.ipa}</Text> : null}
-      <Text style={[styles.meaning, { color: c.text }]}>{phrase.meaningVi}</Text>
-      {phrase.example ? (
-        <View style={[styles.example, { borderColor: c.border }]}>
-          <Text style={{ color: c.muted, fontSize: 13, fontWeight: '700' }}>VÍ DỤ</Text>
-          <Text style={{ color: c.text, fontSize: 16, lineHeight: 23 }}>{phrase.example}</Text>
-        </View>
+      {lines.map((l, i) => (
+        <Bubble
+          key={l.id}
+          line={l}
+          speakers={speakers}
+          showMeaning={showMeaning}
+          active={playing === i}
+          onPress={() => onPlayLine(l)}
+        />
+      ))}
+      {canListen ? (
+        <Text style={{ color: c.muted, textAlign: 'center' }}>Chạm vào một câu để nghe lại.</Text>
       ) : null}
     </View>
   );
 }
 
-/** Đề + 4 đáp án. `label` chọn hiển thị nghĩa hay câu tiếng Anh. */
-export function ChoiceStep({
-  title,
-  prompt,
+/** Câu có chỗ trống, điền bằng đáp án đang chọn (nếu có). */
+function BlankText({ line, filled, me }: { line: Line; filled: string | null; me: boolean }) {
+  const c = useColors();
+  const { before, after } = splitBlank(line.text, line.blank ?? '');
+  const fg = me ? c.onPrimary : c.text;
+  return (
+    <Text style={{ color: fg, fontSize: 16, lineHeight: 26 }}>
+      {before}
+      <Text
+        style={{
+          fontWeight: '700',
+          color: filled ? fg : me ? '#FFFFFFAA' : c.muted,
+          textDecorationLine: 'underline',
+        }}
+      >
+        {filled ?? ' ______ '}
+      </Text>
+      {after}
+    </Text>
+  );
+}
+
+/** Nghe-điền: nghe câu trong ngữ cảnh, chọn cụm còn thiếu. */
+export function FillBlankStep({
+  line,
+  context,
+  speakers,
   options,
-  label,
   chosen,
-  locked,
+  correct,
   onChoose,
-  correctId,
+  onPlay,
+  canListen,
 }: {
-  title: string;
-  prompt: React.ReactNode;
-  options: Phrase[];
-  label: (p: Phrase) => string;
+  line: Line;
+  context: Line[];
+  speakers: Speakers;
+  options: string[];
   chosen: string | null;
-  locked: boolean;
-  onChoose: (id: string) => void;
-  /** Sau khi kiểm tra: id đáp án đúng, để tô xanh đáp án đúng và đỏ đáp án sai. */
-  correctId?: string;
+  /** Sau khi kiểm tra: đáp án đúng (để tô màu). */
+  correct: string | null;
+  onChoose: (o: string) => void;
+  onPlay: PlayLine;
+  canListen: boolean;
 }) {
   const c = useColors();
-  const tint = (id: string) =>
-    correctId === undefined
-      ? undefined
-      : id === correctId
-        ? c.ok
-        : id === chosen
-          ? c.danger
-          : undefined;
+  const tint = (o: string) =>
+    correct === null ? undefined : o === correct ? c.ok : o === chosen ? c.danger : undefined;
   return (
     <View style={styles.gap}>
-      <Text style={[styles.heading, { color: c.text }]}>{title}</Text>
-      {prompt}
-      <View style={styles.options}>
+      <Heading text={canListen ? 'Nghe và điền vào chỗ trống' : 'Điền vào chỗ trống'} />
+      {context.map((l) => (
+        <Bubble key={l.id} line={l} speakers={speakers} dim onPress={() => onPlay(l)} />
+      ))}
+      <Bubble line={line} speakers={speakers}>
+        <BlankText line={line} filled={chosen} me={line.speaker === LEARNER} />
+      </Bubble>
+      {canListen ? <ListenRow line={line} onPlay={onPlay} /> : null}
+      <View style={styles.optionGrid}>
         {options.map((o) => (
-          <View key={o.id} style={styles.optionRow}>
+          <View key={o} style={styles.optionCell}>
             <OutlineButton
-              title={label(o)}
-              selected={chosen === o.id || (correctId !== undefined && o.id === correctId)}
+              title={o}
+              selected={chosen === o || (correct !== null && o === correct)}
+              color={tint(o)}
+              disabled={correct !== null}
+              onPress={() => onChoose(o)}
+            />
+          </View>
+        ))}
+      </View>
+    </View>
+  );
+}
+
+/** Nhập vai: chọn câu đáp phù hợp với lượt nói trước. */
+export function ChooseReplyStep({
+  line,
+  context,
+  speakers,
+  options,
+  chosen,
+  checked,
+  onChoose,
+  onPlay,
+}: {
+  line: Line;
+  context: Line[];
+  speakers: Speakers;
+  options: Line[];
+  chosen: string | null;
+  checked: boolean;
+  onChoose: (id: string) => void;
+  onPlay: PlayLine;
+}) {
+  const c = useColors();
+  const who = line.speaker === 'a' ? speakers.a : speakers.b;
+  const tint = (id: string) =>
+    !checked ? undefined : id === line.id ? c.ok : id === chosen ? c.danger : undefined;
+  return (
+    <View style={styles.gap}>
+      <Heading text={`Bạn là ${who.name}. Bạn sẽ nói gì?`} />
+      {context.map((l, i) => (
+        <Bubble
+          key={l.id}
+          line={l}
+          speakers={speakers}
+          dim={i < context.length - 1}
+          onPress={() => onPlay(l)}
+        />
+      ))}
+      <View style={styles.gap}>
+        {options.map((o) => (
+          <View key={o.id} style={{ flexDirection: 'row' }}>
+            <OutlineButton
+              title={o.text}
+              align="left"
+              selected={chosen === o.id || (checked && o.id === line.id)}
               color={tint(o.id)}
-              disabled={locked}
+              disabled={checked}
               onPress={() => onChoose(o.id)}
             />
           </View>
@@ -103,47 +267,57 @@ export function ChoiceStep({
   );
 }
 
-/** Ghép câu: chạm ô chữ ở dưới để đưa lên dòng trả lời; chạm ô đã chọn để bỏ. */
+/** Ghép câu: chạm ô chữ để đưa lên dòng trả lời; chạm ô đã chọn để bỏ. */
 export function BuildStep({
-  phrase,
+  line,
+  context,
+  speakers,
   tiles,
   picked,
   locked,
   onChange,
+  onPlay,
 }: {
-  phrase: Phrase;
+  line: Line;
+  context: Line[];
+  speakers: Speakers;
   tiles: string[];
-  /** Vị trí các ô (trong `tiles`) đã chọn, theo thứ tự. */
   picked: number[];
   locked: boolean;
   onChange: (picked: number[]) => void;
+  onPlay: PlayLine;
 }) {
   const c = useColors();
   const used = new Set(picked);
-  const tile = (i: number, inAnswer: boolean) => (
-    <Pressable
-      key={`${inAnswer ? 'a' : 'b'}${i}`}
-      accessibilityRole="button"
-      accessibilityLabel={tiles[i]}
-      disabled={locked || (!inAnswer && used.has(i))}
-      onPress={() => onChange(inAnswer ? picked.filter((x) => x !== i) : [...picked, i])}
-      style={[
-        styles.tile,
-        !inAnswer && used.has(i)
-          ? { backgroundColor: c.locked, borderColor: c.locked }
-          : { backgroundColor: c.card, borderColor: c.border, borderBottomColor: c.borderDark },
-      ]}
-    >
-      <Text style={[styles.tileText, { color: !inAnswer && used.has(i) ? c.locked : c.text }]}>
-        {tiles[i]}
-      </Text>
-    </Pressable>
-  );
+  const tile = (i: number, inAnswer: boolean) => {
+    const ghost = !inAnswer && used.has(i);
+    return (
+      <Pressable
+        key={`${inAnswer ? 'a' : 'b'}${i}`}
+        accessibilityRole="button"
+        accessibilityLabel={tiles[i]}
+        disabled={locked || ghost}
+        onPress={() => onChange(inAnswer ? picked.filter((x) => x !== i) : [...picked, i])}
+        style={[
+          styles.tile,
+          ghost
+            ? { backgroundColor: c.border, borderColor: c.border }
+            : { backgroundColor: c.surface, borderColor: c.border },
+        ]}
+      >
+        <Text style={{ fontSize: 16, color: ghost ? c.border : c.text }}>{tiles[i]}</Text>
+      </Pressable>
+    );
+  };
   return (
     <View style={styles.gap}>
-      <Text style={[styles.heading, { color: c.text }]}>Dịch câu này sang tiếng Anh</Text>
-      <View style={[styles.bubble, { borderColor: c.border }]}>
-        <Text style={[styles.meaning, { color: c.text }]}>{phrase.meaningVi}</Text>
+      <Heading text="Ghép câu bạn sẽ nói" />
+      {context.map((l) => (
+        <Bubble key={l.id} line={l} speakers={speakers} dim onPress={() => onPlay(l)} />
+      ))}
+      <View style={[styles.card, { backgroundColor: c.primarySoft }]}>
+        <Text style={{ color: c.muted, fontSize: 13 }}>Ý bạn muốn nói</Text>
+        <Text style={{ color: c.text, fontSize: 17, lineHeight: 24 }}>{line.meaningVi}</Text>
       </View>
       <View style={[styles.answerArea, { borderColor: c.border }]}>
         {picked.map((i) => tile(i, true))}
@@ -154,52 +328,28 @@ export function BuildStep({
 }
 
 const styles = StyleSheet.create({
-  gap: { gap: 14 },
-  label: { fontSize: 14, fontWeight: '800', letterSpacing: 1 },
-  heading: { fontSize: 22, fontWeight: '800' },
-  big: { fontSize: 26, fontWeight: '800', lineHeight: 34 },
-  meaning: { fontSize: 18, lineHeight: 26 },
-  introRow: { flexDirection: 'row' },
-  example: { borderWidth: 2, borderRadius: 16, padding: 14, gap: 4 },
-  bubble: { borderWidth: 2, borderRadius: 16, padding: 14 },
-  options: { gap: 10 },
-  optionRow: { flexDirection: 'row' },
-  speakRow: { flexDirection: 'row', alignItems: 'flex-end', gap: 10 },
-  speakBig: {
-    width: 72,
-    height: 72,
-    borderRadius: 20,
-    borderBottomWidth: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  speakSmall: {
-    width: 52,
-    height: 52,
-    borderRadius: 16,
-    borderBottomWidth: 4,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  speakIcon: { fontSize: 32 },
-  speakIconSmall: { fontSize: 22 },
+  gap: { gap: 12 },
+  heading: { fontSize: 20, fontWeight: '700', marginBottom: 4 },
+  kicker: { fontSize: 13, fontWeight: '700', letterSpacing: 0.5 },
+  title: { fontSize: 24, fontWeight: '700' },
+  card: { borderRadius: 16, padding: 14, gap: 4 },
+  person: { borderRadius: 16, padding: 12, flexDirection: 'row', alignItems: 'center', gap: 12 },
+  levelRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  listenRow: { flexDirection: 'row', gap: 8, flexWrap: 'wrap' },
+  pill: { borderRadius: 999, paddingHorizontal: 14, paddingVertical: 8 },
+  optionGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
+  optionCell: { width: '48%', flexGrow: 1, flexDirection: 'row' },
   answerArea: {
-    minHeight: 110,
-    borderTopWidth: 2,
-    borderBottomWidth: 2,
-    paddingVertical: 10,
+    minHeight: 96,
+    borderWidth: 1.5,
+    borderStyle: 'dashed',
+    borderRadius: 16,
+    padding: 10,
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 8,
     alignContent: 'flex-start',
   },
   bank: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
-  tile: {
-    borderWidth: 2,
-    borderBottomWidth: 4,
-    borderRadius: 12,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-  },
-  tileText: { fontSize: 17, fontWeight: '600' },
+  tile: { borderWidth: 1.5, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 8 },
 });

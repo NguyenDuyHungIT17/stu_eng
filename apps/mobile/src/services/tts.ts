@@ -5,7 +5,7 @@ import * as Speech from 'expo-speech';
  * Giọng và tốc độ do người dùng chọn được truyền vào; mặc định en-US, tốc độ 0.9.
  */
 
-export type TtsOptions = { voice?: string | null; rate?: number };
+export type TtsOptions = { voice?: string | null; rate?: number; pitch?: number };
 export type EnglishVoice = { id: string; name: string; language: string; quality: string };
 
 export const DEFAULT_RATE = 0.9;
@@ -18,6 +18,7 @@ export function speak(text: string, opts: TtsOptions = {}, onDone?: () => void):
     language: 'en-US',
     voice: opts.voice ?? undefined,
     rate: opts.rate ?? DEFAULT_RATE,
+    pitch: opts.pitch,
     onDone,
     onStopped: onDone,
     onError: () => onDone?.(),

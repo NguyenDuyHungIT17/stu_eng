@@ -1,0 +1,291 @@
+[
+  {
+    "id": "mt-clarify-requirement",
+    "topicId": "meetings",
+    "title": "Hỏi lại yêu cầu trong cuộc họp",
+    "level": "B1",
+    "situationVi": "Cuộc họp online với khách hàng ở Anh về tính năng mới. Bạn (Minh), lập trình viên, chưa rõ một yêu cầu nên hỏi lại Sarah, quản lý sản phẩm bên khách hàng.",
+    "speakers": {
+      "a": { "name": "Sarah", "roleVi": "Quản lý sản phẩm bên khách hàng (Anh)" },
+      "b": { "name": "Minh", "roleVi": "Bạn, lập trình viên" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "So we'd like users to export their reports by the end of the month.",
+        "meaningVi": "Vậy là bên tôi muốn người dùng xuất được báo cáo trước cuối tháng."
+      },
+      {
+        "speaker": "b",
+        "text": "Sorry, could I just clarify something before we move on?",
+        "meaningVi": "Xin lỗi, cho tôi hỏi lại một chút trước khi chuyển sang ý khác được không?",
+        "blank": "could I just clarify something",
+        "noteVi": "Cách xin phép hỏi lại lịch sự, không làm gián đoạn quá mạnh."
+      },
+      {
+        "speaker": "a",
+        "text": "Of course, go ahead.",
+        "meaningVi": "Tất nhiên rồi, anh cứ hỏi."
+      },
+      {
+        "speaker": "b",
+        "text": "When you say export, do you mean PDF, Excel, or both?",
+        "meaningVi": "Khi chị nói xuất báo cáo, ý chị là PDF, Excel hay cả hai?",
+        "blank": "When you say export, do you mean",
+        "noteVi": "\"When you say X, do you mean...?\" giúp hỏi rõ một từ cụ thể mà không làm người nói phật lòng."
+      },
+      {
+        "speaker": "a",
+        "text": "Good question. Excel is the priority. PDF would be nice to have.",
+        "meaningVi": "Câu hỏi hay. Excel là ưu tiên. PDF thì có cũng tốt.",
+        "blank": "would be nice to have",
+        "noteVi": "\"Nice to have\" = không bắt buộc, có thì tốt; đối lập với \"must-have\"."
+      },
+      {
+        "speaker": "b",
+        "text": "Got it. And should the export include all the charts as well?",
+        "meaningVi": "Tôi hiểu rồi. Vậy bản xuất có cần gồm tất cả biểu đồ không?"
+      },
+      {
+        "speaker": "a",
+        "text": "Just the tables for now. We can add charts in the next release.",
+        "meaningVi": "Hiện tại chỉ cần bảng thôi. Biểu đồ để bản phát hành sau.",
+        "blank": "Just the tables for now"
+      },
+      {
+        "speaker": "b",
+        "text": "Okay, so just to confirm: Excel export with tables, by the 30th.",
+        "meaningVi": "Vâng, vậy tôi xác nhận lại: xuất Excel gồm các bảng, trước ngày 30.",
+        "blank": "so just to confirm"
+      },
+      {
+        "speaker": "a",
+        "text": "That's exactly right. Thanks for checking, Minh.",
+        "meaningVi": "Đúng chính xác. Cảm ơn anh đã hỏi lại, Minh.",
+        "blank": "Thanks for checking"
+      },
+      {
+        "speaker": "b",
+        "text": "No problem. I'll send a short summary after the call.",
+        "meaningVi": "Không có gì. Tôi sẽ gửi bản tóm tắt ngắn sau cuộc gọi.",
+        "blank": "I'll send a short summary"
+      }
+    ]
+  },
+  {
+    "id": "mt-interrupt-politely",
+    "topicId": "meetings",
+    "title": "Xen vào lời người khác lịch sự",
+    "level": "B1",
+    "situationVi": "Họp tuần online với nhóm ở Singapore. David đang trình bày kế hoạch ra mắt thì bạn (Thảo), chuyên viên marketing, muốn chen vào để báo một vấn đề về ngân sách.",
+    "speakers": {
+      "a": { "name": "David", "roleVi": "Trưởng nhóm dự án (Singapore)" },
+      "b": { "name": "Thảo", "roleVi": "Bạn, chuyên viên marketing" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "So the plan is to launch the campaign in all five markets next week.",
+        "meaningVi": "Vậy kế hoạch là tuần sau sẽ chạy chiến dịch ở cả năm thị trường."
+      },
+      {
+        "speaker": "b",
+        "text": "Sorry to interrupt, David, but can I add something here?",
+        "meaningVi": "Xin lỗi đã ngắt lời anh, David, nhưng tôi bổ sung một ý được không?",
+        "blank": "Sorry to interrupt",
+        "noteVi": "Câu mở đầu chuẩn khi cần chen ngang trong cuộc họp."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure, Thao, go ahead.",
+        "meaningVi": "Được chứ Thảo, chị nói đi."
+      },
+      {
+        "speaker": "b",
+        "text": "I'm a bit worried about the budget for Vietnam and Thailand.",
+        "meaningVi": "Tôi hơi lo về ngân sách cho Việt Nam và Thái Lan.",
+        "blank": "I'm a bit worried about",
+        "noteVi": "\"A bit\" làm nhẹ lời, giúp nêu lo ngại mà không gay gắt."
+      },
+      {
+        "speaker": "a",
+        "text": "Really? I thought finance had approved it last Friday.",
+        "meaningVi": "Thật sao? Tôi tưởng phòng tài chính đã duyệt hôm thứ Sáu tuần trước."
+      },
+      {
+        "speaker": "b",
+        "text": "They approved part of it. The rest is still waiting for sign-off.",
+        "meaningVi": "Họ mới duyệt một phần. Phần còn lại vẫn đang chờ ký duyệt.",
+        "blank": "still waiting for sign-off"
+      },
+      {
+        "speaker": "a",
+        "text": "Ah, I see. That changes things a little.",
+        "meaningVi": "À, tôi hiểu rồi. Vậy thì tình hình hơi khác một chút.",
+        "blank": "That changes things a little"
+      },
+      {
+        "speaker": "b",
+        "text": "Maybe we could start with three markets and add the others later?",
+        "meaningVi": "Hay là mình bắt đầu với ba thị trường rồi thêm các nơi khác sau?",
+        "blank": "Maybe we could start with"
+      },
+      {
+        "speaker": "a",
+        "text": "That makes sense. Let's discuss it at the end of the call.",
+        "meaningVi": "Hợp lý đấy. Mình bàn chuyện này ở cuối cuộc họp nhé.",
+        "blank": "Let's discuss it at the end"
+      },
+      {
+        "speaker": "b",
+        "text": "Great, thanks. Sorry again, please carry on.",
+        "meaningVi": "Tốt quá, cảm ơn anh. Xin lỗi lần nữa, anh cứ nói tiếp đi ạ.",
+        "blank": "please carry on"
+      }
+    ]
+  },
+  {
+    "id": "mt-next-steps",
+    "topicId": "meetings",
+    "title": "Chốt việc cần làm cuối buổi họp",
+    "level": "B1",
+    "situationVi": "Cuối buổi họp online với đối tác Úc về việc chuyển hệ thống. Emma đề nghị chốt lại các bước tiếp theo, và bạn (Huy), trưởng nhóm kỹ thuật, nhận phần việc của mình.",
+    "speakers": {
+      "a": { "name": "Emma", "roleVi": "Quản lý dự án bên đối tác (Úc)" },
+      "b": { "name": "Huy", "roleVi": "Bạn, trưởng nhóm kỹ thuật" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "We're almost out of time, so let's go over the next steps.",
+        "meaningVi": "Sắp hết giờ rồi, nên mình cùng điểm lại các bước tiếp theo nhé.",
+        "blank": "let's go over the next steps"
+      },
+      {
+        "speaker": "b",
+        "text": "Sounds good. Should I start with the technical side?",
+        "meaningVi": "Được ạ. Tôi bắt đầu với phần kỹ thuật nhé?"
+      },
+      {
+        "speaker": "a",
+        "text": "Yes, please. What can your team commit to this week?",
+        "meaningVi": "Vâng, anh nói đi. Tuần này nhóm anh có thể cam kết làm được gì?",
+        "blank": "What can your team commit to",
+        "noteVi": "\"Commit to\" = cam kết hoàn thành, hay dùng khi chốt việc."
+      },
+      {
+        "speaker": "b",
+        "text": "We'll finish the data migration test by Thursday.",
+        "meaningVi": "Nhóm tôi sẽ hoàn thành bài kiểm thử chuyển dữ liệu trước thứ Năm."
+      },
+      {
+        "speaker": "a",
+        "text": "Perfect. And who's going to update the user guide?",
+        "meaningVi": "Tuyệt. Còn ai sẽ cập nhật tài liệu hướng dẫn sử dụng?",
+        "blank": "who's going to update"
+      },
+      {
+        "speaker": "b",
+        "text": "I can take that on, but I'll need your feedback by Friday.",
+        "meaningVi": "Tôi có thể nhận việc đó, nhưng tôi cần chị góp ý trước thứ Sáu.",
+        "blank": "I can take that on",
+        "noteVi": "\"Take something on\" = nhận thêm một việc về mình."
+      },
+      {
+        "speaker": "a",
+        "text": "No problem. I'll block some time for it on Thursday afternoon.",
+        "meaningVi": "Không vấn đề gì. Tôi sẽ dành thời gian cho việc đó chiều thứ Năm.",
+        "blank": "I'll block some time for it"
+      },
+      {
+        "speaker": "b",
+        "text": "Great. Shall we have a quick check-in early next week?",
+        "meaningVi": "Tốt quá. Đầu tuần sau mình họp nhanh để cập nhật tình hình nhé?",
+        "blank": "have a quick check-in"
+      },
+      {
+        "speaker": "a",
+        "text": "Good idea. I'll send an invite for Monday at ten.",
+        "meaningVi": "Ý hay đấy. Tôi sẽ gửi lời mời họp vào 10 giờ sáng thứ Hai.",
+        "blank": "I'll send an invite"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks, Emma. Talk to you then.",
+        "meaningVi": "Cảm ơn chị Emma. Hẹn nói chuyện lúc đó nhé."
+      }
+    ]
+  },
+  {
+    "id": "mt-tech-problems",
+    "topicId": "meetings",
+    "title": "Sự cố mạng khi đang họp online",
+    "level": "B1",
+    "situationVi": "Bạn (Lan), chuyên viên phân tích, đang họp Zoom với Mark ở văn phòng Mỹ thì mạng chập chờn, tiếng bị ngắt quãng.",
+    "speakers": {
+      "a": { "name": "Mark", "roleVi": "Đồng nghiệp ở văn phòng Mỹ" },
+      "b": { "name": "Lan", "roleVi": "Bạn, chuyên viên phân tích" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Lan, you're breaking up a bit. Can you hear me okay?",
+        "meaningVi": "Lan ơi, tiếng chị bị ngắt quãng. Chị có nghe rõ tôi không?",
+        "blank": "you're breaking up",
+        "noteVi": "\"Break up\" trong cuộc gọi = tiếng bị đứt quãng, không phải chia tay."
+      },
+      {
+        "speaker": "b",
+        "text": "Sorry, Mark, I missed the last part. Could you say that again?",
+        "meaningVi": "Xin lỗi anh Mark, tôi không nghe được đoạn cuối. Anh nói lại được không?",
+        "blank": "Could you say that again"
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. I was asking about the sales figures for October.",
+        "meaningVi": "Được. Tôi đang hỏi về số liệu bán hàng tháng Mười."
+      },
+      {
+        "speaker": "b",
+        "text": "Let me turn off my video. That might help with the connection.",
+        "meaningVi": "Để tôi tắt camera. Có thể đường truyền sẽ ổn hơn.",
+        "blank": "Let me turn off my video"
+      },
+      {
+        "speaker": "a",
+        "text": "Yes, that's much better now.",
+        "meaningVi": "Đúng rồi, giờ nghe rõ hơn nhiều."
+      },
+      {
+        "speaker": "b",
+        "text": "Great. I'll share my screen so you can see the numbers.",
+        "meaningVi": "Tốt quá. Tôi sẽ chia sẻ màn hình để anh xem số liệu.",
+        "blank": "I'll share my screen"
+      },
+      {
+        "speaker": "a",
+        "text": "Hmm, I can only see a black screen at the moment.",
+        "meaningVi": "Hừm, hiện giờ tôi chỉ thấy màn hình đen thôi.",
+        "blank": "I can only see a black screen"
+      },
+      {
+        "speaker": "b",
+        "text": "Oh, sorry. I think I shared the wrong window. How about now?",
+        "meaningVi": "Ôi, xin lỗi. Hình như tôi chia sẻ nhầm cửa sổ. Giờ thì sao ạ?",
+        "blank": "I shared the wrong window"
+      },
+      {
+        "speaker": "a",
+        "text": "Yes, I can see it now. Thanks.",
+        "meaningVi": "Rồi, giờ tôi thấy rồi. Cảm ơn chị."
+      },
+      {
+        "speaker": "b",
+        "text": "If I drop off again, I'll call back right away.",
+        "meaningVi": "Nếu tôi bị rớt mạng lần nữa, tôi sẽ gọi lại ngay.",
+        "blank": "If I drop off again",
+        "noteVi": "\"Drop off\" = bị thoát khỏi cuộc gọi do mất kết nối."
+      }
+    ]
+  }
+]

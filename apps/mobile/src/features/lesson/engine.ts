@@ -1,43 +1,35 @@
 import { Rating } from '@/lib/fsrs';
-import type { Phrase } from '../review/repository';
+import type { Line } from '../dialogue/repository';
 
 /**
- * Bài học / phiên ôn kiểu từng bước: logic thuần (không DB, không UI) để test dễ.
- * - Bài học mới: mỗi cụm có 1 bước giới thiệu + 1 bài chọn nghĩa ngay sau, cuối bài thêm
- *   một vòng luyện trộn (ghép câu hoặc nghe chọn).
- * - Phiên ôn: mỗi thẻ đến hạn 1 bài, xoay vòng các kiểu.
- * - Trả lời sai: bài đó quay lại cuối hàng (tối đa MAX_RETRIES lần mỗi cụm).
- * - Mức chấm FSRS tự suy ra từ số lần sai, người học không phải tự chấm.
+ * Bài luyện hội thoại: logic thuần (không DB, không UI) để test dễ.
+ *
+ * Bài học một đoạn hội thoại:
+ *   1. `scene`       — đọc tình huống, ai nói với ai.
+ *   2. `listen_all`  — nghe trọn đoạn hội thoại (có thể bật nghĩa tiếng Việt).
+ *   3. `fill_blank`  — lần lượt từng câu then chốt: nghe câu, chọn cụm còn thiếu.
+ *   4. Nhập vai: với mỗi câu then chốt của vai người học (b), chọn câu đáp đúng
+ *      (`choose_reply`) hoặc ghép câu (`build_sentence`) nếu là câu mở đầu.
+ * Phiên ôn: mỗi câu đến hạn 1 bài trong ngữ cảnh hội thoại, xoay vòng các kiểu.
+ * Trả lời sai: bài quay lại cuối hàng (tối đa MAX_RETRIES). Mức FSRS suy từ số lần sai.
  */
 
-export type StepKind =
-  | 'intro'
-  | 'choose_meaning'
-  | 'choose_text'
-  | 'listen_choose'
-  | 'build_sentence';
+export type StepKind = 'scene' | 'listen_all' | 'fill_blank' | 'choose_reply' | 'build_sentence';
 
-export type Step = { kind: StepKind; phrase: Phrase; retry: number };
+export type Step = { kind: StepKind; line: Line | null; retry: number };
 
 export type LessonState = {
   steps: Step[];
   index: number;
-  /** Số lần sai của từng cụm trong phiên. */
+  /** Số lần sai của từng câu trong phiên. */
   mistakes: Record<string, number>;
   answered: number;
   correct: number;
 };
 
 export const MAX_RETRIES = 2;
-
-function shuffled<T>(items: readonly T[], rng: () => number): T[] {
-  const a = [...items];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(rng() * (i + 1));
-    [a[i], a[j]] = [a[j] as T, a[i] as T];
-  }
-  return a;
-}
+/** Câu dài hơn thì không ghép câu (quá nhiều ô chữ). */
+export const MAX_BUILD_WORDS = 12;
 
 const initial = (steps: Step[]): LessonState => ({
   steps,
@@ -47,47 +39,38 @@ const initial = (steps: Step[]): LessonState => ({
   correct: 0,
 });
 
-/** Bài học cụm mới. `canListen`: máy có giọng tiếng Anh. */
-export function buildLesson(
-  phrases: Phrase[],
-  opts: { canListen: boolean; rng?: () => number },
-): LessonState {
-  const rng = opts.rng ?? Math.random;
-  const steps: Step[] = [];
-  for (const phrase of phrases) {
-    steps.push({ kind: 'intro', phrase, retry: 0 });
-    if (phrases.length > 1) steps.push({ kind: 'choose_meaning', phrase, retry: 0 });
-  }
-  const finale = shuffled(phrases, rng).map((phrase, i): Step => {
-    const kind: StepKind = opts.canListen && i % 2 === 1 ? 'listen_choose' : 'build_sentence';
-    return { kind, phrase, retry: 0 };
-  });
-  return initial([...steps, ...finale]);
+const isKey = (l: Line) => !!l.blank;
+const wordCount = (s: string) => tokenize(s).length;
+
+/** Bài tập nhập vai cho một câu: chọn câu đáp nếu có câu trước, không thì ghép câu. */
+function roleplayKind(l: Line): StepKind {
+  if ((l.lineNo ?? 0) > 0) return 'choose_reply';
+  return wordCount(l.text) <= MAX_BUILD_WORDS ? 'build_sentence' : 'fill_blank';
 }
 
-const REVIEW_KINDS: StepKind[] = [
-  'build_sentence',
-  'choose_meaning',
-  'listen_choose',
-  'choose_text',
-];
+/** Bài học một đoạn hội thoại (các câu theo thứ tự `lineNo`). */
+export function buildDialogueLesson(lines: Line[], learner: 'a' | 'b' = 'b'): LessonState {
+  const key = lines.filter(isKey);
+  const steps: Step[] = [
+    { kind: 'scene', line: null, retry: 0 },
+    { kind: 'listen_all', line: null, retry: 0 },
+    ...key.map((line): Step => ({ kind: 'fill_blank', line, retry: 0 })),
+    ...key
+      .filter((l) => l.speaker === learner)
+      .map((line): Step => ({ kind: roleplayKind(line), line, retry: 0 })),
+  ];
+  return initial(steps);
+}
 
-/** Phiên ôn thẻ đến hạn. Trắc nghiệm cần ít nhất 2 cụm trong kho để có đáp án nhiễu. */
-export function buildReview(
-  due: Phrase[],
-  opts: { canListen: boolean; poolSize: number },
-): LessonState {
-  const kinds = REVIEW_KINDS.filter((k) => {
-    if (k === 'listen_choose' && !opts.canListen) return false;
-    if (k !== 'build_sentence' && opts.poolSize < 2) return false;
-    return true;
-  });
+/** Phiên ôn câu đến hạn: xoay vòng nghe-điền / chọn câu đáp / ghép câu. */
+export function buildReview(due: Line[]): LessonState {
   return initial(
-    due.map((phrase, i) => ({
-      kind: kinds[i % kinds.length] ?? 'build_sentence',
-      phrase,
-      retry: 0,
-    })),
+    due.map((line, i): Step => {
+      const options: StepKind[] = ['fill_blank'];
+      if ((line.lineNo ?? 0) > 0) options.push('choose_reply');
+      if (wordCount(line.text) <= MAX_BUILD_WORDS) options.push('build_sentence');
+      return { kind: options[i % options.length] ?? 'fill_blank', line, retry: 0 };
+    }),
   );
 }
 
@@ -99,12 +82,12 @@ export function isDone(s: LessonState): boolean {
   return s.index >= s.steps.length;
 }
 
-/** Tiến độ 0..1 cho thanh trên cùng. */
+/** Tiến độ 0..1. */
 export function progress(s: LessonState): number {
   return s.steps.length === 0 ? 1 : Math.min(1, s.index / s.steps.length);
 }
 
-/** Bước giới thiệu: chỉ đi tiếp. */
+/** Bước không chấm điểm (tình huống, nghe trọn bài): chỉ đi tiếp. */
 export function advance(s: LessonState): LessonState {
   return { ...s, index: s.index + 1 };
 }
@@ -112,8 +95,8 @@ export function advance(s: LessonState): LessonState {
 /** Ghi nhận câu trả lời cho bước hiện tại. Sai thì bài quay lại cuối hàng. */
 export function answer(s: LessonState, correct: boolean): LessonState {
   const step = currentStep(s);
-  if (!step) return s;
-  const id = step.phrase.id;
+  if (!step?.line) return s;
+  const id = step.line.id;
   const steps =
     !correct && step.retry < MAX_RETRIES
       ? [...s.steps, { ...step, retry: step.retry + 1 }]
@@ -128,14 +111,13 @@ export function answer(s: LessonState, correct: boolean): LessonState {
 }
 
 /**
- * Cụm vừa xong hết các bước trong phiên (không còn bước nào phía sau) — lúc này mới
- * ghi kết quả vào DB, nên thoát giữa chừng vẫn giữ được các cụm đã xong.
+ * Id câu vừa xong bước cuối của nó trong phiên — lúc này mới ghi vào FSRS,
+ * nên thoát giữa chừng vẫn giữ các câu đã xong.
  */
-export function finishedPhraseAt(s: LessonState, index: number): string | null {
-  const step = s.steps[index];
-  if (!step) return null;
-  const later = s.steps.slice(index + 1).some((x) => x.phrase.id === step.phrase.id);
-  return later ? null : step.phrase.id;
+export function finishedLineAt(s: LessonState, index: number): string | null {
+  const id = s.steps[index]?.line?.id;
+  if (!id) return null;
+  return s.steps.slice(index + 1).some((x) => x.line?.id === id) ? null : id;
 }
 
 /** Mức chấm từ số lần sai: 0 → Được, 1 → Khó, ≥2 → Quên. */
@@ -147,6 +129,15 @@ export function ratingFor(mistakes: number): Rating {
 
 export function accuracy(s: LessonState): number {
   return s.answered === 0 ? 1 : s.correct / s.answered;
+}
+
+// ---- Nghe-điền ----
+
+/** Tách câu quanh cụm then chốt: `before` + [chỗ trống] + `after`. */
+export function splitBlank(text: string, blank: string): { before: string; after: string } {
+  const i = text.indexOf(blank);
+  if (i < 0) return { before: text, after: '' };
+  return { before: text.slice(0, i), after: text.slice(i + blank.length) };
 }
 
 // ---- Ghép câu ----
@@ -167,6 +158,15 @@ export function sameSentence(a: string[], b: string[]): boolean {
       .replace(/\s+/g, ' ')
       .trim();
   return norm(a) === norm(b);
+}
+
+function shuffled<T>(items: readonly T[], rng: () => number): T[] {
+  const a = [...items];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j] as T, a[i] as T];
+  }
+  return a;
 }
 
 /** Ô chữ cho bài ghép câu: chữ của câu + vài chữ nhiễu không có trong câu, đã trộn. */

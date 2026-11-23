@@ -85,7 +85,7 @@ export default function NoteEditScreen() {
         placeholder="Nội dung ghi chú…"
         placeholderTextColor={c.muted}
         accessibilityLabel="Nội dung ghi chú"
-        style={[styles.input, styles.body, { color: c.text, backgroundColor: c.card }]}
+        style={[styles.input, styles.body, { color: c.text, backgroundColor: c.surface }]}
       />
       <TextInput
         value={tagsText}
@@ -94,7 +94,7 @@ export default function NoteEditScreen() {
         placeholderTextColor={c.muted}
         accessibilityLabel="Tag"
         autoCapitalize="none"
-        style={[styles.input, { color: c.text, backgroundColor: c.card }]}
+        style={[styles.input, { color: c.text, backgroundColor: c.surface }]}
       />
       <View style={styles.pinRow}>
         <Text style={{ color: c.text, fontSize: 16 }}>📌 Ghim lên đầu</Text>

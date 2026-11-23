@@ -1,0 +1,323 @@
+[
+  {
+    "id": "ps-rehearsal",
+    "topicId": "presentations",
+    "title": "Tập dượt với đồng nghiệp",
+    "level": "B2",
+    "situationVi": "Chiều trước buổi thuyết trình quan trọng với khách hàng, bạn (Thảo) nhờ Ben, đồng nghiệp người Anh, nghe thử và góp ý trong phòng họp nhỏ.",
+    "speakers": {
+      "a": {
+        "name": "Ben",
+        "roleVi": "Đồng nghiệp người Anh"
+      },
+      "b": {
+        "name": "Thảo",
+        "roleVi": "Bạn, người thuyết trình"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Thanks for sitting in, Ben. Could you give me some honest feedback?",
+        "meaningVi": "Cảm ơn anh đã ngồi nghe, Ben. Anh góp ý thẳng thắn giúp em nhé?",
+        "blank": "give me some honest feedback"
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. Go ahead whenever you're ready.",
+        "meaningVi": "Tất nhiên. Em sẵn sàng thì bắt đầu đi.",
+        "blank": "whenever you're ready"
+      },
+      {
+        "speaker": "a",
+        "text": "Okay, overall it was clear, but you rushed through the numbers.",
+        "meaningVi": "Được rồi, nhìn chung rất rõ ràng, nhưng em lướt qua phần số liệu nhanh quá.",
+        "blank": "you rushed through the numbers"
+      },
+      {
+        "speaker": "b",
+        "text": "Really? I was worried about running over time.",
+        "meaningVi": "Thật ạ? Em sợ bị quá giờ.",
+        "blank": "running over time",
+        "noteVi": "\"Run over time\" = nói quá thời lượng cho phép."
+      },
+      {
+        "speaker": "a",
+        "text": "You've got twenty minutes. You finished in fifteen.",
+        "meaningVi": "Em có hai mươi phút. Em nói xong trong mười lăm phút.",
+        "blank": "You've got twenty minutes"
+      },
+      {
+        "speaker": "b",
+        "text": "Good point. I'll slow down and pause after each key figure.",
+        "meaningVi": "Ý hay ạ. Em sẽ nói chậm lại và dừng một chút sau mỗi con số quan trọng.",
+        "blank": "pause after each key figure"
+      },
+      {
+        "speaker": "a",
+        "text": "Also, slide seven is quite busy. Maybe split it into two?",
+        "meaningVi": "Ngoài ra, slide bảy khá rối. Có lẽ nên tách làm hai?",
+        "blank": "slide seven is quite busy",
+        "noteVi": "\"Busy slide\" = slide quá nhiều chữ, hình, khó theo dõi."
+      },
+      {
+        "speaker": "b",
+        "text": "You're right. There's too much text on it.",
+        "meaningVi": "Anh nói đúng. Slide đó nhiều chữ quá.",
+        "blank": "There's too much text on it"
+      },
+      {
+        "speaker": "a",
+        "text": "Other than that, your opening was really strong.",
+        "meaningVi": "Ngoài mấy điểm đó ra, phần mở đầu của em rất tốt.",
+        "blank": "Other than that"
+      },
+      {
+        "speaker": "b",
+        "text": "That's a relief. I'll make those changes and run through it again tonight.",
+        "meaningVi": "Nhẹ cả người. Em sẽ sửa những chỗ đó và tập lại một lượt tối nay.",
+        "blank": "run through it again",
+        "noteVi": "\"Run through\" = tập dượt lại từ đầu đến cuối."
+      }
+    ]
+  },
+  {
+    "id": "ps-opening-the-talk",
+    "topicId": "presentations",
+    "title": "Mở đầu bài thuyết trình",
+    "level": "B2",
+    "situationVi": "Bạn (Nam) mở đầu bài trình bày kết quả kinh doanh quý trước ban lãnh đạo khu vực. Giám đốc khu vực Linda chủ trì và giới thiệu bạn.",
+    "speakers": {
+      "a": {
+        "name": "Linda",
+        "roleVi": "Giám đốc khu vực"
+      },
+      "b": {
+        "name": "Nam",
+        "roleVi": "Bạn, trưởng phòng kinh doanh"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Next up is Nam from our Vietnam office. Nam, the floor is yours.",
+        "meaningVi": "Tiếp theo là Nam từ văn phòng Việt Nam. Nam, mời anh.",
+        "blank": "the floor is yours",
+        "noteVi": "\"The floor is yours\" = mời bạn phát biểu."
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you, Linda. Good morning, everyone, and thanks for being here.",
+        "meaningVi": "Cảm ơn chị Linda. Chào buổi sáng mọi người, và cảm ơn mọi người đã có mặt.",
+        "blank": "thanks for being here"
+      },
+      {
+        "speaker": "b",
+        "text": "Today, I'd like to walk you through our results for the third quarter.",
+        "meaningVi": "Hôm nay, tôi xin trình bày với mọi người kết quả quý ba của chúng tôi.",
+        "blank": "I'd like to walk you through"
+      },
+      {
+        "speaker": "b",
+        "text": "I've divided the talk into three parts: sales, challenges, and next steps.",
+        "meaningVi": "Tôi chia bài trình bày thành ba phần: doanh số, thách thức và các bước tiếp theo.",
+        "blank": "I've divided the talk into",
+        "noteVi": "Nêu cấu trúc bài ngay từ đầu giúp người nghe dễ theo dõi."
+      },
+      {
+        "speaker": "a",
+        "text": "Sounds good. Should we hold questions until the end?",
+        "meaningVi": "Nghe ổn đấy. Chúng ta có nên để câu hỏi đến cuối không?",
+        "blank": "hold questions until the end"
+      },
+      {
+        "speaker": "b",
+        "text": "Actually, feel free to jump in at any time.",
+        "meaningVi": "Thật ra, mọi người cứ thoải mái đặt câu hỏi bất cứ lúc nào.",
+        "blank": "feel free to jump in"
+      },
+      {
+        "speaker": "b",
+        "text": "Let's start with the headline: revenue grew by eighteen percent.",
+        "meaningVi": "Hãy bắt đầu với điểm chính: doanh thu tăng mười tám phần trăm.",
+        "blank": "Let's start with the headline"
+      },
+      {
+        "speaker": "a",
+        "text": "That's well above target. What drove that growth?",
+        "meaningVi": "Vượt mục tiêu khá xa. Điều gì đã thúc đẩy mức tăng trưởng đó?",
+        "blank": "What drove that growth"
+      },
+      {
+        "speaker": "b",
+        "text": "Mostly our new online channel. I'll come back to that in a moment.",
+        "meaningVi": "Chủ yếu là kênh bán hàng trực tuyến mới. Tôi sẽ quay lại điểm này ngay sau đây.",
+        "blank": "I'll come back to that",
+        "noteVi": "Cách lịch sự để hoãn trả lời, giữ đúng trình tự bài nói."
+      }
+    ]
+  },
+  {
+    "id": "ps-tough-question",
+    "topicId": "presentations",
+    "title": "Xử lý câu hỏi khó",
+    "level": "B2",
+    "situationVi": "Trong buổi trình bày đề xuất dự án mới, bạn (Lan) bị một trưởng phòng tài chính chất vấn về chi phí. Bạn cần trả lời bình tĩnh và thuyết phục.",
+    "speakers": {
+      "a": {
+        "name": "Mark",
+        "roleVi": "Trưởng phòng tài chính"
+      },
+      "b": {
+        "name": "Lan",
+        "roleVi": "Bạn, quản lý dự án"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Sorry to interrupt, but these costs seem much higher than last year's.",
+        "meaningVi": "Xin lỗi đã ngắt lời, nhưng các chi phí này có vẻ cao hơn năm ngoái rất nhiều.",
+        "blank": "Sorry to interrupt"
+      },
+      {
+        "speaker": "b",
+        "text": "That's a fair question, Mark. Let me explain where the increase comes from.",
+        "meaningVi": "Câu hỏi rất xác đáng, anh Mark. Để tôi giải thích phần tăng thêm đến từ đâu.",
+        "blank": "That's a fair question",
+        "noteVi": "Ghi nhận câu hỏi trước khi trả lời giúp giảm căng thẳng."
+      },
+      {
+        "speaker": "b",
+        "text": "About sixty percent is new software licenses that replace three old tools.",
+        "meaningVi": "Khoảng sáu mươi phần trăm là bản quyền phần mềm mới, thay thế ba công cụ cũ.",
+        "blank": "replace three old tools"
+      },
+      {
+        "speaker": "a",
+        "text": "But will we actually save money in the long run?",
+        "meaningVi": "Nhưng về lâu dài chúng ta có thực sự tiết kiệm được không?",
+        "blank": "in the long run"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes. We expect to break even within eighteen months.",
+        "meaningVi": "Có. Chúng tôi dự kiến hòa vốn trong vòng mười tám tháng.",
+        "blank": "break even within eighteen months",
+        "noteVi": "\"Break even\" = hòa vốn."
+      },
+      {
+        "speaker": "a",
+        "text": "What's that estimate based on?",
+        "meaningVi": "Ước tính đó dựa trên cơ sở nào?",
+        "blank": "What's that estimate based on"
+      },
+      {
+        "speaker": "b",
+        "text": "It's based on last year's maintenance costs, but I don't have the full breakdown here.",
+        "meaningVi": "Nó dựa trên chi phí bảo trì năm ngoái, nhưng tôi không có bảng chi tiết ở đây.",
+        "blank": "I don't have the full breakdown"
+      },
+      {
+        "speaker": "b",
+        "text": "Let me check the figures and get back to you by Friday.",
+        "meaningVi": "Để tôi kiểm tra số liệu và phản hồi anh trước thứ Sáu.",
+        "blank": "get back to you by Friday",
+        "noteVi": "Khi không chắc, hẹn trả lời sau thay vì đoán; người nghe sẽ tin bạn hơn."
+      },
+      {
+        "speaker": "a",
+        "text": "That works. I just want to be sure the numbers hold up.",
+        "meaningVi": "Được. Tôi chỉ muốn chắc chắn các con số đứng vững.",
+        "blank": "the numbers hold up"
+      },
+      {
+        "speaker": "b",
+        "text": "Absolutely. I'll send the detailed spreadsheet to the whole group.",
+        "meaningVi": "Hoàn toàn đồng ý. Tôi sẽ gửi bảng tính chi tiết cho cả nhóm.",
+        "blank": "send the detailed spreadsheet"
+      }
+    ]
+  },
+  {
+    "id": "ps-wrap-up",
+    "topicId": "presentations",
+    "title": "Kết thúc và thống nhất bước tiếp theo",
+    "level": "B2",
+    "situationVi": "Bạn (Huy) vừa trình bày kế hoạch ra mắt sản phẩm cho đối tác. Bạn tóm tắt nội dung, rồi cùng quản lý phía đối tác chốt các bước tiếp theo.",
+    "speakers": {
+      "a": {
+        "name": "Emma",
+        "roleVi": "Quản lý phía đối tác"
+      },
+      "b": {
+        "name": "Huy",
+        "roleVi": "Bạn, trưởng nhóm sản phẩm"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "So, to sum up, we're ready to launch in March if the budget is approved.",
+        "meaningVi": "Tóm lại, chúng tôi sẵn sàng ra mắt vào tháng Ba nếu ngân sách được duyệt.",
+        "blank": "to sum up",
+        "noteVi": "Cụm mở đầu phần tóm tắt; có thể thay bằng \"to wrap up\" hoặc \"in short\"."
+      },
+      {
+        "speaker": "b",
+        "text": "The key takeaway is that early testing showed strong demand.",
+        "meaningVi": "Điểm chính cần nhớ là thử nghiệm ban đầu cho thấy nhu cầu rất lớn.",
+        "blank": "The key takeaway is"
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks, Huy. That was very clear. So what do you need from us?",
+        "meaningVi": "Cảm ơn Huy. Rất rõ ràng. Vậy anh cần gì từ phía chúng tôi?",
+        "blank": "what do you need from us"
+      },
+      {
+        "speaker": "b",
+        "text": "We'd need your sign-off on the budget by the end of the month.",
+        "meaningVi": "Chúng tôi cần chị phê duyệt ngân sách trước cuối tháng.",
+        "blank": "your sign-off on the budget",
+        "noteVi": "\"Sign-off\" = sự phê duyệt chính thức."
+      },
+      {
+        "speaker": "a",
+        "text": "I think that's doable. I'll raise it with our director on Monday.",
+        "meaningVi": "Tôi nghĩ việc đó khả thi. Tôi sẽ nêu vấn đề với giám đốc vào thứ Hai.",
+        "blank": "I'll raise it with our director"
+      },
+      {
+        "speaker": "b",
+        "text": "Great. I'll also share the slides and a one-page summary today.",
+        "meaningVi": "Tuyệt. Tôi cũng sẽ gửi slide và bản tóm tắt một trang trong hôm nay.",
+        "blank": "share the slides"
+      },
+      {
+        "speaker": "a",
+        "text": "Perfect. Should we schedule a follow-up call?",
+        "meaningVi": "Tuyệt. Chúng ta có nên lên lịch một cuộc gọi tiếp theo không?",
+        "blank": "schedule a follow-up call"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, how about next Thursday afternoon?",
+        "meaningVi": "Vâng, chiều thứ Năm tuần sau được không ạ?",
+        "blank": "how about next Thursday"
+      },
+      {
+        "speaker": "a",
+        "text": "Thursday works for me. I'll send an invite.",
+        "meaningVi": "Thứ Năm tôi rảnh. Tôi sẽ gửi lời mời họp.",
+        "blank": "Thursday works for me"
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you all for your time. I appreciate your support.",
+        "meaningVi": "Cảm ơn mọi người đã dành thời gian. Tôi rất trân trọng sự ủng hộ của mọi người.",
+        "blank": "Thank you all for your time"
+      }
+    ]
+  }
+]

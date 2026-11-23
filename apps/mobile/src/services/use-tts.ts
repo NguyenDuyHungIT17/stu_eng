@@ -10,8 +10,12 @@ export function useTts() {
   useEffect(() => () => stop(), []);
   return useMemo(
     () => ({
-      speak: (text: string, opts?: { slow?: boolean }, onDone?: () => void) =>
-        speak(text, { voice: prefs.voice, rate: opts?.slow ? 0.6 : prefs.rate }, onDone),
+      speak: (text: string, opts?: { slow?: boolean; pitch?: number }, onDone?: () => void) =>
+        speak(
+          text,
+          { voice: prefs.voice, rate: opts?.slow ? 0.6 : prefs.rate, pitch: opts?.pitch },
+          onDone,
+        ),
       stop,
     }),
     [prefs],

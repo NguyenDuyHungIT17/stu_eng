@@ -8,8 +8,8 @@ function TabIcon({ glyph, focused }: { glyph: string; focused: boolean }) {
 }
 
 const TABS = [
-  { name: 'index', title: 'Học', glyph: '🏠' },
-  { name: 'chat', title: 'Luyện nói', glyph: '🗣️' },
+  { name: 'index', title: 'Hội thoại', glyph: '💬' },
+  { name: 'chat', title: 'Nói với AI', glyph: '🎙️' },
   { name: 'notes', title: 'Sổ tay', glyph: '📒' },
   { name: 'settings', title: 'Hồ sơ', glyph: '👤' },
 ] as const;
@@ -20,7 +20,7 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: c.blue,
+        tabBarActiveTintColor: c.primary,
         tabBarInactiveTintColor: c.muted,
         tabBarLabelStyle: { fontSize: 12, fontWeight: '700' },
         tabBarStyle: { backgroundColor: c.bg, borderTopColor: c.border, borderTopWidth: 2 },

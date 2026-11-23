@@ -25,8 +25,35 @@ export const phrases = sqliteTable(
     sortOrder: integer('sort_order').notNull().default(0),
     isCustom: integer('is_custom', { mode: 'boolean' }).notNull().default(false),
     deletedAt: integer('deleted_at'), // nội dung bị gỡ khỏi gói: ẩn, không xóa
+    /** Câu thuộc đoạn hội thoại nào, thứ tự và người nói (a/b). */
+    dialogueId: text('dialogue_id'),
+    lineNo: integer('line_no'),
+    speaker: text('speaker'),
+    /** Cụm then chốt để nghe-điền; null = câu chỉ làm ngữ cảnh, không ôn. */
+    blank: text('blank'),
+    noteVi: text('note_vi'),
   },
-  (t) => [index('phrases_topic_idx').on(t.topicId)],
+  (t) => [
+    index('phrases_topic_idx').on(t.topicId),
+    index('phrases_dialogue_idx').on(t.dialogueId, t.lineNo),
+  ],
+);
+
+/** Đoạn hội thoại gắn với tình huống cụ thể; các câu nằm trong `phrases`. */
+export const dialogues = sqliteTable(
+  'dialogues',
+  {
+    id: text('id').primaryKey(),
+    topicId: text('topic_id').notNull(),
+    title: text('title').notNull(),
+    level: text('level').notNull(),
+    situationVi: text('situation_vi').notNull(),
+    /** JSON `{ a: {name, roleVi}, b: {name, roleVi} }`. */
+    speakers: text('speakers').notNull(),
+    sortOrder: integer('sort_order').notNull().default(0),
+    deletedAt: integer('deleted_at'),
+  },
+  (t) => [index('dialogues_topic_idx').on(t.topicId)],
 );
 
 /** Trạng thái FSRS lưu JSON; cột `due` tách riêng để truy vấn bằng index. */

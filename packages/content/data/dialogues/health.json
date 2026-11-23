@@ -1,0 +1,300 @@
+[
+  {
+    "id": "hl-doctor-abroad",
+    "topicId": "health",
+    "title": "Đi khám bác sĩ ở nước ngoài",
+    "level": "B1",
+    "situationVi": "Bạn (Minh) đang đi công tác ở Úc thì bị sốt và đau họng hai ngày nay. Bạn đến một phòng khám gần khách sạn và gặp bác sĩ Harris.",
+    "speakers": {
+      "a": { "name": "Dr. Harris", "roleVi": "Bác sĩ ở phòng khám" },
+      "b": { "name": "Minh", "roleVi": "Bạn, người đi công tác" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hi Minh, come on in. So, what seems to be the problem?",
+        "meaningVi": "Chào Minh, mời vào. Thế anh thấy trong người có vấn đề gì?",
+        "blank": "what seems to be the problem",
+        "noteVi": "Câu bác sĩ hay hỏi đầu buổi khám, lịch sự hơn \"What's wrong?\"."
+      },
+      {
+        "speaker": "b",
+        "text": "I've had a fever and a sore throat for two days now.",
+        "meaningVi": "Tôi bị sốt và đau họng hai ngày nay rồi.",
+        "blank": "I've had a fever",
+        "noteVi": "Dùng thì hiện tại hoàn thành \"I've had... for...\" để nói triệu chứng kéo dài đến giờ."
+      },
+      {
+        "speaker": "a",
+        "text": "I'm sorry to hear that. Any coughing or trouble breathing?",
+        "meaningVi": "Tôi rất tiếc. Anh có ho hay khó thở không?",
+        "blank": "Any coughing or trouble breathing"
+      },
+      {
+        "speaker": "b",
+        "text": "A bit of a cough, mostly at night. And I feel really tired.",
+        "meaningVi": "Hơi ho một chút, chủ yếu vào ban đêm. Và tôi thấy rất mệt.",
+        "blank": "mostly at night"
+      },
+      {
+        "speaker": "a",
+        "text": "Okay, let me take a look. Can you open your mouth and say \"ah\"?",
+        "meaningVi": "Được rồi, để tôi xem. Anh há miệng ra và nói \"a\" nhé?",
+        "blank": "let me take a look"
+      },
+      {
+        "speaker": "b",
+        "text": "Sure. Is it anything serious? I've got meetings all week.",
+        "meaningVi": "Vâng. Có nghiêm trọng không ạ? Cả tuần này tôi có họp.",
+        "blank": "Is it anything serious"
+      },
+      {
+        "speaker": "a",
+        "text": "Don't worry, it looks like a throat infection. I'll prescribe some antibiotics.",
+        "meaningVi": "Đừng lo, có vẻ là viêm họng. Tôi sẽ kê cho anh ít kháng sinh.",
+        "blank": "it looks like a throat infection"
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you. How often should I take them?",
+        "meaningVi": "Cảm ơn bác sĩ. Tôi nên uống bao lâu một lần ạ?",
+        "blank": "How often should I take them"
+      },
+      {
+        "speaker": "a",
+        "text": "Twice a day after meals, and make sure you finish the whole course.",
+        "meaningVi": "Ngày hai lần sau bữa ăn, và nhớ uống hết cả liệu trình nhé.",
+        "blank": "finish the whole course",
+        "noteVi": "\"Course\" ở đây là một liệu trình thuốc, không phải khóa học."
+      },
+      {
+        "speaker": "b",
+        "text": "Got it. Thanks so much, doctor.",
+        "meaningVi": "Tôi hiểu rồi. Cảm ơn bác sĩ nhiều."
+      }
+    ]
+  },
+  {
+    "id": "hl-pharmacy",
+    "topicId": "health",
+    "title": "Mua thuốc ở hiệu thuốc",
+    "level": "B1",
+    "situationVi": "Bạn (Mai) đang du lịch ở London và bị đau đầu, nghẹt mũi. Bạn vào một hiệu thuốc để hỏi dược sĩ mua thuốc không cần đơn.",
+    "speakers": {
+      "a": { "name": "Sarah", "roleVi": "Dược sĩ" },
+      "b": { "name": "Mai", "roleVi": "Bạn, khách du lịch" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hello, how can I help you today?",
+        "meaningVi": "Xin chào, tôi có thể giúp gì cho chị?"
+      },
+      {
+        "speaker": "b",
+        "text": "Hi, I've got a headache and a blocked nose. Could you recommend something?",
+        "meaningVi": "Chào chị, tôi bị đau đầu và nghẹt mũi. Chị có thể gợi ý thuốc gì không?",
+        "blank": "Could you recommend something",
+        "noteVi": "\"Blocked nose\" (Anh) = \"stuffy nose\" (Mỹ): nghẹt mũi."
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. Are you taking any other medication at the moment?",
+        "meaningVi": "Được chứ. Hiện chị có đang dùng loại thuốc nào khác không?",
+        "blank": "Are you taking any other medication"
+      },
+      {
+        "speaker": "b",
+        "text": "No, nothing. But I'm allergic to aspirin.",
+        "meaningVi": "Không, không có gì cả. Nhưng tôi bị dị ứng với aspirin.",
+        "blank": "I'm allergic to aspirin",
+        "noteVi": "Luôn nói rõ mình dị ứng gì khi mua thuốc ở nước ngoài."
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks for letting me know. This cold and flu tablet doesn't contain aspirin.",
+        "meaningVi": "Cảm ơn chị đã cho tôi biết. Viên cảm cúm này không có aspirin.",
+        "blank": "Thanks for letting me know"
+      },
+      {
+        "speaker": "b",
+        "text": "Great. Will it make me drowsy? I need to stay awake for a tour.",
+        "meaningVi": "Tốt quá. Thuốc có gây buồn ngủ không? Tôi cần tỉnh táo để đi tham quan.",
+        "blank": "Will it make me drowsy"
+      },
+      {
+        "speaker": "a",
+        "text": "No, this one's the daytime version. Just don't take more than four a day.",
+        "meaningVi": "Không đâu, loại này dùng ban ngày. Chỉ cần đừng uống quá bốn viên một ngày.",
+        "blank": "don't take more than four a day"
+      },
+      {
+        "speaker": "b",
+        "text": "Okay, I'll be careful. How much is it?",
+        "meaningVi": "Vâng, tôi sẽ cẩn thận. Bao nhiêu tiền vậy chị?",
+        "blank": "How much is it"
+      },
+      {
+        "speaker": "a",
+        "text": "That's four pounds fifty. I hope you feel better soon!",
+        "meaningVi": "Bốn bảng năm mươi xu. Mong chị sớm khỏe nhé!",
+        "blank": "I hope you feel better soon"
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you, you've been very helpful.",
+        "meaningVi": "Cảm ơn chị, chị đã giúp tôi rất nhiều.",
+        "blank": "you've been very helpful"
+      }
+    ]
+  },
+  {
+    "id": "hl-calling-in-sick",
+    "topicId": "health",
+    "title": "Gọi điện xin nghỉ ốm",
+    "level": "B1",
+    "situationVi": "Sáng thứ Hai bạn (Huy) thức dậy bị đau bụng và nôn. Bạn gọi điện cho quản lý người Mỹ, chị Rachel, để xin nghỉ ốm hôm nay.",
+    "speakers": {
+      "a": { "name": "Rachel", "roleVi": "Quản lý của bạn" },
+      "b": { "name": "Huy", "roleVi": "Bạn, nhân viên" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Morning, Huy. Is everything okay? You don't usually call this early.",
+        "meaningVi": "Chào buổi sáng, Huy. Mọi chuyện ổn chứ? Bình thường em đâu gọi sớm thế.",
+        "blank": "Is everything okay"
+      },
+      {
+        "speaker": "b",
+        "text": "Morning, Rachel. I'm afraid I'm not feeling well today.",
+        "meaningVi": "Chào chị Rachel. Em e là hôm nay em không được khỏe.",
+        "blank": "I'm not feeling well today",
+        "noteVi": "\"I'm afraid...\" làm mềm tin không vui, rất hay dùng nơi công sở."
+      },
+      {
+        "speaker": "a",
+        "text": "Oh no, what's wrong?",
+        "meaningVi": "Ôi, em bị sao thế?"
+      },
+      {
+        "speaker": "b",
+        "text": "I think I've got food poisoning. I was up all night being sick.",
+        "meaningVi": "Em nghĩ em bị ngộ độc thực phẩm. Cả đêm em thức để nôn.",
+        "blank": "I think I've got food poisoning",
+        "noteVi": "Trong tiếng Anh-Anh, \"be sick\" thường có nghĩa là nôn."
+      },
+      {
+        "speaker": "a",
+        "text": "That sounds awful. You should definitely stay home and rest.",
+        "meaningVi": "Nghe khổ quá. Em chắc chắn nên ở nhà nghỉ ngơi đi.",
+        "blank": "stay home and rest"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks. Would it be okay to take the day off?",
+        "meaningVi": "Cảm ơn chị. Em xin nghỉ hôm nay được không ạ?",
+        "blank": "take the day off"
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. Is there anything urgent someone needs to cover?",
+        "meaningVi": "Tất nhiên rồi. Có việc gì gấp cần người khác làm thay không?",
+        "blank": "someone needs to cover",
+        "noteVi": "\"Cover\" ở đây = làm thay phần việc của ai đó."
+      },
+      {
+        "speaker": "b",
+        "text": "Just the client call at two. Could Tuan handle it instead?",
+        "meaningVi": "Chỉ có cuộc gọi với khách lúc hai giờ. Tuấn làm thay được không chị?",
+        "blank": "Could Tuan handle it instead"
+      },
+      {
+        "speaker": "a",
+        "text": "Sure, I'll let him know. Just focus on getting better.",
+        "meaningVi": "Được, chị sẽ báo cậu ấy. Em cứ lo khỏe lại đã.",
+        "blank": "focus on getting better"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks for understanding. I'll keep you posted.",
+        "meaningVi": "Cảm ơn chị đã thông cảm. Em sẽ báo tình hình cho chị.",
+        "blank": "Thanks for understanding"
+      }
+    ]
+  },
+  {
+    "id": "hl-friend-unwell",
+    "topicId": "health",
+    "title": "Hỏi thăm bạn bị mệt",
+    "level": "B1",
+    "situationVi": "Bạn (Thảo) và Emma, bạn cùng lớp tiếng Anh người Canada, đang ngồi trong quán cà phê. Bạn thấy Emma trông xanh xao và mệt mỏi.",
+    "speakers": {
+      "a": { "name": "Emma", "roleVi": "Bạn người Canada" },
+      "b": { "name": "Thảo", "roleVi": "Bạn" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Emma, you look a bit pale. Are you feeling alright?",
+        "meaningVi": "Emma, trông cậu hơi xanh xao. Cậu thấy ổn không?",
+        "blank": "Are you feeling alright",
+        "noteVi": "Hỏi thăm sức khỏe nhẹ nhàng, không gây ngại cho người nghe."
+      },
+      {
+        "speaker": "a",
+        "text": "Not really. I've had a terrible headache since this morning.",
+        "meaningVi": "Không lắm. Tớ bị đau đầu kinh khủng từ sáng tới giờ.",
+        "blank": "I've had a terrible headache"
+      },
+      {
+        "speaker": "b",
+        "text": "Oh no, that's no fun. Have you taken anything for it?",
+        "meaningVi": "Ôi, khổ thân cậu. Cậu đã uống thuốc gì chưa?",
+        "blank": "Have you taken anything for it"
+      },
+      {
+        "speaker": "a",
+        "text": "Not yet. I think I've just been working too hard lately.",
+        "meaningVi": "Chưa. Tớ nghĩ dạo này tớ làm việc quá sức thôi.",
+        "blank": "working too hard lately"
+      },
+      {
+        "speaker": "b",
+        "text": "That makes sense. Have you been getting enough sleep?",
+        "meaningVi": "Thế thì cũng đúng. Cậu có ngủ đủ giấc không?",
+        "blank": "getting enough sleep"
+      },
+      {
+        "speaker": "a",
+        "text": "Honestly, about five hours a night. I know, I know.",
+        "meaningVi": "Thật lòng thì khoảng năm tiếng mỗi đêm. Tớ biết, tớ biết mà.",
+        "noteVi": "\"I know, I know\" = tự nhận lỗi trước khi bị nhắc nhở."
+      },
+      {
+        "speaker": "b",
+        "text": "Maybe you should head home and get some rest.",
+        "meaningVi": "Có lẽ cậu nên về nhà nghỉ một chút đi.",
+        "blank": "Maybe you should head home"
+      },
+      {
+        "speaker": "a",
+        "text": "Yeah, you're probably right. I'll skip class tonight.",
+        "meaningVi": "Ừ, chắc cậu nói đúng. Tối nay tớ nghỉ học vậy.",
+        "blank": "you're probably right"
+      },
+      {
+        "speaker": "b",
+        "text": "Good idea. I'll send you my notes. Text me if you need anything.",
+        "meaningVi": "Ý hay đó. Tớ sẽ gửi cậu bài ghi. Cần gì cứ nhắn tớ nhé.",
+        "blank": "Text me if you need anything"
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks, Thao. You're a lifesaver.",
+        "meaningVi": "Cảm ơn Thảo. Cậu đúng là cứu tinh của tớ.",
+        "blank": "You're a lifesaver"
+      }
+    ]
+  }
+]

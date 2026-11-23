@@ -1,0 +1,348 @@
+[
+  {
+    "id": "rs-coffee-order",
+    "topicId": "restaurant",
+    "title": "Gọi cà phê ở nước ngoài",
+    "level": "A2",
+    "situationVi": "Bạn (Mai) đang đi công tác ở Singapore và ghé một quán cà phê gần khách sạn để mua đồ uống mang đi trước giờ họp.",
+    "speakers": {
+      "a": {
+        "name": "Ben",
+        "roleVi": "Nhân viên quán cà phê"
+      },
+      "b": {
+        "name": "Mai",
+        "roleVi": "Bạn, khách hàng"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hi there! What can I get for you?",
+        "meaningVi": "Chào chị! Chị muốn dùng gì ạ?",
+        "blank": "What can I get for you",
+        "noteVi": "Câu nhân viên quán hay dùng để hỏi khách gọi món."
+      },
+      {
+        "speaker": "b",
+        "text": "Hi, can I get a latte, please?",
+        "meaningVi": "Chào em, cho chị một ly latte nhé.",
+        "blank": "can I get a latte",
+        "noteVi": "\"Can I get...?\" là cách gọi đồ uống tự nhiên, rất phổ biến."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. What size would you like?",
+        "meaningVi": "Vâng. Chị muốn cỡ nào ạ?",
+        "blank": "What size would you like"
+      },
+      {
+        "speaker": "b",
+        "text": "Medium, please. And could I have it with oat milk?",
+        "meaningVi": "Cỡ vừa nhé. Và em làm cho chị bằng sữa yến mạch được không?",
+        "blank": "could I have it with"
+      },
+      {
+        "speaker": "a",
+        "text": "No problem. Is that for here or to go?",
+        "meaningVi": "Được ạ. Chị dùng ở đây hay mang đi?",
+        "blank": "for here or to go",
+        "noteVi": "\"To go\" (Mỹ) hoặc \"takeaway\" (Anh) = mang đi."
+      },
+      {
+        "speaker": "b",
+        "text": "To go, please. I'm in a bit of a hurry.",
+        "meaningVi": "Mang đi nhé. Chị đang hơi vội.",
+        "blank": "I'm in a bit of a hurry"
+      },
+      {
+        "speaker": "a",
+        "text": "Got it. Anything else? Our banana bread is fresh today.",
+        "meaningVi": "Vâng ạ. Chị dùng thêm gì không? Bánh chuối hôm nay mới ra lò đấy."
+      },
+      {
+        "speaker": "b",
+        "text": "Hmm, tempting, but I'm fine, thanks. How much is it?",
+        "meaningVi": "Ừm, hấp dẫn đấy, nhưng thôi, cảm ơn em. Hết bao nhiêu vậy?",
+        "blank": "How much is it"
+      },
+      {
+        "speaker": "a",
+        "text": "That's six fifty. You can tap your card right here.",
+        "meaningVi": "Của chị hết sáu đô năm mươi. Chị chạm thẻ ở đây nhé."
+      },
+      {
+        "speaker": "b",
+        "text": "Great. Thanks so much!",
+        "meaningVi": "Được rồi. Cảm ơn em nhiều!"
+      },
+      {
+        "speaker": "a",
+        "text": "Your latte will be ready at the end of the counter. Have a nice day!",
+        "meaningVi": "Latte của chị sẽ có ở cuối quầy. Chúc chị một ngày tốt lành!",
+        "blank": "Have a nice day"
+      }
+    ]
+  },
+  {
+    "id": "rs-ordering-dinner",
+    "topicId": "restaurant",
+    "title": "Gọi món ở nhà hàng",
+    "level": "A2",
+    "situationVi": "Bạn (Nam) đi du lịch ở London và vào một nhà hàng vào buổi tối. Bạn hỏi nhân viên phục vụ gợi ý món và báo mình bị dị ứng đậu phộng.",
+    "speakers": {
+      "a": {
+        "name": "Sophie",
+        "roleVi": "Nhân viên phục vụ"
+      },
+      "b": {
+        "name": "Nam",
+        "roleVi": "Bạn, khách du lịch"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Good evening! Are you ready to order, or do you need a few more minutes?",
+        "meaningVi": "Chào anh! Anh gọi món luôn chưa, hay cần thêm vài phút ạ?",
+        "blank": "Are you ready to order"
+      },
+      {
+        "speaker": "b",
+        "text": "I think I'm ready. What would you recommend?",
+        "meaningVi": "Chắc tôi gọi được rồi. Chị gợi ý món gì không?",
+        "blank": "What would you recommend",
+        "noteVi": "Hỏi nhân viên món ngon khi chưa biết chọn gì."
+      },
+      {
+        "speaker": "a",
+        "text": "The fish and chips is very popular, and the steak pie is great too.",
+        "meaningVi": "Cá tẩm bột chiên khoai được gọi nhiều lắm, bánh nướng nhân bò cũng rất ngon."
+      },
+      {
+        "speaker": "b",
+        "text": "I'll have the fish and chips, then.",
+        "meaningVi": "Vậy cho tôi món cá chiên khoai nhé.",
+        "blank": "I'll have the",
+        "noteVi": "\"I'll have...\" là cách gọi món ngắn gọn, tự nhiên nhất."
+      },
+      {
+        "speaker": "a",
+        "text": "Good choice. Would you like anything to drink?",
+        "meaningVi": "Lựa chọn hay đấy ạ. Anh có muốn uống gì không?",
+        "blank": "Would you like anything to drink"
+      },
+      {
+        "speaker": "b",
+        "text": "Just a glass of water, please. Oh, and I'm allergic to peanuts.",
+        "meaningVi": "Cho tôi một cốc nước lọc thôi. À, tôi bị dị ứng đậu phộng.",
+        "blank": "I'm allergic to",
+        "noteVi": "Luôn nói rõ dị ứng khi gọi món ở nước ngoài."
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks for letting me know. I'll tell the kitchen.",
+        "meaningVi": "Cảm ơn anh đã báo. Tôi sẽ báo lại với bếp.",
+        "blank": "Thanks for letting me know"
+      },
+      {
+        "speaker": "b",
+        "text": "Is there anything with peanuts in the dish?",
+        "meaningVi": "Trong món đó có gì làm từ đậu phộng không chị?",
+        "blank": "Is there anything with"
+      },
+      {
+        "speaker": "a",
+        "text": "No, but the oil might be shared. I'll double-check for you.",
+        "meaningVi": "Không có, nhưng dầu chiên có thể dùng chung. Để tôi kiểm tra lại cho anh.",
+        "blank": "I'll double-check for you"
+      },
+      {
+        "speaker": "b",
+        "text": "That's great, thank you. I appreciate it.",
+        "meaningVi": "Tốt quá, cảm ơn chị. Tôi rất cảm kích."
+      },
+      {
+        "speaker": "a",
+        "text": "You're welcome. Your food will be out in about fifteen minutes.",
+        "meaningVi": "Không có gì ạ. Khoảng mười lăm phút nữa món của anh sẽ ra."
+      }
+    ]
+  },
+  {
+    "id": "rs-wrong-order",
+    "topicId": "restaurant",
+    "title": "Món ăn bị nhầm và thanh toán",
+    "level": "A2",
+    "situationVi": "Bạn (Thảo) đi ăn trưa với đồng nghiệp ở một nhà hàng tại Úc. Món mang ra không đúng món bạn gọi, và cuối bữa bạn cần thanh toán riêng.",
+    "speakers": {
+      "a": {
+        "name": "Liam",
+        "roleVi": "Nhân viên phục vụ"
+      },
+      "b": {
+        "name": "Thảo",
+        "roleVi": "Bạn, khách hàng"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Here's your chicken curry. Enjoy!",
+        "meaningVi": "Món cà ri gà của chị đây. Chúc chị ngon miệng!"
+      },
+      {
+        "speaker": "b",
+        "text": "Sorry, I think there's been a mistake. I ordered the beef salad.",
+        "meaningVi": "Xin lỗi, hình như có nhầm lẫn. Tôi gọi món salad bò cơ.",
+        "blank": "I think there's been a mistake",
+        "noteVi": "Cách báo nhầm món lịch sự, không đổ lỗi trực tiếp cho người phục vụ."
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, I'm so sorry about that. Let me fix it right away.",
+        "meaningVi": "Ôi, tôi thành thật xin lỗi. Để tôi đổi lại ngay ạ.",
+        "blank": "Let me fix it right away"
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you. No rush, it happens.",
+        "meaningVi": "Cảm ơn anh. Không vội đâu, chuyện thường mà.",
+        "blank": "it happens",
+        "noteVi": "\"It happens\" = chuyện bình thường thôi, dùng để làm nhẹ không khí."
+      },
+      {
+        "speaker": "a",
+        "text": "Here's your beef salad. Again, sorry for the wait.",
+        "meaningVi": "Salad bò của chị đây. Một lần nữa xin lỗi vì để chị phải chờ.",
+        "blank": "sorry for the wait"
+      },
+      {
+        "speaker": "b",
+        "text": "That's okay. It looks delicious.",
+        "meaningVi": "Không sao. Trông ngon quá."
+      },
+      {
+        "speaker": "a",
+        "text": "How was everything? Can I get you anything else?",
+        "meaningVi": "Mọi thứ ổn chứ ạ? Chị có cần gọi thêm gì không?",
+        "blank": "How was everything"
+      },
+      {
+        "speaker": "b",
+        "text": "It was lovely, thanks. Could we get the bill, please?",
+        "meaningVi": "Ngon lắm, cảm ơn anh. Cho chúng tôi xin hóa đơn nhé.",
+        "blank": "Could we get the bill",
+        "noteVi": "Người Anh/Úc nói \"the bill\", người Mỹ hay nói \"the check\"."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. Would you like to pay together or separately?",
+        "meaningVi": "Vâng. Mọi người muốn trả chung hay riêng ạ?",
+        "blank": "together or separately"
+      },
+      {
+        "speaker": "b",
+        "text": "Separately, please. Can I pay by card?",
+        "meaningVi": "Trả riêng nhé. Tôi thanh toán bằng thẻ được không?",
+        "blank": "Can I pay by card"
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. I'll bring the card machine over.",
+        "meaningVi": "Tất nhiên rồi. Tôi sẽ mang máy quẹt thẻ ra ạ."
+      }
+    ]
+  },
+  {
+    "id": "rs-pho-with-friend",
+    "topicId": "restaurant",
+    "title": "Mời bạn nước ngoài ăn phở",
+    "level": "A2",
+    "situationVi": "Bạn (Minh) dẫn Jack, người bạn Mỹ mới sang Hà Nội, đi ăn phở ở một quán quen. Bạn giới thiệu món ăn và chỉ Jack cách ăn.",
+    "speakers": {
+      "a": {
+        "name": "Jack",
+        "roleVi": "Bạn người Mỹ"
+      },
+      "b": {
+        "name": "Minh",
+        "roleVi": "Bạn, người dẫn đi ăn"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "This is my favourite pho place. It's been here for thirty years.",
+        "meaningVi": "Đây là quán phở mình thích nhất. Quán mở được ba mươi năm rồi đấy.",
+        "blank": "This is my favourite"
+      },
+      {
+        "speaker": "a",
+        "text": "Wow, it smells amazing. What do you usually get?",
+        "meaningVi": "Chà, thơm quá. Cậu hay gọi món gì?",
+        "blank": "What do you usually get"
+      },
+      {
+        "speaker": "b",
+        "text": "I always go for the beef pho with rare steak. You should try it.",
+        "meaningVi": "Mình lúc nào cũng gọi phở bò tái. Cậu nên thử món đó.",
+        "blank": "I always go for",
+        "noteVi": "\"Go for\" = chọn, gọi (món gì đó) — rất hay dùng khi nói chuyện ăn uống."
+      },
+      {
+        "speaker": "a",
+        "text": "Rare steak? Is it raw?",
+        "meaningVi": "Bò tái á? Thịt sống à?"
+      },
+      {
+        "speaker": "b",
+        "text": "Just a little. It cooks in the hot broth, don't worry.",
+        "meaningVi": "Chỉ hơi sống thôi. Nó sẽ chín trong nước dùng nóng, đừng lo."
+      },
+      {
+        "speaker": "a",
+        "text": "Okay, I'll give it a try. What are these green herbs for?",
+        "meaningVi": "Được, mình sẽ thử. Mấy loại rau xanh này để làm gì vậy?",
+        "blank": "I'll give it a try",
+        "noteVi": "\"Give it a try\" = thử xem sao."
+      },
+      {
+        "speaker": "b",
+        "text": "You add them to your bowl. A bit of lime and chilli too, if you like.",
+        "meaningVi": "Cậu cho vào bát. Thêm chút chanh và ớt nữa, nếu cậu thích."
+      },
+      {
+        "speaker": "a",
+        "text": "Is the chilli very hot? I'm not great with spicy food.",
+        "meaningVi": "Ớt có cay lắm không? Mình không ăn cay giỏi lắm.",
+        "blank": "I'm not great with spicy food"
+      },
+      {
+        "speaker": "b",
+        "text": "It's pretty strong. Maybe start with just one slice.",
+        "meaningVi": "Khá cay đấy. Chắc cậu thử một lát thôi trước đã.",
+        "blank": "Maybe start with"
+      },
+      {
+        "speaker": "a",
+        "text": "Mmm, this is incredible! I can see why you love it.",
+        "meaningVi": "Ừm, ngon tuyệt! Giờ thì mình hiểu sao cậu mê quán này rồi.",
+        "blank": "I can see why you love it"
+      },
+      {
+        "speaker": "b",
+        "text": "Told you! And it's my treat today.",
+        "meaningVi": "Mình nói rồi mà! Hôm nay mình mời nhé.",
+        "blank": "it's my treat",
+        "noteVi": "\"It's my treat\" / \"It's on me\" = để mình trả, mình mời."
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks, Minh! Next time, it's on me.",
+        "meaningVi": "Cảm ơn Minh! Lần sau để mình mời nhé.",
+        "blank": "it's on me"
+      }
+    ]
+  }
+]

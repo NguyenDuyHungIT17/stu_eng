@@ -1,12 +1,14 @@
-import type { PhraseContent, TopicContent } from '@app/shared';
+import type { DialogueContent, PhraseContent, TopicContent } from '@app/shared';
 import { and, eq, inArray, isNull, not } from 'drizzle-orm';
-import { phrases, topics } from './schema';
+import { dialogues, phrases, topics } from './schema';
 import { getSetting, SettingKey, setSetting } from './settings';
 import type { Db } from './types';
 
 export type ContentBundle = {
   contentVersion: number;
   topics: TopicContent[];
+  /** Đoạn hội thoại (không bắt buộc với gói cũ / test). */
+  dialogues?: DialogueContent[];
   phrases: PhraseContent[];
 };
 
@@ -29,6 +31,23 @@ export function seedContent(db: Db, bundle: ContentBundle, now: number): boolean
         .run();
     }
 
+    const dialogueList = bundle.dialogues ?? [];
+    dialogueList.forEach((d, i) => {
+      const row = {
+        topicId: d.topicId,
+        title: d.title,
+        level: d.level,
+        situationVi: d.situationVi,
+        speakers: JSON.stringify(d.speakers),
+        sortOrder: i,
+        deletedAt: null,
+      };
+      tx.insert(dialogues)
+        .values({ id: d.id, ...row })
+        .onConflictDoUpdate({ target: dialogues.id, set: row })
+        .run();
+    });
+
     bundle.phrases.forEach((p, i) => {
       const row = {
         topicId: p.topicId,
@@ -40,6 +59,11 @@ export function seedContent(db: Db, bundle: ContentBundle, now: number): boolean
         level: p.level,
         sortOrder: i,
         deletedAt: null,
+        dialogueId: p.dialogueId ?? null,
+        lineNo: p.lineNo ?? null,
+        speaker: p.speaker ?? null,
+        blank: p.blank ?? null,
+        noteVi: p.noteVi ?? null,
       };
       tx.insert(phrases)
         .values({ id: p.id, isCustom: false, ...row })
@@ -53,6 +77,11 @@ export function seedContent(db: Db, bundle: ContentBundle, now: number): boolean
     tx.update(topics)
       .set({ deletedAt: now })
       .where(and(isNull(topics.deletedAt), not(inArray(topics.id, topicIds))))
+      .run();
+    const dialogueIds = dialogueList.map((d) => d.id);
+    tx.update(dialogues)
+      .set({ deletedAt: now })
+      .where(and(isNull(dialogues.deletedAt), not(inArray(dialogues.id, dialogueIds))))
       .run();
     tx.update(phrases)
       .set({ deletedAt: now })

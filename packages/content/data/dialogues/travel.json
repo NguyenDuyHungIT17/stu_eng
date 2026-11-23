@@ -1,0 +1,336 @@
+[
+  {
+    "id": "tr-airport-check-in",
+    "topicId": "travel",
+    "title": "Làm thủ tục ở sân bay",
+    "level": "A2",
+    "situationVi": "Bạn (Thảo) bay từ Nội Bài sang Melbourne để đi du học. Bạn đến quầy làm thủ tục của hãng bay và nói chuyện với nhân viên.",
+    "speakers": {
+      "a": {
+        "name": "Sarah",
+        "roleVi": "Nhân viên quầy check-in"
+      },
+      "b": {
+        "name": "Thảo",
+        "roleVi": "Bạn, du học sinh"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Good morning. Can I see your passport, please?",
+        "meaningVi": "Chào buổi sáng. Cho tôi xem hộ chiếu của bạn được không?",
+        "blank": "Can I see your passport"
+      },
+      {
+        "speaker": "b",
+        "text": "Here you are. I'm flying to Melbourne.",
+        "meaningVi": "Đây ạ. Tôi bay đi Melbourne.",
+        "blank": "Here you are",
+        "noteVi": "\"Here you are\" = đây ạ, dùng khi đưa đồ cho ai đó."
+      },
+      {
+        "speaker": "a",
+        "text": "Thank you. Are you checking in any bags today?",
+        "meaningVi": "Cảm ơn bạn. Hôm nay bạn có ký gửi hành lý không?",
+        "blank": "checking in any bags",
+        "noteVi": "\"Check in a bag\" = ký gửi hành lý; hành lý xách tay là \"carry-on\"."
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, just this suitcase. Is it overweight?",
+        "meaningVi": "Có, chỉ cái vali này thôi. Nó có bị quá cân không ạ?",
+        "blank": "Is it overweight"
+      },
+      {
+        "speaker": "a",
+        "text": "Let me check. It's twenty-two kilos, so you're fine.",
+        "meaningVi": "Để tôi kiểm tra. Hai mươi hai cân, vậy là ổn."
+      },
+      {
+        "speaker": "b",
+        "text": "Great. Could I have a window seat, please?",
+        "meaningVi": "Tốt quá. Cho tôi ngồi ghế cạnh cửa sổ được không ạ?",
+        "blank": "Could I have a window seat"
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. Here's your boarding pass. You're in seat 24A.",
+        "meaningVi": "Được ạ. Đây là thẻ lên máy bay của bạn. Bạn ngồi ghế 24A.",
+        "blank": "Here's your boarding pass"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks. What time does boarding start?",
+        "meaningVi": "Cảm ơn. Mấy giờ thì bắt đầu lên máy bay ạ?",
+        "blank": "What time does boarding start"
+      },
+      {
+        "speaker": "a",
+        "text": "At 9:15, from Gate 12. Please be there on time.",
+        "meaningVi": "Lúc 9 giờ 15, ở cửa số 12. Bạn nhớ có mặt đúng giờ nhé.",
+        "blank": "be there on time"
+      },
+      {
+        "speaker": "b",
+        "text": "I will. Thank you!",
+        "meaningVi": "Vâng ạ. Cảm ơn chị!"
+      },
+      {
+        "speaker": "a",
+        "text": "You're welcome. Have a good flight!",
+        "meaningVi": "Không có gì. Chúc bạn có chuyến bay tốt đẹp!",
+        "blank": "Have a good flight"
+      }
+    ]
+  },
+  {
+    "id": "tr-immigration",
+    "topicId": "travel",
+    "title": "Qua cửa nhập cảnh",
+    "level": "A2",
+    "situationVi": "Bạn (Nam) vừa hạ cánh xuống sân bay Heathrow, London để đi du lịch. Bạn đứng ở quầy nhập cảnh và trả lời câu hỏi của nhân viên.",
+    "speakers": {
+      "a": {
+        "name": "Officer",
+        "roleVi": "Nhân viên nhập cảnh"
+      },
+      "b": {
+        "name": "Nam",
+        "roleVi": "Bạn, khách du lịch"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Good afternoon. Passport and landing card, please.",
+        "meaningVi": "Chào anh. Xin cho xem hộ chiếu và tờ khai nhập cảnh.",
+        "blank": "Passport and landing card"
+      },
+      {
+        "speaker": "b",
+        "text": "Here you go, officer.",
+        "meaningVi": "Đây ạ, thưa anh."
+      },
+      {
+        "speaker": "a",
+        "text": "What's the purpose of your visit?",
+        "meaningVi": "Mục đích chuyến đi của anh là gì?",
+        "blank": "What's the purpose of your visit",
+        "noteVi": "Câu hỏi gần như chắc chắn gặp ở cửa nhập cảnh. Trả lời ngắn gọn, rõ ràng."
+      },
+      {
+        "speaker": "b",
+        "text": "I'm here on holiday. I'm visiting my sister.",
+        "meaningVi": "Tôi đến đây du lịch. Tôi đi thăm chị gái.",
+        "blank": "I'm here on holiday"
+      },
+      {
+        "speaker": "a",
+        "text": "How long are you planning to stay?",
+        "meaningVi": "Anh định ở lại bao lâu?",
+        "blank": "How long are you planning to stay"
+      },
+      {
+        "speaker": "b",
+        "text": "Two weeks. My return flight is on the fifteenth.",
+        "meaningVi": "Hai tuần. Chuyến bay về của tôi là ngày mười lăm.",
+        "blank": "My return flight is"
+      },
+      {
+        "speaker": "a",
+        "text": "And where will you be staying?",
+        "meaningVi": "Và anh sẽ ở đâu?",
+        "blank": "where will you be staying"
+      },
+      {
+        "speaker": "b",
+        "text": "At my sister's flat in Manchester. I have the address here.",
+        "meaningVi": "Ở căn hộ của chị gái tôi ở Manchester. Tôi có địa chỉ ở đây.",
+        "blank": "I have the address here",
+        "noteVi": "Nên chuẩn bị sẵn địa chỉ, vé máy bay chiều về để đưa khi được hỏi."
+      },
+      {
+        "speaker": "a",
+        "text": "That's fine. Enjoy your stay in the UK.",
+        "meaningVi": "Được rồi. Chúc anh có thời gian vui vẻ ở Anh.",
+        "blank": "Enjoy your stay"
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you very much.",
+        "meaningVi": "Cảm ơn anh rất nhiều."
+      }
+    ]
+  },
+  {
+    "id": "tr-hotel-room-problem",
+    "topicId": "travel",
+    "title": "Phòng khách sạn có vấn đề",
+    "level": "B1",
+    "situationVi": "Bạn (Mai) vừa nhận phòng ở một khách sạn tại Bangkok thì phát hiện điều hòa không chạy. Bạn xuống quầy lễ tân để phàn nàn và xin đổi phòng.",
+    "speakers": {
+      "a": {
+        "name": "Ploy",
+        "roleVi": "Nhân viên lễ tân"
+      },
+      "b": {
+        "name": "Mai",
+        "roleVi": "Bạn, khách của khách sạn"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hello, how can I help you?",
+        "meaningVi": "Xin chào, tôi có thể giúp gì cho chị?"
+      },
+      {
+        "speaker": "b",
+        "text": "Hi, I'm in room 508. I'm afraid there's a problem with my room.",
+        "meaningVi": "Chào chị, tôi ở phòng 508. Tôi e là phòng tôi có vấn đề.",
+        "blank": "there's a problem with my room",
+        "noteVi": "\"I'm afraid...\" làm lời phàn nàn nhẹ nhàng, lịch sự hơn."
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, I'm sorry to hear that. What seems to be the problem?",
+        "meaningVi": "Ồ, tôi rất tiếc. Có chuyện gì vậy chị?",
+        "blank": "What seems to be the problem"
+      },
+      {
+        "speaker": "b",
+        "text": "The air conditioning isn't working. It's really hot in there.",
+        "meaningVi": "Điều hòa không chạy. Trong phòng nóng lắm.",
+        "blank": "The air conditioning isn't working"
+      },
+      {
+        "speaker": "a",
+        "text": "I'm so sorry. I can send someone up to fix it right away.",
+        "meaningVi": "Tôi rất xin lỗi. Tôi có thể cử người lên sửa ngay.",
+        "blank": "send someone up to fix it"
+      },
+      {
+        "speaker": "b",
+        "text": "Actually, I'd rather change rooms, if that's possible.",
+        "meaningVi": "Thật ra tôi muốn đổi phòng hơn, nếu được.",
+        "blank": "I'd rather change rooms",
+        "noteVi": "\"I'd rather...\" = tôi muốn ... hơn, dùng để nêu lựa chọn mình thích."
+      },
+      {
+        "speaker": "a",
+        "text": "Let me see. We have a room available on the seventh floor.",
+        "meaningVi": "Để tôi xem. Chúng tôi còn một phòng trống ở tầng bảy.",
+        "blank": "We have a room available"
+      },
+      {
+        "speaker": "b",
+        "text": "That sounds good. Is it the same type of room?",
+        "meaningVi": "Nghe được đấy. Có phải cùng loại phòng không chị?",
+        "blank": "the same type of room"
+      },
+      {
+        "speaker": "a",
+        "text": "Yes, and it has a city view. Here's your new key card.",
+        "meaningVi": "Vâng, và phòng có view thành phố. Đây là thẻ phòng mới của chị.",
+        "blank": "Here's your new key card"
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you, I really appreciate it.",
+        "meaningVi": "Cảm ơn chị, tôi rất cảm kích.",
+        "blank": "I really appreciate it"
+      },
+      {
+        "speaker": "a",
+        "text": "Not at all. Sorry again for the trouble.",
+        "meaningVi": "Không có gì. Một lần nữa xin lỗi vì sự phiền phức."
+      }
+    ]
+  },
+  {
+    "id": "tr-lost-luggage",
+    "topicId": "travel",
+    "title": "Báo mất hành lý",
+    "level": "B1",
+    "situationVi": "Bạn (Minh) bay sang Frankfurt để dự hội thảo nhưng chờ mãi không thấy vali ở băng chuyền. Bạn đến quầy hành lý thất lạc của sân bay để báo.",
+    "speakers": {
+      "a": {
+        "name": "Klaus",
+        "roleVi": "Nhân viên quầy hành lý thất lạc"
+      },
+      "b": {
+        "name": "Minh",
+        "roleVi": "Bạn, hành khách"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Excuse me, my suitcase didn't come out on the belt.",
+        "meaningVi": "Xin lỗi, vali của tôi không ra ở băng chuyền.",
+        "blank": "didn't come out on the belt"
+      },
+      {
+        "speaker": "a",
+        "text": "I'm sorry about that. Which flight were you on?",
+        "meaningVi": "Tôi rất tiếc. Anh đi chuyến bay nào?",
+        "blank": "Which flight were you on"
+      },
+      {
+        "speaker": "b",
+        "text": "LH 773 from Hanoi. Here's my baggage tag.",
+        "meaningVi": "Chuyến LH 773 từ Hà Nội. Đây là thẻ hành lý của tôi.",
+        "blank": "Here's my baggage tag",
+        "noteVi": "Luôn giữ thẻ hành lý (baggage tag) dán sau thẻ lên máy bay cho đến khi lấy được vali."
+      },
+      {
+        "speaker": "a",
+        "text": "Thank you. Can you describe your suitcase for me?",
+        "meaningVi": "Cảm ơn anh. Anh có thể mô tả vali của anh không?",
+        "blank": "describe your suitcase"
+      },
+      {
+        "speaker": "b",
+        "text": "It's a large black suitcase with a red ribbon on the handle.",
+        "meaningVi": "Đó là một vali lớn màu đen, có buộc dải ruy băng đỏ ở tay cầm.",
+        "blank": "with a red ribbon on the handle"
+      },
+      {
+        "speaker": "a",
+        "text": "Let me check the system. It looks like it's still in Munich.",
+        "meaningVi": "Để tôi kiểm tra trên hệ thống. Có vẻ như nó vẫn còn ở Munich."
+      },
+      {
+        "speaker": "b",
+        "text": "Oh no. When do you think it'll arrive?",
+        "meaningVi": "Ôi không. Anh nghĩ khi nào nó sẽ đến?",
+        "blank": "When do you think it'll arrive"
+      },
+      {
+        "speaker": "a",
+        "text": "Probably on the next flight, this evening. We can deliver it to your hotel.",
+        "meaningVi": "Có lẽ là chuyến bay tiếp theo, tối nay. Chúng tôi có thể giao đến khách sạn của anh.",
+        "blank": "deliver it to your hotel"
+      },
+      {
+        "speaker": "b",
+        "text": "That would be great. I'm staying at the Maritim Hotel.",
+        "meaningVi": "Thế thì tốt quá. Tôi ở khách sạn Maritim.",
+        "blank": "That would be great"
+      },
+      {
+        "speaker": "a",
+        "text": "Okay. Please fill in this form and we'll call you.",
+        "meaningVi": "Vâng. Anh vui lòng điền vào mẫu đơn này và chúng tôi sẽ gọi cho anh.",
+        "blank": "fill in this form",
+        "noteVi": "\"Fill in a form\" = điền đơn, điền mẫu."
+      },
+      {
+        "speaker": "b",
+        "text": "Sure. Thanks for your help.",
+        "meaningVi": "Vâng. Cảm ơn anh đã giúp."
+      }
+    ]
+  }
+]

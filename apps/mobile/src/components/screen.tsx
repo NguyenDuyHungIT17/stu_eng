@@ -28,7 +28,7 @@ export function Body({ children, muted }: { children: ReactNode; muted?: boolean
 }
 
 const styles = StyleSheet.create({
-  content: { padding: 16, gap: 14, paddingBottom: 32 },
-  title: { fontSize: 24, fontWeight: '800' },
+  content: { padding: 16, gap: 14, paddingBottom: 32, flexGrow: 1 },
+  title: { fontSize: 26, fontWeight: '700' },
   body: { fontSize: 16, lineHeight: 23 },
 });

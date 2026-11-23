@@ -1,0 +1,288 @@
+[
+  {
+    "id": "mp-lunch-invite",
+    "topicId": "making-plans",
+    "title": "Rủ đồng nghiệp đi ăn trưa",
+    "level": "A2",
+    "situationVi": "Bạn (Lan) muốn rủ Chris, đồng nghiệp người Canada mới vào công ty, đi ăn bún chả gần văn phòng vào thứ Sáu.",
+    "speakers": {
+      "a": { "name": "Chris", "roleVi": "Đồng nghiệp người Canada" },
+      "b": { "name": "Lan", "roleVi": "Bạn, nhân viên nhân sự" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hey Chris, are you free for lunch on Friday?",
+        "meaningVi": "Chris ơi, thứ Sáu anh rảnh đi ăn trưa không?",
+        "blank": "are you free for lunch",
+        "noteVi": "\"Are you free...?\" là cách hỏi rảnh không, nhẹ nhàng, không ép buộc."
+      },
+      {
+        "speaker": "a",
+        "text": "I think so. What did you have in mind?",
+        "meaningVi": "Chắc là rảnh. Em định đi đâu?",
+        "blank": "What did you have in mind"
+      },
+      {
+        "speaker": "b",
+        "text": "There's a great bun cha place around the corner. Have you tried it?",
+        "meaningVi": "Có một quán bún chả ngon lắm ngay góc phố. Anh ăn thử chưa?",
+        "blank": "Have you tried it"
+      },
+      {
+        "speaker": "a",
+        "text": "Not yet, but I've heard a lot about it. I'd love to.",
+        "meaningVi": "Chưa, nhưng anh nghe nói nhiều rồi. Anh rất muốn đi.",
+        "blank": "I'd love to",
+        "noteVi": "\"I'd love to\" = nhận lời một cách nhiệt tình."
+      },
+      {
+        "speaker": "b",
+        "text": "Great! How about twelve o'clock? It gets busy after that.",
+        "meaningVi": "Tuyệt! Mười hai giờ được không anh? Sau giờ đó quán đông lắm.",
+        "blank": "How about twelve o'clock"
+      },
+      {
+        "speaker": "a",
+        "text": "Twelve works for me. Should we meet in the lobby?",
+        "meaningVi": "Mười hai giờ được đấy. Mình gặp nhau ở sảnh nhé?",
+        "blank": "Twelve works for me"
+      },
+      {
+        "speaker": "b",
+        "text": "Sure, see you in the lobby at twelve.",
+        "meaningVi": "Được ạ, mười hai giờ gặp anh ở sảnh nhé."
+      },
+      {
+        "speaker": "a",
+        "text": "Perfect. Thanks for asking me, Lan!",
+        "meaningVi": "Tuyệt. Cảm ơn em đã rủ anh nhé, Lan!"
+      }
+    ]
+  },
+  {
+    "id": "mp-weekend-sightseeing",
+    "topicId": "making-plans",
+    "title": "Lên kế hoạch dẫn bạn đi chơi",
+    "level": "A2",
+    "situationVi": "Sophie, bạn người Pháp quen qua mạng, sắp đến Hà Nội. Bạn (Minh) nhắn tin gọi video để bàn xem cuối tuần đi đâu, gặp ở đâu.",
+    "speakers": {
+      "a": { "name": "Sophie", "roleVi": "Bạn người Pháp sắp đến Hà Nội" },
+      "b": { "name": "Minh", "roleVi": "Bạn, người dẫn đi chơi" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hi Minh! I land in Hanoi on Friday night. Any plans for Saturday?",
+        "meaningVi": "Chào Minh! Tối thứ Sáu mình hạ cánh ở Hà Nội. Thứ Bảy có kế hoạch gì chưa?",
+        "blank": "Any plans for Saturday"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes! I was thinking we could explore the Old Quarter in the morning.",
+        "meaningVi": "Có chứ! Mình đang nghĩ buổi sáng hai đứa đi dạo Phố Cổ.",
+        "blank": "I was thinking we could",
+        "noteVi": "Cách gợi ý mềm mỏng, không áp đặt."
+      },
+      {
+        "speaker": "a",
+        "text": "That sounds perfect. What time should we meet?",
+        "meaningVi": "Nghe tuyệt quá. Mấy giờ mình gặp nhau?",
+        "blank": "What time should we meet"
+      },
+      {
+        "speaker": "b",
+        "text": "Is eight too early for you? It's cooler in the morning.",
+        "meaningVi": "Tám giờ có sớm quá với bạn không? Buổi sáng trời mát hơn.",
+        "blank": "Is eight too early for you"
+      },
+      {
+        "speaker": "a",
+        "text": "Hmm, I might be jet-lagged. Could we make it nine instead?",
+        "meaningVi": "Hừm, chắc mình còn bị lệch múi giờ. Mình hẹn chín giờ được không?",
+        "blank": "Could we make it nine instead",
+        "noteVi": "\"Make it + giờ\" = chốt hẹn vào giờ đó; dùng để đề xuất giờ khác."
+      },
+      {
+        "speaker": "b",
+        "text": "No problem. I'll pick you up from your hotel at nine.",
+        "meaningVi": "Không sao. Chín giờ mình qua khách sạn đón bạn.",
+        "blank": "I'll pick you up"
+      },
+      {
+        "speaker": "a",
+        "text": "Thank you! And what about the afternoon?",
+        "meaningVi": "Cảm ơn bạn! Còn buổi chiều thì sao?"
+      },
+      {
+        "speaker": "b",
+        "text": "Why don't we try egg coffee, then visit the Temple of Literature?",
+        "meaningVi": "Sao mình không uống thử cà phê trứng, rồi đi thăm Văn Miếu nhỉ?",
+        "blank": "Why don't we try",
+        "noteVi": "\"Why don't we...?\" là lời gợi ý, không phải câu hỏi \"tại sao\"."
+      },
+      {
+        "speaker": "a",
+        "text": "Egg coffee? I'm curious! Okay, it's a plan.",
+        "meaningVi": "Cà phê trứng á? Mình tò mò quá! Được, chốt kế hoạch nhé."
+      },
+      {
+        "speaker": "b",
+        "text": "Great. Send me your hotel address when you arrive.",
+        "meaningVi": "Tuyệt. Đến nơi thì gửi mình địa chỉ khách sạn nhé."
+      }
+    ]
+  },
+  {
+    "id": "mp-reschedule-call",
+    "topicId": "making-plans",
+    "title": "Xin dời lịch cuộc gọi",
+    "level": "A2",
+    "situationVi": "Bạn (Huy) có lịch gọi online với Mark, đối tác người Mỹ, vào chiều mai, nhưng sếp vừa xếp một cuộc họp gấp trùng giờ. Bạn gọi cho Mark để xin dời lịch.",
+    "speakers": {
+      "a": { "name": "Mark", "roleVi": "Đối tác người Mỹ" },
+      "b": { "name": "Huy", "roleVi": "Bạn, trưởng nhóm dự án" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hi Huy, good to hear from you. What's up?",
+        "meaningVi": "Chào Huy, vui khi anh gọi. Có chuyện gì vậy?"
+      },
+      {
+        "speaker": "b",
+        "text": "Hi Mark. I'm afraid I can't make our call tomorrow afternoon.",
+        "meaningVi": "Chào Mark. Tôi e là chiều mai tôi không tham gia cuộc gọi được.",
+        "blank": "I'm afraid I can't make",
+        "noteVi": "\"I'm afraid...\" làm lời báo tin không vui nghe lịch sự hơn; \"make\" ở đây = tham dự được."
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, is everything okay?",
+        "meaningVi": "Ồ, mọi chuyện ổn chứ?"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, but something urgent came up with my manager. I'm really sorry.",
+        "meaningVi": "Vâng, chỉ là sếp tôi vừa có việc gấp. Tôi thật sự xin lỗi.",
+        "blank": "something urgent came up"
+      },
+      {
+        "speaker": "a",
+        "text": "No worries, these things happen. When would suit you instead?",
+        "meaningVi": "Không sao, chuyện thường mà. Vậy khi nào thì tiện cho anh?",
+        "blank": "When would suit you instead"
+      },
+      {
+        "speaker": "b",
+        "text": "Would Thursday morning work for you? Say, nine your time?",
+        "meaningVi": "Sáng thứ Năm có tiện cho anh không? Chẳng hạn chín giờ theo giờ bên anh?",
+        "blank": "Would Thursday morning work for you",
+        "noteVi": "Khi gọi với người ở múi giờ khác, nói rõ \"your time\" / \"my time\" để tránh nhầm."
+      },
+      {
+        "speaker": "a",
+        "text": "Hmm, I have something at nine. Could we push it back to ten thirty?",
+        "meaningVi": "Hừm, chín giờ tôi có việc rồi. Mình lùi sang mười giờ rưỡi được không?",
+        "blank": "push it back to",
+        "noteVi": "\"Push back\" = lùi lịch; \"bring forward\" = đẩy lịch lên sớm hơn."
+      },
+      {
+        "speaker": "b",
+        "text": "Ten thirty is fine. I'll send you an updated invite.",
+        "meaningVi": "Mười giờ rưỡi được ạ. Tôi sẽ gửi anh lịch mời mới.",
+        "blank": "I'll send you an updated invite"
+      },
+      {
+        "speaker": "a",
+        "text": "Sounds good. Thanks for letting me know early.",
+        "meaningVi": "Được đấy. Cảm ơn anh đã báo sớm."
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks for being flexible, Mark. Talk to you on Thursday.",
+        "meaningVi": "Cảm ơn anh đã linh động, Mark. Hẹn nói chuyện với anh vào thứ Năm.",
+        "blank": "Thanks for being flexible"
+      }
+    ]
+  },
+  {
+    "id": "mp-cancel-dinner",
+    "topicId": "making-plans",
+    "title": "Hủy hẹn ăn tối một cách lịch sự",
+    "level": "A2",
+    "situationVi": "Bạn (Mai) đang du học ở Úc và đã hẹn ăn tối với Jess, bạn cùng lớp, tối nay. Nhưng bạn bị sốt nên gọi điện xin hủy và hẹn lại hôm khác.",
+    "speakers": {
+      "a": { "name": "Jess", "roleVi": "Bạn cùng lớp người Úc" },
+      "b": { "name": "Mai", "roleVi": "Bạn, du học sinh" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hey Mai! Are we still on for dinner tonight?",
+        "meaningVi": "Mai ơi! Tối nay mình vẫn đi ăn như đã hẹn chứ?",
+        "blank": "Are we still on for",
+        "noteVi": "\"Are we still on?\" = kế hoạch vẫn giữ nguyên chứ?"
+      },
+      {
+        "speaker": "b",
+        "text": "Hi Jess. Actually, that's why I'm calling. I'm not feeling well.",
+        "meaningVi": "Chào Jess. Thật ra mình gọi vì chuyện đó. Mình thấy không khỏe.",
+        "blank": "I'm not feeling well"
+      },
+      {
+        "speaker": "a",
+        "text": "Oh no! What's wrong?",
+        "meaningVi": "Ôi không! Bạn bị sao vậy?"
+      },
+      {
+        "speaker": "b",
+        "text": "I've got a fever, so I'd better stay home tonight.",
+        "meaningVi": "Mình bị sốt, nên tối nay mình nên ở nhà thì hơn.",
+        "blank": "I'd better stay home",
+        "noteVi": "\"I'd better...\" = tốt hơn là nên..., dùng khi đưa ra quyết định hợp lý."
+      },
+      {
+        "speaker": "a",
+        "text": "That's no fun. Have you seen a doctor?",
+        "meaningVi": "Khổ thân bạn. Bạn đi khám bác sĩ chưa?"
+      },
+      {
+        "speaker": "b",
+        "text": "Not yet, I'll go tomorrow. I'm so sorry to cancel at the last minute.",
+        "meaningVi": "Chưa, mai mình đi. Mình rất xin lỗi vì hủy sát giờ thế này.",
+        "blank": "cancel at the last minute"
+      },
+      {
+        "speaker": "a",
+        "text": "Don't worry about it at all. Your health comes first.",
+        "meaningVi": "Đừng lo gì cả. Sức khỏe là trên hết.",
+        "blank": "Your health comes first"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks for understanding. Can we take a rain check?",
+        "meaningVi": "Cảm ơn bạn đã thông cảm. Mình hẹn lại dịp khác được không?",
+        "blank": "Can we take a rain check",
+        "noteVi": "\"Take a rain check\" = từ chối lần này nhưng hứa hẹn lại lần sau."
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. How about next Saturday, if you're better?",
+        "meaningVi": "Tất nhiên rồi. Thứ Bảy tuần sau nhé, nếu bạn khỏe lại?"
+      },
+      {
+        "speaker": "b",
+        "text": "Next Saturday sounds great. Dinner's on me this time.",
+        "meaningVi": "Thứ Bảy tuần sau được đấy. Lần này mình mời nhé.",
+        "blank": "Dinner's on me"
+      },
+      {
+        "speaker": "a",
+        "text": "Deal! Get some rest and feel better soon.",
+        "meaningVi": "Chốt! Nghỉ ngơi đi và mau khỏe nhé.",
+        "blank": "feel better soon"
+      }
+    ]
+  }
+]

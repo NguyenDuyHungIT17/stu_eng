@@ -1,4 +1,4 @@
-import { contentVersion, phrases, topics } from '@app/content';
+import { contentVersion, dialogues, phrases, topics } from '@app/content';
 import { drizzle } from 'drizzle-orm/expo-sqlite';
 import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
 import { openDatabaseSync } from 'expo-sqlite';
@@ -31,7 +31,7 @@ export function DbProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!success) return;
     try {
-      seedContent(db, { contentVersion, topics, phrases }, Date.now());
+      seedContent(db, { contentVersion, topics, dialogues, phrases }, Date.now());
       setSeeded(true);
     } catch (e) {
       setSeedError(e instanceof Error ? e : new Error(String(e)));

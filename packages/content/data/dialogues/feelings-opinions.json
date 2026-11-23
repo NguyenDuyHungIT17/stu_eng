@@ -1,0 +1,301 @@
+[
+  {
+    "id": "fo-good-news",
+    "topicId": "feelings-opinions",
+    "title": "Khoe tin vui",
+    "level": "B1",
+    "situationVi": "Bạn (Lan) vừa nhận được học bổng thạc sĩ ở Anh. Bạn gọi video cho Jessica, người bạn Mỹ quen từ hồi học tiếng, để báo tin.",
+    "speakers": {
+      "a": { "name": "Jessica", "roleVi": "Bạn người Mỹ" },
+      "b": { "name": "Lan", "roleVi": "Bạn" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hey Lan! You look really happy. What's going on?",
+        "meaningVi": "Chào Lan! Trông cậu vui thế. Có chuyện gì vậy?",
+        "blank": "What's going on"
+      },
+      {
+        "speaker": "b",
+        "text": "Guess what? I got the scholarship to study in the UK!",
+        "meaningVi": "Đoán xem? Tớ được học bổng đi học ở Anh rồi!",
+        "blank": "Guess what",
+        "noteVi": "\"Guess what?\" dùng để mở đầu khi sắp báo một tin bất ngờ."
+      },
+      {
+        "speaker": "a",
+        "text": "No way! That's amazing news! Congratulations!",
+        "meaningVi": "Không thể tin được! Tin tuyệt vời quá! Chúc mừng cậu!",
+        "blank": "That's amazing news"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks! I still can't believe it. I only found out this morning.",
+        "meaningVi": "Cảm ơn cậu! Tớ vẫn chưa tin nổi. Sáng nay tớ mới biết.",
+        "blank": "I still can't believe it"
+      },
+      {
+        "speaker": "a",
+        "text": "You totally deserve it. You worked so hard on that application.",
+        "meaningVi": "Cậu hoàn toàn xứng đáng. Cậu đã dồn rất nhiều công sức cho bộ hồ sơ đó.",
+        "blank": "You totally deserve it",
+        "noteVi": "Câu khen chân thành khi ai đó đạt được thành quả."
+      },
+      {
+        "speaker": "b",
+        "text": "I did. I was so nervous during the interview, though.",
+        "meaningVi": "Đúng vậy. Nhưng lúc phỏng vấn tớ hồi hộp lắm.",
+        "blank": "I was so nervous"
+      },
+      {
+        "speaker": "a",
+        "text": "Well, it clearly paid off. When do you leave?",
+        "meaningVi": "Thì rõ ràng là xứng đáng mà. Khi nào cậu đi?",
+        "blank": "it clearly paid off",
+        "noteVi": "\"Pay off\" = công sức bỏ ra mang lại kết quả tốt."
+      },
+      {
+        "speaker": "b",
+        "text": "In September. I'm excited, but a little scared too.",
+        "meaningVi": "Tháng Chín. Tớ háo hức nhưng cũng hơi sợ.",
+        "blank": "I'm excited, but a little scared"
+      },
+      {
+        "speaker": "a",
+        "text": "That's completely normal. We have to celebrate before you go!",
+        "meaningVi": "Thế là bình thường thôi. Mình phải ăn mừng trước khi cậu đi chứ!",
+        "blank": "We have to celebrate"
+      },
+      {
+        "speaker": "b",
+        "text": "Definitely! Dinner's on me next time you visit.",
+        "meaningVi": "Chắc chắn rồi! Lần tới cậu sang chơi, tớ mời bữa tối.",
+        "blank": "Dinner's on me"
+      }
+    ]
+  },
+  {
+    "id": "fo-comforting-friend",
+    "topicId": "feelings-opinions",
+    "title": "An ủi bạn đang buồn",
+    "level": "B1",
+    "situationVi": "Bạn (Nam) gặp Daniel, đồng nghiệp người Anh, trong giờ nghỉ. Anh ấy vừa biết mình không được thăng chức như mong đợi.",
+    "speakers": {
+      "a": { "name": "Daniel", "roleVi": "Đồng nghiệp người Anh" },
+      "b": { "name": "Nam", "roleVi": "Bạn" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hey Daniel, you seem a bit down today. Do you want to talk about it?",
+        "meaningVi": "Này Daniel, hôm nay trông anh hơi buồn. Anh có muốn kể không?",
+        "blank": "Do you want to talk about it",
+        "noteVi": "Mời người khác chia sẻ mà không ép buộc."
+      },
+      {
+        "speaker": "a",
+        "text": "I didn't get the promotion. They gave it to someone from another team.",
+        "meaningVi": "Tôi không được thăng chức. Họ trao cho một người ở nhóm khác.",
+        "blank": "I didn't get the promotion"
+      },
+      {
+        "speaker": "b",
+        "text": "Oh, I'm so sorry. I know how much you wanted it.",
+        "meaningVi": "Ôi, tôi rất tiếc. Tôi biết anh mong vị trí đó thế nào.",
+        "blank": "I know how much you wanted it"
+      },
+      {
+        "speaker": "a",
+        "text": "Yeah. I feel like all my hard work was for nothing.",
+        "meaningVi": "Ừ. Tôi cảm thấy bao công sức của mình đều thành công cốc.",
+        "blank": "was for nothing"
+      },
+      {
+        "speaker": "b",
+        "text": "That's totally understandable. Anyone would feel the same way.",
+        "meaningVi": "Hoàn toàn dễ hiểu mà. Ai ở vào hoàn cảnh đó cũng sẽ thấy như vậy.",
+        "blank": "Anyone would feel the same way",
+        "noteVi": "Công nhận cảm xúc của người kia trước khi khuyên."
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks. I just don't know what I did wrong.",
+        "meaningVi": "Cảm ơn anh. Tôi chỉ không biết mình đã sai ở đâu."
+      },
+      {
+        "speaker": "b",
+        "text": "Maybe you could ask your manager for some feedback?",
+        "meaningVi": "Có lẽ anh thử hỏi quản lý để xin góp ý xem?",
+        "blank": "ask your manager for some feedback"
+      },
+      {
+        "speaker": "a",
+        "text": "That's a good point. At least I'd know what to improve.",
+        "meaningVi": "Ý hay đấy. Ít ra tôi sẽ biết mình cần cải thiện gì.",
+        "blank": "That's a good point"
+      },
+      {
+        "speaker": "b",
+        "text": "Exactly. And for what it's worth, everyone here thinks you're brilliant.",
+        "meaningVi": "Đúng thế. Và nói thật lòng, mọi người ở đây đều nghĩ anh rất giỏi.",
+        "blank": "for what it's worth",
+        "noteVi": "\"For what it's worth\" = dù có thể không giúp được nhiều, nhưng..."
+      },
+      {
+        "speaker": "a",
+        "text": "That means a lot. Thanks for listening, Nam.",
+        "meaningVi": "Câu đó có ý nghĩa với tôi lắm. Cảm ơn anh đã lắng nghe, Nam.",
+        "blank": "That means a lot"
+      }
+    ]
+  },
+  {
+    "id": "fo-film-disagree",
+    "topicId": "feelings-opinions",
+    "title": "Bàn luận về một bộ phim",
+    "level": "B1",
+    "situationVi": "Bạn (Mai) và Chris, bạn người Úc, vừa xem xong một bộ phim khoa học viễn tưởng ở rạp. Hai người vừa đi ra vừa nói về cảm nhận của mình.",
+    "speakers": {
+      "a": { "name": "Chris", "roleVi": "Bạn người Úc" },
+      "b": { "name": "Mai", "roleVi": "Bạn" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "So, what did you think of the film? I absolutely loved it.",
+        "meaningVi": "Thế cậu thấy phim thế nào? Tớ cực kỳ thích.",
+        "blank": "what did you think of the film"
+      },
+      {
+        "speaker": "b",
+        "text": "It was okay, but to be honest, I found it a bit too long.",
+        "meaningVi": "Cũng được, nhưng thật lòng mà nói, tớ thấy nó hơi dài.",
+        "blank": "to be honest",
+        "noteVi": "\"To be honest\" làm mềm một ý kiến trái chiều."
+      },
+      {
+        "speaker": "a",
+        "text": "Really? I thought every minute was worth it.",
+        "meaningVi": "Thật á? Tớ thấy phút nào cũng đáng xem.",
+        "blank": "every minute was worth it"
+      },
+      {
+        "speaker": "b",
+        "text": "I see what you mean. The special effects were incredible.",
+        "meaningVi": "Tớ hiểu ý cậu. Kỹ xảo thì tuyệt vời thật.",
+        "blank": "I see what you mean",
+        "noteVi": "Ghi nhận ý người khác trước khi nêu quan điểm của mình."
+      },
+      {
+        "speaker": "a",
+        "text": "Right? And the ending totally surprised me.",
+        "meaningVi": "Đúng không? Và cái kết làm tớ bất ngờ hoàn toàn.",
+        "blank": "totally surprised me"
+      },
+      {
+        "speaker": "b",
+        "text": "Hmm, I'm not so sure about that. I kind of saw it coming.",
+        "meaningVi": "Hừm, tớ không chắc lắm. Tớ đoán trước được phần nào rồi.",
+        "blank": "I'm not so sure about that"
+      },
+      {
+        "speaker": "a",
+        "text": "Seriously? You must watch way more movies than me!",
+        "meaningVi": "Thật hả? Chắc cậu xem phim nhiều hơn tớ nhiều!"
+      },
+      {
+        "speaker": "b",
+        "text": "Maybe! But I agree the main actor was fantastic.",
+        "meaningVi": "Có thể! Nhưng tớ đồng ý là nam chính diễn xuất sắc.",
+        "blank": "I agree the main actor was fantastic"
+      },
+      {
+        "speaker": "a",
+        "text": "Finally, something we both agree on!",
+        "meaningVi": "Cuối cùng cũng có điều cả hai cùng đồng ý!",
+        "blank": "something we both agree on"
+      },
+      {
+        "speaker": "b",
+        "text": "Ha, true. Next time I get to pick the film, though.",
+        "meaningVi": "Haha, đúng thế. Nhưng lần sau tớ được chọn phim nhé.",
+        "blank": "I get to pick the film"
+      }
+    ]
+  },
+  {
+    "id": "fo-weekend-plan",
+    "topicId": "feelings-opinions",
+    "title": "Góp ý kiến cho kế hoạch cuối tuần",
+    "level": "B1",
+    "situationVi": "Nhóm bạn quốc tế định đi chơi cuối tuần. Sophie đề xuất đi leo núi cả ngày, còn bạn (Minh) có ý kiến khác và muốn nói một cách khéo léo.",
+    "speakers": {
+      "a": { "name": "Sophie", "roleVi": "Bạn người Pháp" },
+      "b": { "name": "Minh", "roleVi": "Bạn" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "How about a full-day hike on Saturday? The weather's supposed to be great.",
+        "meaningVi": "Thứ Bảy mình đi leo núi cả ngày thì sao? Nghe nói thời tiết đẹp lắm.",
+        "blank": "How about a full-day hike"
+      },
+      {
+        "speaker": "b",
+        "text": "That sounds fun, but I'm a little worried about the others.",
+        "meaningVi": "Nghe vui đấy, nhưng mình hơi lo cho mấy bạn khác.",
+        "blank": "I'm a little worried about",
+        "noteVi": "Khen ý tưởng trước rồi mới nêu lo ngại: cách phản đối lịch sự."
+      },
+      {
+        "speaker": "a",
+        "text": "Why's that? Everyone said they wanted to do something outdoors.",
+        "meaningVi": "Sao vậy? Ai cũng bảo muốn làm gì đó ngoài trời mà.",
+        "blank": "Why's that"
+      },
+      {
+        "speaker": "b",
+        "text": "True, but Hana hurt her knee last month. A whole day might be too much.",
+        "meaningVi": "Đúng, nhưng Hana bị đau đầu gối tháng trước. Cả ngày có khi quá sức.",
+        "blank": "might be too much"
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, I completely forgot about that. Good thinking.",
+        "meaningVi": "Ồ, mình quên mất chuyện đó. Cậu chu đáo thật.",
+        "blank": "Good thinking"
+      },
+      {
+        "speaker": "b",
+        "text": "What if we did a shorter walk and then had a picnic by the lake?",
+        "meaningVi": "Hay là mình đi bộ đường ngắn hơn rồi picnic bên hồ?",
+        "blank": "What if we did a shorter walk",
+        "noteVi": "\"What if we...?\" là cách đưa ra đề xuất mềm mỏng."
+      },
+      {
+        "speaker": "a",
+        "text": "I like that idea. It's more relaxing, too.",
+        "meaningVi": "Mình thích ý đó. Lại thư giãn hơn nữa.",
+        "blank": "I like that idea"
+      },
+      {
+        "speaker": "b",
+        "text": "In my opinion, it's better if everyone can enjoy it.",
+        "meaningVi": "Theo mình thì tốt hơn là ai cũng vui được.",
+        "blank": "In my opinion"
+      },
+      {
+        "speaker": "a",
+        "text": "Agreed. I'll post it in the group chat and see what they think.",
+        "meaningVi": "Đồng ý. Mình sẽ đăng vào nhóm chat xem mọi người nghĩ sao.",
+        "blank": "see what they think"
+      },
+      {
+        "speaker": "b",
+        "text": "Perfect. I'll bring the snacks!",
+        "meaningVi": "Tuyệt. Mình sẽ mang đồ ăn vặt!"
+      }
+    ]
+  }
+]

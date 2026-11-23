@@ -1,0 +1,314 @@
+[
+  {
+    "id": "wp-asking-for-help",
+    "topicId": "workplace",
+    "title": "Nhờ đồng nghiệp giúp đỡ",
+    "level": "B1",
+    "situationVi": "Bạn (Thảo) cần làm báo cáo doanh số bằng Excel nhưng không biết tạo bảng tổng hợp. Bạn sang bàn nhờ Mark, đồng nghiệp người Mỹ rành Excel.",
+    "speakers": {
+      "a": { "name": "Mark", "roleVi": "Đồng nghiệp người Mỹ" },
+      "b": { "name": "Thảo", "roleVi": "Bạn, nhân viên" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hi Mark, sorry to bother you. Do you have a minute?",
+        "meaningVi": "Chào Mark, xin lỗi làm phiền anh. Anh có rảnh một chút không?",
+        "blank": "Do you have a minute",
+        "noteVi": "Câu mở lời lịch sự trước khi nhờ ai đó ở chỗ làm."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure, I've got a few minutes. What's up?",
+        "meaningVi": "Được chứ, anh có vài phút. Có chuyện gì thế?"
+      },
+      {
+        "speaker": "b",
+        "text": "I'm stuck on this sales report. I can't figure out how to make a pivot table.",
+        "meaningVi": "Em đang bí với báo cáo doanh số này. Em không biết cách tạo bảng tổng hợp.",
+        "blank": "I can't figure out how to",
+        "noteVi": "\"Figure out\" = tìm ra, hiểu ra cách làm."
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, no worries. Those can be tricky at first.",
+        "meaningVi": "À, đừng lo. Lúc đầu cái đó hơi rắc rối thật.",
+        "blank": "Those can be tricky at first"
+      },
+      {
+        "speaker": "b",
+        "text": "Could you show me how to do it? I'd really appreciate it.",
+        "meaningVi": "Anh chỉ em cách làm được không? Em sẽ rất biết ơn.",
+        "blank": "I'd really appreciate it"
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. First, select all your data, then click \"Insert\".",
+        "meaningVi": "Tất nhiên. Đầu tiên chọn hết dữ liệu, rồi bấm \"Insert\".",
+        "blank": "select all your data"
+      },
+      {
+        "speaker": "b",
+        "text": "Okay, done. And then I drag the columns here?",
+        "meaningVi": "Vâng, xong rồi. Rồi em kéo các cột vào đây ạ?",
+        "blank": "I drag the columns here"
+      },
+      {
+        "speaker": "a",
+        "text": "Exactly. See? You've got the hang of it already.",
+        "meaningVi": "Chính xác. Thấy chưa? Em nắm được cách làm rồi đấy.",
+        "blank": "You've got the hang of it",
+        "noteVi": "\"Get the hang of something\" = bắt đầu quen tay, biết cách làm."
+      },
+      {
+        "speaker": "b",
+        "text": "That was much easier than I thought. Thanks so much!",
+        "meaningVi": "Dễ hơn em tưởng nhiều. Cảm ơn anh nhiều lắm!",
+        "blank": "much easier than I thought"
+      },
+      {
+        "speaker": "a",
+        "text": "Anytime. Just give me a shout if you get stuck again.",
+        "meaningVi": "Lúc nào cũng được. Nếu lại bí thì cứ gọi anh nhé.",
+        "blank": "give me a shout"
+      }
+    ]
+  },
+  {
+    "id": "wp-status-update",
+    "topicId": "workplace",
+    "title": "Báo cáo tiến độ với quản lý",
+    "level": "B1",
+    "situationVi": "Trong buổi họp nhanh hằng tuần, quản lý người Úc là David hỏi bạn (Huy) về tiến độ dự án làm lại trang web cho khách hàng.",
+    "speakers": {
+      "a": { "name": "David", "roleVi": "Quản lý người Úc" },
+      "b": { "name": "Huy", "roleVi": "Bạn, trưởng nhóm nhỏ" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Thanks for joining, Huy. How's the website project coming along?",
+        "meaningVi": "Cảm ơn em đã tham gia, Huy. Dự án trang web tiến triển thế nào rồi?",
+        "blank": "How's the website project coming along",
+        "noteVi": "\"How's ... coming along?\" = hỏi tiến độ công việc."
+      },
+      {
+        "speaker": "b",
+        "text": "It's going well overall. We've finished the homepage design.",
+        "meaningVi": "Nhìn chung mọi việc ổn ạ. Bọn em đã xong thiết kế trang chủ.",
+        "blank": "It's going well overall"
+      },
+      {
+        "speaker": "a",
+        "text": "Great. Are we still on track for the end of the month?",
+        "meaningVi": "Tốt lắm. Mình vẫn đúng tiến độ để xong vào cuối tháng chứ?",
+        "blank": "still on track",
+        "noteVi": "\"On track\" = đúng kế hoạch, đúng tiến độ."
+      },
+      {
+        "speaker": "b",
+        "text": "Mostly, yes. But we've run into a problem with the payment page.",
+        "meaningVi": "Phần lớn là có ạ. Nhưng bọn em gặp vấn đề với trang thanh toán.",
+        "blank": "we've run into a problem"
+      },
+      {
+        "speaker": "a",
+        "text": "I see. What's the issue exactly?",
+        "meaningVi": "Anh hiểu. Cụ thể là vấn đề gì?",
+        "blank": "What's the issue exactly"
+      },
+      {
+        "speaker": "b",
+        "text": "The client hasn't sent us the login details for their payment system yet.",
+        "meaningVi": "Khách hàng vẫn chưa gửi thông tin đăng nhập hệ thống thanh toán cho bọn em.",
+        "blank": "hasn't sent us the login details"
+      },
+      {
+        "speaker": "a",
+        "text": "Hmm, that could delay things. Have you followed up with them?",
+        "meaningVi": "Hừm, việc đó có thể làm chậm tiến độ. Em đã nhắc lại họ chưa?",
+        "blank": "Have you followed up with them"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, twice. Would you mind giving them a call as well?",
+        "meaningVi": "Rồi ạ, hai lần. Anh có thể gọi cho họ một cuộc được không?",
+        "blank": "Would you mind giving them a call",
+        "noteVi": "\"Would you mind + V-ing\" = nhờ cấp trên một cách lịch sự."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure, I'll call them this afternoon. Good job flagging it early.",
+        "meaningVi": "Được, chiều nay anh sẽ gọi. Em báo sớm vậy là tốt.",
+        "blank": "Good job flagging it early"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks, David. I'll send you a written update on Friday.",
+        "meaningVi": "Cảm ơn anh David. Thứ Sáu em sẽ gửi anh báo cáo bằng văn bản.",
+        "blank": "send you a written update"
+      }
+    ]
+  },
+  {
+    "id": "wp-workload",
+    "topicId": "workplace",
+    "title": "Trao đổi khi quá tải công việc",
+    "level": "B1",
+    "situationVi": "Quản lý Anna vừa giao thêm cho bạn (Mai) một bài thuyết trình, trong khi bạn đang làm hai việc gấp. Bạn xin gặp riêng chị ấy để sắp xếp lại.",
+    "speakers": {
+      "a": { "name": "Anna", "roleVi": "Quản lý người Đức" },
+      "b": { "name": "Mai", "roleVi": "Bạn, nhân viên" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hi Anna, could we talk about the new presentation for a moment?",
+        "meaningVi": "Chào chị Anna, mình nói chuyện một chút về bài thuyết trình mới được không ạ?",
+        "blank": "could we talk about"
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. Is something wrong?",
+        "meaningVi": "Tất nhiên. Có vấn đề gì à?"
+      },
+      {
+        "speaker": "b",
+        "text": "Not exactly, but I've got a lot on my plate right now.",
+        "meaningVi": "Không hẳn ạ, nhưng hiện giờ em đang có rất nhiều việc.",
+        "blank": "I've got a lot on my plate",
+        "noteVi": "Thành ngữ: có quá nhiều việc phải lo cùng lúc."
+      },
+      {
+        "speaker": "a",
+        "text": "Okay. What are you working on at the moment?",
+        "meaningVi": "Được. Hiện em đang làm những việc gì?",
+        "blank": "What are you working on"
+      },
+      {
+        "speaker": "b",
+        "text": "The budget report and the client survey. Both are due this Thursday.",
+        "meaningVi": "Báo cáo ngân sách và khảo sát khách hàng. Cả hai đều hạn thứ Năm này.",
+        "blank": "Both are due this Thursday"
+      },
+      {
+        "speaker": "a",
+        "text": "Ah, I didn't realize they were so urgent. Thanks for telling me.",
+        "meaningVi": "À, chị không biết là chúng gấp vậy. Cảm ơn em đã nói.",
+        "blank": "I didn't realize"
+      },
+      {
+        "speaker": "b",
+        "text": "I want to do a good job on all three, but I don't think I can.",
+        "meaningVi": "Em muốn làm tốt cả ba, nhưng em nghĩ là không kịp.",
+        "blank": "I want to do a good job",
+        "noteVi": "Nói ý muốn làm tốt trước khi nói khó khăn: cho thấy thái độ tích cực."
+      },
+      {
+        "speaker": "a",
+        "text": "Fair enough. Which task should we move or give to someone else?",
+        "meaningVi": "Cũng hợp lý. Việc nào mình nên dời lại hoặc giao cho người khác?",
+        "blank": "Fair enough"
+      },
+      {
+        "speaker": "b",
+        "text": "Could the presentation wait until next week? Then I can focus.",
+        "meaningVi": "Bài thuyết trình có thể để tuần sau được không ạ? Như vậy em tập trung được.",
+        "blank": "Could the presentation wait until next week"
+      },
+      {
+        "speaker": "a",
+        "text": "Yes, that works. Let's push the deadline to next Wednesday.",
+        "meaningVi": "Được, vậy ổn. Mình lùi hạn đến thứ Tư tuần sau nhé.",
+        "blank": "push the deadline",
+        "noteVi": "\"Push the deadline\" = lùi hạn chót."
+      },
+      {
+        "speaker": "b",
+        "text": "Thank you so much. That really takes the pressure off.",
+        "meaningVi": "Cảm ơn chị nhiều. Thế thì em đỡ áp lực hẳn.",
+        "blank": "takes the pressure off"
+      }
+    ]
+  },
+  {
+    "id": "wp-lunch-chat",
+    "topicId": "workplace",
+    "title": "Trò chuyện bữa trưa với đồng nghiệp nước ngoài",
+    "level": "B1",
+    "situationVi": "Giờ nghỉ trưa, bạn (Nam) ngồi ăn cùng Kenji, đồng nghiệp người Nhật mới chuyển đến Hà Nội được một tháng. Hai người nói chuyện về đồ ăn và cuộc sống ở đây.",
+    "speakers": {
+      "a": { "name": "Kenji", "roleVi": "Đồng nghiệp người Nhật" },
+      "b": { "name": "Nam", "roleVi": "Bạn" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Mind if I join you, Kenji?",
+        "meaningVi": "Mình ngồi cùng được không, Kenji?",
+        "blank": "Mind if I join you",
+        "noteVi": "Cách hỏi tự nhiên khi muốn ngồi ăn cùng ai đó."
+      },
+      {
+        "speaker": "a",
+        "text": "Not at all, please sit down. Your lunch looks delicious.",
+        "meaningVi": "Không sao, ngồi đi. Đồ ăn trưa của cậu trông ngon thế.",
+        "blank": "Not at all"
+      },
+      {
+        "speaker": "b",
+        "text": "It's bun cha. Have you tried it yet?",
+        "meaningVi": "Bún chả đấy. Cậu ăn thử chưa?",
+        "blank": "Have you tried it yet"
+      },
+      {
+        "speaker": "a",
+        "text": "Not yet, but I've heard a lot about it.",
+        "meaningVi": "Chưa, nhưng mình nghe nói về nó nhiều rồi.",
+        "blank": "I've heard a lot about it"
+      },
+      {
+        "speaker": "b",
+        "text": "You should definitely try it. I know a great place near the office.",
+        "meaningVi": "Cậu nhất định phải thử. Mình biết một quán ngon gần công ty.",
+        "blank": "I know a great place"
+      },
+      {
+        "speaker": "a",
+        "text": "That would be great. I'm still finding my way around the city.",
+        "meaningVi": "Thế thì tuyệt. Mình vẫn đang làm quen với thành phố.",
+        "blank": "finding my way around",
+        "noteVi": "\"Find your way around\" = dần quen đường, quen nơi ở mới."
+      },
+      {
+        "speaker": "b",
+        "text": "How are you settling in, by the way?",
+        "meaningVi": "Mà cậu thích nghi ở đây thế nào rồi?",
+        "blank": "How are you settling in"
+      },
+      {
+        "speaker": "a",
+        "text": "Pretty well, thanks. The traffic still scares me a little, though.",
+        "meaningVi": "Khá ổn, cảm ơn cậu. Nhưng giao thông vẫn làm mình hơi sợ.",
+        "blank": "still scares me a little"
+      },
+      {
+        "speaker": "b",
+        "text": "Ha, everyone says that! You'll get used to it soon.",
+        "meaningVi": "Haha, ai cũng nói vậy! Cậu sẽ sớm quen thôi.",
+        "blank": "You'll get used to it"
+      },
+      {
+        "speaker": "a",
+        "text": "I hope so. So, bun cha tomorrow?",
+        "meaningVi": "Mong là vậy. Thế mai đi ăn bún chả nhé?"
+      },
+      {
+        "speaker": "b",
+        "text": "It's a date. My treat!",
+        "meaningVi": "Chốt nhé. Mình mời!",
+        "noteVi": "\"It's a date\" ở đây chỉ là \"hẹn rồi nhé\", không mang nghĩa hẹn hò."
+      }
+    ]
+  }
+]

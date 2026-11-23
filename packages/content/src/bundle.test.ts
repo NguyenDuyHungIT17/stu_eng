@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { getScenario, phrases, scenarios, topics } from './index';
+import { dialogues, getScenario, phrases, scenarios, topics } from './index';
 import { loadFromDisk } from './load-from-disk';
 import { validateBundle } from './validate-bundle';
 
@@ -12,10 +12,16 @@ describe('nội dung đóng gói', () => {
     expect(validateBundle(disk)).toEqual([]);
   });
 
-  it('index.ts import đủ mọi file trong data/phrases', () => {
-    const bundledIds = phrases.map((p) => p.id).sort();
-    const diskIds = (disk.phrases as { id: string }[]).map((p) => p.id).sort();
+  it('index.ts import đủ mọi file trong data/dialogues', () => {
+    const bundledIds = dialogues.map((d) => d.id).sort();
+    const diskIds = (disk.dialogues as { id: string }[]).map((d) => d.id).sort();
     expect(bundledIds).toEqual(diskIds);
+  });
+
+  it('mỗi câu hội thoại thành một phrase có ngữ cảnh', () => {
+    const total = dialogues.reduce((n, d) => n + d.lines.length, 0);
+    expect(phrases).toHaveLength(total);
+    expect(phrases[0]).toMatchObject({ dialogueId: dialogues[0]?.id, lineNo: 0 });
   });
 
   it('có chủ đề và kịch bản', () => {

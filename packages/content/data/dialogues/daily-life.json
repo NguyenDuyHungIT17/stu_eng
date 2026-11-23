@@ -1,0 +1,328 @@
+[
+  {
+    "id": "dl-new-neighbour",
+    "topicId": "daily-life",
+    "title": "Làm quen hàng xóm mới",
+    "level": "A1",
+    "situationVi": "Một gia đình người Canada vừa chuyển đến căn hộ cạnh nhà bạn (Mai). Bạn gặp Mark, người chồng, ở thang máy chung cư.",
+    "speakers": {
+      "a": {
+        "name": "Mark",
+        "roleVi": "Hàng xóm mới người Canada"
+      },
+      "b": {
+        "name": "Mai",
+        "roleVi": "Bạn, hàng xóm cũ"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hi! Are you the new family in 1205?",
+        "meaningVi": "Chào anh! Anh là gia đình mới chuyển đến căn 1205 phải không?",
+        "blank": "Are you the new family"
+      },
+      {
+        "speaker": "a",
+        "text": "Yes, we just moved in on Saturday. I'm Mark.",
+        "meaningVi": "Đúng rồi, nhà tôi vừa chuyển đến hôm thứ Bảy. Tôi là Mark.",
+        "blank": "we just moved in",
+        "noteVi": "\"Move in\" = dọn đến ở; ngược lại là \"move out\" = dọn đi."
+      },
+      {
+        "speaker": "b",
+        "text": "Nice to meet you, Mark. I'm Mai. I live right next door.",
+        "meaningVi": "Rất vui được gặp anh, Mark. Tôi là Mai. Tôi ở ngay nhà bên cạnh.",
+        "blank": "I live right next door"
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, great! So we're neighbours. How long have you lived here?",
+        "meaningVi": "Ồ, hay quá! Vậy là mình là hàng xóm. Chị sống ở đây bao lâu rồi?",
+        "blank": "How long have you lived here"
+      },
+      {
+        "speaker": "b",
+        "text": "About five years. It's a nice, quiet building.",
+        "meaningVi": "Khoảng năm năm rồi. Tòa nhà này yên tĩnh, dễ chịu lắm."
+      },
+      {
+        "speaker": "a",
+        "text": "Good to know. Is there a supermarket near here?",
+        "meaningVi": "Biết vậy tốt quá. Gần đây có siêu thị không chị?",
+        "blank": "Is there a supermarket near here"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, there's one across the street, next to the bank.",
+        "meaningVi": "Có, có một cái ở bên kia đường, cạnh ngân hàng."
+      },
+      {
+        "speaker": "a",
+        "text": "Perfect. Thanks, Mai. That's very helpful.",
+        "meaningVi": "Tuyệt quá. Cảm ơn chị Mai. Thông tin hữu ích lắm.",
+        "blank": "That's very helpful"
+      },
+      {
+        "speaker": "b",
+        "text": "Anytime. Just knock if you need anything.",
+        "meaningVi": "Có gì đâu. Cần gì anh cứ gõ cửa nhé.",
+        "blank": "Just knock if you need anything",
+        "noteVi": "Lời mời giúp đỡ thân thiện giữa hàng xóm với nhau."
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks! Have a good evening.",
+        "meaningVi": "Cảm ơn chị! Chúc chị buổi tối vui vẻ."
+      }
+    ]
+  },
+  {
+    "id": "dl-weekday-routine",
+    "topicId": "daily-life",
+    "title": "Chuyện đi làm mỗi sáng",
+    "level": "A1",
+    "situationVi": "Giờ nghỉ trưa ở công ty, Emma, đồng nghiệp người Pháp, hỏi bạn (Nam) về thói quen buổi sáng và cách bạn đi làm mỗi ngày.",
+    "speakers": {
+      "a": {
+        "name": "Emma",
+        "roleVi": "Đồng nghiệp người Pháp"
+      },
+      "b": {
+        "name": "Nam",
+        "roleVi": "Bạn, nhân viên văn phòng"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "You're always here so early, Nam. What time do you get up?",
+        "meaningVi": "Nam lúc nào cũng đến sớm thế. Mấy giờ anh dậy vậy?",
+        "blank": "What time do you get up"
+      },
+      {
+        "speaker": "b",
+        "text": "Usually around six. I like to go for a run first.",
+        "meaningVi": "Thường khoảng sáu giờ. Tôi thích chạy bộ trước đã.",
+        "blank": "go for a run",
+        "noteVi": "\"Go for a run/walk/swim\" = đi chạy/đi dạo/đi bơi một lúc."
+      },
+      {
+        "speaker": "a",
+        "text": "Wow, that's impressive. I can't even get up before seven.",
+        "meaningVi": "Chà, giỏi thật. Tôi còn chẳng dậy nổi trước bảy giờ."
+      },
+      {
+        "speaker": "b",
+        "text": "Ha, it took me a while to get used to it.",
+        "meaningVi": "Haha, tôi cũng mất một thời gian mới quen được.",
+        "blank": "get used to it",
+        "noteVi": "\"Get used to\" = dần quen với điều gì đó."
+      },
+      {
+        "speaker": "a",
+        "text": "So how do you get to work? By motorbike?",
+        "meaningVi": "Thế anh đi làm bằng gì? Xe máy à?",
+        "blank": "how do you get to work"
+      },
+      {
+        "speaker": "b",
+        "text": "No, I take the metro now. It's faster and I can read on the way.",
+        "meaningVi": "Không, giờ tôi đi tàu điện. Nhanh hơn mà lại đọc sách được trên đường.",
+        "blank": "I take the metro"
+      },
+      {
+        "speaker": "a",
+        "text": "Smart. How long does it take?",
+        "meaningVi": "Khôn đấy. Mất bao lâu vậy?",
+        "blank": "How long does it take"
+      },
+      {
+        "speaker": "b",
+        "text": "About twenty minutes, door to door. What about you?",
+        "meaningVi": "Khoảng hai mươi phút, tính từ nhà đến công ty. Còn chị?"
+      },
+      {
+        "speaker": "a",
+        "text": "I take a Grab bike, but the traffic is crazy sometimes.",
+        "meaningVi": "Tôi đi Grab xe máy, nhưng nhiều lúc tắc đường kinh khủng."
+      },
+      {
+        "speaker": "b",
+        "text": "You should try the metro. I can show you the station.",
+        "meaningVi": "Chị nên thử đi tàu điện xem. Tôi chỉ ga cho chị nhé.",
+        "blank": "You should try"
+      },
+      {
+        "speaker": "a",
+        "text": "That would be great, thanks!",
+        "meaningVi": "Vậy thì tốt quá, cảm ơn anh!"
+      }
+    ]
+  },
+  {
+    "id": "dl-roommate-chores",
+    "topicId": "daily-life",
+    "title": "Chia việc nhà với bạn cùng phòng",
+    "level": "A2",
+    "situationVi": "Bạn (Lan) đang du học ở Úc và ở chung căn hộ với Chloe. Bếp dạo này hơi bừa, nên hai người ngồi lại bàn cách chia việc nhà.",
+    "speakers": {
+      "a": {
+        "name": "Chloe",
+        "roleVi": "Bạn cùng phòng người Úc"
+      },
+      "b": {
+        "name": "Lan",
+        "roleVi": "Bạn, du học sinh"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hey Chloe, have you got a minute? I wanted to talk about the kitchen.",
+        "meaningVi": "Chloe ơi, cậu rảnh một chút không? Mình muốn nói chuyện về cái bếp.",
+        "blank": "have you got a minute",
+        "noteVi": "Cách mở lời nhẹ nhàng trước khi nói chuyện nghiêm túc."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. Oh no, is it the dishes again? Sorry about that.",
+        "meaningVi": "Được chứ. Ôi, lại chuyện bát đĩa à? Xin lỗi cậu nhé."
+      },
+      {
+        "speaker": "b",
+        "text": "It's okay, I'm not perfect either. Maybe we could make a schedule?",
+        "meaningVi": "Không sao, mình cũng có lúc thế mà. Hay là mình lập lịch chia việc nhé?",
+        "blank": "Maybe we could",
+        "noteVi": "\"Maybe we could...\" là cách đề xuất mềm mỏng, không áp đặt."
+      },
+      {
+        "speaker": "a",
+        "text": "Good idea. How about we take turns doing the dishes?",
+        "meaningVi": "Ý hay đấy. Hay mình thay phiên nhau rửa bát?",
+        "blank": "take turns",
+        "noteVi": "\"Take turns\" = thay phiên nhau làm việc gì."
+      },
+      {
+        "speaker": "b",
+        "text": "Sounds fair. I can do Monday, Wednesday and Friday.",
+        "meaningVi": "Nghe công bằng đấy. Mình làm thứ Hai, thứ Tư và thứ Sáu nhé.",
+        "blank": "Sounds fair"
+      },
+      {
+        "speaker": "a",
+        "text": "Then I'll do the other days. What about taking out the rubbish?",
+        "meaningVi": "Vậy mình làm những ngày còn lại. Còn việc đổ rác thì sao?",
+        "blank": "What about taking out the rubbish"
+      },
+      {
+        "speaker": "b",
+        "text": "I don't mind doing that if you clean the bathroom.",
+        "meaningVi": "Mình làm việc đó cũng được, nếu cậu lau dọn nhà tắm.",
+        "blank": "I don't mind doing that"
+      },
+      {
+        "speaker": "a",
+        "text": "Deal. I'll clean it every Sunday.",
+        "meaningVi": "Chốt. Chủ nhật nào mình cũng sẽ dọn."
+      },
+      {
+        "speaker": "b",
+        "text": "Great. I'll write it down and stick it on the fridge.",
+        "meaningVi": "Tuyệt. Mình sẽ ghi ra rồi dán lên tủ lạnh."
+      },
+      {
+        "speaker": "a",
+        "text": "Perfect. Thanks for bringing it up so nicely, Lan.",
+        "meaningVi": "Tuyệt vời. Cảm ơn cậu đã nói chuyện này một cách nhẹ nhàng nhé, Lan.",
+        "blank": "Thanks for bringing it up",
+        "noteVi": "\"Bring something up\" = nêu ra, đề cập một vấn đề."
+      }
+    ]
+  },
+  {
+    "id": "dl-noisy-neighbour",
+    "topicId": "daily-life",
+    "title": "Nhờ hàng xóm giữ trật tự",
+    "level": "A2",
+    "situationVi": "Đã 11 giờ đêm mà căn hộ trên tầng vẫn mở nhạc to. Bạn (Huy) lên gõ cửa, nói chuyện lịch sự với Jake, người hàng xóm người Mỹ.",
+    "speakers": {
+      "a": {
+        "name": "Jake",
+        "roleVi": "Hàng xóm người Mỹ ở tầng trên"
+      },
+      "b": {
+        "name": "Huy",
+        "roleVi": "Bạn, hàng xóm tầng dưới"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hey! Oh, hi. Can I help you?",
+        "meaningVi": "Này! À, chào anh. Anh cần gì ạ?"
+      },
+      {
+        "speaker": "b",
+        "text": "Hi, sorry to bother you. I'm Huy from the apartment downstairs.",
+        "meaningVi": "Chào anh, xin lỗi đã làm phiền. Tôi là Huy ở căn hộ tầng dưới.",
+        "blank": "sorry to bother you",
+        "noteVi": "Mở lời lịch sự khi phải làm phiền ai đó, nhất là lúc muộn."
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, hey. Is everything okay?",
+        "meaningVi": "Ồ, chào anh. Có chuyện gì không ạ?"
+      },
+      {
+        "speaker": "b",
+        "text": "Well, the music is a bit loud, and I have to get up early tomorrow.",
+        "meaningVi": "À, nhạc hơi to một chút, mà mai tôi phải dậy sớm.",
+        "blank": "the music is a bit loud",
+        "noteVi": "Thêm \"a bit\" để lời phàn nàn bớt nặng nề."
+      },
+      {
+        "speaker": "a",
+        "text": "Oh man, I'm so sorry. I didn't realise it was that loud.",
+        "meaningVi": "Trời, tôi xin lỗi nhé. Tôi không biết là to đến thế.",
+        "blank": "I didn't realise"
+      },
+      {
+        "speaker": "b",
+        "text": "No worries. Would you mind turning it down a little?",
+        "meaningVi": "Không sao đâu. Anh vặn nhỏ đi một chút được không?",
+        "blank": "Would you mind turning it down",
+        "noteVi": "\"Would you mind + V-ing?\" là cách nhờ vả rất lịch sự. \"Turn down\" = vặn nhỏ."
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. It's my birthday, so a few friends came over.",
+        "meaningVi": "Tất nhiên rồi. Hôm nay sinh nhật tôi nên có mấy người bạn sang chơi."
+      },
+      {
+        "speaker": "b",
+        "text": "Oh, happy birthday! I hope you're having a great night.",
+        "meaningVi": "Ồ, chúc mừng sinh nhật anh! Chúc anh có một buổi tối vui vẻ.",
+        "blank": "I hope you're having a great night"
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks, man. We'll keep it down from now on, I promise.",
+        "meaningVi": "Cảm ơn anh. Từ giờ bọn tôi sẽ giữ trật tự, tôi hứa đấy.",
+        "blank": "We'll keep it down",
+        "noteVi": "\"Keep it down\" = giữ yên lặng, nói/làm nhỏ tiếng lại."
+      },
+      {
+        "speaker": "b",
+        "text": "I really appreciate it. Have fun!",
+        "meaningVi": "Cảm ơn anh nhiều. Chơi vui nhé!",
+        "blank": "I really appreciate it"
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks for understanding. Good night!",
+        "meaningVi": "Cảm ơn anh đã thông cảm. Chúc ngủ ngon!"
+      }
+    ]
+  }
+]

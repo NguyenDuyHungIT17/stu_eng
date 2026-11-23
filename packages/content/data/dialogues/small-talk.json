@@ -1,0 +1,300 @@
+[
+  {
+    "id": "st-weather-before-meeting",
+    "topicId": "small-talk",
+    "title": "Nói chuyện thời tiết trước cuộc họp",
+    "level": "A2",
+    "situationVi": "Năm phút trước cuộc họp online, chỉ có bạn (Mai) và Peter, khách hàng người Anh, đã vào phòng họp. Bạn bắt chuyện cho đỡ im lặng.",
+    "speakers": {
+      "a": { "name": "Peter", "roleVi": "Khách hàng người Anh" },
+      "b": { "name": "Mai", "roleVi": "Bạn, nhân viên dự án" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Good morning, Peter! Looks like we're a bit early.",
+        "meaningVi": "Chào buổi sáng, Peter! Có vẻ chúng ta vào hơi sớm."
+      },
+      {
+        "speaker": "a",
+        "text": "Morning, Mai! Yes, the others should join in a few minutes.",
+        "meaningVi": "Chào Mai! Ừ, mọi người chắc vài phút nữa mới vào."
+      },
+      {
+        "speaker": "b",
+        "text": "How's the weather in London today?",
+        "meaningVi": "Hôm nay thời tiết ở London thế nào?",
+        "blank": "How's the weather",
+        "noteVi": "Hỏi thời tiết là cách bắt chuyện an toàn, phổ biến nhất với người Anh."
+      },
+      {
+        "speaker": "a",
+        "text": "Grey and rainy, as usual. What's it like in Hanoi?",
+        "meaningVi": "Xám xịt và mưa, như mọi khi. Ở Hà Nội thì sao?",
+        "blank": "What's it like in Hanoi"
+      },
+      {
+        "speaker": "b",
+        "text": "It's getting cooler now. Autumn is my favourite time of year here.",
+        "meaningVi": "Trời đang mát dần rồi. Mùa thu là thời điểm mình thích nhất trong năm ở đây.",
+        "blank": "It's getting cooler now"
+      },
+      {
+        "speaker": "a",
+        "text": "Lucky you! I'd love to visit Hanoi in autumn one day.",
+        "meaningVi": "Sướng thật! Mong một ngày nào đó được đến Hà Nội vào mùa thu.",
+        "blank": "I'd love to visit",
+        "noteVi": "\"Lucky you!\" = sướng thế, thích thế (nói vui, không ghen tị thật)."
+      },
+      {
+        "speaker": "b",
+        "text": "You should! Let me know when you come, I'll show you around.",
+        "meaningVi": "Anh nên đến! Khi nào sang thì báo em, em dẫn anh đi chơi.",
+        "blank": "I'll show you around"
+      },
+      {
+        "speaker": "a",
+        "text": "That's very kind. Oh, looks like Sarah's just joined.",
+        "meaningVi": "Em tốt quá. À, hình như Sarah vừa vào rồi."
+      },
+      {
+        "speaker": "b",
+        "text": "Great, shall we get started?",
+        "meaningVi": "Tốt quá, mình bắt đầu nhé?",
+        "blank": "shall we get started",
+        "noteVi": "Câu lịch sự để chuyển từ nói chuyện phiếm sang công việc."
+      }
+    ]
+  },
+  {
+    "id": "st-monday-weekend",
+    "topicId": "small-talk",
+    "title": "Cuối tuần của bạn thế nào?",
+    "level": "A2",
+    "situationVi": "Sáng thứ Hai ở văn phòng, Anna, đồng nghiệp người Đức, hỏi bạn (Huy) về cuối tuần trong lúc chờ thang máy.",
+    "speakers": {
+      "a": { "name": "Anna", "roleVi": "Đồng nghiệp người Đức" },
+      "b": { "name": "Huy", "roleVi": "Bạn, nhân viên kỹ thuật" }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Morning, Huy! Did you have a good weekend?",
+        "meaningVi": "Chào Huy! Cuối tuần vui chứ?",
+        "blank": "Did you have a good weekend",
+        "noteVi": "Câu hỏi quen thuộc mỗi sáng thứ Hai; trả lời ngắn rồi hỏi lại."
+      },
+      {
+        "speaker": "b",
+        "text": "Yeah, it was great, thanks. I went to Ninh Binh with my family.",
+        "meaningVi": "Ừ, vui lắm, cảm ơn chị. Mình đi Ninh Bình với gia đình.",
+        "blank": "it was great, thanks"
+      },
+      {
+        "speaker": "a",
+        "text": "Oh, nice! I've heard it's beautiful there. What did you do?",
+        "meaningVi": "Ồ, hay quá! Nghe nói ở đó đẹp lắm. Bạn đã làm gì?",
+        "blank": "I've heard it's beautiful"
+      },
+      {
+        "speaker": "b",
+        "text": "We took a boat trip through the caves. The scenery was amazing.",
+        "meaningVi": "Bọn mình đi thuyền qua các hang động. Phong cảnh tuyệt lắm.",
+        "blank": "The scenery was amazing"
+      },
+      {
+        "speaker": "a",
+        "text": "Sounds lovely. Was it very crowded?",
+        "meaningVi": "Nghe thích thật. Có đông lắm không?"
+      },
+      {
+        "speaker": "b",
+        "text": "A little, but we went early, so it was fine. How about your weekend?",
+        "meaningVi": "Hơi đông, nhưng bọn mình đi sớm nên cũng ổn. Còn cuối tuần của chị thế nào?",
+        "blank": "How about your weekend",
+        "noteVi": "Luôn hỏi lại để cuộc trò chuyện không bị một chiều."
+      },
+      {
+        "speaker": "a",
+        "text": "Pretty quiet, actually. I just stayed home and caught up on some sleep.",
+        "meaningVi": "Thật ra khá yên ả. Mình chỉ ở nhà và ngủ bù.",
+        "blank": "caught up on some sleep",
+        "noteVi": "\"Catch up on sleep\" = ngủ bù."
+      },
+      {
+        "speaker": "b",
+        "text": "That sounds nice too. Sometimes you just need a rest.",
+        "meaningVi": "Thế cũng hay mà. Đôi khi mình chỉ cần nghỉ ngơi thôi.",
+        "blank": "you just need a rest"
+      },
+      {
+        "speaker": "a",
+        "text": "Exactly. Oh, here's the lift. Have a good day!",
+        "meaningVi": "Đúng vậy. À, thang máy đến rồi. Chúc bạn một ngày tốt lành!"
+      },
+      {
+        "speaker": "b",
+        "text": "You too, Anna. See you at lunch!",
+        "meaningVi": "Chị cũng vậy nhé, Anna. Gặp chị lúc ăn trưa!"
+      }
+    ]
+  },
+  {
+    "id": "st-hobbies-at-party",
+    "topicId": "small-talk",
+    "title": "Hỏi về sở thích ở bữa tiệc",
+    "level": "A2",
+    "situationVi": "Ở tiệc cuối năm của công ty, bạn (Thảo) đứng cạnh David, một kỹ sư người Mỹ mới chuyển sang chi nhánh Việt Nam. Hai người chưa quen nhau.",
+    "speakers": {
+      "a": { "name": "David", "roleVi": "Kỹ sư người Mỹ" },
+      "b": { "name": "Thảo", "roleVi": "Bạn, nhân viên kế toán" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Hi, I'm Thao from accounting. Are you enjoying the party?",
+        "meaningVi": "Chào anh, em là Thảo bên kế toán. Anh thấy bữa tiệc vui không?",
+        "blank": "Are you enjoying the party",
+        "noteVi": "Câu mở lời dễ dùng nhất ở tiệc, kể cả khi chưa quen."
+      },
+      {
+        "speaker": "a",
+        "text": "Hi Thao, I'm David. Yes, the food is fantastic!",
+        "meaningVi": "Chào Thảo, anh là David. Có chứ, đồ ăn tuyệt lắm!"
+      },
+      {
+        "speaker": "b",
+        "text": "So, what do you like to do in your free time?",
+        "meaningVi": "Vậy lúc rảnh anh thích làm gì?",
+        "blank": "what do you like to do"
+      },
+      {
+        "speaker": "a",
+        "text": "I'm really into cycling. I ride around West Lake most mornings.",
+        "meaningVi": "Anh rất mê đạp xe. Sáng nào anh cũng đạp quanh Hồ Tây.",
+        "blank": "I'm really into cycling",
+        "noteVi": "\"Be into something\" = rất thích, mê cái gì (văn nói)."
+      },
+      {
+        "speaker": "b",
+        "text": "Wow, that early? How long have you been doing that?",
+        "meaningVi": "Ồ, sớm thế ạ? Anh đạp xe được bao lâu rồi?",
+        "blank": "How long have you been doing that"
+      },
+      {
+        "speaker": "a",
+        "text": "About five years now. What about you? Any hobbies?",
+        "meaningVi": "Khoảng năm năm rồi. Còn em? Em có sở thích gì không?"
+      },
+      {
+        "speaker": "b",
+        "text": "I love baking. I usually make cakes for my friends at weekends.",
+        "meaningVi": "Em rất thích làm bánh. Cuối tuần em hay làm bánh cho bạn bè.",
+        "blank": "I usually make cakes"
+      },
+      {
+        "speaker": "a",
+        "text": "That's cool! You'll have to bring some to the office.",
+        "meaningVi": "Hay quá! Thế thì em phải mang ít bánh lên văn phòng đấy.",
+        "blank": "You'll have to bring some"
+      },
+      {
+        "speaker": "b",
+        "text": "Ha, deal! Only if you take me cycling one day.",
+        "meaningVi": "Haha, chốt nhé! Với điều kiện hôm nào anh rủ em đi đạp xe.",
+        "blank": "Only if you take me",
+        "noteVi": "\"Deal!\" = chốt, đồng ý (nói vui với bạn bè, đồng nghiệp)."
+      },
+      {
+        "speaker": "a",
+        "text": "It's a deal. I'll let you know next time we go.",
+        "meaningVi": "Chốt luôn. Lần tới đi anh sẽ báo em."
+      }
+    ]
+  },
+  {
+    "id": "st-keep-conversation-going",
+    "topicId": "small-talk",
+    "title": "Giữ cho cuộc trò chuyện tiếp diễn",
+    "level": "A2",
+    "situationVi": "Bạn (Nam) đi hội thảo công nghệ ở Singapore. Giờ giải lao, bạn đứng cạnh Emma, một nhà thiết kế người Úc, ở quầy cà phê và muốn làm quen để mở rộng quan hệ.",
+    "speakers": {
+      "a": { "name": "Emma", "roleVi": "Nhà thiết kế người Úc" },
+      "b": { "name": "Nam", "roleVi": "Bạn, lập trình viên" }
+    },
+    "lines": [
+      {
+        "speaker": "b",
+        "text": "Excuse me, is this your first time at this conference?",
+        "meaningVi": "Xin lỗi, đây có phải lần đầu chị đến hội thảo này không?",
+        "blank": "is this your first time",
+        "noteVi": "Hỏi về sự kiện chung là cách bắt chuyện tự nhiên với người lạ."
+      },
+      {
+        "speaker": "a",
+        "text": "No, it's my third year. I come mainly for the design talks.",
+        "meaningVi": "Không, năm thứ ba rồi. Tôi đến chủ yếu vì các bài nói về thiết kế."
+      },
+      {
+        "speaker": "b",
+        "text": "Oh, really? Which talk did you like best this morning?",
+        "meaningVi": "Ồ, thật ạ? Sáng nay chị thích bài nói nào nhất?",
+        "blank": "Which talk did you like best"
+      },
+      {
+        "speaker": "a",
+        "text": "The one about mobile apps for older people. It was really eye-opening.",
+        "meaningVi": "Bài về ứng dụng di động cho người lớn tuổi. Nó thật sự mở mang tầm mắt.",
+        "blank": "It was really eye-opening"
+      },
+      {
+        "speaker": "b",
+        "text": "I missed that one! What was the main idea?",
+        "meaningVi": "Tôi lỡ mất bài đó! Ý chính là gì vậy?",
+        "blank": "What was the main idea",
+        "noteVi": "Hỏi thêm chi tiết cho thấy bạn thật sự quan tâm, giúp người kia nói tiếp."
+      },
+      {
+        "speaker": "a",
+        "text": "Basically, keep things simple: big buttons, clear text, fewer steps.",
+        "meaningVi": "Về cơ bản là giữ mọi thứ đơn giản: nút to, chữ rõ, ít bước hơn.",
+        "blank": "keep things simple"
+      },
+      {
+        "speaker": "b",
+        "text": "That makes sense. My parents always struggle with complicated apps.",
+        "meaningVi": "Hợp lý thật. Bố mẹ tôi lúc nào cũng vật lộn với mấy ứng dụng phức tạp.",
+        "blank": "That makes sense"
+      },
+      {
+        "speaker": "a",
+        "text": "Mine too! So, what brings you here? Are you a designer as well?",
+        "meaningVi": "Bố mẹ tôi cũng vậy! Thế anh đến đây vì gì? Anh cũng làm thiết kế à?",
+        "blank": "what brings you here"
+      },
+      {
+        "speaker": "b",
+        "text": "I'm a developer from Vietnam. I'm here to learn about new tools.",
+        "meaningVi": "Tôi là lập trình viên đến từ Việt Nam. Tôi đến để tìm hiểu các công cụ mới."
+      },
+      {
+        "speaker": "a",
+        "text": "Nice! Oh, the next session's starting. It was great chatting with you.",
+        "meaningVi": "Hay quá! À, phiên tiếp theo sắp bắt đầu rồi. Nói chuyện với anh vui lắm.",
+        "blank": "It was great chatting with you"
+      },
+      {
+        "speaker": "b",
+        "text": "You too, Emma. Can I add you on LinkedIn?",
+        "meaningVi": "Tôi cũng vậy, Emma. Tôi kết nối với chị trên LinkedIn được không?",
+        "blank": "Can I add you on LinkedIn",
+        "noteVi": "Cách tự nhiên để giữ liên lạc sau khi làm quen ở sự kiện."
+      },
+      {
+        "speaker": "a",
+        "text": "Of course! Just search for Emma Clarke.",
+        "meaningVi": "Tất nhiên rồi! Cứ tìm Emma Clarke nhé."
+      }
+    ]
+  }
+]

@@ -1,0 +1,331 @@
+[
+  {
+    "id": "pc-book-a-table",
+    "topicId": "phone-calls",
+    "title": "Gọi điện đặt bàn nhà hàng",
+    "level": "B1",
+    "situationVi": "Bạn (Lan) đang làm việc ở Sydney và muốn mời hai đồng nghiệp đi ăn tối thứ Sáu. Bạn gọi điện cho một nhà hàng Ý để đặt bàn.",
+    "speakers": {
+      "a": {
+        "name": "Marco",
+        "roleVi": "Nhân viên nhà hàng"
+      },
+      "b": {
+        "name": "Lan",
+        "roleVi": "Bạn, người gọi đặt bàn"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Good afternoon, Bella Vista. Marco speaking. How can I help?",
+        "meaningVi": "Xin chào, nhà hàng Bella Vista. Marco nghe đây. Tôi giúp gì được ạ?",
+        "blank": "Marco speaking",
+        "noteVi": "Khi nghe máy ở nơi làm việc, người bản xứ hay nói \"[Tên] speaking\"."
+      },
+      {
+        "speaker": "b",
+        "text": "Hi, I'd like to book a table for Friday evening, please.",
+        "meaningVi": "Chào anh, tôi muốn đặt bàn cho tối thứ Sáu.",
+        "blank": "I'd like to book a table"
+      },
+      {
+        "speaker": "a",
+        "text": "Certainly. How many people is it for?",
+        "meaningVi": "Vâng ạ. Bàn cho mấy người ạ?",
+        "blank": "How many people is it for"
+      },
+      {
+        "speaker": "b",
+        "text": "Three people, at around seven thirty if possible.",
+        "meaningVi": "Ba người, khoảng bảy rưỡi nếu được.",
+        "blank": "at around seven thirty"
+      },
+      {
+        "speaker": "a",
+        "text": "I'm afraid seven thirty is fully booked. Would eight o'clock work for you?",
+        "meaningVi": "Rất tiếc là bảy rưỡi đã kín chỗ rồi. Tám giờ có được không ạ?",
+        "blank": "Would eight o'clock work for you",
+        "noteVi": "\"Would ... work for you?\" = như vậy có tiện cho bạn không, rất hay dùng khi hẹn giờ."
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, eight o'clock is fine. Could we have a table by the window?",
+        "meaningVi": "Vâng, tám giờ cũng được. Cho chúng tôi bàn cạnh cửa sổ được không?",
+        "blank": "a table by the window"
+      },
+      {
+        "speaker": "a",
+        "text": "I'll make a note of that. Can I take your name, please?",
+        "meaningVi": "Tôi sẽ ghi chú lại. Cho tôi xin tên của chị ạ?",
+        "blank": "Can I take your name"
+      },
+      {
+        "speaker": "b",
+        "text": "It's Lan, L-A-N. And my number is 0412 555 019.",
+        "meaningVi": "Tôi tên Lan, L-A-N. Và số điện thoại của tôi là 0412 555 019.",
+        "noteVi": "Tên tiếng Việt nên đánh vần luôn để người nghe ghi đúng."
+      },
+      {
+        "speaker": "a",
+        "text": "Great, that's all booked. See you on Friday!",
+        "meaningVi": "Tuyệt, vậy là đặt xong rồi. Hẹn gặp chị thứ Sáu!",
+        "blank": "that's all booked"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks very much. Bye!",
+        "meaningVi": "Cảm ơn anh nhiều. Chào anh!"
+      }
+    ]
+  },
+  {
+    "id": "pc-leave-a-message",
+    "topicId": "phone-calls",
+    "title": "Gọi tìm người và để lại lời nhắn",
+    "level": "B1",
+    "situationVi": "Bạn (Minh) làm ở công ty xuất khẩu tại TP.HCM. Bạn gọi sang văn phòng của đối tác ở Anh để gặp ông David Brown nhưng ông ấy đang họp.",
+    "speakers": {
+      "a": {
+        "name": "Rachel",
+        "roleVi": "Lễ tân công ty đối tác"
+      },
+      "b": {
+        "name": "Minh",
+        "roleVi": "Bạn, nhân viên kinh doanh"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Good morning, Harper Trading. How may I help you?",
+        "meaningVi": "Chào buổi sáng, công ty Harper Trading. Tôi có thể giúp gì cho anh?"
+      },
+      {
+        "speaker": "b",
+        "text": "Hello, could I speak to David Brown, please?",
+        "meaningVi": "Xin chào, cho tôi nói chuyện với ông David Brown được không?",
+        "blank": "could I speak to",
+        "noteVi": "Cách hỏi gặp ai đó qua điện thoại lịch sự, phổ biến nhất."
+      },
+      {
+        "speaker": "a",
+        "text": "May I ask who's calling?",
+        "meaningVi": "Cho tôi hỏi ai đang gọi ạ?",
+        "blank": "who's calling"
+      },
+      {
+        "speaker": "b",
+        "text": "This is Minh from Saigon Coffee Export.",
+        "meaningVi": "Tôi là Minh, từ công ty Saigon Coffee Export.",
+        "blank": "This is Minh from",
+        "noteVi": "Trên điện thoại, giới thiệu bằng \"This is...\", không nói \"I am...\"."
+      },
+      {
+        "speaker": "a",
+        "text": "I'm sorry, he's in a meeting right now. Would you like to leave a message?",
+        "meaningVi": "Rất tiếc, ông ấy đang họp. Anh có muốn để lại lời nhắn không?",
+        "blank": "Would you like to leave a message"
+      },
+      {
+        "speaker": "b",
+        "text": "Yes, please. Could you ask him to call me back? It's about our coffee samples.",
+        "meaningVi": "Vâng. Chị nhắn ông ấy gọi lại cho tôi được không? Là về mẫu cà phê của chúng tôi.",
+        "blank": "ask him to call me back"
+      },
+      {
+        "speaker": "a",
+        "text": "Of course. Does he have your number?",
+        "meaningVi": "Vâng ạ. Ông ấy có số của anh chưa?",
+        "blank": "Does he have your number"
+      },
+      {
+        "speaker": "b",
+        "text": "I think so, but let me give it to you just in case.",
+        "meaningVi": "Tôi nghĩ là có, nhưng để tôi đọc cho chị cho chắc.",
+        "blank": "just in case"
+      },
+      {
+        "speaker": "a",
+        "text": "Thank you. I'll make sure he gets the message.",
+        "meaningVi": "Cảm ơn anh. Tôi sẽ đảm bảo ông ấy nhận được lời nhắn.",
+        "blank": "I'll make sure he gets the message"
+      },
+      {
+        "speaker": "b",
+        "text": "Thanks for your help. Goodbye.",
+        "meaningVi": "Cảm ơn chị. Chào chị."
+      }
+    ]
+  },
+  {
+    "id": "pc-bad-connection",
+    "topicId": "phone-calls",
+    "title": "Điện thoại bị rè, mất sóng",
+    "level": "B1",
+    "situationVi": "Bạn (Thảo) đang đi tàu và nhận cuộc gọi từ Ben, đồng nghiệp người Canada, hỏi về buổi họp ngày mai. Sóng điện thoại chập chờn.",
+    "speakers": {
+      "a": {
+        "name": "Ben",
+        "roleVi": "Đồng nghiệp người Canada"
+      },
+      "b": {
+        "name": "Thảo",
+        "roleVi": "Bạn, đang đi tàu"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Hi Thao, it's Ben. Have you got a minute?",
+        "meaningVi": "Chào Thảo, Ben đây. Bạn rảnh một phút không?",
+        "blank": "Have you got a minute"
+      },
+      {
+        "speaker": "b",
+        "text": "Hi Ben. Sorry, you're breaking up. I'm on the train.",
+        "meaningVi": "Chào Ben. Xin lỗi, tiếng anh bị ngắt quãng. Mình đang trên tàu.",
+        "blank": "you're breaking up",
+        "noteVi": "\"You're breaking up\" = tiếng bị đứt quãng, không phải \"chia tay\"."
+      },
+      {
+        "speaker": "a",
+        "text": "Can you hear me now? I wanted to ask about tomorrow's meeting.",
+        "meaningVi": "Giờ bạn nghe rõ không? Mình muốn hỏi về buổi họp ngày mai.",
+        "blank": "Can you hear me now"
+      },
+      {
+        "speaker": "b",
+        "text": "That's better. Could you say that again, please?",
+        "meaningVi": "Rõ hơn rồi. Anh nói lại được không?",
+        "blank": "Could you say that again"
+      },
+      {
+        "speaker": "a",
+        "text": "Is the meeting still at ten, or has it been moved?",
+        "meaningVi": "Buổi họp vẫn lúc mười giờ, hay đã bị dời rồi?",
+        "blank": "has it been moved"
+      },
+      {
+        "speaker": "b",
+        "text": "It's been moved to eleven. Did you get that?",
+        "meaningVi": "Dời sang mười một giờ rồi. Anh nghe được không?",
+        "blank": "Did you get that"
+      },
+      {
+        "speaker": "a",
+        "text": "Sorry, I lost you for a second. Eleven or seven?",
+        "meaningVi": "Xin lỗi, vừa mất tiếng một chút. Mười một hay bảy giờ?",
+        "blank": "I lost you for a second"
+      },
+      {
+        "speaker": "b",
+        "text": "Eleven. The signal's really bad here, so I'll text you the details.",
+        "meaningVi": "Mười một. Ở đây sóng tệ quá, nên mình sẽ nhắn tin chi tiết cho anh.",
+        "blank": "I'll text you the details",
+        "noteVi": "Khi sóng quá kém, đề nghị nhắn tin là cách xử lý gọn và lịch sự."
+      },
+      {
+        "speaker": "a",
+        "text": "Perfect. Thanks, Thao. Talk to you later.",
+        "meaningVi": "Tuyệt. Cảm ơn Thảo. Nói chuyện sau nhé.",
+        "blank": "Talk to you later"
+      },
+      {
+        "speaker": "b",
+        "text": "Okay, bye Ben!",
+        "meaningVi": "Ừ, chào Ben nhé!"
+      }
+    ]
+  },
+  {
+    "id": "pc-customer-service",
+    "topicId": "phone-calls",
+    "title": "Gọi tổng đài chăm sóc khách hàng",
+    "level": "B1",
+    "situationVi": "Bạn (Nam) là du học sinh ở Úc. Hóa đơn điện thoại tháng này bị tính thêm một khoản lạ, nên bạn gọi lên tổng đài của nhà mạng để hỏi.",
+    "speakers": {
+      "a": {
+        "name": "Chloe",
+        "roleVi": "Nhân viên tổng đài"
+      },
+      "b": {
+        "name": "Nam",
+        "roleVi": "Bạn, khách hàng"
+      }
+    },
+    "lines": [
+      {
+        "speaker": "a",
+        "text": "Thanks for calling Optel. My name's Chloe. How can I help you today?",
+        "meaningVi": "Cảm ơn quý khách đã gọi Optel. Tôi là Chloe. Hôm nay tôi giúp gì được ạ?"
+      },
+      {
+        "speaker": "b",
+        "text": "Hi, I'm calling about my phone bill for this month.",
+        "meaningVi": "Chào chị, tôi gọi về hóa đơn điện thoại tháng này.",
+        "blank": "I'm calling about",
+        "noteVi": "Câu nêu lý do gọi điện, nên nói ngay ở đầu cuộc gọi."
+      },
+      {
+        "speaker": "a",
+        "text": "Sure. Can I have your account number, please?",
+        "meaningVi": "Vâng. Cho tôi xin số tài khoản của anh ạ.",
+        "blank": "your account number"
+      },
+      {
+        "speaker": "b",
+        "text": "It's 4471 2093. I think I've been charged twice for my plan.",
+        "meaningVi": "Số là 4471 2093. Tôi nghĩ tôi bị tính tiền gói cước hai lần.",
+        "blank": "I've been charged twice"
+      },
+      {
+        "speaker": "a",
+        "text": "Let me look into that for you. Could you hold for a moment?",
+        "meaningVi": "Để tôi kiểm tra giúp anh. Anh giữ máy một chút được không?",
+        "blank": "Could you hold for a moment",
+        "noteVi": "\"Hold\" = giữ máy chờ. Có thể trả lời: \"Sure, no problem.\""
+      },
+      {
+        "speaker": "b",
+        "text": "Sure, I don't mind waiting.",
+        "meaningVi": "Vâng, tôi chờ được."
+      },
+      {
+        "speaker": "a",
+        "text": "Thanks for waiting. You're right, there was a mistake on our side.",
+        "meaningVi": "Cảm ơn anh đã chờ. Anh nói đúng, bên chúng tôi đã nhầm.",
+        "blank": "a mistake on our side"
+      },
+      {
+        "speaker": "b",
+        "text": "Okay. So will I get a refund?",
+        "meaningVi": "Vâng. Vậy tôi có được hoàn tiền không?",
+        "blank": "will I get a refund"
+      },
+      {
+        "speaker": "a",
+        "text": "Yes, the money will be back in your account within five working days.",
+        "meaningVi": "Có ạ, tiền sẽ được hoàn vào tài khoản của anh trong vòng năm ngày làm việc.",
+        "blank": "within five working days"
+      },
+      {
+        "speaker": "b",
+        "text": "Great, thanks for sorting that out so quickly.",
+        "meaningVi": "Tốt quá, cảm ơn chị đã giải quyết nhanh như vậy.",
+        "blank": "thanks for sorting that out"
+      },
+      {
+        "speaker": "a",
+        "text": "My pleasure. Is there anything else I can help you with?",
+        "meaningVi": "Rất hân hạnh. Anh còn cần giúp gì nữa không ạ?",
+        "blank": "Is there anything else"
+      },
+      {
+        "speaker": "b",
+        "text": "No, that's everything. Have a nice day.",
+        "meaningVi": "Không, vậy là đủ rồi. Chúc chị một ngày tốt lành."
+      }
+    ]
+  }
+]

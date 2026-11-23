@@ -1,16 +1,17 @@
 import {
   ContentVersion,
-  PhraseContent,
+  DialogueContent,
   PlacementQuestion,
   ScenarioContent,
   TopicContent,
 } from '@app/shared';
 import type { z } from 'zod';
+import { dialogueToPhrases } from './dialogues';
 
 export type RawBundle = {
   contentVersion: unknown;
   topics: unknown[];
-  phrases: unknown[];
+  dialogues: unknown[];
   scenarios: unknown[];
   placement: unknown[];
 };
@@ -51,7 +52,7 @@ export function validateBundle(bundle: RawBundle): string[] {
   if (!v.success) errors.push('version.json: cần { "contentVersion": số nguyên >= 1 }');
 
   const topics = checkList('topics', TopicContent, bundle.topics, errors);
-  const phrases = checkList('phrases', PhraseContent, bundle.phrases, errors);
+  const dialogues = checkList('dialogues', DialogueContent, bundle.dialogues, errors);
   const scenarios = checkList('scenarios', ScenarioContent, bundle.scenarios, errors);
   const placement = checkList('placement', PlacementQuestion, bundle.placement, errors);
 
@@ -61,8 +62,13 @@ export function validateBundle(bundle: RawBundle): string[] {
     errors,
   );
   checkDuplicates(
-    'phrases',
-    phrases.map((p) => p.id),
+    'dialogues',
+    dialogues.map((d) => d.id),
+    errors,
+  );
+  checkDuplicates(
+    'câu hội thoại',
+    dialogues.flatMap(dialogueToPhrases).map((p) => p.id),
     errors,
   );
   checkDuplicates(
@@ -77,9 +83,9 @@ export function validateBundle(bundle: RawBundle): string[] {
   );
 
   const topicIds = new Set(topics.map((t) => t.id));
-  for (const p of phrases) {
-    if (!topicIds.has(p.topicId))
-      errors.push(`phrases "${p.id}": topicId "${p.topicId}" không tồn tại`);
+  for (const d of dialogues) {
+    if (!topicIds.has(d.topicId))
+      errors.push(`dialogues "${d.id}": topicId "${d.topicId}" không tồn tại`);
   }
 
   return errors;

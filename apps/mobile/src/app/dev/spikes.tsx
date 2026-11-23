@@ -15,7 +15,7 @@ import { SseParser } from '@/lib/sse-parser';
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   const c = useColors();
   return (
-    <View style={[styles.section, { backgroundColor: c.card }]}>
+    <View style={[styles.section, { backgroundColor: c.surface }]}>
       <Text style={[styles.sectionTitle, { color: c.text }]}>{title}</Text>
       {children}
     </View>
