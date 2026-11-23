@@ -3,6 +3,7 @@ import { cardShadow, useColors } from '@/components/theme';
 import { Avatar, Badge, OutlineButton } from '@/components/ui';
 import { Bubble, LEARNER, speakerColor } from '../dialogue/bubbles';
 import type { Dialogue, Line, Speakers } from '../dialogue/repository';
+import { TurnViewer } from '../dialogue/turn-viewer';
 import { splitBlank } from './engine';
 
 type PlayLine = (l: Line, slow?: boolean) => void;
@@ -72,68 +73,20 @@ export function SceneStep({ dialogue }: { dialogue: Dialogue }) {
   );
 }
 
-/** Bước 2: nghe trọn hội thoại, bật/tắt nghĩa tiếng Việt, chạm câu để nghe lại. */
+/** Bước 2: nghe trọn hội thoại, từng lượt một (không cần cuộn). */
 export function ListenAllStep({
   lines,
   speakers,
-  playing,
-  showMeaning,
-  onToggleMeaning,
-  onPlayAll,
-  onStop,
-  onPlayLine,
   canListen,
 }: {
   lines: Line[];
   speakers: Speakers;
-  playing: number | null;
-  showMeaning: boolean;
-  onToggleMeaning: () => void;
-  onPlayAll: () => void;
-  onStop: () => void;
-  onPlayLine: PlayLine;
   canListen: boolean;
 }) {
-  const c = useColors();
   return (
-    <View style={styles.gap}>
+    <View style={{ flex: 1, gap: 8 }}>
       <Heading text="Nghe đoạn hội thoại" />
-      <View style={styles.listenRow}>
-        {canListen ? (
-          <Pressable
-            accessibilityRole="button"
-            onPress={playing === null ? onPlayAll : onStop}
-            style={[styles.pill, { backgroundColor: c.primary }]}
-          >
-            <Text style={{ color: c.onPrimary, fontWeight: '600' }}>
-              {playing === null ? '▶ Nghe cả đoạn' : '■ Dừng'}
-            </Text>
-          </Pressable>
-        ) : null}
-        <Pressable
-          accessibilityRole="button"
-          accessibilityState={{ selected: showMeaning }}
-          onPress={onToggleMeaning}
-          style={[styles.pill, { backgroundColor: showMeaning ? c.primarySoft : c.surface }]}
-        >
-          <Text style={{ color: c.primary, fontWeight: '600' }}>
-            {showMeaning ? 'Ẩn nghĩa' : 'Hiện nghĩa'}
-          </Text>
-        </Pressable>
-      </View>
-      {lines.map((l, i) => (
-        <Bubble
-          key={l.id}
-          line={l}
-          speakers={speakers}
-          showMeaning={showMeaning}
-          active={playing === i}
-          onPress={() => onPlayLine(l)}
-        />
-      ))}
-      {canListen ? (
-        <Text style={{ color: c.muted, textAlign: 'center' }}>Chạm vào một câu để nghe lại.</Text>
-      ) : null}
+      <TurnViewer lines={lines} speakers={speakers} canListen={canListen} autoPlay />
     </View>
   );
 }

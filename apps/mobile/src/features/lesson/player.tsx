@@ -62,7 +62,6 @@ export function LessonPlayer({
   const [chosen, setChosen] = useState<string | null>(null);
   const [picked, setPicked] = useState<number[]>([]);
   const [result, setResult] = useState<null | { correct: boolean }>(null);
-  const [showMeaning, setShowMeaning] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const step = currentStep(state);
@@ -104,8 +103,7 @@ export function LessonPlayer({
   // biome-ignore lint/correctness/useExhaustiveDependencies: chỉ phát một lần khi sang bước mới
   useEffect(() => {
     if (!step || !canListen) return;
-    if (step.kind === 'listen_all') playback.playFrom(0);
-    else if (step.kind === 'fill_blank' && step.line) playback.playLine(step.line);
+    if (step.kind === 'fill_blank' && step.line) playback.playLine(step.line);
     else if (step.kind === 'choose_reply') {
       const prev = context[context.length - 1];
       if (prev) playback.playLine(prev);
@@ -186,24 +184,12 @@ export function LessonPlayer({
   let body: ReactNode = null;
   if (step.kind === 'scene' && dialogue) body = <SceneStep dialogue={dialogue} />;
   else if (step.kind === 'listen_all')
-    body = (
-      <ListenAllStep
-        lines={lines}
-        speakers={speakers}
-        playing={playback.playing}
-        showMeaning={showMeaning}
-        onToggleMeaning={() => setShowMeaning((v) => !v)}
-        onPlayAll={() => playback.playFrom(0)}
-        onStop={playback.stop}
-        onPlayLine={playback.playLine}
-        canListen={canListen}
-      />
-    );
+    body = <ListenAllStep lines={lines} speakers={speakers} canListen={canListen} />;
   else if (step.kind === 'fill_blank' && line)
     body = (
       <FillBlankStep
         line={line}
-        context={context.slice(-2)}
+        context={context.slice(-1)}
         speakers={speakers}
         options={extras.blanks}
         chosen={chosen}
@@ -217,7 +203,7 @@ export function LessonPlayer({
     body = (
       <ChooseReplyStep
         line={line}
-        context={context}
+        context={context.slice(-2)}
         speakers={speakers}
         options={extras.replies}
         chosen={chosen}
@@ -261,13 +247,17 @@ export function LessonPlayer({
           <ProgressBar value={progress(state)} />
         </View>
       </View>
-      <ScrollView contentContainerStyle={styles.body} key={stepKey}>
-        {step.retry > 0 ? (
-          <Text style={{ color: c.accent, fontWeight: '600' }}>↺ Thử lại câu bạn làm sai</Text>
-        ) : null}
-        {body}
-        {error ? <Text style={{ color: c.danger }}>{error}</Text> : null}
-      </ScrollView>
+      {step.kind === 'listen_all' ? (
+        <View style={[styles.body, { flex: 1 }]}>{body}</View>
+      ) : (
+        <ScrollView contentContainerStyle={styles.body} key={stepKey}>
+          {step.retry > 0 ? (
+            <Text style={{ color: c.accent, fontWeight: '600' }}>↺ Thử lại câu bạn làm sai</Text>
+          ) : null}
+          {body}
+          {error ? <Text style={{ color: c.danger }}>{error}</Text> : null}
+        </ScrollView>
+      )}
 
       <View
         style={[
@@ -281,11 +271,13 @@ export function LessonPlayer({
             <Text style={[styles.fbTitle, { color: result.correct ? c.ok : c.danger }]}>
               {result.correct
                 ? `✓ ${PRAISE[state.index % PRAISE.length]}`
-                : '✗ Chưa đúng — câu đúng là:'}
+                : '✗ Chưa đúng, câu đúng là:'}
             </Text>
-            <Text style={{ color: c.text, fontSize: 16, lineHeight: 23, fontWeight: '600' }}>
-              {line.text}
-            </Text>
+            {!result.correct ? (
+              <Text style={{ color: c.text, fontSize: 16, lineHeight: 23, fontWeight: '600' }}>
+                {line.text}
+              </Text>
+            ) : null}
             <Text style={{ color: c.muted, lineHeight: 21 }}>{line.meaningVi}</Text>
             {line.noteVi ? (
               <Text style={[styles.note, { color: c.text, backgroundColor: c.primarySoft }]}>
