@@ -1,0 +1,35 @@
+[
+  {
+    "id": "meet-colleague",
+    "title": "Làm quen đồng nghiệp mới",
+    "level": "A1",
+    "aiRole": "a friendly coworker named Alex",
+    "userRole": "a new employee on their first day",
+    "goalVi": "Giới thiệu bản thân, hỏi về công việc và văn phòng",
+    "setting": "The office kitchen on the user's first day at a tech company.",
+    "keywords": ["name", "team", "where are you from", "what do you do"],
+    "opener": "Hi there! I don't think we've met. Are you new here?"
+  },
+  {
+    "id": "restaurant-order",
+    "title": "Gọi món ở nhà hàng",
+    "level": "A2",
+    "aiRole": "a waiter at a casual Italian restaurant",
+    "userRole": "a customer having dinner",
+    "goalVi": "Gọi đồ uống và món ăn, hỏi gợi ý, xin hoá đơn",
+    "setting": "A busy Italian restaurant on a Friday evening.",
+    "keywords": ["menu", "recommend", "I'll have", "the bill"],
+    "opener": "Good evening! Welcome in. Can I get you something to drink first?"
+  },
+  {
+    "id": "job-interview",
+    "title": "Phỏng vấn xin việc",
+    "level": "B1",
+    "aiRole": "a hiring manager at an international company",
+    "userRole": "a candidate for an office job",
+    "goalVi": "Giới thiệu kinh nghiệm, điểm mạnh và hỏi lại nhà tuyển dụng",
+    "setting": "A video job interview for a junior marketing position.",
+    "keywords": ["experience", "strengths", "teamwork", "why this company"],
+    "opener": "Thanks for joining us today. Could you start by telling me a little about yourself?"
+  }
+]

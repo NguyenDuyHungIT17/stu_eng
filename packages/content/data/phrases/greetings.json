@@ -1,0 +1,82 @@
+[
+  {
+    "id": "nice-to-meet-you",
+    "topicId": "greetings",
+    "text": "Nice to meet you.",
+    "ipa": "/naɪs tə miːt juː/",
+    "meaningVi": "Rất vui được gặp bạn.",
+    "example": "Hi, I'm Lan. Nice to meet you.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "how-is-it-going",
+    "topicId": "greetings",
+    "text": "How's it going?",
+    "ipa": "/haʊz ɪt ˈɡoʊɪŋ/",
+    "meaningVi": "Dạo này thế nào? / Mọi việc ổn chứ?",
+    "example": "Hey Tom, how's it going?",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "where-are-you-from",
+    "topicId": "greetings",
+    "text": "Where are you from?",
+    "ipa": "/wer ɑːr juː frʌm/",
+    "meaningVi": "Bạn đến từ đâu?",
+    "example": "Where are you from? — I'm from Vietnam.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "what-do-you-do",
+    "topicId": "greetings",
+    "text": "What do you do?",
+    "ipa": "/wʌt də jə duː/",
+    "meaningVi": "Bạn làm nghề gì?",
+    "example": "So, what do you do? — I'm an accountant.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "long-time-no-see",
+    "topicId": "greetings",
+    "text": "Long time no see!",
+    "ipa": "/lɔːŋ taɪm noʊ siː/",
+    "meaningVi": "Lâu rồi không gặp!",
+    "example": "Minh! Long time no see! How have you been?",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "let-me-introduce",
+    "topicId": "greetings",
+    "text": "Let me introduce you to...",
+    "ipa": "/let mi ˌɪntrəˈduːs juː tuː/",
+    "meaningVi": "Để tôi giới thiệu bạn với...",
+    "example": "Let me introduce you to my manager, Sarah.",
+    "register": "formal",
+    "level": "A2"
+  },
+  {
+    "id": "catch-you-later",
+    "topicId": "greetings",
+    "text": "Catch you later.",
+    "ipa": "/kætʃ jə ˈleɪtər/",
+    "meaningVi": "Hẹn gặp lại sau nhé.",
+    "example": "I have to go now. Catch you later!",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "it-was-great-talking",
+    "topicId": "greetings",
+    "text": "It was great talking to you.",
+    "ipa": "/ɪt wəz ɡreɪt ˈtɔːkɪŋ tə juː/",
+    "meaningVi": "Nói chuyện với bạn vui lắm.",
+    "example": "It was great talking to you. Let's keep in touch.",
+    "register": "neutral",
+    "level": "A2"
+  }
+]

@@ -1,6 +1,6 @@
 # PLAN – Ứng dụng học tiếng Anh giao tiếp
 
-*Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thiết kế kỹ thuật v1.1. Bắt đầu: 18/11/2026.*
+_Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thiết kế kỹ thuật v1.1. Bắt đầu: 18/11/2026._
 
 ## Cách dùng file này
 
@@ -9,19 +9,19 @@
   - `[ ]` chưa làm · `[~]` đang làm · `[x]` xong · `[-]` bỏ hoặc hoãn (ghi lý do)
 - Một việc chỉ được đánh `[x]` khi đạt **DoD** (cuối file).
 - Cuối mỗi ngày làm việc: cập nhật checkbox. Cuối mỗi tuần: cập nhật **Bảng tổng quan** và **Nhật ký tuần**.
-- Cột *Tham chiếu* trỏ tới mã yêu cầu trong BRD (FR-...) hoặc mục trong Thiết kế kỹ thuật (TK §...).
+- Cột _Tham chiếu_ trỏ tới mã yêu cầu trong BRD (FR-...) hoặc mục trong Thiết kế kỹ thuật (TK §...).
 
 ## Bảng tổng quan
 
-| Sprint | Mục tiêu | Ước tính | Bắt đầu | Kết thúc | Tiến độ | Trạng thái |
-| --- | --- | --- | --- | --- | --- | --- |
-| 0 | Nền móng + spike | 1,5 tuần | | | 0/24 | Chưa bắt đầu |
-| 1 | Từ vựng và ôn tập | 2 tuần | | | 0/18 | Chưa bắt đầu |
-| 2 | Ghi chú và tiến độ | 1 tuần | | | 0/14 | Chưa bắt đầu |
-| 3a | Chat bằng chữ | 1,5 tuần | | | 0/18 | Chưa bắt đầu |
-| 3b | Chat bằng giọng | 1,5 tuần | | | 0/13 | Chưa bắt đầu |
-| 4 | Hoàn thiện MVP | 1,5 tuần | | | 0/17 | Chưa bắt đầu |
-| **MVP** | | **~9 tuần (+20–30% dự phòng)** | | | **0/104** | |
+| Sprint  | Mục tiêu           | Ước tính                       | Bắt đầu | Kết thúc | Tiến độ              | Trạng thái                                          |
+| ------- | ------------------ | ------------------------------ | ------- | -------- | -------------------- | --------------------------------------------------- |
+| 0       | Nền móng + spike   | 1,5 tuần                       | 18/11   |          | 10/24 (+11 đang làm) | Chờ secrets GitHub, PR vào main, keystore, máy thật |
+| 1       | Từ vựng và ôn tập  | 2 tuần                         |         |          | 0/18                 | Chưa bắt đầu                                        |
+| 2       | Ghi chú và tiến độ | 1 tuần                         |         |          | 0/14                 | Chưa bắt đầu                                        |
+| 3a      | Chat bằng chữ      | 1,5 tuần                       |         |          | 0/18                 | Chưa bắt đầu                                        |
+| 3b      | Chat bằng giọng    | 1,5 tuần                       |         |          | 0/13                 | Chưa bắt đầu                                        |
+| 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17                 | Chưa bắt đầu                                        |
+| **MVP** |                    | **~9 tuần (+20–30% dự phòng)** |         |          | **0/104**            |                                                     |
 
 Mốc quan trọng:
 
@@ -35,12 +35,12 @@ Mốc quan trọng:
 
 ## Việc trước khi code
 
-| Mã | Việc | Trạng thái |
-| --- | --- | --- |
-| P-01 | Xác nhận 6 quyết định tạm ở BRD §10 | [ ] |
-| P-02 | Tạo tài khoản GitHub repo, Cloudflare | [ ] |
-| P-03 | Đăng ký khóa API miễn phí của ít nhất 2 nhà cung cấp LLM | [ ] |
-| P-04 | Chuẩn bị 2–3 điện thoại Android khác hãng để test | [ ] |
+| Mã   | Việc                                                     | Trạng thái                                                         |
+| ---- | -------------------------------------------------------- | ------------------------------------------------------------------ |
+| P-01 | Xác nhận 6 quyết định tạm ở BRD §10                      | [~] đã chốt package `com.engoats.mobile`; còn 6 quyết định BRD §10 |
+| P-02 | Tạo tài khoản GitHub repo, Cloudflare                    | [x] repo `stu_eng`, Cloudflare đã `wrangler login`                 |
+| P-03 | Đăng ký khóa API miễn phí của ít nhất 2 nhà cung cấp LLM | [ ]                                                                |
+| P-04 | Chuẩn bị 2–3 điện thoại Android khác hãng để test        | [ ]                                                                |
 
 ---
 
@@ -50,38 +50,38 @@ Mốc quan trọng:
 
 ### Hạ tầng repo
 
-- [ ] `S0-01` Khởi tạo monorepo: pnpm workspace, `.npmrc` (`node-linker=hoisted`), Turborepo, Biome, `tsconfig` strict dùng chung — TK §11
-- [ ] `S0-02` Tạo `apps/mobile` (Expo + Expo Router + NativeWind), chạy được trên development build — TK §11
-- [ ] `S0-03` Tạo `apps/api` (Hono, Cloudflare Workers), route `GET /health` — TK §7.1
-- [ ] `S0-04` Tạo `packages/shared` (Zod: `Level`, `ChatRequest`), import được từ cả mobile và api
-- [ ] `S0-05` Tạo `packages/content` khung: schema Zod cho topic/phrase/scenario, script `validate.ts`, `version.json`
-- [ ] `S0-06` Cấu hình test: Vitest cho api/shared/content, jest-expo cho mobile; mỗi nơi có 1 test mẫu chạy được
-- [ ] `S0-07` `.gitignore` (android/, .dev.vars, keystore), README hướng dẫn chạy
+- [x] `S0-01` Khởi tạo monorepo: pnpm workspace, `.npmrc` (`node-linker=hoisted`), Turborepo, Biome, `tsconfig` strict dùng chung — TK §11
+- [~] `S0-02` Tạo `apps/mobile` (Expo + Expo Router + NativeWind), chạy được trên development build — TK §11 _(22/11: chạy được bản debug trên máy ảo; còn máy thật + merge main)_
+- [x] `S0-03` Tạo `apps/api` (Hono, Cloudflare Workers), route `GET /health` — TK §7.1
+- [x] `S0-04` Tạo `packages/shared` (Zod: `Level`, `ChatRequest`), import được từ cả mobile và api
+- [x] `S0-05` Tạo `packages/content` khung: schema Zod cho topic/phrase/scenario, script `validate.ts`, `version.json`
+- [x] `S0-06` Cấu hình test: Vitest cho api/shared/content, jest-expo cho mobile; mỗi nơi có 1 test mẫu chạy được
+- [x] `S0-07` `.gitignore` (android/, .dev.vars, keystore), README hướng dẫn chạy
 
 ### CI/CD
 
-- [ ] `S0-08` `ci.yml`: install, Biome, typecheck, test, validate content — TK §10
+- [~] `S0-08` `ci.yml`: install, Biome, typecheck, test, validate content — TK §10
 - [ ] `S0-09` Tạo keystore, sao lưu 2 nơi, lưu vào GitHub Secrets — TK §10
-- [ ] `S0-10` Config plugin `with-release-signing.js` — TK §10
-- [ ] `S0-11` `android-apk.yml` build APK release đã ký — TK §10
-- [ ] `S0-12` Tạo D1 `dev` và `prod`, migration `0001_usage.sql` — TK §7.2
-- [ ] `S0-13` `api-deploy.yml`: migrate D1 + `wrangler deploy` (dev khi merge, prod khi tag)
-- [ ] `S0-14` Config `API_BASE_URL` theo môi trường trong `app.config.ts`
+- [x] `S0-10` Config plugin `with-release-signing.js` — TK §10
+- [~] `S0-11` `android-apk.yml` build APK release đã ký — TK §10
+- [~] `S0-12` Tạo D1 `dev` và `prod`, migration `0001_usage.sql` — TK §7.2 _(đã tạo 2 DB; dev đã migrate; prod chưa — migrate khi tag đầu tiên)_
+- [~] `S0-13` `api-deploy.yml`: migrate D1 + `wrangler deploy` (dev khi merge, prod khi tag) _(23/11: đã deploy dev bằng tay; workflow chưa chạy — cần secrets + merge)_
+- [x] `S0-14` Config `API_BASE_URL` theo môi trường trong `app.config.ts`
 
 ### Spike (ghi kết quả vào bảng "Kết quả spike")
 
-- [ ] `S0-15` **S1** – Stream SSE bằng `expo/fetch` trên APK release — TK §11.1
-- [ ] `S0-16` **S2** – STT tiếng Anh giọng Việt trên 2–3 máy
-- [ ] `S0-17` **S3** – TTS tiếng Anh offline, liệt kê giọng
-- [ ] `S0-18` **S4** – D1 đếm đúng khi 20 request song song; ghi hạn mức free D1/Workers
-- [ ] `S0-19` **S5** – Metro + pnpm + `@app/shared` khi build release
-- [ ] `S0-20` **S6** – Drizzle migration + FTS5 trên expo-sqlite
+- [~] `S0-15` **S1** – Stream SSE bằng `expo/fetch` trên APK release — TK §11.1
+- [~] `S0-16` **S2** – STT tiếng Anh giọng Việt trên 2–3 máy
+- [~] `S0-17` **S3** – TTS tiếng Anh offline, liệt kê giọng
+- [x] `S0-18` **S4** – D1 đếm đúng khi 20 request song song; ghi hạn mức free D1/Workers _(23/11: đạt trên D1 thật)_
+- [~] `S0-19` **S5** – Metro + pnpm + `@app/shared` khi build release
+- [~] `S0-20` **S6** – Drizzle migration + FTS5 trên expo-sqlite
 - [ ] `S0-21` **S7** – Hạn mức free và độ trễ token đầu của 2 nhà cung cấp LLM
 - [ ] `S0-22` **S8** – APK ký từ CI cài được trên máy thật, gọi `/health`
 
 ### Tổng kết sprint
 
-- [ ] `S0-23` Ghi các phiên bản công cụ đã chọn (Node, Expo SDK, JDK) vào README
+- [x] `S0-23` Ghi các phiên bản công cụ đã chọn (Node, Expo SDK, JDK) vào README
 - [ ] `S0-24` Cập nhật Thiết kế kỹ thuật/ADR nếu có spike thất bại → **Mốc M0**
 
 ---
@@ -232,11 +232,11 @@ Mốc quan trọng:
 
 ## Sau MVP (chưa chia việc chi tiết)
 
-| Sprint | Nội dung | Tham chiếu |
-| --- | --- | --- |
-| 5 | Bài nghe, tốc độ, transcript, nối âm/nói tắt, shadowing, bài phản xạ | FR-L-*, FR-S-01..03 |
-| 6 | Rảnh tay, bộ từ tự tạo + enrich, lưu câu AI thành thẻ, ghi chú → thẻ, lịch sử chat, sao lưu, bài tập điền từ/nghe gõ lại, phần nói trong kiểm tra đầu vào | FR-A-01b, FR-V-04b/06/07/08, FR-A-06b/08, FR-N-06, FR-U-03, FR-P-01b |
-| 7 | Đăng nhập, đồng bộ, chấm ngữ điệu, báo cáo tiến bộ, kịch bản tự tạo | P2 |
+| Sprint | Nội dung                                                                                                                                                  | Tham chiếu                                                           |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| 5      | Bài nghe, tốc độ, transcript, nối âm/nói tắt, shadowing, bài phản xạ                                                                                      | FR-L-*, FR-S-01..03                                                  |
+| 6      | Rảnh tay, bộ từ tự tạo + enrich, lưu câu AI thành thẻ, ghi chú → thẻ, lịch sử chat, sao lưu, bài tập điền từ/nghe gõ lại, phần nói trong kiểm tra đầu vào | FR-A-01b, FR-V-04b/06/07/08, FR-A-06b/08, FR-N-06, FR-U-03, FR-P-01b |
+| 7      | Đăng nhập, đồng bộ, chấm ngữ điệu, báo cáo tiến bộ, kịch bản tự tạo                                                                                       | P2                                                                   |
 
 Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử ở M4.
 
@@ -244,46 +244,52 @@ Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử
 
 ## Kết quả spike (Sprint 0)
 
-| Spike | Kết quả | Số liệu/ghi chú | Quyết định |
-| --- | --- | --- | --- |
-| S1 – SSE `expo/fetch` | | | |
-| S2 – STT trên máy thật | | Máy: ... | |
-| S3 – TTS offline | | Giọng có sẵn: ... | |
-| S4 – D1 quota | | Hạn mức free: ... | |
-| S5 – Metro + pnpm | | | |
-| S6 – Drizzle + FTS5 | | | |
-| S7 – Nhà cung cấp LLM | | Hạn mức/độ trễ: ... | |
-| S8 – APK ký từ CI | | | |
+| Spike                  | Kết quả                       | Số liệu/ghi chú                                                                                                                                                                                                         | Quyết định                                                                                                       |
+| ---------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| S1 – SSE `expo/fetch`  | Đạt phía server; chờ máy thật | API dev thật: `/dev/stream` byte đầu ~0,25 s, 11 token đến dần trong ~1,9 s (curl). Còn: đo bằng `expo/fetch` trên APK release                                                                                          |                                                                                                                  |
+| S2 – STT trên máy thật | Chờ máy thật                  | Máy: ...                                                                                                                                                                                                                |                                                                                                                  |
+| S3 – TTS offline       | Chờ máy thật                  | Giọng có sẵn: ...                                                                                                                                                                                                       |                                                                                                                  |
+| S4 – D1 quota          | Đạt                           | D1 dev thật (23/11): 20 lệnh `hit()` song song → trả về đúng 1..20, không trùng, tổng 20. Free: Workers 100.000 request/ngày (thấy trên dashboard), CPU 10 ms/request; D1 5 triệu dòng đọc, 100.000 dòng ghi/ngày, 5 GB | Giữ thiết kế đếm bằng 1 câu `INSERT … ON CONFLICT … RETURNING`; mỗi lượt chat tốn ~1–3 dòng ghi → dư sức cho MVP |
+| S5 – Metro + pnpm      | Đạt (bundle JS)               | `expo export --platform android` bundle được, import `@app/content`/`@app/shared` OK, không cần metro.config. Còn: build native release trên CI                                                                         | Giữ `node-linker=hoisted`; thêm `ws@8` ở gốc cho Miniflare                                                       |
+| S6 – Drizzle + FTS5    | Chờ máy thật (FTS5)           | Phần Drizzle migration làm ở S1-01                                                                                                                                                                                      |                                                                                                                  |
+| S7 – Nhà cung cấp LLM  | Chưa làm                      | Cần khóa API (P-03)                                                                                                                                                                                                     |                                                                                                                  |
+| S8 – APK ký từ CI      | Chưa làm                      | `expo prebuild` chạy được ở máy, plugin ký chèn đúng vào `app/build.gradle`. Cần push lên GitHub + secrets                                                                                                              |                                                                                                                  |
 
 ## Kiểm tra nghiệm thu P0 (điền ở Sprint 4)
 
-| Yêu cầu | Tiêu chí | Đạt |
-| --- | --- | --- |
-| FR-V-03 | Thẻ đã ôn không xuất hiện lại trước hạn | [ ] |
-| FR-V-02 | Phát âm offline (khi có giọng) / có hướng dẫn tải giọng | [ ] |
-| FR-V-05 | Số thẻ ôn hôm nay khớp thực tế; số cụm mới ≤ mục tiêu | [ ] |
-| FR-N-07 | Ghi chú tạo offline còn nguyên khi mở lại | [ ] |
-| FR-N-03 | Tìm kiếm < 1 giây với 1.000 ghi chú | [ ] |
-| FR-A-01a | Chữ đầu tiên ≤ 3 giây; AI đọc câu đầu trước khi stream xong | [ ] |
-| FR-A-01a | STT lỗi/không quyền → chuyển gõ chữ, không mất buổi | [ ] |
-| FR-A-04 | Tổng kết chỉ ra lỗi lặp lại của buổi đó | [ ] |
-| FR-A-07 | Hết lượt: thông báo rõ giờ làm mới, tính năng khác vẫn dùng được | [ ] |
-| FR-P-04 | Nhắc học đúng giờ, đổi giờ và tắt được | [ ] |
-| FR-U-05 | Xóa dữ liệu xóa sạch, app về trạng thái ban đầu | [ ] |
+| Yêu cầu  | Tiêu chí                                                         | Đạt |
+| -------- | ---------------------------------------------------------------- | --- |
+| FR-V-03  | Thẻ đã ôn không xuất hiện lại trước hạn                          | [ ] |
+| FR-V-02  | Phát âm offline (khi có giọng) / có hướng dẫn tải giọng          | [ ] |
+| FR-V-05  | Số thẻ ôn hôm nay khớp thực tế; số cụm mới ≤ mục tiêu            | [ ] |
+| FR-N-07  | Ghi chú tạo offline còn nguyên khi mở lại                        | [ ] |
+| FR-N-03  | Tìm kiếm < 1 giây với 1.000 ghi chú                              | [ ] |
+| FR-A-01a | Chữ đầu tiên ≤ 3 giây; AI đọc câu đầu trước khi stream xong      | [ ] |
+| FR-A-01a | STT lỗi/không quyền → chuyển gõ chữ, không mất buổi              | [ ] |
+| FR-A-04  | Tổng kết chỉ ra lỗi lặp lại của buổi đó                          | [ ] |
+| FR-A-07  | Hết lượt: thông báo rõ giờ làm mới, tính năng khác vẫn dùng được | [ ] |
+| FR-P-04  | Nhắc học đúng giờ, đổi giờ và tắt được                           | [ ] |
+| FR-U-05  | Xóa dữ liệu xóa sạch, app về trạng thái ban đầu                  | [ ] |
 
 ## Nhật ký quyết định
 
 Ghi mọi thay đổi so với BRD/Thiết kế kỹ thuật phát sinh khi làm.
 
-| Ngày | Quyết định | Lý do | Ảnh hưởng |
-| --- | --- | --- | --- |
-| 18/11/2026 | Áp dụng BRD v1.1 và Thiết kế kỹ thuật v1.1 | Cắt phạm vi MVP, sửa rủi ro kỹ thuật | Xem mục 0 của hai tài liệu |
+| Ngày       | Quyết định                                                                                     | Lý do                                                                       | Ảnh hưởng                             |
+| ---------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------- |
+| 18/11/2026 | Áp dụng BRD v1.1 và Thiết kế kỹ thuật v1.1                                                     | Cắt phạm vi MVP, sửa rủi ro kỹ thuật                                        | Xem mục 0 của hai tài liệu            |
+| 18/11/2026 | Expo SDK 58, TypeScript 6.0                                                                    | Bản stable mới nhất; template Expo dùng TS 6.0 (TS 7 chưa an toàn với Expo) | —                                     |
+| 18/11/2026 | Route mobile ở `apps/mobile/src/app`                                                           | Quy ước của Expo SDK 58                                                     | Khác đường dẫn TK §4                  |
+| 18/11/2026 | Biến môi trường `EXPO_PUBLIC_API_BASE_URL` thay cho `extra` trong app config                   | Cách chuẩn của Expo, tự nhúng lúc bundle                                    | —                                     |
+| 18/11/2026 | Test API dùng Vitest + `getPlatformProxy()` của wrangler, bỏ `@cloudflare/vitest-pool-workers` | Gói này deprecated, không hợp Vitest 5                                      | Test không chạy trong runtime workerd |
+| 18/11/2026 | NativeWind hoãn sang Sprint 1 (khi làm UI thật); Sprint 0 dùng StyleSheet                      | Giảm cấu hình khi chưa có màn hình thật                                     | S0-02 chưa có NativeWind              |
+| 18/11/2026 | Android package `com.engoats.mobile` (bạn đã chốt)                                             | Tên chính thức                                                              | **Không đổi sau khi phát hành**       |
 
 ## Nhật ký tuần
 
-| Tuần | Đã xong | Vướng mắc | Kế hoạch tuần tới |
-| --- | --- | --- | --- |
-| 1 | | | |
+| Tuần | Đã xong                                                                                                                                                                                                          | Vướng mắc                                                                                | Kế hoạch tuần tới                                                       |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| 1    | Monorepo, shared/content (schema + validate + 24 cụm mẫu, 3 kịch bản), API (`/health`, `/dev/stream`, D1 quota counter, cron), khung app Expo + màn spike, plugin ký APK, 3 workflow CI/CD, README. 42 test xanh | Máy dev chưa có JDK/Android SDK; chưa có tài khoản Cloudflare/GitHub, khóa LLM, máy test | Làm P-01..P-04, push repo lên GitHub, chạy spike trên máy thật, chốt M0 |
 
 ## Định nghĩa hoàn thành (DoD)
 
@@ -295,3 +301,129 @@ Một việc chỉ được đánh `[x]` khi:
 4. Tính năng thuộc nhóm offline đã thử khi bật chế độ máy bay.
 5. Đã thử trên ít nhất 1 máy thật (tính năng liên quan giọng nói: 2 máy).
 6. Nội dung mới đã qua `validate` và đã được duyệt thủ công.
+
+---
+
+## Nhật ký theo ngày
+
+Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ sprint và mã việc), đang chờ gì.
+
+### Ngày 18/11/2026
+
+**Đã làm (nhánh `feat/sprint-0`, 5 commit, 43 test xanh):**
+
+- Sprint 0: xong 9/24 việc: `S0-01`, `S0-03`, `S0-04`, `S0-05`, `S0-06`, `S0-07`, `S0-10`, `S0-14`, `S0-23`.
+- Monorepo pnpm + Turborepo + Biome, TypeScript 6.0, Expo SDK 58.
+- `packages/shared`: schema Zod cho chat, giải thích, tổng kết, quota, nội dung học.
+- `packages/content`: script kiểm tra nội dung; nội dung mẫu 3 chủ đề, 24 cụm từ, 3 kịch bản, 4 câu xếp trình độ (**chưa duyệt**).
+- `apps/api`: `/health`, `/dev/stream` (chỉ bật ở dev), bộ đếm quota D1, cron dọn bảng `usage`. Đã chạy thử `wrangler dev` ở máy.
+- `apps/mobile`: khung 5 tab, màn **Kiểm tra kỹ thuật** (spike S1, S2, S3, S6, S8), plugin ký APK (đã thử với `expo prebuild` thật), Metro bundle được.
+- CI/CD: `ci.yml`, `android-apk.yml`, `api-deploy.yml`. README hướng dẫn cấu hình.
+- Review độc lập toàn nhánh: 0 Critical, đã sửa 3 Important.
+
+**Còn dở:**
+
+| Sprint | Mã việc          | Đang dở ở đâu                                             | Cần gì để xong                                                |
+| ------ | ---------------- | --------------------------------------------------------- | ------------------------------------------------------------- |
+| 0      | `S0-02`          | App chưa chạy trên development build                      | Android Studio + điện thoại                                   |
+| 0      | `S0-08`          | CI chỉ mới chạy ở máy                                     | Repo GitHub, push code                                        |
+| 0      | `S0-09`          | Chưa tạo keystore                                         | JDK (có sẵn trong Android Studio); bạn tự tạo, sao lưu 2 nơi  |
+| 0      | `S0-11`          | Workflow build APK chưa chạy lần nào                      | Repo GitHub + secrets keystore                                |
+| 0      | `S0-12`, `S0-13` | Migration D1 đã viết, chưa tạo database thật, chưa deploy | Tài khoản Cloudflare                                          |
+| 0      | `S0-15` S1       | Có nút đo trên app và route `/dev/stream`                 | APK + API đã deploy + điện thoại                              |
+| 0      | `S0-16` S2       | Có nút thử STT trên app                                   | 2–3 điện thoại khác hãng                                      |
+| 0      | `S0-17` S3       | Có nút thử TTS trên app                                   | Điện thoại (bật chế độ máy bay)                               |
+| 0      | `S0-18` S4       | Đạt trên D1 ở máy (20 request song song)                  | Tài khoản Cloudflare để thử D1 thật                           |
+| 0      | `S0-19` S5       | Bundle JS đạt                                             | Build native release thành công (`S0-11`)                     |
+| 0      | `S0-20` S6       | Có nút thử FTS5 trên app                                  | Điện thoại                                                    |
+| 0      | `S0-21` S7       | Chưa làm                                                  | 2 khóa API AI miễn phí                                        |
+| 0      | `S0-22` S8       | Chưa làm                                                  | APK + API đã deploy                                           |
+| 0      | `S0-24`          | Chưa làm                                                  | Kết quả các spike                                             |
+| 1      | Toàn bộ          | Chưa bắt đầu (chờ các spike S3, S6)                       | Có thể viết trước phần logic; kiểm tra `S1-18` cần điện thoại |
+
+**Đang chờ bạn:**
+
+- [ ] P-01: xác nhận 6 quyết định tạm ở BRD §10 và **chốt tên package Android** (đang tạm là `com.englishapp.mobile`; chốt trước khi tạo keystore)
+- [ ] P-02: tạo repo GitHub và gửi URL; tạo tài khoản Cloudflare rồi chạy `pnpm exec wrangler login` trong `apps/api`
+- [ ] P-03: đăng ký 2 khóa API AI miễn phí, đặt vào `apps/api/.dev.vars` (không gửi khóa qua chat)
+- [ ] P-04: chuẩn bị ít nhất 1 điện thoại Android (tốt nhất 2–3 máy khác hãng), bật USB debugging
+- [ ] Cài Android Studio trên máy tính (có kèm JDK 17 + Android SDK)
+- [ ] Duyệt 24 cụm từ mẫu trong `packages/content/data/phrases/`
+
+**Lỗi nhỏ để sau (từ review):**
+
+- ~~Bộ đọc SSE chưa xử lý `\r` đơn, BOM, event rỗng~~ → đã sửa 22/11 (`a62ddb2`, thêm 3 test).
+- ~~Màn Kiểm tra kỹ thuật thiếu try/catch ở nút liệt kê giọng TTS và nút bắt đầu STT~~ → đã sửa 22/11 (`a62ddb2`).
+
+**Bước tiếp theo:** khi có repo và Cloudflare thì push code, deploy API. Khi có Android Studio và điện thoại thì chạy app, làm các spike, chốt mốc M0, rồi sang Sprint 1.
+
+### Ngày 19–22/11/2026
+
+**Đã làm (nhánh `eng_hungnd`):**
+
+- P-01 (một phần): chốt package Android `com.engoats.mobile` (`9ce1e39`).
+- P-02: có repo GitHub `NguyenDuyHungIT17/stu_eng`; Cloudflare đã `wrangler login`.
+- `S0-12`: tạo D1 `english-app-quota-dev` và `english-app-quota-prod`, điền `database_id` (`2fe1ce6`). D1 dev đã chạy migration (`wrangler d1 migrations list --remote` báo không còn migration nào); **D1 prod chưa migrate**.
+- Cài Android Studio; `expo prebuild` + Gradle build được `app-debug.apk`, **chạy được trên máy ảo** (`S0-02` gần xong).
+- Sửa lỗi build Windows: đường dẫn C++ của `react-native-gesture-handler` vượt 260 ký tự → gỡ khỏi `package.json` (`baa23bf`) và tắt autolinking trong `apps/mobile/react-native.config.js` (**file này chưa commit**).
+- Thêm `LENH.md` tổng hợp lệnh thường dùng.
+
+**Phát hiện khi kiểm tra 22/11:**
+
+- `origin/main` vẫn chỉ có commit docs đầu tiên → `ci.yml`, `android-apk.yml`, `api-deploy.yml` chưa chạy trên GitHub.
+- Nhánh `eng_hungnd` đi trước `origin` 1 commit (`baa23bf` chưa push).
+- Worker `english-app-api` chưa tồn tại trên Cloudflare (chưa deploy lần nào).
+- Chưa có keystore release, chưa có `apps/api/.dev.vars` (khóa LLM).
+- Bản đã chạy là **debug**, spike S1/S5/S8 yêu cầu **release đã ký**.
+
+**Checklist hoàn thành Sprint 0 (theo thứ tự):**
+
+| #   | Việc                                                                                                                                                                | Mã                        | Ai làm                     |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | -------------------------- |
+| 1   | Commit `react-native.config.js`, push nhánh `eng_hungnd`                                                                                                            | `S0-02`                   | Claude/bạn                 |
+| 2   | Thêm secret `CLOUDFLARE_API_TOKEN` vào GitHub (Account ID và URL dev đã để trong code, 23/11)                                                                       | `S0-13`                   | Bạn                        |
+| 3   | Mở PR `eng_hungnd` → `main`, sửa đến khi `ci.yml` xanh, merge                                                                                                       | `S0-08`                   | Claude/bạn                 |
+| 4   | Merge kích hoạt `api-deploy.yml` → API dev deploy, kiểm tra `GET /health`                                                                                           | `S0-13`, `S0-12`          | Tự động                    |
+| 5   | Tạo keystore release (`keytool`), sao lưu 2 nơi, thêm 4 secrets `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD` | `S0-09`                   | Bạn (Claude hướng dẫn)     |
+| 6   | Chạy `android-apk.yml` → APK release đã ký                                                                                                                          | `S0-11`, `S0-19` (S5)     | Tự động                    |
+| 7   | Cài APK lên **điện thoại thật**, gọi `/health`                                                                                                                      | `S0-22` (S8), `S0-02`     | Bạn                        |
+| 8   | Trên màn Kiểm tra kỹ thuật: đo SSE, TTS (chế độ máy bay), FTS5                                                                                                      | `S0-15`, `S0-17`, `S0-20` | Bạn (máy ảo đo sơ bộ được) |
+| 9   | Thử STT giọng Việt trên 2–3 máy thật                                                                                                                                | `S0-16` (S2)              | Bạn                        |
+| 10  | Kiểm tra hạn mức free D1/Workers thật; chạy 20 request song song lên API dev                                                                                        | `S0-18` (S4)              | Claude                     |
+| 11  | Đăng ký 2 khóa LLM free, đặt vào `.dev.vars` + `wrangler secret`; đo hạn mức và độ trễ token đầu                                                                    | `S0-21` (S7), P-03        | Bạn lấy khóa, Claude đo    |
+| 12  | Migrate D1 prod (tự động khi tag, hoặc chạy tay)                                                                                                                    | `S0-12`                   | Claude/bạn                 |
+| 13  | Điền bảng "Kết quả spike", cập nhật TK/ADR nếu spike nào thất bại → **M0**                                                                                          | `S0-24`                   | Claude                     |
+
+**Đang chờ bạn:** keystore (#5), secrets GitHub (#2, #5), ít nhất 1 điện thoại thật (#7–9), 2 khóa LLM (#11), 6 quyết định BRD §10.
+
+### Ngày 23/11/2026
+
+**Đã làm:**
+
+- Cloudflare: đăng ký subdomain `nguyenduyhungit17.workers.dev`; deploy API dev bằng tay → `https://english-app-api.nguyenduyhungit17.workers.dev` (`/health` 200, `/dev/stream` chạy).
+- Spike S4 đạt trên D1 thật (`S0-18` xong). Spike S1 đạt phía server.
+- Sửa 2 lỗi nhỏ từ review (bộ đọc SSE, try/catch màn spike) — `a62ddb2`.
+- `apps/mobile/.env.local` (không commit) trỏ app build ở máy tới API dev thật.
+
+**Checklist cập nhật:** #1 xong, #10 xong; #4 deploy dev đã làm tay (workflow vẫn cần chạy sau merge).
+
+**Đang chờ bạn:** secret `CLOUDFLARE_API_TOKEN` (#2; Account ID và URL dev đã đưa vào code vì không bí mật), mở PR và merge (#3), keystore (#5), điện thoại thật, 2 khóa LLM, 6 quyết định BRD §10.
+
+---
+
+## Cần chuẩn bị để hoàn thành toàn bộ MVP
+
+Danh sách tổng hợp những thứ ngoài code cần có. Đánh dấu khi đã có.
+
+| #   | Cần có                                                                      | Dùng cho                                 | Sprint       | Đã có            |
+| --- | --------------------------------------------------------------------------- | ---------------------------------------- | ------------ | ---------------- |
+| 1   | Quyết định BRD §10 + tên package Android                                    | Toàn dự án, keystore                     | 0            | [~] package xong |
+| 2   | Repo GitHub (free)                                                          | CI, build APK                            | 0            | [x]              |
+| 3   | Tài khoản Cloudflare (free)                                                 | API, D1                                  | 0, 3a        | [x]              |
+| 4   | Android Studio (JDK 17 + Android SDK)                                       | Build và chạy app trên máy               | 0 → 4        | [x]              |
+| 5   | 1 điện thoại Android (tốt nhất 2–3 máy khác hãng)                           | Spike, kiểm tra từng sprint              | 0 → 4        | [ ]              |
+| 6   | Keystore + mật khẩu, sao lưu 2 nơi                                          | Ký APK phát hành                         | 0            | [ ]              |
+| 7   | 2 khóa API AI miễn phí                                                      | Spike S7, hội thoại AI                   | 0, 3a        | [ ]              |
+| 8   | Người duyệt nội dung tiếng Anh                                              | Duyệt cụm từ, kịch bản, câu xếp trình độ | 1, 3a, 3b, 4 | [ ]              |
+| 9   | Nội dung: 60 cụm (S1) → 200 cụm (S4); 3 → 10 kịch bản; ~30 câu xếp trình độ | Học, chat, onboarding                    | 1, 3a, 3b, 4 | [ ]              |
+| 10  | 5–10 người thử + mẫu khảo sát                                               | Mốc M4                                   | 4            | [ ]              |

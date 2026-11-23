@@ -1,0 +1,82 @@
+[
+  {
+    "id": "table-for-two",
+    "topicId": "restaurant",
+    "text": "A table for two, please.",
+    "ipa": "/ə ˈteɪbəl fər tuː pliːz/",
+    "meaningVi": "Cho tôi một bàn hai người.",
+    "example": "Hi, a table for two, please.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "can-i-see-the-menu",
+    "topicId": "restaurant",
+    "text": "Can I see the menu?",
+    "ipa": "/kən aɪ siː ðə ˈmenjuː/",
+    "meaningVi": "Cho tôi xem thực đơn được không?",
+    "example": "Excuse me, can I see the menu?",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "ill-have-the",
+    "topicId": "restaurant",
+    "text": "I'll have the...",
+    "ipa": "/aɪl hæv ðə/",
+    "meaningVi": "Tôi sẽ gọi món...",
+    "example": "I'll have the chicken salad, please.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "what-do-you-recommend",
+    "topicId": "restaurant",
+    "text": "What do you recommend?",
+    "ipa": "/wʌt də jə ˌrekəˈmend/",
+    "meaningVi": "Bạn gợi ý món gì?",
+    "example": "It's my first time here. What do you recommend?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "could-i-get-the-bill",
+    "topicId": "restaurant",
+    "text": "Could I get the bill, please?",
+    "ipa": "/kʊd aɪ ɡet ðə bɪl pliːz/",
+    "meaningVi": "Cho tôi xin hoá đơn.",
+    "example": "We're done. Could I get the bill, please?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "for-here-or-to-go",
+    "topicId": "restaurant",
+    "text": "For here or to go?",
+    "ipa": "/fər hɪr ɔːr tə ɡoʊ/",
+    "meaningVi": "Dùng tại chỗ hay mang đi?",
+    "example": "One latte. — For here or to go?",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "im-allergic-to",
+    "topicId": "restaurant",
+    "text": "I'm allergic to...",
+    "ipa": "/aɪm əˈlɜːrdʒɪk tuː/",
+    "meaningVi": "Tôi bị dị ứng với...",
+    "example": "Does this have peanuts? I'm allergic to nuts.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "keep-the-change",
+    "topicId": "restaurant",
+    "text": "Keep the change.",
+    "ipa": "/kiːp ðə tʃeɪndʒ/",
+    "meaningVi": "Khỏi thối lại (tiền thừa).",
+    "example": "Here's twenty. Keep the change.",
+    "register": "casual",
+    "level": "A2"
+  }
+]

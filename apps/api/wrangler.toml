@@ -1,0 +1,29 @@
+name = "english-app-api"
+main = "src/index.ts"
+account_id = "d49c8beaa7239ffba8eddd424e65ac87" # không bí mật; token mới là bí mật (GitHub Secrets)
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+APP_ENV = "dev" # wrangler dev ở máy và worker dev trên Cloudflare
+CHAT_PER_DEVICE = "40"
+ASSIST_PER_DEVICE = "20"
+REQ_PER_IP = "150"
+GLOBAL_DAILY = "1500"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "english-app-quota-dev"
+database_id = "baa925d9-0dad-43aa-9cec-08cfede114f9"
+migrations_dir = "migrations"
+
+[triggers]
+crons = ["0 18 * * *"] # 01:00 giờ Việt Nam: dọn bảng usage
+
+[env.prod]
+name = "english-app-api-prod"
+vars = { APP_ENV = "prod", CHAT_PER_DEVICE = "40", ASSIST_PER_DEVICE = "20", REQ_PER_IP = "150", GLOBAL_DAILY = "1500" }
+d1_databases = [
+  { binding = "DB", database_name = "english-app-quota-prod", database_id = "ebbe30e7-5094-48c6-8f5a-d97730350d23", migrations_dir = "migrations" }
+]
+triggers = { crons = ["0 18 * * *"] }

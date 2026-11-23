@@ -1,0 +1,5 @@
+[
+  { "id": "greetings", "title": "Làm quen và chào hỏi", "level": "A1", "sortOrder": 1 },
+  { "id": "restaurant", "title": "Ở nhà hàng, quán cà phê", "level": "A2", "sortOrder": 2 },
+  { "id": "meetings", "title": "Họp và trao đổi công việc", "level": "B1", "sortOrder": 3 }
+]

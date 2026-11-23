@@ -1,0 +1,38 @@
+[
+  {
+    "id": "pl-a1-1",
+    "level": "A1",
+    "kind": "read_choose",
+    "prompt": "Where are you from?",
+    "questionVi": "Câu này có nghĩa là gì?",
+    "options": ["Bạn đang ở đâu?", "Bạn đến từ đâu?", "Bạn đi đâu vậy?", "Bạn sống với ai?"],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-a2-1",
+    "level": "A2",
+    "kind": "listen_choose",
+    "prompt": "Could I get the bill, please?",
+    "questionVi": "Người nói đang muốn gì?",
+    "options": ["Gọi thêm món", "Đặt bàn", "Xin hoá đơn", "Hỏi đường"],
+    "answerIndex": 2
+  },
+  {
+    "id": "pl-b1-1",
+    "level": "B1",
+    "kind": "read_choose",
+    "prompt": "Let's circle back to that later.",
+    "questionVi": "Người nói muốn làm gì?",
+    "options": ["Kết thúc cuộc họp", "Quay lại vấn đề đó sau", "Đi một vòng", "Đồng ý ngay"],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b2-1",
+    "level": "B2",
+    "kind": "listen_choose",
+    "prompt": "I'm not entirely convinced this is the best way forward.",
+    "questionVi": "Thái độ của người nói là gì?",
+    "options": ["Hoàn toàn đồng ý", "Còn nghi ngờ, chưa đồng ý hẳn", "Tức giận", "Không quan tâm"],
+    "answerIndex": 1
+  }
+]

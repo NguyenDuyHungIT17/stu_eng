@@ -1,0 +1,82 @@
+[
+  {
+    "id": "lets-get-started",
+    "topicId": "meetings",
+    "text": "Let's get started.",
+    "ipa": "/lets ɡet ˈstɑːrtɪd/",
+    "meaningVi": "Chúng ta bắt đầu nhé.",
+    "example": "OK everyone, let's get started.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "could-you-clarify",
+    "topicId": "meetings",
+    "text": "Could you clarify that?",
+    "ipa": "/kʊd juː ˈklerəfaɪ ðæt/",
+    "meaningVi": "Bạn có thể nói rõ hơn được không?",
+    "example": "Sorry, could you clarify that last point?",
+    "register": "formal",
+    "level": "B1"
+  },
+  {
+    "id": "i-see-your-point-but",
+    "topicId": "meetings",
+    "text": "I see your point, but...",
+    "ipa": "/aɪ siː jɔːr pɔɪnt bʌt/",
+    "meaningVi": "Tôi hiểu ý bạn, nhưng...",
+    "example": "I see your point, but the deadline is too tight.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "lets-circle-back",
+    "topicId": "meetings",
+    "text": "Let's circle back to that later.",
+    "ipa": "/lets ˈsɜːrkəl bæk tə ðæt ˈleɪtər/",
+    "meaningVi": "Mình quay lại vấn đề đó sau nhé.",
+    "example": "Good question. Let's circle back to that later.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "on-the-same-page",
+    "topicId": "meetings",
+    "text": "Are we on the same page?",
+    "ipa": "/ɑːr wiː ɑːn ðə seɪm peɪdʒ/",
+    "meaningVi": "Chúng ta đã hiểu giống nhau chưa?",
+    "example": "Before we move on, are we on the same page?",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "to-sum-up",
+    "topicId": "meetings",
+    "text": "To sum up...",
+    "ipa": "/tə sʌm ʌp/",
+    "meaningVi": "Tóm lại là...",
+    "example": "To sum up, we'll launch in March.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "ill-follow-up",
+    "topicId": "meetings",
+    "text": "I'll follow up by email.",
+    "ipa": "/aɪl ˈfɑːloʊ ʌp baɪ ˈiːmeɪl/",
+    "meaningVi": "Tôi sẽ gửi email trao đổi tiếp.",
+    "example": "Thanks everyone. I'll follow up by email.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "sorry-to-interrupt",
+    "topicId": "meetings",
+    "text": "Sorry to interrupt, but...",
+    "ipa": "/ˈsɑːri tu ˌɪntəˈrʌpt bʌt/",
+    "meaningVi": "Xin lỗi đã ngắt lời, nhưng...",
+    "example": "Sorry to interrupt, but we're running out of time.",
+    "register": "formal",
+    "level": "B1"
+  }
+]
