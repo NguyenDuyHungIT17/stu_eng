@@ -7,6 +7,7 @@ import { useColors } from '@/components/theme';
 import { Card } from '@/components/ui';
 import { useDb } from '@/db/client';
 import { getDailyNewLimit, getLevel } from '@/db/settings';
+import { useStudyTimer } from '@/features/progress/use-study-timer';
 import {
   ChooseMeaningExercise,
   FlipExercise,
@@ -35,6 +36,7 @@ import { useTts } from '@/services/use-tts';
 export default function ReviewScreen() {
   const db = useDb();
   const tts = useTts();
+  useStudyTimer(db);
   const [session, setSession] = useState<SessionState | null>(null);
   const [error, setError] = useState<string | null>(null);
 

@@ -1,4 +1,4 @@
-import { gte } from 'drizzle-orm';
+import { gte, sql } from 'drizzle-orm';
 import { dailyActivity } from '@/db/schema';
 import type { Db } from '@/db/types';
 import { addLocalDays, localDayKey } from '@/lib/day';
@@ -39,4 +39,17 @@ export function getStreak(db: Db, now: number, maxDays = 3660): Streak {
   const from = localDayKey(addLocalDays(now, -maxDays));
   const rows = db.select().from(dailyActivity).where(gte(dailyActivity.day, from)).all();
   return computeStreak(rows, now);
+}
+
+/** Cộng thời gian học vào ngày (giờ máy) của `now` (S2-09). Bỏ qua giá trị ≤ 0. */
+export function addStudySeconds(db: Db, seconds: number, now: number): void {
+  const s = Math.floor(seconds);
+  if (!(s > 0)) return;
+  db.insert(dailyActivity)
+    .values({ day: localDayKey(now), studySeconds: s })
+    .onConflictDoUpdate({
+      target: dailyActivity.day,
+      set: { studySeconds: sql`${dailyActivity.studySeconds} + ${s}` },
+    })
+    .run();
 }

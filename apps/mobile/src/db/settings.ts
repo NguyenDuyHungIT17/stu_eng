@@ -10,10 +10,14 @@ export const SettingKey = {
   dailyNewLimit: 'daily_new_limit',
   ttsVoice: 'tts_voice',
   ttsRate: 'tts_rate',
+  dailyMinutesGoal: 'daily_minutes_goal',
 } as const;
 export type SettingKey = (typeof SettingKey)[keyof typeof SettingKey];
 
 export const DEFAULT_DAILY_NEW_LIMIT = 10;
+export const DEFAULT_DAILY_MINUTES_GOAL = 10;
+export const NEW_LIMIT_CHOICES = [5, 10, 15, 20] as const;
+export const MINUTES_GOAL_CHOICES = [5, 10, 15, 20, 30] as const;
 /** Chưa có bài xếp trình độ (Sprint 4) thì mở toàn bộ nội dung, học theo thứ tự chủ đề. */
 export const DEFAULT_LEVEL: Level = 'B2';
 
@@ -33,13 +37,22 @@ export function setSetting(db: Db, key: SettingKey, value: string): void {
     .run();
 }
 
-/** Số cụm mới tối đa mỗi ngày (FR-V-05). Giá trị hỏng thì dùng mặc định. */
-export function getDailyNewLimit(db: Db): number {
-  const raw = getSetting(db, SettingKey.dailyNewLimit);
-  // Lưu ý: Number(null) = 0, nên phải kiểm tra thiếu giá trị trước.
-  if (raw === null || raw.trim() === '') return DEFAULT_DAILY_NEW_LIMIT;
+/** Đọc số nguyên ≥ 0; thiếu hoặc hỏng thì dùng `fallback`. Lưu ý: Number(null) = 0. */
+function getIntSetting(db: Db, key: SettingKey, fallback: number): number {
+  const raw = getSetting(db, key);
+  if (raw === null || raw.trim() === '') return fallback;
   const n = Number(raw);
-  return Number.isInteger(n) && n >= 0 ? n : DEFAULT_DAILY_NEW_LIMIT;
+  return Number.isInteger(n) && n >= 0 ? n : fallback;
+}
+
+/** Số cụm mới tối đa mỗi ngày (FR-V-05, FR-P-02). */
+export function getDailyNewLimit(db: Db): number {
+  return getIntSetting(db, SettingKey.dailyNewLimit, DEFAULT_DAILY_NEW_LIMIT);
+}
+
+/** Mục tiêu số phút học mỗi ngày (FR-P-02). */
+export function getDailyMinutesGoal(db: Db): number {
+  return getIntSetting(db, SettingKey.dailyMinutesGoal, DEFAULT_DAILY_MINUTES_GOAL);
 }
 
 export function getLevel(db: Db): Level {

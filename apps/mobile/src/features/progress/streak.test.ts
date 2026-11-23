@@ -1,6 +1,6 @@
 import { dailyActivity } from '@/db/schema';
 import { createTestDb } from '@/db/test-db';
-import { computeStreak, type DayActivity, getStreak, isActiveDay } from './streak';
+import { addStudySeconds, computeStreak, type DayActivity, getStreak, isActiveDay } from './streak';
 
 const d = (day: string, reviews = 1, newCards = 0, chatSessions = 0): DayActivity => ({
   day,
@@ -63,5 +63,22 @@ describe('getStreak', () => {
       ])
       .run();
     expect(getStreak(db, at(2026, 11, 23))).toEqual({ current: 2, todayDone: true });
+  });
+});
+
+describe('addStudySeconds (S2-09)', () => {
+  it('cộng dồn theo ngày, bỏ qua giá trị không hợp lệ, không ảnh hưởng streak', () => {
+    const db = createTestDb();
+    addStudySeconds(db, 30.7, at(2026, 11, 23));
+    addStudySeconds(db, 45, at(2026, 11, 23, 22));
+    addStudySeconds(db, -5, at(2026, 11, 23));
+    addStudySeconds(db, Number.NaN, at(2026, 11, 23));
+    addStudySeconds(db, 10, at(2026, 11, 24));
+    expect(db.select().from(dailyActivity).all()).toEqual([
+      expect.objectContaining({ day: '2026-11-23', studySeconds: 75, reviews: 0 }),
+      expect.objectContaining({ day: '2026-11-24', studySeconds: 10 }),
+    ]);
+    // Chỉ mở màn học mà không làm thẻ nào thì chưa tính là "có học".
+    expect(getStreak(db, at(2026, 11, 24)).current).toBe(0);
   });
 });
