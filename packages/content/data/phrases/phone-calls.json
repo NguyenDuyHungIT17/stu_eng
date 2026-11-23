@@ -1,0 +1,252 @@
+[
+  {
+    "id": "pc-front-desk-how-can-i-help",
+    "topicId": "phone-calls",
+    "text": "Hello, this is the front desk. How can I help you?",
+    "ipa": "/həˈloʊ ðɪs ɪz ðə frʌnt dɛsk haʊ kən aɪ hɛlp juː/",
+    "meaningVi": "Xin chào, lễ tân xin nghe. Tôi có thể giúp gì cho anh/chị ạ?",
+    "example": "A: (phone rings) — B: Hello, this is the front desk. How can I help you?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "pc-could-i-speak-to",
+    "topicId": "phone-calls",
+    "text": "Hi, could I speak to Mr. Jones, please?",
+    "ipa": "/haɪ kʊd aɪ spiːk tə ˈmɪstər dʒoʊnz pliːz/",
+    "meaningVi": "Chào chị, cho tôi gặp ông Jones được không ạ?",
+    "example": "A: Good morning, Smith and Company. — B: Hi, could I speak to Mr. Jones, please?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "pc-may-i-ask-whos-calling",
+    "topicId": "phone-calls",
+    "text": "May I ask who's calling, please?",
+    "ipa": "/meɪ aɪ æsk huːz ˈkɔːlɪŋ pliːz/",
+    "meaningVi": "Xin hỏi ai đang gọi đến ạ?",
+    "example": "A: I'd like to speak to the manager. — B: Certainly. May I ask who's calling, please?",
+    "register": "formal",
+    "level": "B1"
+  },
+  {
+    "id": "pc-put-you-through",
+    "topicId": "phone-calls",
+    "text": "Hold on a second, I'll put you through to her.",
+    "ipa": "/hoʊld ɑːn ə ˈsɛkənd aɪl pʊt juː θruː tə hɜːr/",
+    "meaningVi": "Anh chờ một chút, tôi sẽ nối máy cho anh gặp chị ấy.",
+    "example": "A: Is Ms. Lee in today? — B: Yes, she is. Hold on a second, I'll put you through to her.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "pc-not-available-take-message",
+    "topicId": "phone-calls",
+    "text": "I'm sorry, he's not available right now. Can I take a message?",
+    "ipa": "/aɪm ˈsɑːri hiːz nɑːt əˈveɪləbəl raɪt naʊ kən aɪ teɪk ə ˈmɛsɪdʒ/",
+    "meaningVi": "Xin lỗi, hiện giờ anh ấy không nghe máy được. Anh có muốn nhắn lại gì không ạ?",
+    "example": "A: Can I talk to David? — B: I'm sorry, he's not available right now. Can I take a message?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "pc-ask-her-to-call-back",
+    "topicId": "phone-calls",
+    "text": "Could you ask her to call me back when she gets a chance?",
+    "ipa": "/kʊd juː æsk hɜːr tə kɔːl miː bæk wɛn ʃiː ɡɛts ə tʃæns/",
+    "meaningVi": "Nhờ anh nhắn cô ấy khi nào rảnh thì gọi lại cho tôi nhé.",
+    "example": "A: She's in a meeting at the moment. — B: Okay. Could you ask her to call me back when she gets a chance?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "pc-youre-breaking-up",
+    "topicId": "phone-calls",
+    "text": "Sorry, you're breaking up. I can barely hear you.",
+    "ipa": "/ˈsɑːri jʊr ˈbreɪkɪŋ ʌp aɪ kən ˈbɛrli hɪr juː/",
+    "meaningVi": "Xin lỗi, tiếng bạn cứ bị ngắt quãng, mình gần như không nghe thấy gì.",
+    "example": "A: So I was thinking we could... — B: Sorry, you're breaking up. I can barely hear you.",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "pc-signal-is-bad",
+    "topicId": "phone-calls",
+    "text": "The signal is really bad here. Can I call you back in five minutes?",
+    "ipa": "/ðə ˈsɪɡnəl ɪz ˈrɪli bæd hɪr kən aɪ kɔːl juː bæk ɪn faɪv ˈmɪnɪts/",
+    "meaningVi": "Ở đây sóng yếu quá. Năm phút nữa mình gọi lại cho bạn được không?",
+    "example": "A: Hello? Are you still there? — B: The signal is really bad here. Can I call you back in five minutes?",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "pc-could-you-speak-up",
+    "topicId": "phone-calls",
+    "text": "Could you speak up a little? It's really noisy where I am.",
+    "ipa": "/kʊd juː spiːk ʌp ə ˈlɪtəl ɪts ˈrɪli ˈnɔɪzi wɛr aɪ æm/",
+    "meaningVi": "Bạn nói to lên một chút được không? Chỗ mình ồn quá.",
+    "example": "A: I said the party starts at eight. — B: Could you speak up a little? It's really noisy where I am.",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "pc-repeat-more-slowly",
+    "topicId": "phone-calls",
+    "text": "Sorry, could you repeat that a bit more slowly, please?",
+    "ipa": "/ˈsɑːri kʊd juː rɪˈpiːt ðæt ə bɪt mɔːr ˈsloʊli pliːz/",
+    "meaningVi": "Xin lỗi, anh nhắc lại chậm hơn một chút được không ạ?",
+    "example": "A: Your booking number is 4-7-2-9-1-8. — B: Sorry, could you repeat that a bit more slowly, please?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "pc-spell-your-last-name",
+    "topicId": "phone-calls",
+    "text": "Could you spell your last name for me, please?",
+    "ipa": "/kʊd juː spɛl jʊr læst neɪm fɔːr miː pliːz/",
+    "meaningVi": "Anh đánh vần giúp tôi họ của anh được không ạ?",
+    "example": "A: My name is Nguyen Van Nam. — B: Thank you. Could you spell your last name for me, please?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "pc-returning-your-call",
+    "topicId": "phone-calls",
+    "text": "Hi, I'm returning your call from this morning.",
+    "ipa": "/haɪ aɪm rɪˈtɜːrnɪŋ jʊr kɔːl frəm ðɪs ˈmɔːrnɪŋ/",
+    "meaningVi": "Chào anh, sáng nay anh có gọi cho tôi nên giờ tôi gọi lại.",
+    "example": "A: Hello, Mark speaking. — B: Hi Mark, it's Hoa. I'm returning your call from this morning.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "pc-sorry-i-missed-your-call",
+    "topicId": "phone-calls",
+    "text": "Sorry I missed your call. I was in a meeting.",
+    "ipa": "/ˈsɑːri aɪ mɪst jʊr kɔːl aɪ wəz ɪn ə ˈmiːtɪŋ/",
+    "meaningVi": "Xin lỗi mình lỡ cuộc gọi của bạn, lúc đó mình đang họp.",
+    "example": "A: Hey, I tried calling you earlier. — B: Sorry I missed your call. I was in a meeting.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "pc-wrong-number",
+    "topicId": "phone-calls",
+    "text": "I think you have the wrong number. There's no Linda here.",
+    "ipa": "/aɪ θɪŋk juː hæv ðə rɔːŋ ˈnʌmbər ðɛrz noʊ ˈlɪndə hɪr/",
+    "meaningVi": "Hình như anh gọi nhầm số rồi, ở đây không có ai tên Linda cả.",
+    "example": "A: Hi, is Linda there? — B: I think you have the wrong number. There's no Linda here.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "pc-calling-about-the-apartment",
+    "topicId": "phone-calls",
+    "text": "I'm calling about the apartment you advertised online.",
+    "ipa": "/aɪm ˈkɔːlɪŋ əˈbaʊt ði əˈpɑːrtmənt juː ˈædvərtaɪzd ˌɑːnˈlaɪn/",
+    "meaningVi": "Tôi gọi để hỏi về căn hộ anh đăng cho thuê trên mạng.",
+    "example": "A: Hello? — B: Hi, I'm calling about the apartment you advertised online. Is it still available?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "pc-speak-to-a-real-person",
+    "topicId": "phone-calls",
+    "text": "Is there any way I can speak to a real person?",
+    "ipa": "/ɪz ðɛr ˈɛni weɪ aɪ kən spiːk tu ə ˈriːəl ˈpɜːrsən/",
+    "meaningVi": "Có cách nào để tôi nói chuyện trực tiếp với nhân viên không?",
+    "example": "A: Please press one for billing, two for... — B: (to a friend) Ugh. Is there any way I can speak to a real person?",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "pc-been-on-hold",
+    "topicId": "phone-calls",
+    "text": "I've been on hold for almost twenty minutes now.",
+    "ipa": "/aɪv bɪn ɑːn hoʊld fɔːr ˈɔːlmoʊst ˈtwɛnti ˈmɪnɪts naʊ/",
+    "meaningVi": "Tôi đã phải chờ máy gần hai mươi phút rồi đấy.",
+    "example": "A: Thank you for waiting. How can I help? — B: Finally! I've been on hold for almost twenty minutes now.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "pc-problem-with-my-account",
+    "topicId": "phone-calls",
+    "text": "I'm having a problem with my account and need some help.",
+    "ipa": "/aɪm ˈhævɪŋ ə ˈprɑːbləm wɪð maɪ əˈkaʊnt ænd niːd səm hɛlp/",
+    "meaningVi": "Tài khoản của tôi đang gặp trục trặc, tôi cần được hỗ trợ.",
+    "example": "A: Customer service, how can I help you? — B: Hi, I'm having a problem with my account and need some help.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "pc-transfer-me-to-billing",
+    "topicId": "phone-calls",
+    "text": "Could you transfer me to the billing department, please?",
+    "ipa": "/kʊd juː trænsˈfɜːr miː tə ðə ˈbɪlɪŋ dɪˈpɑːrtmənt pliːz/",
+    "meaningVi": "Anh chuyển máy giúp tôi sang bộ phận thanh toán được không ạ?",
+    "example": "A: I'm afraid I can't help with payments. — B: I see. Could you transfer me to the billing department, please?",
+    "register": "formal",
+    "level": "B1"
+  },
+  {
+    "id": "pc-call-may-be-recorded",
+    "topicId": "phone-calls",
+    "text": "Please note that this call may be recorded for training purposes.",
+    "ipa": "/pliːz noʊt ðæt ðɪs kɔːl meɪ biː rɪˈkɔːrdɪd fɔːr ˈtreɪnɪŋ ˈpɜːrpəsɪz/",
+    "meaningVi": "Xin lưu ý cuộc gọi này có thể được ghi âm để phục vụ việc đào tạo nhân viên.",
+    "example": "Thank you for calling. Please note that this call may be recorded for training purposes.",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "pc-battery-about-to-die",
+    "topicId": "phone-calls",
+    "text": "My battery is about to die, so I'll have to be quick.",
+    "ipa": "/maɪ ˈbætəri ɪz əˈbaʊt tə daɪ soʊ aɪl hæv tə biː kwɪk/",
+    "meaningVi": "Điện thoại mình sắp hết pin rồi, nên mình nói nhanh thôi nhé.",
+    "example": "A: Hey, do you have a minute? — B: Sure, but my battery is about to die, so I'll have to be quick.",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "pc-we-got-cut-off",
+    "topicId": "phone-calls",
+    "text": "Sorry, I think we got cut off. Where were we?",
+    "ipa": "/ˈsɑːri aɪ θɪŋk wiː ɡɑːt kʌt ɔːf wɛr wɜːr wiː/",
+    "meaningVi": "Xin lỗi, hình như lúc nãy bị mất kết nối. Mình đang nói đến đâu rồi nhỉ?",
+    "example": "A: (calling again) Hi, it's me again. — B: Sorry, I think we got cut off. Where were we?",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "pc-best-time-to-reach-you",
+    "topicId": "phone-calls",
+    "text": "What's the best time to reach you tomorrow?",
+    "ipa": "/wʌts ðə bɛst taɪm tə riːtʃ juː təˈmɑːroʊ/",
+    "meaningVi": "Ngày mai gọi cho anh vào lúc nào thì tiện nhất?",
+    "example": "A: I'm a bit busy today, sorry. — B: No problem. What's the best time to reach you tomorrow?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "pc-thanks-for-calling",
+    "topicId": "phone-calls",
+    "text": "Thanks for calling. Is there anything else I can help you with?",
+    "ipa": "/θæŋks fɔːr ˈkɔːlɪŋ ɪz ðɛr ˈɛniθɪŋ ɛls aɪ kən hɛlp juː wɪð/",
+    "meaningVi": "Cảm ơn anh đã gọi. Anh còn cần tôi hỗ trợ thêm gì nữa không ạ?",
+    "example": "A: Great, that solves my problem. — B: Thanks for calling. Is there anything else I can help you with?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "pc-ill-let-you-go",
+    "topicId": "phone-calls",
+    "text": "Anyway, I'll let you go now. Talk to you soon!",
+    "ipa": "/ˈɛniweɪ aɪl lɛt juː ɡoʊ naʊ tɔːk tə juː suːn/",
+    "meaningVi": "Thôi, mình không làm phiền bạn nữa nhé. Nói chuyện sau nha!",
+    "example": "A: I really need to finish dinner. — B: Anyway, I'll let you go now. Talk to you soon!",
+    "register": "casual",
+    "level": "B1"
+  }
+]

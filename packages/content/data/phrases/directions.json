@@ -1,0 +1,252 @@
+[
+  {
+    "id": "dr-how-do-i-get-to-station",
+    "topicId": "directions",
+    "text": "Excuse me, how do I get to the train station?",
+    "ipa": "/ɪkˈskjuːz miː haʊ də aɪ ɡet tə ðə treɪn ˈsteɪʃən/",
+    "meaningVi": "Xin lỗi, cho hỏi đi đến ga tàu thế nào ạ?",
+    "example": "A: Excuse me, how do I get to the train station? — B: Take the second street on the left.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-far-or-can-i-walk",
+    "topicId": "directions",
+    "text": "Is it far from here, or can I walk?",
+    "ipa": "/ɪz ɪt fɑːr frəm hɪr ɔːr kən aɪ wɔːk/",
+    "meaningVi": "Chỗ đó có xa không, hay tôi đi bộ được?",
+    "example": "A: Is it far from here, or can I walk? — B: You can walk. It's really close.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-go-straight-turn-left",
+    "topicId": "directions",
+    "text": "Go straight and turn left at the traffic lights.",
+    "ipa": "/ɡoʊ streɪt ən tɜːrn left æt ðə ˈtræfɪk laɪts/",
+    "meaningVi": "Đi thẳng rồi rẽ trái ở chỗ đèn giao thông.",
+    "example": "A: Where's the post office? — B: Go straight and turn left at the traffic lights.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-on-your-right-next-to-bank",
+    "topicId": "directions",
+    "text": "It's on your right, next to the bank.",
+    "ipa": "/ɪts ɑːn jʊr raɪt nekst tə ðə bæŋk/",
+    "meaningVi": "Nó nằm bên tay phải, cạnh ngân hàng.",
+    "example": "A: Where's the pharmacy? — B: It's on your right, next to the bank.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-i-think-im-lost",
+    "topicId": "directions",
+    "text": "Sorry, I think I'm lost. Can you help me?",
+    "ipa": "/ˈsɑːri aɪ θɪŋk aɪm lɔːst kən juː help miː/",
+    "meaningVi": "Xin lỗi, hình như tôi bị lạc. Bạn giúp tôi được không?",
+    "example": "A: Sorry, I think I'm lost. Can you help me? — B: Sure. Where are you going?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-show-me-on-map",
+    "topicId": "directions",
+    "text": "Could you show me where we are on this map?",
+    "ipa": "/kʊd juː ʃoʊ miː wer wiː ɑːr ɑːn ðɪs mæp/",
+    "meaningVi": "Bạn chỉ giúp tôi mình đang ở đâu trên bản đồ này được không?",
+    "example": "A: Could you show me where we are on this map? — B: We're right here, near the river.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-how-long-to-walk",
+    "topicId": "directions",
+    "text": "How long does it take to walk there?",
+    "ipa": "/haʊ lɔːŋ dʌz ɪt teɪk tə wɔːk ðer/",
+    "meaningVi": "Đi bộ đến đó mất bao lâu?",
+    "example": "A: How long does it take to walk there? — B: About fifteen minutes.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-which-bus-city-center",
+    "topicId": "directions",
+    "text": "Which bus goes to the city center?",
+    "ipa": "/wɪtʃ bʌs ɡoʊz tə ðə ˈsɪti ˈsentər/",
+    "meaningVi": "Xe buýt nào đi vào trung tâm thành phố?",
+    "example": "A: Which bus goes to the city center? — B: Number eighteen.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-does-this-bus-stop-at",
+    "topicId": "directions",
+    "text": "Does this bus stop at the night market?",
+    "ipa": "/dʌz ðɪs bʌs stɑːp æt ðə naɪt ˈmɑːrkɪt/",
+    "meaningVi": "Xe buýt này có dừng ở chợ đêm không?",
+    "example": "A: Does this bus stop at the night market? — B: Yes, it's the fourth stop.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-buy-metro-ticket",
+    "topicId": "directions",
+    "text": "Where can I buy a ticket for the metro?",
+    "ipa": "/wer kən aɪ baɪ ə ˈtɪkɪt fər ðə ˈmetroʊ/",
+    "meaningVi": "Mua vé tàu điện ngầm ở đâu vậy?",
+    "example": "A: Where can I buy a ticket for the metro? — B: There's a machine by the entrance.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-which-stop-get-off",
+    "topicId": "directions",
+    "text": "Which stop should I get off at for the museum?",
+    "ipa": "/wɪtʃ stɑːp ʃʊd aɪ ɡet ɔːf æt fər ðə mjuˈziːəm/",
+    "meaningVi": "Muốn đến bảo tàng thì tôi xuống ở trạm nào?",
+    "example": "A: Which stop should I get off at for the museum? — B: Get off at Opera House.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-change-trains",
+    "topicId": "directions",
+    "text": "Do I need to change trains anywhere?",
+    "ipa": "/də aɪ niːd tə tʃeɪndʒ treɪnz ˈeniwer/",
+    "meaningVi": "Tôi có phải đổi tàu ở đâu không?",
+    "example": "A: Do I need to change trains anywhere? — B: Yes, change at Central Station.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-take-me-to-this-address",
+    "topicId": "directions",
+    "text": "Could you take me to this address, please?",
+    "ipa": "/kʊd juː teɪk miː tə ðɪs ˈædres pliːz/",
+    "meaningVi": "Anh chở tôi đến địa chỉ này được không?",
+    "example": "A: Could you take me to this address, please? — B: Sure, hop in.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-how-much-to-airport",
+    "topicId": "directions",
+    "text": "Roughly how much is it to the airport?",
+    "ipa": "/ˈrʌfli haʊ mʌtʃ ɪz ɪt tə ði ˈerpɔːrt/",
+    "meaningVi": "Đi ra sân bay khoảng bao nhiêu tiền?",
+    "example": "A: Roughly how much is it to the airport? — B: Around two hundred thousand dong.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-drop-me-off-here",
+    "topicId": "directions",
+    "text": "You can drop me off right here, thanks.",
+    "ipa": "/juː kən drɑːp miː ɔːf raɪt hɪr θæŋks/",
+    "meaningVi": "Cho tôi xuống ngay đây được rồi, cảm ơn.",
+    "example": "A: Is this the place? — B: Yes, you can drop me off right here, thanks.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "dr-waiting-for-my-grab",
+    "topicId": "directions",
+    "text": "I'm waiting for my Grab. It's two minutes away.",
+    "ipa": "/aɪm ˈweɪtɪŋ fər maɪ ɡræb ɪts tuː ˈmɪnɪts əˈweɪ/",
+    "meaningVi": "Tôi đang đợi xe Grab, còn hai phút nữa là tới.",
+    "example": "A: Do you want a ride? — B: No thanks, I'm waiting for my Grab. It's two minutes away.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "dr-where-exactly-are-you",
+    "topicId": "directions",
+    "text": "Where exactly are you? I'm in front of the hotel.",
+    "ipa": "/wer ɪɡˈzæktli ɑːr juː aɪm ɪn frʌnt əv ðə hoʊˈtel/",
+    "meaningVi": "Anh đang ở chỗ nào vậy? Tôi đang đứng trước khách sạn.",
+    "example": "(on the phone with a driver) Where exactly are you? I'm in front of the hotel.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "dr-slow-down-please",
+    "topicId": "directions",
+    "text": "Could you slow down a little, please?",
+    "ipa": "/kʊd juː sloʊ daʊn ə ˈlɪtəl pliːz/",
+    "meaningVi": "Anh chạy chậm lại một chút được không?",
+    "example": "A: Could you slow down a little, please? — B: Oh, sorry. No problem.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-pharmacy-near-here",
+    "topicId": "directions",
+    "text": "Is there a pharmacy anywhere near here?",
+    "ipa": "/ɪz ðer ə ˈfɑːrməsi ˈeniwer nɪr hɪr/",
+    "meaningVi": "Gần đây có hiệu thuốc nào không?",
+    "example": "A: Is there a pharmacy anywhere near here? — B: Yes, there's one on Le Loi Street.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-just-around-the-corner",
+    "topicId": "directions",
+    "text": "It's just around the corner, about five minutes away.",
+    "ipa": "/ɪts dʒʌst əˈraʊnd ðə ˈkɔːrnər əˈbaʊt faɪv ˈmɪnɪts əˈweɪ/",
+    "meaningVi": "Nó ngay góc đường thôi, đi tầm năm phút.",
+    "example": "A: Is the café far? — B: No, it's just around the corner, about five minutes away.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "dr-cross-the-street",
+    "topicId": "directions",
+    "text": "Cross the street and walk past the supermarket.",
+    "ipa": "/krɔːs ðə striːt ən wɔːk pæst ðə ˈsuːpərˌmɑːrkɪt/",
+    "meaningVi": "Băng qua đường rồi đi qua khỏi siêu thị.",
+    "example": "A: How do I get to the park? — B: Cross the street and walk past the supermarket.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-not-from-around-here",
+    "topicId": "directions",
+    "text": "Sorry, I'm not from around here either.",
+    "ipa": "/ˈsɑːri aɪm nɑːt frəm əˈraʊnd hɪr ˈiːðər/",
+    "meaningVi": "Xin lỗi, tôi cũng không phải người ở đây.",
+    "example": "A: Do you know where the bus station is? — B: Sorry, I'm not from around here either.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "dr-missed-our-stop",
+    "topicId": "directions",
+    "text": "Oh no, I think we just missed our stop.",
+    "ipa": "/oʊ noʊ aɪ θɪŋk wiː dʒʌst mɪst ˈaʊər stɑːp/",
+    "meaningVi": "Thôi chết, hình như mình lỡ trạm rồi.",
+    "example": "A: Oh no, I think we just missed our stop. — B: Let's get off at the next one and walk back.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "dr-last-train-tonight",
+    "topicId": "directions",
+    "text": "What time does the last train leave tonight?",
+    "ipa": "/wʌt taɪm dʌz ðə læst treɪn liːv təˈnaɪt/",
+    "meaningVi": "Chuyến tàu cuối tối nay chạy lúc mấy giờ?",
+    "example": "A: What time does the last train leave tonight? — B: At eleven thirty.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dr-how-often-bus",
+    "topicId": "directions",
+    "text": "How often does the bus come?",
+    "ipa": "/haʊ ˈɔːfən dʌz ðə bʌs kʌm/",
+    "meaningVi": "Bao lâu thì có một chuyến xe buýt?",
+    "example": "A: How often does the bus come? — B: Every ten minutes or so.",
+    "register": "neutral",
+    "level": "A2"
+  }
+]

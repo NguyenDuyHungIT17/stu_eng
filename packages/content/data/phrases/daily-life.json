@@ -1,0 +1,252 @@
+[
+  {
+    "id": "dl-what-time-do-you-usually-get-up",
+    "topicId": "daily-life",
+    "text": "What time do you usually get up in the morning?",
+    "ipa": "/wʌt taɪm də jə ˈjuːʒuəli ɡet ʌp ɪn ðə ˈmɔːrnɪŋ/",
+    "meaningVi": "Bạn thường dậy lúc mấy giờ sáng?",
+    "example": "A: What time do you usually get up in the morning? — B: Around six thirty.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-i-usually-take-the-bus-to-work",
+    "topicId": "daily-life",
+    "text": "I usually take the bus to work.",
+    "ipa": "/aɪ ˈjuːʒuəli teɪk ðə bʌs tə wɜːrk/",
+    "meaningVi": "Tôi thường đi làm bằng xe buýt.",
+    "example": "A: How do you get to the office? — B: I usually take the bus to work.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-i-didnt-sleep-well-last-night",
+    "topicId": "daily-life",
+    "text": "I'm so tired, I didn't sleep well last night.",
+    "ipa": "/aɪm soʊ ˈtaɪərd aɪ ˈdɪdənt sliːp wel læst naɪt/",
+    "meaningVi": "Mệt quá, tối qua tôi ngủ không ngon.",
+    "example": "A: You look sleepy. — B: I'm so tired, I didn't sleep well last night.",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "dl-can-you-help-me-with-the-dishes",
+    "topicId": "daily-life",
+    "text": "Can you help me with the dishes after dinner?",
+    "ipa": "/kən jə help mi wɪð ðə ˈdɪʃɪz ˈæftər ˈdɪnər/",
+    "meaningVi": "Ăn tối xong bạn rửa bát phụ tôi một tay được không?",
+    "example": "A: Can you help me with the dishes after dinner? — B: Sure, I'll dry them.",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "dl-whose-turn-is-it-to-take-out-the-trash",
+    "topicId": "daily-life",
+    "text": "Whose turn is it to take out the trash?",
+    "ipa": "/huːz tɜːrn ɪz ɪt tə teɪk aʊt ðə træʃ/",
+    "meaningVi": "Hôm nay đến lượt ai đi đổ rác vậy?",
+    "example": "A: The bin is full. Whose turn is it to take out the trash? — B: Mine, sorry!",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "dl-i-need-to-do-the-laundry",
+    "topicId": "daily-life",
+    "text": "I need to do the laundry this weekend.",
+    "ipa": "/aɪ niːd tə duː ðə ˈlɔːndri ðɪs ˈwiːkend/",
+    "meaningVi": "Cuối tuần này tôi phải giặt đồ.",
+    "example": "A: Want to go shopping on Saturday? — B: Sorry, I need to do the laundry this weekend.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-im-going-to-take-a-quick-shower",
+    "topicId": "daily-life",
+    "text": "I'm going to take a quick shower before dinner.",
+    "ipa": "/aɪm ˈɡoʊɪŋ tə teɪk ə kwɪk ˈʃaʊər bɪˈfɔːr ˈdɪnər/",
+    "meaningVi": "Tôi đi tắm nhanh một cái rồi ăn tối nhé.",
+    "example": "A: Dinner is almost ready. — B: OK, I'm going to take a quick shower before dinner.",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "dl-did-you-remember-to-lock-the-door",
+    "topicId": "daily-life",
+    "text": "Did you remember to lock the front door?",
+    "ipa": "/dɪd jə rɪˈmembər tə lɑːk ðə frʌnt dɔːr/",
+    "meaningVi": "Bạn có nhớ khóa cửa trước chưa?",
+    "example": "A: Did you remember to lock the front door? — B: Yes, I checked it twice.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-the-traffic-was-terrible-this-morning",
+    "topicId": "daily-life",
+    "text": "The traffic was terrible this morning, so I was late.",
+    "ipa": "/ðə ˈtræfɪk wəz ˈterəbəl ðɪs ˈmɔːrnɪŋ soʊ aɪ wəz leɪt/",
+    "meaningVi": "Sáng nay kẹt xe kinh khủng nên tôi đến muộn.",
+    "example": "Sorry, everyone. The traffic was terrible this morning, so I was late.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dl-i-always-have-a-cup-of-coffee",
+    "topicId": "daily-life",
+    "text": "I always have a cup of coffee before I start work.",
+    "ipa": "/aɪ ˈɔːlweɪz hæv ə kʌp əv ˈkɔːfi bɪˈfɔːr aɪ stɑːrt wɜːrk/",
+    "meaningVi": "Lúc nào tôi cũng uống một ly cà phê rồi mới bắt đầu làm việc.",
+    "example": "A: Coffee again? — B: Yes, I always have a cup of coffee before I start work.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-what-do-you-usually-have-for-breakfast",
+    "topicId": "daily-life",
+    "text": "What do you usually have for breakfast?",
+    "ipa": "/wʌt də jə ˈjuːʒuəli hæv fər ˈbrekfəst/",
+    "meaningVi": "Bữa sáng bạn thường ăn gì?",
+    "example": "A: What do you usually have for breakfast? — B: Just some bread and milk.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-im-heading-out-now",
+    "topicId": "daily-life",
+    "text": "I'm heading out now, see you this evening.",
+    "ipa": "/aɪm ˈhedɪŋ aʊt naʊ siː jə ðɪs ˈiːvnɪŋ/",
+    "meaningVi": "Tôi đi đây, tối gặp lại nhé.",
+    "example": "A: I'm heading out now, see you this evening. — B: OK, have a good day!",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "dl-could-you-turn-off-the-lights",
+    "topicId": "daily-life",
+    "text": "Could you turn off the lights when you leave?",
+    "ipa": "/kʊd jə tɜːrn ɔːf ðə laɪts wen jə liːv/",
+    "meaningVi": "Lúc đi ra nhớ tắt đèn giúp tôi nhé.",
+    "example": "A: I'm going to stay a bit longer. — B: OK. Could you turn off the lights when you leave?",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-it-takes-me-about-thirty-minutes",
+    "topicId": "daily-life",
+    "text": "It takes me about thirty minutes to get to work.",
+    "ipa": "/ɪt teɪks mi əˈbaʊt ˈθɜːrti ˈmɪnɪts tə ɡet tə wɜːrk/",
+    "meaningVi": "Tôi đi làm mất khoảng ba mươi phút.",
+    "example": "A: Do you live far from the office? — B: Not really. It takes me about thirty minutes to get to work.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "dl-i-usually-go-to-bed-around-eleven",
+    "topicId": "daily-life",
+    "text": "I usually go to bed around eleven o'clock.",
+    "ipa": "/aɪ ˈjuːʒuəli ɡoʊ tə bed əˈraʊnd ɪˈlevən əˈklɑːk/",
+    "meaningVi": "Tôi thường đi ngủ tầm mười một giờ.",
+    "example": "A: Do you stay up late? — B: Not really. I usually go to bed around eleven o'clock.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-im-home",
+    "topicId": "daily-life",
+    "text": "I'm home!",
+    "ipa": "/aɪm hoʊm/",
+    "meaningVi": "Mình về rồi đây!",
+    "example": "I'm home! Is anyone here?",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "dl-do-we-need-anything-from-the-supermarket",
+    "topicId": "daily-life",
+    "text": "Do we need anything from the supermarket?",
+    "ipa": "/də wi niːd ˈeniθɪŋ frəm ðə ˈsuːpərˌmɑːrkɪt/",
+    "meaningVi": "Nhà mình có cần mua gì ở siêu thị không?",
+    "example": "A: I'm going out. Do we need anything from the supermarket? — B: Yes, eggs and milk, please.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-i-forgot-to-set-my-alarm",
+    "topicId": "daily-life",
+    "text": "I forgot to set my alarm last night.",
+    "ipa": "/aɪ fərˈɡɑːt tə set maɪ əˈlɑːrm læst naɪt/",
+    "meaningVi": "Tối qua tôi quên đặt báo thức.",
+    "example": "A: Why did you get up so late? — B: I forgot to set my alarm last night.",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "dl-lets-clean-the-house-together",
+    "topicId": "daily-life",
+    "text": "Let's clean the house together on Sunday morning.",
+    "ipa": "/lets kliːn ðə haʊs təˈɡeðər ɑːn ˈsʌndeɪ ˈmɔːrnɪŋ/",
+    "meaningVi": "Sáng Chủ nhật cả nhà mình cùng dọn nhà nhé.",
+    "example": "A: The house is such a mess. — B: Let's clean the house together on Sunday morning.",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "dl-i-usually-cook-dinner-at-home",
+    "topicId": "daily-life",
+    "text": "I usually cook dinner at home on weekdays.",
+    "ipa": "/aɪ ˈjuːʒuəli kʊk ˈdɪnər æt hoʊm ɑːn ˈwiːkdeɪz/",
+    "meaningVi": "Ngày thường tôi hay tự nấu bữa tối ở nhà.",
+    "example": "A: Do you eat out a lot? — B: Not really. I usually cook dinner at home on weekdays.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-the-washing-machine-is-broken-again",
+    "topicId": "daily-life",
+    "text": "The washing machine is broken again.",
+    "ipa": "/ðə ˈwɑːʃɪŋ məˈʃiːn ɪz ˈbroʊkən əˈɡen/",
+    "meaningVi": "Máy giặt lại hỏng nữa rồi.",
+    "example": "A: The washing machine is broken again. — B: Oh no, I'll call the repairman.",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "dl-i-walk-my-dog-every-evening",
+    "topicId": "daily-life",
+    "text": "I walk my dog in the park every evening.",
+    "ipa": "/aɪ wɔːk maɪ dɔːɡ ɪn ðə pɑːrk ˈevri ˈiːvnɪŋ/",
+    "meaningVi": "Tối nào tôi cũng dắt chó đi dạo trong công viên.",
+    "example": "A: Do you get much exercise? — B: A little. I walk my dog in the park every evening.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-can-you-pick-up-the-kids",
+    "topicId": "daily-life",
+    "text": "Can you pick up the kids from school today?",
+    "ipa": "/kən jə pɪk ʌp ðə kɪdz frəm skuːl təˈdeɪ/",
+    "meaningVi": "Hôm nay anh đón các con ở trường được không?",
+    "example": "A: I have a meeting until six. Can you pick up the kids from school today? — B: No problem.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "dl-i-need-to-charge-my-phone",
+    "topicId": "daily-life",
+    "text": "I need to charge my phone before I go out.",
+    "ipa": "/aɪ niːd tə tʃɑːrdʒ maɪ foʊn bɪˈfɔːr aɪ ɡoʊ aʊt/",
+    "meaningVi": "Tôi phải sạc điện thoại đã rồi mới ra ngoài.",
+    "example": "A: Are you ready to go? — B: Almost. I need to charge my phone before I go out.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "dl-dont-forget-to-water-the-plants",
+    "topicId": "daily-life",
+    "text": "Don't forget to water the plants while I'm away.",
+    "ipa": "/doʊnt fərˈɡet tə ˈwɔːtər ðə plænts waɪl aɪm əˈweɪ/",
+    "meaningVi": "Tôi đi vắng thì nhớ tưới cây giúp tôi nhé.",
+    "example": "A: I'll be back on Friday. Don't forget to water the plants while I'm away. — B: Don't worry, I won't.",
+    "register": "neutral",
+    "level": "A2"
+  }
+]

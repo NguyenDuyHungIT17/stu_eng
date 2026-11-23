@@ -1,0 +1,252 @@
+[
+  {
+    "id": "cp-not-what-i-ordered",
+    "topicId": "complaints",
+    "text": "Excuse me, I'm afraid this isn't what I ordered.",
+    "ipa": "/ɪkˈskjuːz miː aɪm əˈfreɪd ðɪs ˈɪzənt wʌt aɪ ˈɔːrdərd/",
+    "meaningVi": "Xin lỗi, hình như đây không phải món tôi gọi.",
+    "example": "Excuse me, I'm afraid this isn't what I ordered. I asked for the chicken salad.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "cp-arrived-screen-cracked",
+    "topicId": "complaints",
+    "text": "The package arrived yesterday, but the screen was already cracked.",
+    "ipa": "/ðə ˈpækɪdʒ əˈraɪvd ˈjestərdeɪ bʌt ðə skriːn wʌz ɔːlˈredi krækt/",
+    "meaningVi": "Hôm qua tôi nhận hàng nhưng màn hình đã bị nứt sẵn rồi.",
+    "example": "A: How can I help you? — B: The package arrived yesterday, but the screen was already cracked.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-refund-heres-receipt",
+    "topicId": "complaints",
+    "text": "I'd like a refund, please. Here's my receipt.",
+    "ipa": "/aɪd laɪk ə ˈriːfʌnd pliːz hɪrz maɪ rɪˈsiːt/",
+    "meaningVi": "Tôi muốn được hoàn tiền. Hóa đơn của tôi đây.",
+    "example": "This jacket doesn't fit. I'd like a refund, please. Here's my receipt.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "cp-exchange-larger-size",
+    "topicId": "complaints",
+    "text": "Could I exchange it for a larger size instead?",
+    "ipa": "/kʊd aɪ ɪksˈtʃeɪndʒ ɪt fɔːr ə ˈlɑːrdʒər saɪz ɪnˈsted/",
+    "meaningVi": "Tôi đổi sang cỡ lớn hơn được không?",
+    "example": "A: Would you like a refund? — B: Could I exchange it for a larger size instead?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-charged-twice",
+    "topicId": "complaints",
+    "text": "I think I've been charged twice for the same order.",
+    "ipa": "/aɪ θɪŋk aɪv bɪn tʃɑːrdʒd twaɪs fɔːr ðə seɪm ˈɔːrdər/",
+    "meaningVi": "Hình như tôi bị trừ tiền hai lần cho cùng một đơn hàng.",
+    "example": "Hello, I'm calling because I think I've been charged twice for the same order.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-waiting-forty-minutes",
+    "topicId": "complaints",
+    "text": "We've been waiting for over forty minutes for our food.",
+    "ipa": "/wiːv bɪn ˈweɪtɪŋ fɔːr ˈoʊvər ˈfɔːrti ˈmɪnɪts fɔːr ˈaʊər fuːd/",
+    "meaningVi": "Chúng tôi chờ đồ ăn hơn bốn mươi phút rồi.",
+    "example": "Excuse me, we've been waiting for over forty minutes for our food. Is everything OK?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-speak-to-manager-third-time",
+    "topicId": "complaints",
+    "text": "Could I speak to the manager, please? This is the third time.",
+    "ipa": "/kʊd aɪ spiːk tə ðə ˈmænɪdʒər pliːz ðɪs ɪz ðə θɜːrd taɪm/",
+    "meaningVi": "Cho tôi gặp quản lý được không? Đây là lần thứ ba rồi.",
+    "example": "The delivery is late again. Could I speak to the manager, please? This is the third time.",
+    "register": "formal",
+    "level": "B1"
+  },
+  {
+    "id": "cp-sorry-inconvenience-fix-now",
+    "topicId": "complaints",
+    "text": "I'm really sorry for the inconvenience, let me fix that right away.",
+    "ipa": "/aɪm ˈrɪli ˈsɑːri fɔːr ðə ˌɪnkənˈviːniəns let miː fɪks ðæt raɪt əˈweɪ/",
+    "meaningVi": "Thành thật xin lỗi vì sự bất tiện này, để tôi xử lý ngay.",
+    "example": "A: My room key doesn't work. — B: I'm really sorry for the inconvenience, let me fix that right away.",
+    "register": "formal",
+    "level": "B1"
+  },
+  {
+    "id": "cp-my-mistake-wont-happen-again",
+    "topicId": "complaints",
+    "text": "That was my mistake, and it won't happen again.",
+    "ipa": "/ðæt wʌz maɪ mɪˈsteɪk ænd ɪt woʊnt ˈhæpən əˈɡen/",
+    "meaningVi": "Đó là lỗi của tôi, lần sau sẽ không để xảy ra nữa.",
+    "example": "A: The invoice had the wrong address. — B: That was my mistake, and it won't happen again.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-thanks-well-look-into-it",
+    "topicId": "complaints",
+    "text": "Thanks for letting us know, we'll look into it immediately.",
+    "ipa": "/θæŋks fɔːr ˈletɪŋ ʌs noʊ wiːl lʊk ˈɪntuː ɪt ɪˈmiːdiətli/",
+    "meaningVi": "Cảm ơn anh/chị đã báo cho chúng tôi, chúng tôi sẽ kiểm tra ngay.",
+    "example": "A: The app crashes when I log in. — B: Thanks for letting us know, we'll look into it immediately.",
+    "register": "formal",
+    "level": "B1"
+  },
+  {
+    "id": "cp-air-con-not-working",
+    "topicId": "complaints",
+    "text": "The air conditioner in my room hasn't worked since Monday.",
+    "ipa": "/ði er kənˈdɪʃənər ɪn maɪ ruːm ˈhæzənt wɜːrkt sɪns ˈmʌndeɪ/",
+    "meaningVi": "Máy lạnh trong phòng tôi bị hỏng từ thứ Hai tới giờ.",
+    "example": "Hi, this is room 305. The air conditioner in my room hasn't worked since Monday.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-leak-under-sink",
+    "topicId": "complaints",
+    "text": "There's a leak under the kitchen sink. Could you send someone to fix it?",
+    "ipa": "/ðerz ə liːk ˈʌndər ðə ˈkɪtʃən sɪŋk kʊd juː send ˈsʌmwʌn tə fɪks ɪt/",
+    "meaningVi": "Dưới bồn rửa trong bếp bị rò nước, anh/chị cho người tới sửa giúp được không?",
+    "example": "Hi, it's your tenant in 4B. There's a leak under the kitchen sink. Could you send someone to fix it?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-music-a-bit-loud",
+    "topicId": "complaints",
+    "text": "Sorry to bother you, but the music is a bit loud tonight.",
+    "ipa": "/ˈsɑːri tə ˈbɑːðər juː bʌt ðə ˈmjuːzɪk ɪz ə bɪt laʊd təˈnaɪt/",
+    "meaningVi": "Xin lỗi làm phiền, nhưng tối nay nhạc bên nhà mình hơi to quá.",
+    "example": "Hi, I live next door. Sorry to bother you, but the music is a bit loud tonight.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-car-blocking-driveway",
+    "topicId": "complaints",
+    "text": "Your car is blocking my driveway, could you move it, please?",
+    "ipa": "/jɔːr kɑːr ɪz ˈblɑːkɪŋ maɪ ˈdraɪvweɪ kʊd juː muːv ɪt pliːz/",
+    "meaningVi": "Xe của anh/chị đang chắn lối ra vào nhà tôi, phiền anh/chị dời đi giúp.",
+    "example": "Excuse me, your car is blocking my driveway, could you move it, please? I need to leave.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-deposit-back-when",
+    "topicId": "complaints",
+    "text": "When can I expect to get my deposit back?",
+    "ipa": "/wen kæn aɪ ɪkˈspekt tə ɡet maɪ dɪˈpɑːzɪt bæk/",
+    "meaningVi": "Khi nào tôi mới được nhận lại tiền đặt cọc?",
+    "example": "I moved out two weeks ago. When can I expect to get my deposit back?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-not-happy-with-service",
+    "topicId": "complaints",
+    "text": "To be honest, I'm not very happy with the service today.",
+    "ipa": "/tə biː ˈɑːnɪst aɪm nɑːt ˈveri ˈhæpi wɪð ðə ˈsɜːrvɪs təˈdeɪ/",
+    "meaningVi": "Nói thật là hôm nay tôi không hài lòng lắm với cách phục vụ.",
+    "example": "A: How was everything? — B: To be honest, I'm not very happy with the service today.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-mistake-on-the-bill",
+    "topicId": "complaints",
+    "text": "There seems to be a mistake on the bill; we didn't order dessert.",
+    "ipa": "/ðer siːmz tə biː ə mɪˈsteɪk ɑːn ðə bɪl wiː ˈdɪdənt ˈɔːrdər dɪˈzɜːrt/",
+    "meaningVi": "Hóa đơn hình như bị tính nhầm, chúng tôi đâu có gọi món tráng miệng.",
+    "example": "Excuse me, there seems to be a mistake on the bill; we didn't order dessert.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-what-can-you-do-sort-out",
+    "topicId": "complaints",
+    "text": "What can you do to sort this out for me?",
+    "ipa": "/wʌt kæn juː duː tə sɔːrt ðɪs aʊt fɔːr miː/",
+    "meaningVi": "Bên anh/chị có thể giải quyết chuyện này cho tôi bằng cách nào?",
+    "example": "The laptop broke after one week. What can you do to sort this out for me?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-offer-twenty-percent-discount",
+    "topicId": "complaints",
+    "text": "We'd like to offer you a twenty percent discount on your next order.",
+    "ipa": "/wiːd laɪk tu ˈɔːfər juː ə ˈtwenti pərˈsent ˈdɪskaʊnt ɑːn jɔːr nekst ˈɔːrdər/",
+    "meaningVi": "Chúng tôi xin tặng anh/chị ưu đãi giảm hai mươi phần trăm cho đơn hàng tiếp theo.",
+    "example": "We're sorry for the delay. We'd like to offer you a twenty percent discount on your next order.",
+    "register": "formal",
+    "level": "B1"
+  },
+  {
+    "id": "cp-replacement-free-of-charge",
+    "topicId": "complaints",
+    "text": "We'll send you a replacement free of charge by Thursday.",
+    "ipa": "/wiːl send juː ə rɪˈpleɪsmənt friː əv tʃɑːrdʒ baɪ ˈθɜːrzdeɪ/",
+    "meaningVi": "Chúng tôi sẽ gửi sản phẩm thay thế miễn phí cho anh/chị trước thứ Năm.",
+    "example": "A: The blender doesn't turn on. — B: We'll send you a replacement free of charge by Thursday.",
+    "register": "formal",
+    "level": "B1"
+  },
+  {
+    "id": "cp-understand-frustration",
+    "topicId": "complaints",
+    "text": "I completely understand your frustration, and I apologize.",
+    "ipa": "/aɪ kəmˈpliːtli ˌʌndərˈstænd jɔːr frʌˈstreɪʃən ænd aɪ əˈpɑːlədʒaɪz/",
+    "meaningVi": "Tôi hoàn toàn hiểu vì sao anh/chị bực mình, và tôi thành thật xin lỗi.",
+    "example": "A: I've called three times already! — B: I completely understand your frustration, and I apologize.",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "cp-still-havent-received",
+    "topicId": "complaints",
+    "text": "I ordered it two weeks ago and still haven't received it.",
+    "ipa": "/aɪ ˈɔːrdərd ɪt tuː wiːks əˈɡoʊ ænd stɪl ˈhævənt rɪˈsiːvd ɪt/",
+    "meaningVi": "Tôi đặt hàng từ hai tuần trước mà đến giờ vẫn chưa nhận được.",
+    "example": "A: How can I help? — B: It's about my new keyboard. I ordered it two weeks ago and still haven't received it.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-internet-keeps-cutting-out",
+    "topicId": "complaints",
+    "text": "The internet keeps cutting out, and I work from home.",
+    "ipa": "/ði ˈɪntərnet kiːps ˈkʌtɪŋ aʊt ænd aɪ wɜːrk frəm hoʊm/",
+    "meaningVi": "Mạng cứ chập chờn mất kết nối hoài, mà tôi lại làm việc ở nhà.",
+    "example": "Please send a technician soon. The internet keeps cutting out, and I work from home.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "cp-anything-else-help-today",
+    "topicId": "complaints",
+    "text": "Is there anything else I can help you with today?",
+    "ipa": "/ɪz ðer ˈeniθɪŋ els aɪ kæn help juː wɪð təˈdeɪ/",
+    "meaningVi": "Anh/chị còn cần tôi hỗ trợ gì thêm không ạ?",
+    "example": "Your refund has been processed. Is there anything else I can help you with today?",
+    "register": "formal",
+    "level": "A2"
+  },
+  {
+    "id": "cp-not-acceptable-brand-new",
+    "topicId": "complaints",
+    "text": "I'm sorry, but this just isn't acceptable for a brand-new phone.",
+    "ipa": "/aɪm ˈsɑːri bʌt ðɪs dʒʌst ˈɪzənt əkˈseptəbəl fɔːr ə ˌbrændˈnuː foʊn/",
+    "meaningVi": "Xin lỗi chứ điện thoại mới mua mà bị thế này thì không chấp nhận được.",
+    "example": "The battery dies in two hours. I'm sorry, but this just isn't acceptable for a brand-new phone.",
+    "register": "neutral",
+    "level": "B2"
+  }
+]

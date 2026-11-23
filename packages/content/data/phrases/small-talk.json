@@ -1,0 +1,252 @@
+[
+  {
+    "id": "st-lovely-weather-today",
+    "topicId": "small-talk",
+    "text": "Lovely weather today, isn't it?",
+    "ipa": "/ˈlʌvli ˈweðər təˈdeɪ ˈɪzənt ɪt/",
+    "meaningVi": "Hôm nay trời đẹp quá nhỉ?",
+    "example": "A: Lovely weather today, isn't it? — B: Yes, perfect for a walk.",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "st-its-been-raining-all-week",
+    "topicId": "small-talk",
+    "text": "It's been raining all week, I'm so tired of it.",
+    "ipa": "/ɪts bɪn ˈreɪnɪŋ ɔːl wiːk aɪm soʊ ˈtaɪərd əv ɪt/",
+    "meaningVi": "Mưa suốt cả tuần, tôi chán lắm rồi.",
+    "example": "A: Another rainy day! — B: I know. It's been raining all week, I'm so tired of it.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "st-did-you-do-anything-fun-over-the-weekend",
+    "topicId": "small-talk",
+    "text": "Did you do anything fun over the weekend?",
+    "ipa": "/dɪd jə duː ˈeniθɪŋ fʌn ˈoʊvər ðə ˈwiːkend/",
+    "meaningVi": "Cuối tuần vừa rồi bạn có làm gì vui không?",
+    "example": "A: Did you do anything fun over the weekend? — B: I went hiking with some friends.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "st-do-you-have-any-plans-for-the-holidays",
+    "topicId": "small-talk",
+    "text": "Do you have any plans for the holidays?",
+    "ipa": "/də jə hæv ˈeni plænz fər ðə ˈhɑːlədeɪz/",
+    "meaningVi": "Kỳ nghỉ sắp tới bạn đã có kế hoạch gì chưa?",
+    "example": "A: Do you have any plans for the holidays? — B: I'm going back to my hometown.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "st-what-do-you-like-to-do-in-your-free-time",
+    "topicId": "small-talk",
+    "text": "What do you like to do in your free time?",
+    "ipa": "/wʌt də jə laɪk tə duː ɪn jər friː taɪm/",
+    "meaningVi": "Lúc rảnh rỗi bạn thích làm gì?",
+    "example": "A: What do you like to do in your free time? — B: I like reading and playing badminton.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "st-how-long-have-you-been-living-here",
+    "topicId": "small-talk",
+    "text": "How long have you been living here?",
+    "ipa": "/haʊ lɔːŋ həv jə bɪn ˈlɪvɪŋ hɪr/",
+    "meaningVi": "Bạn sống ở đây được bao lâu rồi?",
+    "example": "A: How long have you been living here? — B: About three years now.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "st-have-you-seen-any-good-movies-lately",
+    "topicId": "small-talk",
+    "text": "Have you seen any good movies lately?",
+    "ipa": "/həv jə siːn ˈeni ɡʊd ˈmuːviz ˈleɪtli/",
+    "meaningVi": "Dạo này bạn có xem được phim nào hay không?",
+    "example": "A: Have you seen any good movies lately? — B: Yes, I watched a great comedy last week.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "st-ive-just-started-learning-the-guitar",
+    "topicId": "small-talk",
+    "text": "I've just started learning to play the guitar.",
+    "ipa": "/aɪv dʒʌst ˈstɑːrtɪd ˈlɜːrnɪŋ tə pleɪ ðə ɡɪˈtɑːr/",
+    "meaningVi": "Tôi mới bắt đầu học chơi đàn guitar.",
+    "example": "A: Any new hobbies? — B: I've just started learning to play the guitar.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "st-did-you-hear-about-the-new-mall",
+    "topicId": "small-talk",
+    "text": "Did you hear about the new shopping mall downtown?",
+    "ipa": "/dɪd jə hɪr əˈbaʊt ðə nuː ˈʃɑːpɪŋ mɔːl ˌdaʊnˈtaʊn/",
+    "meaningVi": "Bạn nghe tin về cái trung tâm thương mại mới trong phố chưa?",
+    "example": "A: Did you hear about the new shopping mall downtown? — B: Yes! I heard it opens next week.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "st-that-sounds-like-a-lot-of-fun",
+    "topicId": "small-talk",
+    "text": "That sounds like a lot of fun!",
+    "ipa": "/ðæt saʊndz laɪk ə lɑːt əv fʌn/",
+    "meaningVi": "Nghe vui ghê!",
+    "example": "A: We went camping by the lake. — B: That sounds like a lot of fun!",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "st-really-tell-me-more",
+    "topicId": "small-talk",
+    "text": "Really? Tell me more about it.",
+    "ipa": "/ˈrɪli tel mi mɔːr əˈbaʊt ɪt/",
+    "meaningVi": "Thật á? Kể thêm cho tôi nghe đi.",
+    "example": "A: I'm moving to Japan next year. — B: Really? Tell me more about it.",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "st-i-know-what-you-mean",
+    "topicId": "small-talk",
+    "text": "I know what you mean, the same thing happened to me.",
+    "ipa": "/aɪ noʊ wʌt jə miːn ðə seɪm θɪŋ ˈhæpənd tə mi/",
+    "meaningVi": "Tôi hiểu mà, tôi cũng từng bị y chang vậy.",
+    "example": "A: My flight was delayed for five hours! — B: I know what you mean, the same thing happened to me.",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "st-its-so-hot-today",
+    "topicId": "small-talk",
+    "text": "It's so hot today, I can't stop sweating.",
+    "ipa": "/ɪts soʊ hɑːt təˈdeɪ aɪ kænt stɑːp ˈswetɪŋ/",
+    "meaningVi": "Hôm nay nóng quá, mồ hôi cứ chảy ròng ròng.",
+    "example": "A: It's so hot today, I can't stop sweating. — B: Let's go inside, the air conditioner is on.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "st-are-you-a-coffee-or-tea-person",
+    "topicId": "small-talk",
+    "text": "Are you a coffee person or a tea person?",
+    "ipa": "/ɑːr jə ə ˈkɔːfi ˈpɜːrsən ɔːr ə tiː ˈpɜːrsən/",
+    "meaningVi": "Bạn là dân mê cà phê hay mê trà?",
+    "example": "A: Are you a coffee person or a tea person? — B: Definitely coffee!",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "st-have-you-tried-the-new-restaurant",
+    "topicId": "small-talk",
+    "text": "Have you tried that new restaurant on the corner?",
+    "ipa": "/həv jə traɪd ðæt nuː ˈrestərɑːnt ɑːn ðə ˈkɔːrnər/",
+    "meaningVi": "Bạn ăn thử cái nhà hàng mới ở góc đường chưa?",
+    "example": "A: Have you tried that new restaurant on the corner? — B: Not yet. Is it good?",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "st-i-heard-theres-a-big-storm-coming",
+    "topicId": "small-talk",
+    "text": "I heard there's a big storm coming this weekend.",
+    "ipa": "/aɪ hɜːrd ðerz ə bɪɡ stɔːrm ˈkʌmɪŋ ðɪs ˈwiːkend/",
+    "meaningVi": "Nghe nói cuối tuần này có bão lớn đấy.",
+    "example": "A: I heard there's a big storm coming this weekend. — B: Really? I'd better stay home then.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "st-sorry-what-were-we-talking-about",
+    "topicId": "small-talk",
+    "text": "Sorry, what were we talking about?",
+    "ipa": "/ˈsɑːri wʌt wər wi ˈtɔːkɪŋ əˈbaʊt/",
+    "meaningVi": "Xin lỗi, nãy mình đang nói tới đâu rồi nhỉ?",
+    "example": "A: That was my boss on the phone. Sorry, what were we talking about? — B: Your trip to Hue.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "st-by-the-way-hows-your-new-job",
+    "topicId": "small-talk",
+    "text": "By the way, how's your new job going?",
+    "ipa": "/baɪ ðə weɪ haʊz jər nuː dʒɑːb ˈɡoʊɪŋ/",
+    "meaningVi": "À mà công việc mới của bạn sao rồi?",
+    "example": "A: By the way, how's your new job going? — B: Pretty well! My team is really friendly.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "st-have-you-ever-been-to-da-nang",
+    "topicId": "small-talk",
+    "text": "Have you ever been to Da Nang? It's beautiful.",
+    "ipa": "/həv jə ˈevər bɪn tə dɑː nɑːŋ ɪts ˈbjuːtəfəl/",
+    "meaningVi": "Bạn đến Đà Nẵng bao giờ chưa? Đẹp lắm đấy.",
+    "example": "A: Have you ever been to Da Nang? It's beautiful. — B: Not yet, but I'd love to go.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "st-im-really-into-cooking-these-days",
+    "topicId": "small-talk",
+    "text": "I'm really into cooking these days.",
+    "ipa": "/aɪm ˈrɪli ˈɪntuː ˈkʊkɪŋ ðiːz deɪz/",
+    "meaningVi": "Dạo này tôi mê nấu ăn lắm.",
+    "example": "A: You post so many food photos! — B: Yeah, I'm really into cooking these days.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "st-what-kind-of-music-do-you-listen-to",
+    "topicId": "small-talk",
+    "text": "What kind of music do you listen to?",
+    "ipa": "/wʌt kaɪnd əv ˈmjuːzɪk də jə ˈlɪsən tuː/",
+    "meaningVi": "Bạn hay nghe thể loại nhạc gì?",
+    "example": "A: What kind of music do you listen to? — B: Mostly pop, and some jazz.",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "st-everything-is-so-expensive-now",
+    "topicId": "small-talk",
+    "text": "Can you believe how expensive everything is now?",
+    "ipa": "/kən jə bɪˈliːv haʊ ɪkˈspensɪv ˈevriθɪŋ ɪz naʊ/",
+    "meaningVi": "Bạn thấy không, giờ cái gì cũng đắt kinh khủng!",
+    "example": "A: Can you believe how expensive everything is now? — B: I know! Even a bowl of pho costs more.",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "st-is-this-your-first-time-at-these-events",
+    "topicId": "small-talk",
+    "text": "Is this your first time at one of these events?",
+    "ipa": "/ɪz ðɪs jər fɜːrst taɪm æt wʌn əv ðiːz ɪˈvents/",
+    "meaningVi": "Đây là lần đầu bạn dự sự kiện kiểu này à?",
+    "example": "A: Is this your first time at one of these events? — B: Yes, a colleague invited me.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "st-ive-never-thought-about-it-that-way",
+    "topicId": "small-talk",
+    "text": "That's interesting, I've never thought about it that way.",
+    "ipa": "/ðæts ˈɪntrəstɪŋ aɪv ˈnevər θɔːt əˈbaʊt ɪt ðæt weɪ/",
+    "meaningVi": "Hay đấy, tôi chưa từng nghĩ theo hướng đó.",
+    "example": "A: Working from home actually makes me more social. — B: That's interesting, I've never thought about it that way.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "st-did-you-watch-the-match-last-night",
+    "topicId": "small-talk",
+    "text": "Did you watch the football match last night?",
+    "ipa": "/dɪd jə wɑːtʃ ðə ˈfʊtbɔːl mætʃ læst naɪt/",
+    "meaningVi": "Tối qua bạn có xem trận bóng đá không?",
+    "example": "A: Did you watch the football match last night? — B: Yes! What a goal at the end!",
+    "register": "casual",
+    "level": "A2"
+  }
+]

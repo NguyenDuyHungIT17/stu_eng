@@ -1,0 +1,252 @@
+[
+  {
+    "id": "ng-propose-two-year-contract",
+    "topicId": "negotiation",
+    "text": "We'd like to propose a two-year contract at a fixed monthly rate.",
+    "ipa": "/wiːd laɪk tə prəˈpoʊz ə ˌtuːˈjɪr ˈkɑːntrækt æt ə fɪkst ˈmʌnθli reɪt/",
+    "meaningVi": "Chúng tôi xin đề xuất một hợp đồng hai năm với mức phí cố định hằng tháng.",
+    "example": "A: So, what did you have in mind? — B: We'd like to propose a two-year contract at a fixed monthly rate.",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ng-discount-on-large-orders",
+    "topicId": "negotiation",
+    "text": "What we have in mind is a ten percent discount on orders over a thousand units.",
+    "ipa": "/wʌt wiː hæv ɪn maɪnd ɪz ə ten pɚˈsent ˈdɪskaʊnt ɑːn ˈɔːrdɚz ˈoʊvɚr ə ˈθaʊzənd ˈjuːnɪts/",
+    "meaningVi": "Điều chúng tôi muốn là được chiết khấu mười phần trăm cho các đơn hàng trên một nghìn sản phẩm.",
+    "example": "A: What kind of discount are you looking for? — B: What we have in mind is a ten percent discount on orders over a thousand units.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ng-price-higher-than-expected",
+    "topicId": "negotiation",
+    "text": "I'm afraid that price is a little higher than we were expecting.",
+    "ipa": "/aɪm əˈfreɪd ðæt praɪs ɪz ə ˈlɪtəl ˈhaɪɚ ðən wiː wɚr ɪkˈspektɪŋ/",
+    "meaningVi": "Tôi e rằng mức giá đó hơi cao hơn so với dự tính của chúng tôi.",
+    "example": "A: The total comes to fifty thousand dollars. — B: I'm afraid that price is a little higher than we were expecting.",
+    "register": "formal",
+    "level": "B1"
+  },
+  {
+    "id": "ng-lower-price-if-double-order",
+    "topicId": "negotiation",
+    "text": "Would you be willing to consider a lower price if we doubled our order?",
+    "ipa": "/wʊd juː bi ˈwɪlɪŋ tə kənˈsɪdɚr ə ˈloʊɚ praɪs ɪf wiː ˈdʌbəld ˈaʊɚr ˈɔːrdɚ/",
+    "meaningVi": "Nếu chúng tôi tăng gấp đôi số lượng đặt hàng, bên anh/chị có cân nhắc giảm giá không?",
+    "example": "A: That's our standard price. — B: Would you be willing to consider a lower price if we doubled our order?",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ng-agree-provided-you-cover-shipping",
+    "topicId": "negotiation",
+    "text": "We could agree to that, provided that you cover the shipping costs.",
+    "ipa": "/wiː kʊd əˈɡriː tə ðæt prəˈvaɪdɪd ðæt juː ˈkʌvɚ ðə ˈʃɪpɪŋ kɔːsts/",
+    "meaningVi": "Chúng tôi có thể đồng ý, với điều kiện bên anh/chị chịu chi phí vận chuyển.",
+    "example": "A: Can you accept a thirty-day delivery window? — B: We could agree to that, provided that you cover the shipping costs.",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ng-as-long-as-delivery-on-time",
+    "topicId": "negotiation",
+    "text": "As long as delivery is on time, we're happy with these terms.",
+    "ipa": "/æz lɔːŋ æz dɪˈlɪvəri ɪz ɑːn taɪm wɪr ˈhæpi wɪð ðiːz tɝːmz/",
+    "meaningVi": "Miễn là giao hàng đúng hạn, chúng tôi hoàn toàn hài lòng với các điều khoản này.",
+    "example": "A: Does the rest of the agreement look OK? — B: As long as delivery is on time, we're happy with these terms.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ng-with-respect-see-differently",
+    "topicId": "negotiation",
+    "text": "With all due respect, I see the situation a little differently.",
+    "ipa": "/wɪð ɔːl duː rɪˈspekt aɪ siː ðə ˌsɪtʃuˈeɪʃən ə ˈlɪtəl ˈdɪfrəntli/",
+    "meaningVi": "Xin phép được nói thẳng, tôi nhìn nhận tình hình hơi khác một chút.",
+    "example": "A: Clearly the delay was your fault. — B: With all due respect, I see the situation a little differently.",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ng-budget-doesnt-allow-it",
+    "topicId": "negotiation",
+    "text": "I understand where you're coming from, but our budget simply doesn't allow it.",
+    "ipa": "/aɪ ˌʌndɚˈstænd wer jʊr ˈkʌmɪŋ frʌm bət ˈaʊɚ ˈbʌdʒɪt ˈsɪmpli ˈdʌzənt əˈlaʊ ɪt/",
+    "meaningVi": "Tôi hiểu quan điểm của anh/chị, nhưng ngân sách của chúng tôi thực sự không cho phép.",
+    "example": "A: Quality like this costs more. — B: I understand where you're coming from, but our budget simply doesn't allow it.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ng-solution-works-for-both-sides",
+    "topicId": "negotiation",
+    "text": "Let's try to find a solution that works for both sides.",
+    "ipa": "/lets traɪ tə faɪnd ə səˈluːʃən ðæt wɝːks fɚ boʊθ saɪdz/",
+    "meaningVi": "Chúng ta hãy cố tìm ra một giải pháp hợp lý cho cả hai bên.",
+    "example": "A: We can't accept that price. — B: OK. Let's try to find a solution that works for both sides.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "ng-lower-price-longer-contract",
+    "topicId": "negotiation",
+    "text": "If you can lower the price, we can commit to a longer contract.",
+    "ipa": "/ɪf juː kæn ˈloʊɚ ðə praɪs wiː kæn kəˈmɪt tu ə ˈlɔːŋɡɚ ˈkɑːntrækt/",
+    "meaningVi": "Nếu bên anh/chị giảm được giá, chúng tôi có thể cam kết ký hợp đồng dài hạn hơn.",
+    "example": "A: The price is already very competitive. — B: If you can lower the price, we can commit to a longer contract.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ng-free-installation-faster-payment",
+    "topicId": "negotiation",
+    "text": "We could offer free installation in exchange for faster payment.",
+    "ipa": "/wiː kʊd ˈɔːfɚ friː ˌɪnstəˈleɪʃən ɪn ɪksˈtʃeɪndʒ fɚ ˈfæstɚ ˈpeɪmənt/",
+    "meaningVi": "Chúng tôi có thể lắp đặt miễn phí, đổi lại bên anh/chị thanh toán sớm hơn.",
+    "example": "A: Is there anything else you can offer? — B: We could offer free installation in exchange for faster payment.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ng-final-offer-cant-go-lower",
+    "topicId": "negotiation",
+    "text": "That's our final offer, and I'm afraid we can't go any lower.",
+    "ipa": "/ðæts ˈaʊɚ ˈfaɪnəl ˈɔːfɚ ænd aɪm əˈfreɪd wiː kænt ɡoʊ ˈeni ˈloʊɚ/",
+    "meaningVi": "Đó là đề nghị cuối cùng của chúng tôi, và tôi e là không thể giảm thêm được nữa.",
+    "example": "A: Can you do eight dollars per unit? — B: Nine is the best we can do. That's our final offer, and I'm afraid we can't go any lower.",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ng-flexibility-on-payment-terms",
+    "topicId": "negotiation",
+    "text": "Is there any flexibility at all on the payment terms you've proposed?",
+    "ipa": "/ɪz ðer ˈeni ˌfleksəˈbɪləti æt ɔːl ɑːn ðə ˈpeɪmənt tɝːmz juːv prəˈpoʊzd/",
+    "meaningVi": "Các điều khoản thanh toán mà bên anh/chị đề xuất có thể linh động chút nào không?",
+    "example": "A: We need full payment within fifteen days. — B: Is there any flexibility at all on the payment terms you've proposed?",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ng-split-the-difference",
+    "topicId": "negotiation",
+    "text": "Could we split the difference and settle on fifteen percent?",
+    "ipa": "/kʊd wiː splɪt ðə ˈdɪfrəns ænd ˈsetəl ɑːn ˌfɪfˈtiːn pɚˈsent/",
+    "meaningVi": "Hay chúng ta mỗi bên nhường một nửa và chốt ở mức mười lăm phần trăm nhé?",
+    "example": "A: We can offer ten percent, not twenty. — B: Could we split the difference and settle on fifteen percent?",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ng-discuss-with-manager-first",
+    "topicId": "negotiation",
+    "text": "I'll need to discuss this with my manager before I can give you an answer.",
+    "ipa": "/aɪl niːd tə dɪˈskʌs ðɪs wɪð maɪ ˈmænədʒɚ bɪˈfɔːr aɪ kən ɡɪv juː ən ˈænsɚ/",
+    "meaningVi": "Tôi cần trao đổi việc này với quản lý trước khi có thể trả lời anh/chị.",
+    "example": "A: So, do we have a deal? — B: I'll need to discuss this with my manager before I can give you an answer.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "ng-make-sure-understand-position",
+    "topicId": "negotiation",
+    "text": "Let me make sure I understand your position correctly before we continue.",
+    "ipa": "/let miː meɪk ʃʊr aɪ ˌʌndɚˈstænd jɚ pəˈzɪʃən kəˈrektli bɪˈfɔːr wiː kənˈtɪnjuː/",
+    "meaningVi": "Trước khi tiếp tục, để tôi chắc chắn rằng mình đã hiểu đúng lập trường của anh/chị.",
+    "example": "Let me make sure I understand your position correctly before we continue. You want delivery in May, not June?",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ng-interesting-but-doesnt-meet-needs",
+    "topicId": "negotiation",
+    "text": "That's an interesting proposal, but it doesn't quite meet our needs.",
+    "ipa": "/ðæts ən ˈɪntrəstɪŋ prəˈpoʊzəl bət ɪt ˈdʌzənt kwaɪt miːt ˈaʊɚ niːdz/",
+    "meaningVi": "Đề xuất đó khá thú vị, nhưng chưa thực sự đáp ứng được nhu cầu của chúng tôi.",
+    "example": "A: We could deliver in two separate batches. — B: That's an interesting proposal, but it doesn't quite meet our needs.",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ng-close-to-agreement-momentum",
+    "topicId": "negotiation",
+    "text": "We're very close to an agreement, so let's not lose momentum now.",
+    "ipa": "/wɪr ˈveri kloʊs tu ən əˈɡriːmənt soʊ lets nɑːt luːz moʊˈmentəm naʊ/",
+    "meaningVi": "Chúng ta sắp đi đến thỏa thuận rồi, vậy đừng để mọi thứ chững lại lúc này.",
+    "example": "A: Maybe we should continue next month. — B: We're very close to an agreement, so let's not lose momentum now.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ng-have-a-deal-go-over-points",
+    "topicId": "negotiation",
+    "text": "I think we have a deal; shall we go over the main points once more?",
+    "ipa": "/aɪ θɪŋk wiː hæv ə diːl ʃæl wiː ɡoʊ ˈoʊvɚ ðə meɪn pɔɪnts wʌns mɔːr/",
+    "meaningVi": "Tôi nghĩ là chúng ta đã thống nhất rồi; mình điểm lại các ý chính một lần nữa nhé?",
+    "example": "A: Fifteen percent, delivery in May. Agreed. — B: Great. I think we have a deal; shall we go over the main points once more?",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ng-put-in-writing-contract-friday",
+    "topicId": "negotiation",
+    "text": "We'll put everything in writing and send you the contract by Friday.",
+    "ipa": "/wiːl pʊt ˈevriθɪŋ ɪn ˈraɪtɪŋ ænd send juː ðə ˈkɑːntrækt baɪ ˈfraɪdeɪ/",
+    "meaningVi": "Chúng tôi sẽ soạn mọi thứ thành văn bản và gửi hợp đồng cho bên anh/chị trước thứ Sáu.",
+    "example": "A: So what happens next? — B: We'll put everything in writing and send you the contract by Friday.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "ng-spread-payments-six-months",
+    "topicId": "negotiation",
+    "text": "Would it help if we spread the payments over six months instead?",
+    "ipa": "/wʊd ɪt help ɪf wiː spred ðə ˈpeɪmənts ˈoʊvɚ sɪks mʌnθs ɪnˈsted/",
+    "meaningVi": "Nếu chúng tôi chia khoản thanh toán ra trong sáu tháng thì có giúp được gì không?",
+    "example": "A: Paying it all at once is difficult for us. — B: Would it help if we spread the payments over six months instead?",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ng-other-suppliers-better-terms",
+    "topicId": "negotiation",
+    "text": "To be honest, other suppliers have offered us better terms.",
+    "ipa": "/tə bi ˈɑːnɪst ˈʌðɚ səˈplaɪɚz hæv ˈɔːfɚd ʌs ˈbetɚ tɝːmz/",
+    "meaningVi": "Nói thật là các nhà cung cấp khác đã đưa ra điều kiện tốt hơn cho chúng tôi.",
+    "example": "A: Why are you asking for a bigger discount? — B: To be honest, other suppliers have offered us better terms.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ng-what-would-it-take-sign-today",
+    "topicId": "negotiation",
+    "text": "What would it take for you to sign the agreement today?",
+    "ipa": "/wʌt wʊd ɪt teɪk fɚ juː tə saɪn ði əˈɡriːmənt təˈdeɪ/",
+    "meaningVi": "Bên anh/chị cần điều kiện gì để có thể ký thỏa thuận ngay hôm nay?",
+    "example": "A: We're still not completely sure. — B: I understand. What would it take for you to sign the agreement today?",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ng-pleasure-doing-business",
+    "topicId": "negotiation",
+    "text": "It's been a pleasure doing business with you, and I look forward to working together.",
+    "ipa": "/ɪts bɪn ə ˈpleʒɚ ˈduːɪŋ ˈbɪznəs wɪð juː ænd aɪ lʊk ˈfɔːrwɚd tə ˈwɝːkɪŋ təˈɡeðɚ/",
+    "meaningVi": "Rất hân hạnh được hợp tác kinh doanh với anh/chị, tôi mong chờ được làm việc cùng nhau.",
+    "example": "A: Here's the signed contract. — B: Thank you. It's been a pleasure doing business with you, and I look forward to working together.",
+    "register": "formal",
+    "level": "B1"
+  },
+  {
+    "id": "ng-put-price-aside-delivery-times",
+    "topicId": "negotiation",
+    "text": "Let's put the price aside for now and talk about delivery times.",
+    "ipa": "/lets pʊt ðə praɪs əˈsaɪd fɚ naʊ ænd tɔːk əˈbaʊt dɪˈlɪvəri taɪmz/",
+    "meaningVi": "Tạm gác chuyện giá cả sang một bên, chúng ta bàn về thời gian giao hàng trước nhé.",
+    "example": "A: We're still far apart on price. — B: Let's put the price aside for now and talk about delivery times.",
+    "register": "neutral",
+    "level": "B2"
+  }
+]

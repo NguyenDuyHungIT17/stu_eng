@@ -198,5 +198,105 @@
     "example": "We're almost out of time. Let's wrap up.",
     "register": "casual",
     "level": "B1"
+  },
+  {
+    "id": "mt-quick-round-of-introductions",
+    "topicId": "meetings",
+    "text": "Before we begin, let's do a quick round of introductions.",
+    "ipa": "/bɪˈfɔːr wiː bɪˈɡɪn lets duː ə kwɪk raʊnd əv ˌɪntrəˈdʌkʃənz/",
+    "meaningVi": "Trước khi bắt đầu, mình giới thiệu nhanh từng người nhé.",
+    "example": "Before we begin, let's do a quick round of introductions. I'll go first.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "mt-main-goal-agree-budget",
+    "topicId": "meetings",
+    "text": "The main goal of today's meeting is to agree on the budget.",
+    "ipa": "/ðə meɪn ɡoʊl əv təˈdeɪz ˈmiːtɪŋ ɪz tu əˈɡriː ɑːn ðə ˈbʌdʒɪt/",
+    "meaningVi": "Mục tiêu chính của buổi họp hôm nay là thống nhất ngân sách.",
+    "example": "Thanks for coming. The main goal of today's meeting is to agree on the budget.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "mt-share-my-screen-numbers",
+    "topicId": "meetings",
+    "text": "Let me share my screen so everyone can see the numbers.",
+    "ipa": "/let miː ʃer maɪ skriːn soʊ ˈevriwʌn kæn siː ðə ˈnʌmbərz/",
+    "meaningVi": "Để tôi chia sẻ màn hình cho mọi người cùng xem số liệu.",
+    "example": "OK, let me share my screen so everyone can see the numbers. Can you see it?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "mt-add-to-what-hoa-said",
+    "topicId": "meetings",
+    "text": "I'd like to add something to what Hoa just said.",
+    "ipa": "/aɪd laɪk tu æd ˈsʌmθɪŋ tə wʌt ˈhoʊə dʒʌst sed/",
+    "meaningVi": "Tôi xin bổ sung thêm một chút vào ý chị Hoa vừa nói.",
+    "example": "I'd like to add something to what Hoa just said. We also need more testers.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "mt-who-takes-notes-today",
+    "topicId": "meetings",
+    "text": "Who's going to take notes for today's meeting?",
+    "ipa": "/huːz ˈɡoʊɪŋ tə teɪk noʊts fɔːr təˈdeɪz ˈmiːtɪŋ/",
+    "meaningVi": "Hôm nay ai sẽ ghi biên bản cuộc họp?",
+    "example": "A: Who's going to take notes for today's meeting? — B: I can do it.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "mt-five-minutes-keep-it-short",
+    "topicId": "meetings",
+    "text": "We only have five minutes left, so let's keep it short.",
+    "ipa": "/wiː ˈoʊnli hæv faɪv ˈmɪnɪts left soʊ lets kiːp ɪt ʃɔːrt/",
+    "meaningVi": "Chúng ta chỉ còn năm phút, nên mọi người nói ngắn gọn thôi nhé.",
+    "example": "We only have five minutes left, so let's keep it short. Any final questions?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "mt-responsible-contacting-supplier",
+    "topicId": "meetings",
+    "text": "Who's going to be responsible for contacting the supplier?",
+    "ipa": "/huːz ˈɡoʊɪŋ tə biː rɪˈspɑːnsəbəl fɔːr ˈkɑːntæktɪŋ ðə səˈplaɪər/",
+    "meaningVi": "Ai sẽ phụ trách liên hệ với nhà cung cấp?",
+    "example": "A: Who's going to be responsible for contacting the supplier? — B: I'll handle that.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "mt-reschedule-to-thursday",
+    "topicId": "meetings",
+    "text": "Can we reschedule this meeting to Thursday afternoon instead?",
+    "ipa": "/kæn wiː ˌriːˈskedʒuːl ðɪs ˈmiːtɪŋ tə ˈθɜːrzdeɪ ˌæftərˈnuːn ɪnˈsted/",
+    "meaningVi": "Mình dời cuộc họp này sang chiều thứ Năm được không?",
+    "example": "Half the team is out today. Can we reschedule this meeting to Thursday afternoon instead?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "mt-go-over-action-items",
+    "topicId": "meetings",
+    "text": "Let's quickly go over the action items before we finish.",
+    "ipa": "/lets ˈkwɪkli ɡoʊ ˈoʊvər ði ˈækʃən ˈaɪtəmz bɪˈfɔːr wiː ˈfɪnɪʃ/",
+    "meaningVi": "Trước khi kết thúc, mình điểm lại nhanh các đầu việc cần làm nhé.",
+    "example": "Let's quickly go over the action items before we finish. Nam, you have the first one.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "mt-connection-unstable-drop-off",
+    "topicId": "meetings",
+    "text": "Sorry, my connection is unstable, so I might drop off for a moment.",
+    "ipa": "/ˈsɑːri maɪ kəˈnekʃən ɪz ʌnˈsteɪbəl soʊ aɪ maɪt drɑːp ɔːf fɔːr ə ˈmoʊmənt/",
+    "meaningVi": "Xin lỗi, mạng của tôi không ổn định nên có thể tôi sẽ bị rớt khỏi cuộc họp một lúc.",
+    "example": "Sorry, my connection is unstable, so I might drop off for a moment. I'll rejoin quickly.",
+    "register": "neutral",
+    "level": "B1"
   }
 ]

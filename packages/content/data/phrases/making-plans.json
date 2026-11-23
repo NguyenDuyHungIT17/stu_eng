@@ -1,0 +1,252 @@
+[
+  {
+    "id": "mp-are-you-free-this-saturday-afternoon",
+    "topicId": "making-plans",
+    "text": "Are you free this Saturday afternoon?",
+    "ipa": "/ɑːr jə friː ðɪs ˈsætərdeɪ ˌæftərˈnuːn/",
+    "meaningVi": "Chiều thứ Bảy này bạn có rảnh không?",
+    "example": "A: Are you free this Saturday afternoon? — B: I think so. Why?",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "mp-do-you-want-to-grab-a-coffee",
+    "topicId": "making-plans",
+    "text": "Do you want to grab a coffee after work?",
+    "ipa": "/də jə wɑːnt tə ɡræb ə ˈkɔːfi ˈæftər wɜːrk/",
+    "meaningVi": "Tan làm đi cà phê không?",
+    "example": "A: Do you want to grab a coffee after work? — B: Sure, I finish at five.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "mp-how-about-going-to-the-movies-tonight",
+    "topicId": "making-plans",
+    "text": "How about going to the movies tonight?",
+    "ipa": "/haʊ əˈbaʊt ˈɡoʊɪŋ tə ðə ˈmuːviz təˈnaɪt/",
+    "meaningVi": "Hay tối nay mình đi xem phim đi?",
+    "example": "A: I'm so bored. — B: How about going to the movies tonight?",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "mp-what-time-works-best-for-you",
+    "topicId": "making-plans",
+    "text": "What time works best for you?",
+    "ipa": "/wʌt taɪm wɜːrks best fər juː/",
+    "meaningVi": "Mấy giờ thì bạn tiện nhất?",
+    "example": "A: Let's meet tomorrow. What time works best for you? — B: Around ten would be great.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "mp-lets-meet-in-front-of-the-cinema",
+    "topicId": "making-plans",
+    "text": "Let's meet in front of the cinema at seven.",
+    "ipa": "/lets miːt ɪn frʌnt əv ðə ˈsɪnəmə æt ˈsevən/",
+    "meaningVi": "Bảy giờ mình gặp nhau trước cửa rạp phim nhé.",
+    "example": "A: So where should we meet? — B: Let's meet in front of the cinema at seven.",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "mp-im-afraid-i-cant-make-it-tomorrow",
+    "topicId": "making-plans",
+    "text": "I'm afraid I can't make it tomorrow.",
+    "ipa": "/aɪm əˈfreɪd aɪ kænt meɪk ɪt təˈmɑːroʊ/",
+    "meaningVi": "Tôi e là ngày mai tôi không đến được rồi.",
+    "example": "A: See you at the party tomorrow? — B: I'm afraid I can't make it tomorrow. I have to work late.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "mp-are-we-still-on-for-dinner-tonight",
+    "topicId": "making-plans",
+    "text": "Are we still on for dinner tonight?",
+    "ipa": "/ɑːr wi stɪl ɑːn fər ˈdɪnər təˈnaɪt/",
+    "meaningVi": "Tối nay mình vẫn đi ăn như đã hẹn chứ?",
+    "example": "A: Are we still on for dinner tonight? — B: Of course! See you at seven.",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "mp-would-next-tuesday-be-better",
+    "topicId": "making-plans",
+    "text": "Would next Tuesday be better for you?",
+    "ipa": "/wʊd nekst ˈtuːzdeɪ bi ˈbetər fər juː/",
+    "meaningVi": "Thứ Ba tuần sau thì bạn có tiện hơn không?",
+    "example": "A: This week is really busy for me. — B: No problem. Would next Tuesday be better for you?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "mp-sorry-im-running-fifteen-minutes-late",
+    "topicId": "making-plans",
+    "text": "Sorry, I'm running about fifteen minutes late.",
+    "ipa": "/ˈsɑːri aɪm ˈrʌnɪŋ əˈbaʊt ˌfɪfˈtiːn ˈmɪnɪts leɪt/",
+    "meaningVi": "Xin lỗi, tôi sẽ đến muộn khoảng mười lăm phút.",
+    "example": "A: Where are you? — B: Sorry, I'm running about fifteen minutes late.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "mp-ill-text-you-when-i-get-there",
+    "topicId": "making-plans",
+    "text": "I'll text you when I get there.",
+    "ipa": "/aɪl tekst jə wen aɪ ɡet ðer/",
+    "meaningVi": "Tới nơi tôi nhắn tin cho bạn nhé.",
+    "example": "A: Call me when you arrive. — B: OK, I'll text you when I get there.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "mp-should-i-book-a-table-for-four",
+    "topicId": "making-plans",
+    "text": "Should I book a table for four people?",
+    "ipa": "/ʃʊd aɪ bʊk ə ˈteɪbəl fər fɔːr ˈpiːpəl/",
+    "meaningVi": "Hay là tôi đặt bàn cho bốn người nhé?",
+    "example": "A: Lan and Minh are coming too. — B: Great. Should I book a table for four people?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "mp-sounds-great-count-me-in",
+    "topicId": "making-plans",
+    "text": "Sounds great, count me in!",
+    "ipa": "/saʊndz ɡreɪt kaʊnt mi ɪn/",
+    "meaningVi": "Nghe hay đấy, tính cả tôi một suất nhé!",
+    "example": "A: We're going to the beach on Sunday. — B: Sounds great, count me in!",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "mp-maybe-another-time",
+    "topicId": "making-plans",
+    "text": "Maybe another time, I'm really busy this week.",
+    "ipa": "/ˈmeɪbi əˈnʌðər taɪm aɪm ˈrɪli ˈbɪzi ðɪs wiːk/",
+    "meaningVi": "Để dịp khác nhé, tuần này tôi bận quá.",
+    "example": "A: Want to play badminton on Thursday? — B: Maybe another time, I'm really busy this week.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "mp-do-you-mind-if-i-bring-a-friend",
+    "topicId": "making-plans",
+    "text": "Do you mind if I bring a friend along?",
+    "ipa": "/də jə maɪnd ɪf aɪ brɪŋ ə frend əˈlɔːŋ/",
+    "meaningVi": "Tôi rủ thêm một người bạn đi cùng có được không?",
+    "example": "A: Do you mind if I bring a friend along? — B: Not at all, the more the merrier!",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "mp-where-do-you-want-to-meet",
+    "topicId": "making-plans",
+    "text": "Where do you want to meet?",
+    "ipa": "/wer də jə wɑːnt tə miːt/",
+    "meaningVi": "Bạn muốn gặp nhau ở đâu?",
+    "example": "A: Let's have lunch tomorrow. — B: Sure. Where do you want to meet?",
+    "register": "neutral",
+    "level": "A1"
+  },
+  {
+    "id": "mp-i-have-to-cancel-our-meeting-on-friday",
+    "topicId": "making-plans",
+    "text": "I'm sorry, but I have to cancel our meeting on Friday.",
+    "ipa": "/aɪm ˈsɑːri bət aɪ hæv tə ˈkænsəl ˈaʊər ˈmiːtɪŋ ɑːn ˈfraɪdeɪ/",
+    "meaningVi": "Xin lỗi, tôi phải hủy buổi hẹn hôm thứ Sáu.",
+    "example": "A: I'm sorry, but I have to cancel our meeting on Friday. — B: That's OK. Let's find another day.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "mp-let-me-check-my-calendar",
+    "topicId": "making-plans",
+    "text": "Let me check my calendar and get back to you.",
+    "ipa": "/let mi tʃek maɪ ˈkæləndər ənd ɡet bæk tə juː/",
+    "meaningVi": "Để tôi xem lại lịch rồi báo bạn sau nhé.",
+    "example": "A: Can we meet on Wednesday? — B: Let me check my calendar and get back to you.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "mp-can-we-push-it-back-to-eight",
+    "topicId": "making-plans",
+    "text": "Can we push it back to eight o'clock instead?",
+    "ipa": "/kən wi pʊʃ ɪt bæk tə eɪt əˈklɑːk ɪnˈsted/",
+    "meaningVi": "Mình lùi sang tám giờ được không?",
+    "example": "A: Dinner at seven? — B: I finish work late. Can we push it back to eight o'clock instead?",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "mp-im-on-my-way",
+    "topicId": "making-plans",
+    "text": "I'm on my way, I'll be there in ten minutes.",
+    "ipa": "/aɪm ɑːn maɪ weɪ aɪl bi ðer ɪn ten ˈmɪnɪts/",
+    "meaningVi": "Tôi đang trên đường tới, mười phút nữa là đến.",
+    "example": "A: Are you coming? We're all here. — B: I'm on my way, I'll be there in ten minutes.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "mp-lets-do-something-fun-this-weekend",
+    "topicId": "making-plans",
+    "text": "Let's do something fun this weekend!",
+    "ipa": "/lets duː ˈsʌmθɪŋ fʌn ðɪs ˈwiːkend/",
+    "meaningVi": "Cuối tuần này mình đi đâu chơi cho vui đi!",
+    "example": "A: Let's do something fun this weekend! — B: Good idea. How about the zoo?",
+    "register": "casual",
+    "level": "A1"
+  },
+  {
+    "id": "mp-would-you-like-to-come-to-my-party",
+    "topicId": "making-plans",
+    "text": "Would you like to come to my birthday party on Sunday?",
+    "ipa": "/wʊd jə laɪk tə kʌm tə maɪ ˈbɜːrθdeɪ ˈpɑːrti ɑːn ˈsʌndeɪ/",
+    "meaningVi": "Chủ nhật này bạn đến dự tiệc sinh nhật tôi nhé?",
+    "example": "A: Would you like to come to my birthday party on Sunday? — B: I'd love to! Thanks.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "mp-shall-i-pick-you-up",
+    "topicId": "making-plans",
+    "text": "Shall I pick you up at your place?",
+    "ipa": "/ʃæl aɪ pɪk jə ʌp æt jər pleɪs/",
+    "meaningVi": "Để tôi qua nhà đón bạn nhé?",
+    "example": "A: The restaurant is a bit far from my house. — B: Shall I pick you up at your place?",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "mp-ill-be-waiting-at-the-bus-stop",
+    "topicId": "making-plans",
+    "text": "I'll be waiting for you at the bus stop.",
+    "ipa": "/aɪl bi ˈweɪtɪŋ fər jə æt ðə bʌs stɑːp/",
+    "meaningVi": "Tôi sẽ đứng đợi bạn ở trạm xe buýt.",
+    "example": "A: OK, I'm leaving the house now. — B: Great, I'll be waiting for you at the bus stop.",
+    "register": "neutral",
+    "level": "A2"
+  },
+  {
+    "id": "mp-what-should-we-do-if-it-rains",
+    "topicId": "making-plans",
+    "text": "What should we do if it rains?",
+    "ipa": "/wʌt ʃʊd wi duː ɪf ɪt reɪnz/",
+    "meaningVi": "Lỡ trời mưa thì mình tính sao?",
+    "example": "A: Let's have a picnic on Saturday. — B: Nice! But what should we do if it rains?",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "mp-thanks-for-inviting-me",
+    "topicId": "making-plans",
+    "text": "Thanks for inviting me, I'll definitely be there.",
+    "ipa": "/θæŋks fər ɪnˈvaɪtɪŋ mi aɪl ˈdefənətli bi ðer/",
+    "meaningVi": "Cảm ơn đã mời nhé, chắc chắn tôi sẽ đến.",
+    "example": "A: We're having a small party on Friday. — B: Thanks for inviting me, I'll definitely be there.",
+    "register": "neutral",
+    "level": "A2"
+  }
+]

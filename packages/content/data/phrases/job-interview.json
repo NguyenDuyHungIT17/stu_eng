@@ -1,0 +1,252 @@
+[
+  {
+    "id": "ji-working-as-engineer-five-years",
+    "topicId": "job-interview",
+    "text": "I've been working as a software engineer for about five years now.",
+    "ipa": "/aɪv bɪn ˈwɝːkɪŋ æz ə ˈsɔːftwer ˌendʒɪˈnɪr fɚr əˈbaʊt faɪv jɪrz naʊ/",
+    "meaningVi": "Tôi đã làm kỹ sư phần mềm được khoảng năm năm rồi.",
+    "example": "A: So tell me a little about yourself. — B: Sure. I've been working as a software engineer for about five years now.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "ji-responsible-for-managing-team",
+    "topicId": "job-interview",
+    "text": "In my current role, I'm responsible for managing a team of six people.",
+    "ipa": "/ɪn maɪ ˈkɝːənt roʊl aɪm rɪˈspɑːnsəbəl fɚ ˈmænədʒɪŋ ə tiːm əv sɪks ˈpiːpəl/",
+    "meaningVi": "Ở vị trí hiện tại, tôi phụ trách quản lý một nhóm sáu người.",
+    "example": "A: What does your job involve day to day? — B: In my current role, I'm responsible for managing a team of six people.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "ji-applying-matches-skills-goals",
+    "topicId": "job-interview",
+    "text": "I'm applying for this position because it matches my skills and long-term goals.",
+    "ipa": "/aɪm əˈplaɪɪŋ fɚ ðɪs pəˈzɪʃən bɪˈkɔːz ɪt ˈmætʃɪz maɪ skɪlz ænd ˌlɔːŋˈtɝːm ɡoʊlz/",
+    "meaningVi": "Tôi ứng tuyển vị trí này vì nó phù hợp với kỹ năng và mục tiêu lâu dài của tôi.",
+    "example": "A: Why are you interested in this job? — B: I'm applying for this position because it matches my skills and long-term goals.",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ji-strength-stay-calm-under-pressure",
+    "topicId": "job-interview",
+    "text": "One of my greatest strengths is that I stay calm under pressure.",
+    "ipa": "/wʌn əv maɪ ˈɡreɪtɪst streŋθs ɪz ðæt aɪ steɪ kɑːm ˈʌndɚ ˈpreʃɚ/",
+    "meaningVi": "Một trong những điểm mạnh lớn nhất của tôi là luôn giữ được bình tĩnh khi chịu áp lực.",
+    "example": "A: What would you say are your main strengths? — B: One of my greatest strengths is that I stay calm under pressure.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-weakness-take-on-too-much",
+    "topicId": "job-interview",
+    "text": "I'd say my biggest weakness is that I sometimes take on too much at once.",
+    "ipa": "/aɪd seɪ maɪ ˈbɪɡɪst ˈwiːknəs ɪz ðæt aɪ ˈsʌmtaɪmz teɪk ɑːn tuː mʌtʃ æt wʌns/",
+    "meaningVi": "Có lẽ điểm yếu lớn nhất của tôi là đôi khi tôi ôm đồm quá nhiều việc cùng lúc.",
+    "example": "A: And what about your weaknesses? — B: I'd say my biggest weakness is that I sometimes take on too much at once.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-learning-to-delegate",
+    "topicId": "job-interview",
+    "text": "I've been working on it by learning to delegate and prioritize more carefully.",
+    "ipa": "/aɪv bɪn ˈwɝːkɪŋ ɑːn ɪt baɪ ˈlɝːnɪŋ tə ˈdeləɡeɪt ænd praɪˈɔːrətaɪz mɔːr ˈkerfəli/",
+    "meaningVi": "Tôi đang khắc phục bằng cách học cách giao việc và sắp xếp thứ tự ưu tiên kỹ hơn.",
+    "example": "A: How are you dealing with that weakness? — B: I've been working on it by learning to delegate and prioritize more carefully.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-typical-day-in-role",
+    "topicId": "job-interview",
+    "text": "Could you walk me through what a typical day looks like in this role?",
+    "ipa": "/kʊd juː wɔːk miː θruː wʌt ə ˈtɪpɪkəl deɪ lʊks laɪk ɪn ðɪs roʊl/",
+    "meaningVi": "Anh/chị có thể mô tả giúp tôi một ngày làm việc điển hình ở vị trí này không?",
+    "example": "A: Do you have any questions for us? — B: Yes. Could you walk me through what a typical day looks like in this role?",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-expect-first-three-months",
+    "topicId": "job-interview",
+    "text": "What would you expect me to achieve in my first three months here?",
+    "ipa": "/wʌt wʊd juː ɪkˈspekt miː tə əˈtʃiːv ɪn maɪ fɝːst θriː mʌnθs hɪr/",
+    "meaningVi": "Anh/chị kỳ vọng tôi đạt được những gì trong ba tháng đầu làm việc ở đây?",
+    "example": "Before we finish, what would you expect me to achieve in my first three months here?",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-describe-team-culture",
+    "topicId": "job-interview",
+    "text": "How would you describe the team culture and the way people work together?",
+    "ipa": "/haʊ wʊd juː dɪˈskraɪb ðə tiːm ˈkʌltʃɚ ænd ðə weɪ ˈpiːpəl wɝːk təˈɡeðɚ/",
+    "meaningVi": "Anh/chị đánh giá thế nào về văn hóa nhóm và cách mọi người phối hợp với nhau?",
+    "example": "A: Anything else you'd like to know? — B: How would you describe the team culture and the way people work together?",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-salary-range-expectation",
+    "topicId": "job-interview",
+    "text": "Based on my experience, I'm looking for a salary of around seventy thousand dollars.",
+    "ipa": "/beɪst ɑːn maɪ ɪkˈspɪriəns aɪm ˈlʊkɪŋ fɚr ə ˈsæləri əv əˈraʊnd ˈsevənti ˈθaʊzənd ˈdɑːlɚz/",
+    "meaningVi": "Dựa trên kinh nghiệm của mình, tôi mong muốn mức lương khoảng bảy mươi nghìn đô la.",
+    "example": "A: What are your salary expectations? — B: Based on my experience, I'm looking for a salary of around seventy thousand dollars.",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ji-room-to-negotiate-salary",
+    "topicId": "job-interview",
+    "text": "Is there any room for negotiation on the salary you've offered?",
+    "ipa": "/ɪz ðer ˈeni ruːm fɚ nɪˌɡoʊʃiˈeɪʃən ɑːn ðə ˈsæləri juːv ˈɔːfɚd/",
+    "meaningVi": "Mức lương anh/chị đưa ra có thể thương lượng thêm được không?",
+    "example": "A: We'd like to offer you the position. — B: Thank you! Is there any room for negotiation on the salary you've offered?",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ji-left-previous-job-to-grow",
+    "topicId": "job-interview",
+    "text": "I left my previous job because I wanted more opportunities to grow.",
+    "ipa": "/aɪ left maɪ ˈpriːviəs dʒɑːb bɪˈkɔːz aɪ ˈwɑːntɪd mɔːr ˌɑːpɚˈtuːnətiz tə ɡroʊ/",
+    "meaningVi": "Tôi nghỉ công việc trước vì muốn có thêm cơ hội phát triển.",
+    "example": "A: Why did you leave your last company? — B: I left my previous job because I wanted more opportunities to grow.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "ji-example-difficult-customer",
+    "topicId": "job-interview",
+    "text": "Can you give me an example of a time you handled a difficult customer?",
+    "ipa": "/kæn juː ɡɪv miː ən ɪɡˈzæmpəl əv ə taɪm juː ˈhændəld ə ˈdɪfɪkəlt ˈkʌstəmɚ/",
+    "meaningVi": "Bạn có thể kể một lần bạn đã xử lý một khách hàng khó tính không?",
+    "example": "A: Can you give me an example of a time you handled a difficult customer? — B: Of course. Last year, a client was unhappy with a late delivery...",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-listened-then-offered-solution",
+    "topicId": "job-interview",
+    "text": "In that situation, I listened carefully first and then offered a practical solution.",
+    "ipa": "/ɪn ðæt ˌsɪtʃuˈeɪʃən aɪ ˈlɪsənd ˈkerfəli fɝːst ænd ðen ˈɔːfɚd ə ˈpræktɪkəl səˈluːʃən/",
+    "meaningVi": "Trong tình huống đó, tôi lắng nghe kỹ trước rồi mới đưa ra một giải pháp thiết thực.",
+    "example": "The client was very upset. In that situation, I listened carefully first and then offered a practical solution.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-five-years-leading-mentoring",
+    "topicId": "job-interview",
+    "text": "In five years, I hope to be leading projects and mentoring junior colleagues.",
+    "ipa": "/ɪn faɪv jɪrz aɪ hoʊp tə bi ˈliːdɪŋ ˈprɑːdʒekts ænd ˈmentɔːrɪŋ ˈdʒuːnjɚ ˈkɑːliːɡz/",
+    "meaningVi": "Trong năm năm tới, tôi hy vọng sẽ dẫn dắt các dự án và kèm cặp các đồng nghiệp mới vào nghề.",
+    "example": "A: Where do you see yourself in five years? — B: In five years, I hope to be leading projects and mentoring junior colleagues.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-cut-delivery-time-thirty-percent",
+    "topicId": "job-interview",
+    "text": "I led a project that cut our delivery time by nearly thirty percent.",
+    "ipa": "/aɪ led ə ˈprɑːdʒekt ðæt kʌt ˈaʊɚ dɪˈlɪvəri taɪm baɪ ˈnɪrli ˈθɝːti pɚˈsent/",
+    "meaningVi": "Tôi từng dẫn dắt một dự án giúp rút ngắn thời gian giao hàng gần ba mươi phần trăm.",
+    "example": "A: What's your proudest achievement? — B: I led a project that cut our delivery time by nearly thirty percent.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-quick-learner-new-tools",
+    "topicId": "job-interview",
+    "text": "I'm a quick learner, and I'm comfortable picking up new tools on my own.",
+    "ipa": "/aɪm ə kwɪk ˈlɝːnɚ ænd aɪm ˈkʌmftɚbəl ˈpɪkɪŋ ʌp nuː tuːlz ɑːn maɪ oʊn/",
+    "meaningVi": "Tôi tiếp thu nhanh và có thể tự học cách dùng các công cụ mới.",
+    "example": "A: We use a lot of internal software here. — B: That's fine. I'm a quick learner, and I'm comfortable picking up new tools on my own.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "ji-next-steps-hiring-process",
+    "topicId": "job-interview",
+    "text": "What are the next steps in the hiring process, and when can I expect to hear back?",
+    "ipa": "/wʌt ɑːr ðə nekst steps ɪn ðə ˈhaɪrɪŋ ˈprɑːses ænd wen kæn aɪ ɪkˈspekt tə hɪr bæk/",
+    "meaningVi": "Các bước tiếp theo của quy trình tuyển dụng là gì, và khi nào tôi có thể nhận được phản hồi?",
+    "example": "A: That's all from our side. — B: Thank you. What are the next steps in the hiring process, and when can I expect to hear back?",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ji-thank-you-enjoyed-learning",
+    "topicId": "job-interview",
+    "text": "Thank you for your time; I really enjoyed learning more about the company.",
+    "ipa": "/ˈθæŋk juː fɚ jɚ taɪm aɪ ˈrɪli ɪnˈdʒɔɪd ˈlɝːnɪŋ mɔːr əˈbaʊt ðə ˈkʌmpəni/",
+    "meaningVi": "Cảm ơn anh/chị đã dành thời gian; tôi rất vui vì được tìm hiểu thêm về công ty.",
+    "example": "A: We'll be in touch soon. — B: Thank you for your time; I really enjoyed learning more about the company.",
+    "register": "formal",
+    "level": "B1"
+  },
+  {
+    "id": "ji-work-independently-and-in-team",
+    "topicId": "job-interview",
+    "text": "I work well both independently and as part of a larger team.",
+    "ipa": "/aɪ wɝːk wel boʊθ ˌɪndɪˈpendəntli ænd æz pɑːrt əv ə ˈlɑːrdʒɚ tiːm/",
+    "meaningVi": "Tôi làm việc tốt cả khi làm độc lập lẫn khi làm trong một nhóm lớn.",
+    "example": "A: Do you prefer working alone or with others? — B: I work well both independently and as part of a larger team.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "ji-no-direct-experience-similar",
+    "topicId": "job-interview",
+    "text": "I don't have direct experience with that, but I've done something very similar.",
+    "ipa": "/aɪ doʊnt hæv dəˈrekt ɪkˈspɪriəns wɪð ðæt bət aɪv dʌn ˈsʌmθɪŋ ˈveri ˈsɪmələr/",
+    "meaningVi": "Tôi chưa trực tiếp làm việc đó, nhưng tôi đã làm một việc rất tương tự.",
+    "example": "A: Have you ever managed an overseas supplier? — B: I don't have direct experience with that, but I've done something very similar.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-biggest-challenge-facing-team",
+    "topicId": "job-interview",
+    "text": "What do you think is the biggest challenge facing the team right now?",
+    "ipa": "/wʌt də juː θɪŋk ɪz ðə ˈbɪɡɪst ˈtʃælɪndʒ ˈfeɪsɪŋ ðə tiːm raɪt naʊ/",
+    "meaningVi": "Theo anh/chị, thách thức lớn nhất mà nhóm đang gặp phải hiện nay là gì?",
+    "example": "A: Do you have any other questions? — B: Yes. What do you think is the biggest challenge facing the team right now?",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "ji-start-after-notice-period",
+    "topicId": "job-interview",
+    "text": "I'm available to start in two weeks, once I've finished my notice period.",
+    "ipa": "/aɪm əˈveɪləbəl tə stɑːrt ɪn tuː wiːks wʌns aɪv ˈfɪnɪʃt maɪ ˈnoʊtɪs ˈpɪriəd/",
+    "meaningVi": "Tôi có thể bắt đầu sau hai tuần, khi đã hoàn tất thời gian báo trước nghỉ việc.",
+    "example": "A: When would you be able to join us? — B: I'm available to start in two weeks, once I've finished my notice period.",
+    "register": "formal",
+    "level": "B2"
+  },
+  {
+    "id": "ji-why-right-fit-for-position",
+    "topicId": "job-interview",
+    "text": "Why do you think you're the right fit for this position?",
+    "ipa": "/waɪ də juː θɪŋk jʊr ðə raɪt fɪt fɚ ðɪs pəˈzɪʃən/",
+    "meaningVi": "Vì sao bạn nghĩ mình là người phù hợp với vị trí này?",
+    "example": "A: Why do you think you're the right fit for this position? — B: Because I have both the technical skills and the client experience you need.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "ji-benefits-package-besides-salary",
+    "topicId": "job-interview",
+    "text": "Besides the salary, could you tell me a bit more about the benefits package?",
+    "ipa": "/bɪˈsaɪdz ðə ˈsæləri kʊd juː tel miː ə bɪt mɔːr əˈbaʊt ðə ˈbenəfɪts ˈpækɪdʒ/",
+    "meaningVi": "Ngoài lương ra, anh/chị có thể cho tôi biết thêm về chế độ phúc lợi không?",
+    "example": "A: The base salary is fixed for the first year. — B: I see. Besides the salary, could you tell me a bit more about the benefits package?",
+    "register": "formal",
+    "level": "B2"
+  }
+]

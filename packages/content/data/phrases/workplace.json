@@ -1,0 +1,252 @@
+[
+  {
+    "id": "wp-running-late-traffic",
+    "topicId": "workplace",
+    "text": "I'm running about ten minutes late because of the traffic.",
+    "ipa": "/aɪm ˈrʌnɪŋ əˈbaʊt ten ˈmɪnɪts leɪt bɪˈkɔːz əv ðə ˈtræfɪk/",
+    "meaningVi": "Tôi sẽ đến muộn khoảng mười phút vì kẹt xe.",
+    "example": "A: Are you on your way? — B: Yes, I'm running about ten minutes late because of the traffic.",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "wp-not-feeling-well-wfh",
+    "topicId": "workplace",
+    "text": "I'm not feeling well today, so I'll work from home.",
+    "ipa": "/aɪm nɑːt ˈfiːlɪŋ wel təˈdeɪ soʊ aɪl wɜːrk frəm hoʊm/",
+    "meaningVi": "Hôm nay tôi không được khỏe nên sẽ làm việc ở nhà.",
+    "example": "Hi team, I'm not feeling well today, so I'll work from home.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-take-a-sick-day",
+    "topicId": "workplace",
+    "text": "I need to take a sick day, I've got a bad fever.",
+    "ipa": "/aɪ niːd tə teɪk ə sɪk deɪ aɪv ɡɑːt ə bæd ˈfiːvər/",
+    "meaningVi": "Tôi phải xin nghỉ ốm một hôm, tôi đang sốt cao.",
+    "example": "A: You sound terrible. — B: I need to take a sick day, I've got a bad fever.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-grab-lunch-together",
+    "topicId": "workplace",
+    "text": "Do you want to grab lunch together after this?",
+    "ipa": "/duː juː wɑːnt tə ɡræb lʌntʃ təˈɡeðər ˈæftər ðɪs/",
+    "meaningVi": "Xong việc này mình đi ăn trưa cùng nhau không?",
+    "example": "A: Do you want to grab lunch together after this? — B: Sure, I'm starving.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "wp-new-noodle-place",
+    "topicId": "workplace",
+    "text": "There's a new noodle place around the corner we should try.",
+    "ipa": "/ðerz ə nuː ˈnuːdəl pleɪs əˈraʊnd ðə ˈkɔːrnər wiː ʃʊd traɪ/",
+    "meaningVi": "Có quán mì mới mở ngay góc đường, mình đi ăn thử đi.",
+    "example": "A: Any ideas for lunch? — B: There's a new noodle place around the corner we should try.",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "wp-give-me-a-hand-report",
+    "topicId": "workplace",
+    "text": "Could you give me a hand with this report when you're free?",
+    "ipa": "/kʊd juː ɡɪv miː ə hænd wɪð ðɪs rɪˈpɔːrt wen jʊr friː/",
+    "meaningVi": "Khi nào rảnh, bạn phụ tôi làm bản báo cáo này được không?",
+    "example": "A: Could you give me a hand with this report when you're free? — B: Sure, after lunch.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-stuck-on-this-bug",
+    "topicId": "workplace",
+    "text": "I've been stuck on this bug since this morning.",
+    "ipa": "/aɪv bɪn stʌk ɑːn ðɪs bʌɡ sɪns ðɪs ˈmɔːrnɪŋ/",
+    "meaningVi": "Tôi loay hoay với lỗi này từ sáng tới giờ vẫn chưa xong.",
+    "example": "A: You look stressed. — B: I've been stuck on this bug since this morning.",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "wp-almost-done-slides",
+    "topicId": "workplace",
+    "text": "I'm almost done with the slides, I just need to check the numbers.",
+    "ipa": "/aɪm ˈɔːlmoʊst dʌn wɪð ðə slaɪdz aɪ dʒʌst niːd tə tʃek ðə ˈnʌmbərz/",
+    "meaningVi": "Tôi sắp làm xong slide rồi, chỉ cần kiểm tra lại số liệu thôi.",
+    "example": "A: How's the presentation going? — B: I'm almost done with the slides, I just need to check the numbers.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-still-on-track",
+    "topicId": "workplace",
+    "text": "We're still on track to finish everything by Friday.",
+    "ipa": "/wɪr stɪl ɑːn træk tə ˈfɪnɪʃ ˈevriθɪŋ baɪ ˈfraɪdeɪ/",
+    "meaningVi": "Mọi việc vẫn đúng tiến độ, thứ Sáu là xong hết.",
+    "example": "A: Any update on the project? — B: We're still on track to finish everything by Friday.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-behind-schedule-client",
+    "topicId": "workplace",
+    "text": "We're a bit behind schedule because the client changed the design.",
+    "ipa": "/wɪr ə bɪt bɪˈhaɪnd ˈskedʒuːl bɪˈkɔːz ðə ˈklaɪənt tʃeɪndʒd ðə dɪˈzaɪn/",
+    "meaningVi": "Chúng tôi đang hơi chậm tiến độ vì khách hàng đổi thiết kế.",
+    "example": "A: Why is the app delayed? — B: We're a bit behind schedule because the client changed the design.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-swamped-this-week",
+    "topicId": "workplace",
+    "text": "I'm totally swamped this week, can we talk next Monday?",
+    "ipa": "/aɪm ˈtoʊtəli swɑːmpt ðɪs wiːk kæn wiː tɔːk nekst ˈmʌndeɪ/",
+    "meaningVi": "Tuần này tôi ngập việc luôn, để thứ Hai tuần sau mình nói chuyện nhé?",
+    "example": "A: Do you have time to discuss the new idea? — B: I'm totally swamped this week, can we talk next Monday?",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "wp-too-much-on-my-plate",
+    "topicId": "workplace",
+    "text": "I have too much on my plate to take on another project.",
+    "ipa": "/aɪ hæv tuː mʌtʃ ɑːn maɪ pleɪt tə teɪk ɑːn əˈnʌðər ˈprɑːdʒekt/",
+    "meaningVi": "Tôi đang ôm quá nhiều việc, không nhận thêm dự án nào nữa được.",
+    "example": "Sorry, I have too much on my plate to take on another project right now.",
+    "register": "neutral",
+    "level": "B2"
+  },
+  {
+    "id": "wp-doctors-appointment-leave",
+    "topicId": "workplace",
+    "text": "I have a doctor's appointment, so I'll leave at four today.",
+    "ipa": "/aɪ hæv ə ˈdɑːktərz əˈpɔɪntmənt soʊ aɪl liːv æt fɔːr təˈdeɪ/",
+    "meaningVi": "Tôi có lịch khám bác sĩ nên hôm nay bốn giờ tôi về.",
+    "example": "Just so you know, I have a doctor's appointment, so I'll leave at four today.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-how-was-your-weekend",
+    "topicId": "workplace",
+    "text": "How was your weekend? Did you do anything fun?",
+    "ipa": "/haʊ wʌz jɔːr ˈwiːkend dɪd juː duː ˈeniθɪŋ fʌn/",
+    "meaningVi": "Cuối tuần của bạn thế nào? Có đi đâu chơi vui không?",
+    "example": "A: How was your weekend? Did you do anything fun? — B: I went to the beach with my kids.",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "wp-grab-a-coffee-anything",
+    "topicId": "workplace",
+    "text": "I'm going to grab a coffee, do you want anything?",
+    "ipa": "/aɪm ˈɡoʊɪŋ tə ɡræb ə ˈkɔːfi duː juː wɑːnt ˈeniθɪŋ/",
+    "meaningVi": "Tôi đi mua cà phê đây, bạn có muốn uống gì không?",
+    "example": "A: I'm going to grab a coffee, do you want anything? — B: An iced latte, please. Thanks!",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "wp-who-to-ask-access",
+    "topicId": "workplace",
+    "text": "Who should I talk to about getting access to the shared drive?",
+    "ipa": "/huː ʃʊd aɪ tɔːk tə əˈbaʊt ˈɡetɪŋ ˈækses tə ðə ʃerd draɪv/",
+    "meaningVi": "Muốn được cấp quyền vào thư mục chung thì tôi nên hỏi ai?",
+    "example": "A: Who should I talk to about getting access to the shared drive? — B: Ask Tuan in IT.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-laptop-keeps-freezing",
+    "topicId": "workplace",
+    "text": "My laptop keeps freezing, so I'll need to call IT support.",
+    "ipa": "/maɪ ˈlæptɑːp kiːps ˈfriːzɪŋ soʊ aɪl niːd tə kɔːl ˌaɪˈtiː səˈpɔːrt/",
+    "meaningVi": "Laptop của tôi cứ bị treo hoài, chắc phải gọi bộ phận IT thôi.",
+    "example": "A: Why aren't you online? — B: My laptop keeps freezing, so I'll need to call IT support.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-cover-for-me-on-leave",
+    "topicId": "workplace",
+    "text": "Can you cover for me while I'm on leave next week?",
+    "ipa": "/kæn juː ˈkʌvər fɔːr miː waɪl aɪm ɑːn liːv nekst wiːk/",
+    "meaningVi": "Tuần sau tôi nghỉ phép, bạn làm thay phần việc của tôi được không?",
+    "example": "A: Can you cover for me while I'm on leave next week? — B: No problem, just leave me some notes.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-heads-up-printer",
+    "topicId": "workplace",
+    "text": "Just a heads-up, the printer on our floor is broken again.",
+    "ipa": "/dʒʌst ə ˈhedzʌp ðə ˈprɪntər ɑːn ˈaʊər flɔːr ɪz ˈbroʊkən əˈɡen/",
+    "meaningVi": "Báo trước để mọi người biết, máy in ở tầng mình lại hỏng rồi.",
+    "example": "Just a heads-up, the printer on our floor is broken again. Use the one downstairs.",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "wp-heading-out-see-you",
+    "topicId": "workplace",
+    "text": "I'm heading out now, see you all tomorrow morning.",
+    "ipa": "/aɪm ˈhedɪŋ aʊt naʊ siː juː ɔːl təˈmɑːroʊ ˈmɔːrnɪŋ/",
+    "meaningVi": "Tôi về trước đây, hẹn gặp mọi người sáng mai.",
+    "example": "A: I'm heading out now, see you all tomorrow morning. — B: Bye, get home safe!",
+    "register": "casual",
+    "level": "A2"
+  },
+  {
+    "id": "wp-stay-late-monthly-report",
+    "topicId": "workplace",
+    "text": "I have to stay late tonight to finish the monthly report.",
+    "ipa": "/aɪ hæv tə steɪ leɪt təˈnaɪt tə ˈfɪnɪʃ ðə ˈmʌnθli rɪˈpɔːrt/",
+    "meaningVi": "Tối nay tôi phải ở lại muộn để làm cho xong báo cáo tháng.",
+    "example": "A: Are you coming to dinner? — B: Sorry, I have to stay late tonight to finish the monthly report.",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-first-day-show-around",
+    "topicId": "workplace",
+    "text": "It's my first day here, could you show me around the office?",
+    "ipa": "/ɪts maɪ fɜːrst deɪ hɪr kʊd juː ʃoʊ miː əˈraʊnd ði ˈɔːfɪs/",
+    "meaningVi": "Hôm nay là ngày đầu tôi đi làm, bạn dẫn tôi đi một vòng văn phòng được không?",
+    "example": "Hi, I'm Mai. It's my first day here, could you show me around the office?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-heard-the-news-promoted",
+    "topicId": "workplace",
+    "text": "Have you heard the news? Minh is getting promoted next month.",
+    "ipa": "/hæv juː hɜːrd ðə nuːz mɪn ɪz ˈɡetɪŋ prəˈmoʊtɪd nekst mʌnθ/",
+    "meaningVi": "Bạn nghe tin chưa? Tháng sau anh Minh được thăng chức đấy.",
+    "example": "A: Have you heard the news? Minh is getting promoted next month. — B: Really? Good for him!",
+    "register": "casual",
+    "level": "B1"
+  },
+  {
+    "id": "wp-hows-your-workload",
+    "topicId": "workplace",
+    "text": "How's your workload this week? Do you have time for a small task?",
+    "ipa": "/haʊz jɔːr ˈwɜːrkloʊd ðɪs wiːk duː juː hæv taɪm fɔːr ə smɔːl tæsk/",
+    "meaningVi": "Tuần này bạn có nhiều việc không? Có rảnh nhận thêm một việc nhỏ không?",
+    "example": "A: How's your workload this week? Do you have time for a small task? — B: Sure, what is it?",
+    "register": "neutral",
+    "level": "B1"
+  },
+  {
+    "id": "wp-thanks-owe-you-one",
+    "topicId": "workplace",
+    "text": "Thanks for helping me out yesterday, I really owe you one.",
+    "ipa": "/θæŋks fɔːr ˈhelpɪŋ miː aʊt ˈjestərdeɪ aɪ ˈrɪli oʊ juː wʌn/",
+    "meaningVi": "Cảm ơn bạn hôm qua đã giúp tôi, lần này tôi nợ bạn một lần nhé.",
+    "example": "A: Thanks for helping me out yesterday, I really owe you one. — B: Anytime!",
+    "register": "casual",
+    "level": "B1"
+  }
+]

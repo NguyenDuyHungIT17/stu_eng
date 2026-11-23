@@ -1,5 +1,20 @@
 [
   { "id": "greetings", "title": "Làm quen và chào hỏi", "level": "A1", "sortOrder": 1 },
-  { "id": "restaurant", "title": "Ở nhà hàng, quán cà phê", "level": "A2", "sortOrder": 2 },
-  { "id": "meetings", "title": "Họp và trao đổi công việc", "level": "B1", "sortOrder": 3 }
+  { "id": "daily-life", "title": "Sinh hoạt hằng ngày", "level": "A1", "sortOrder": 2 },
+  { "id": "restaurant", "title": "Ở nhà hàng, quán cà phê", "level": "A2", "sortOrder": 3 },
+  { "id": "small-talk", "title": "Chuyện phiếm", "level": "A2", "sortOrder": 4 },
+  { "id": "making-plans", "title": "Hẹn gặp, rủ đi chơi", "level": "A2", "sortOrder": 5 },
+  { "id": "shopping", "title": "Mua sắm", "level": "A2", "sortOrder": 6 },
+  { "id": "directions", "title": "Hỏi đường, đi lại", "level": "A2", "sortOrder": 7 },
+  { "id": "travel", "title": "Sân bay, khách sạn", "level": "A2", "sortOrder": 8 },
+  { "id": "phone-calls", "title": "Gọi điện thoại", "level": "B1", "sortOrder": 9 },
+  { "id": "health", "title": "Sức khỏe, đi khám", "level": "B1", "sortOrder": 10 },
+  { "id": "feelings-opinions", "title": "Cảm xúc và ý kiến", "level": "B1", "sortOrder": 11 },
+  { "id": "workplace", "title": "Nơi làm việc", "level": "B1", "sortOrder": 12 },
+  { "id": "meetings", "title": "Họp và trao đổi công việc", "level": "B1", "sortOrder": 13 },
+  { "id": "polite-requests", "title": "Nhờ vả lịch sự", "level": "B1", "sortOrder": 14 },
+  { "id": "complaints", "title": "Phàn nàn, xử lý sự cố", "level": "B1", "sortOrder": 15 },
+  { "id": "job-interview", "title": "Phỏng vấn xin việc", "level": "B2", "sortOrder": 16 },
+  { "id": "presentations", "title": "Thuyết trình", "level": "B2", "sortOrder": 17 },
+  { "id": "negotiation", "title": "Đàm phán", "level": "B2", "sortOrder": 18 }
 ]
