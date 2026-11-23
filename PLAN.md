@@ -16,7 +16,7 @@ _Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thi
 | Sprint  | Mục tiêu           | Ước tính                       | Bắt đầu | Kết thúc | Tiến độ              | Trạng thái                                          |
 | ------- | ------------------ | ------------------------------ | ------- | -------- | -------------------- | --------------------------------------------------- |
 | 0       | Nền móng + spike   | 1,5 tuần                       | 18/11   |          | 10/24 (+11 đang làm) | Chờ secrets GitHub, PR vào main, keystore, máy thật |
-| 1       | Từ vựng và ôn tập  | 2 tuần                         |         |          | 0/18                 | Chưa bắt đầu                                        |
+| 1       | Từ vựng và ôn tập  | 2 tuần                         | 23/11   |          | 0/18 (+17 code xong) | Chờ PR, duyệt nội dung, thử máy thật                |
 | 2       | Ghi chú và tiến độ | 1 tuần                         |         |          | 0/14                 | Chưa bắt đầu                                        |
 | 3a      | Chat bằng chữ      | 1,5 tuần                       |         |          | 0/18                 | Chưa bắt đầu                                        |
 | 3b      | Chat bằng giọng    | 1,5 tuần                       |         |          | 0/13                 | Chưa bắt đầu                                        |
@@ -74,7 +74,7 @@ Mốc quan trọng:
 - [~] `S0-16` **S2** – STT tiếng Anh giọng Việt trên 2–3 máy
 - [~] `S0-17` **S3** – TTS tiếng Anh offline, liệt kê giọng
 - [x] `S0-18` **S4** – D1 đếm đúng khi 20 request song song; ghi hạn mức free D1/Workers _(23/11: đạt trên D1 thật)_
-- [~] `S0-19` **S5** – Metro + pnpm + `@app/shared` khi build release
+- [x] `S0-19` **S5** – Metro + pnpm + `@app/shared` khi build release _(23/11: build release ở máy đạt)_
 - [~] `S0-20` **S6** – Drizzle migration + FTS5 trên expo-sqlite
 - [ ] `S0-21` **S7** – Hạn mức free và độ trễ token đầu của 2 nhà cung cấp LLM
 - [ ] `S0-22` **S8** – APK ký từ CI cài được trên máy thật, gọi `/health`
@@ -92,29 +92,29 @@ Mốc quan trọng:
 
 ### Dữ liệu
 
-- [ ] `S1-01` Drizzle schema đầy đủ cho MVP + migration đầu tiên — TK §5
-- [ ] `S1-02` `lib/day.ts` (`localDayKey`, `startOfLocalDay`) + test
-- [ ] `S1-03` Seed theo `content_version` (upsert, `deletedAt`, không chạm tiến độ) + test — TK §5
-- [ ] `S1-04` Nội dung: 3 chủ đề, 60 cụm từ (có IPA, nghĩa, ví dụ, register), đã duyệt — BRD §6
+- [~] `S1-01` Drizzle schema đầy đủ cho MVP + migration đầu tiên — TK §5 _(23/11: code + test xong (`b0ec426`); thêm `phrases.sort_order`, `topics.deleted_at` so với TK §5)_
+- [~] `S1-02` `lib/day.ts` (`localDayKey`, `startOfLocalDay`) + test _(23/11: code + test xong (`b0ec426`); thêm `addLocalDays`)_
+- [~] `S1-03` Seed theo `content_version` (upsert, `deletedAt`, không chạm tiến độ) + test — TK §5 _(23/11: code + test xong (`b0ec426`); chạy lúc khởi động trong `DbProvider`)_
+- [~] `S1-04` Nội dung: 3 chủ đề, 60 cụm từ (có IPA, nghĩa, ví dụ, register), đã duyệt — BRD §6 _(23/11: 60 cụm (`9acb97c`), qua validate; **chưa duyệt** (cần người duyệt tiếng Anh))_
 
 ### Logic
 
-- [ ] `S1-05` `lib/fsrs.ts` – `scheduleNext(card, rating, now)` + test — TK §6.1
-- [ ] `S1-06` Repository vocab: danh sách chủ đề, cụm theo chủ đề
-- [ ] `S1-07` Repository review: thẻ đến hạn, thẻ mới còn lại trong ngày (theo `dailyNewLimit`) + test — FR-V-05
-- [ ] `S1-08` Ghi kết quả ôn trong 1 transaction (`review_cards`, `review_logs`, `daily_activity`) + test — TK §6.1
-- [ ] `S1-09` Sinh đáp án nhiễu cho bài trắc nghiệm (cùng chủ đề) + test
+- [~] `S1-05` `lib/fsrs.ts` – `scheduleNext(card, rating, now)` + test — TK §6.1 _(23/11: code + test xong (`b0ec426`), dùng `ts-fsrs` 6)_
+- [~] `S1-06` Repository vocab: danh sách chủ đề, cụm theo chủ đề _(23/11: code + test xong (`b0ec426`))_
+- [~] `S1-07` Repository review: thẻ đến hạn, thẻ mới còn lại trong ngày (theo `dailyNewLimit`) + test — FR-V-05 _(23/11: code + test xong (`b0ec426`))_
+- [~] `S1-08` Ghi kết quả ôn trong 1 transaction (`review_cards`, `review_logs`, `daily_activity`) + test — TK §6.1 _(23/11: code + test xong (`b0ec426`))_
+- [~] `S1-09` Sinh đáp án nhiễu cho bài trắc nghiệm (cùng chủ đề) + test _(23/11: code + test xong (`b0ec426`); bỏ đáp án trùng nghĩa)_
 
 ### Giao diện
 
-- [ ] `S1-10` `services/tts.ts` (đọc, dừng, chọn giọng, tốc độ)
-- [ ] `S1-11` Tab Học: danh sách chủ đề → danh sách cụm — FR-V-01
-- [ ] `S1-12` Thẻ cụm từ (IPA, nghĩa, ví dụ, register, nút phát âm) — FR-V-02
-- [ ] `S1-13` Bài tập lật thẻ — FR-V-04a
-- [ ] `S1-14` Bài tập chọn nghĩa đúng — FR-V-04a
-- [ ] `S1-15` Bài tập nghe rồi chọn cụm từ — FR-V-04a
-- [ ] `S1-16` Phiên ôn: Quên/Khó/Được/Dễ, màn kết thúc phiên — FR-V-03
-- [ ] `S1-17` Trang chủ: số thẻ cần ôn hôm nay, số cụm mới còn lại — FR-V-05
+- [~] `S1-10` `services/tts.ts` (đọc, dừng, chọn giọng, tốc độ) _(23/11: code xong (`8d6b81b`); chưa có màn chọn giọng (Cài đặt, Sprint 2/4))_
+- [~] `S1-11` Tab Học: danh sách chủ đề → danh sách cụm — FR-V-01 _(23/11: code xong (`8d6b81b`))_
+- [~] `S1-12` Thẻ cụm từ (IPA, nghĩa, ví dụ, register, nút phát âm) — FR-V-02 _(23/11: code xong (`8d6b81b`), có nút nghe chậm)_
+- [~] `S1-13` Bài tập lật thẻ — FR-V-04a _(23/11: code + test component (`8d6b81b`))_
+- [~] `S1-14` Bài tập chọn nghĩa đúng — FR-V-04a _(23/11: code + test component (`8d6b81b`))_
+- [~] `S1-15` Bài tập nghe rồi chọn cụm từ — FR-V-04a _(23/11: code + test component (`8d6b81b`))_
+- [~] `S1-16` Phiên ôn: Quên/Khó/Được/Dễ, màn kết thúc phiên — FR-V-03 _(23/11: code + test logic phiên (`8d6b81b`))_
+- [~] `S1-17` Trang chủ: số thẻ cần ôn hôm nay, số cụm mới còn lại — FR-V-05 _(23/11: code xong (`8d6b81b`))_
 
 ### Tổng kết sprint
 
@@ -244,16 +244,16 @@ Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử
 
 ## Kết quả spike (Sprint 0)
 
-| Spike                  | Kết quả                       | Số liệu/ghi chú                                                                                                                                                                                                         | Quyết định                                                                                                       |
-| ---------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| S1 – SSE `expo/fetch`  | Đạt phía server; chờ máy thật | API dev thật: `/dev/stream` byte đầu ~0,25 s, 11 token đến dần trong ~1,9 s (curl). Còn: đo bằng `expo/fetch` trên APK release                                                                                          |                                                                                                                  |
-| S2 – STT trên máy thật | Chờ máy thật                  | Máy: ...                                                                                                                                                                                                                |                                                                                                                  |
-| S3 – TTS offline       | Chờ máy thật                  | Giọng có sẵn: ...                                                                                                                                                                                                       |                                                                                                                  |
-| S4 – D1 quota          | Đạt                           | D1 dev thật (23/11): 20 lệnh `hit()` song song → trả về đúng 1..20, không trùng, tổng 20. Free: Workers 100.000 request/ngày (thấy trên dashboard), CPU 10 ms/request; D1 5 triệu dòng đọc, 100.000 dòng ghi/ngày, 5 GB | Giữ thiết kế đếm bằng 1 câu `INSERT … ON CONFLICT … RETURNING`; mỗi lượt chat tốn ~1–3 dòng ghi → dư sức cho MVP |
-| S5 – Metro + pnpm      | Đạt (bundle JS)               | `expo export --platform android` bundle được, import `@app/content`/`@app/shared` OK, không cần metro.config. Còn: build native release trên CI                                                                         | Giữ `node-linker=hoisted`; thêm `ws@8` ở gốc cho Miniflare                                                       |
-| S6 – Drizzle + FTS5    | Chờ máy thật (FTS5)           | Phần Drizzle migration làm ở S1-01                                                                                                                                                                                      |                                                                                                                  |
-| S7 – Nhà cung cấp LLM  | Chưa làm                      | Cần khóa API (P-03)                                                                                                                                                                                                     |                                                                                                                  |
-| S8 – APK ký từ CI      | Chưa làm                      | `expo prebuild` chạy được ở máy, plugin ký chèn đúng vào `app/build.gradle`. Cần push lên GitHub + secrets                                                                                                              |                                                                                                                  |
+| Spike                  | Kết quả                   | Số liệu/ghi chú                                                                                                                                                                                                         | Quyết định                                                                                                                                 |
+| ---------------------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| S1 – SSE `expo/fetch`  | Đạt (máy ảo, APK release) | 23/11, máy ảo API 37, APK release build ở máy: token đầu 259 ms, tổng 1,9 s, 12 chunk, nhận dần. Còn: 1 máy thật                                                                                                        | Giữ `expo/fetch` + bộ đọc SSE tự viết                                                                                                      |
+| S2 – STT trên máy thật | Chờ máy thật              | Máy: ...                                                                                                                                                                                                                |                                                                                                                                            |
+| S3 – TTS offline       | Đạt (máy ảo)              | Máy ảo: 473 giọng, 51 giọng tiếng Anh, có giọng `-local` (offline). Engine khởi động lần đầu ~2–5 s. Còn: máy thật ở chế độ máy bay                                                                                     | Không chặn giao diện chờ engine TTS (timeout 2 s)                                                                                          |
+| S4 – D1 quota          | Đạt                       | D1 dev thật (23/11): 20 lệnh `hit()` song song → trả về đúng 1..20, không trùng, tổng 20. Free: Workers 100.000 request/ngày (thấy trên dashboard), CPU 10 ms/request; D1 5 triệu dòng đọc, 100.000 dòng ghi/ngày, 5 GB | Giữ thiết kế đếm bằng 1 câu `INSERT … ON CONFLICT … RETURNING`; mỗi lượt chat tốn ~1–3 dòng ghi → dư sức cho MVP                           |
+| S5 – Metro + pnpm      | Đạt                       | 23/11: `expo run:android --variant release` build native release ở máy (Windows) thành công, app chạy, import `@app/*` và migration `.sql` OK. Lần đầu ~20 phút (C++ 4 ABI)                                             | Giữ `node-linker=hoisted`; thêm `metro.config.js` (đuôi .sql) và `babel.config.js` (inline-import)                                         |
+| S6 – Drizzle + FTS5    | Đạt (máy ảo)              | Drizzle migration + seed chạy lúc mở app (APK release). expo-sqlite: SQLite 3.53.3, FTS5 hoạt động                                                                                                                      | MVP tìm ghi chú bằng cột `search_text` chuẩn hóa (bỏ dấu, đ→d) + `LIKE`: tìm không dấu, 1.000 ghi chú < 1 s. FTS5 để dành khi cần xếp hạng |
+| S7 – Nhà cung cấp LLM  | Chưa làm                  | Cần khóa API (P-03)                                                                                                                                                                                                     |                                                                                                                                            |
+| S8 – APK ký từ CI      | Một phần                  | APK release build ở máy cài lên máy ảo, gọi `/health` → 200 (lần đầu 2,1 s). Còn: chạy `android-apk.yml` + cài lên máy thật                                                                                             |                                                                                                                                            |
 
 ## Kiểm tra nghiệm thu P0 (điền ở Sprint 4)
 
@@ -275,15 +275,20 @@ Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử
 
 Ghi mọi thay đổi so với BRD/Thiết kế kỹ thuật phát sinh khi làm.
 
-| Ngày       | Quyết định                                                                                     | Lý do                                                                       | Ảnh hưởng                             |
-| ---------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------- |
-| 18/11/2026 | Áp dụng BRD v1.1 và Thiết kế kỹ thuật v1.1                                                     | Cắt phạm vi MVP, sửa rủi ro kỹ thuật                                        | Xem mục 0 của hai tài liệu            |
-| 18/11/2026 | Expo SDK 58, TypeScript 6.0                                                                    | Bản stable mới nhất; template Expo dùng TS 6.0 (TS 7 chưa an toàn với Expo) | —                                     |
-| 18/11/2026 | Route mobile ở `apps/mobile/src/app`                                                           | Quy ước của Expo SDK 58                                                     | Khác đường dẫn TK §4                  |
-| 18/11/2026 | Biến môi trường `EXPO_PUBLIC_API_BASE_URL` thay cho `extra` trong app config                   | Cách chuẩn của Expo, tự nhúng lúc bundle                                    | —                                     |
-| 18/11/2026 | Test API dùng Vitest + `getPlatformProxy()` của wrangler, bỏ `@cloudflare/vitest-pool-workers` | Gói này deprecated, không hợp Vitest 5                                      | Test không chạy trong runtime workerd |
-| 18/11/2026 | NativeWind hoãn sang Sprint 1 (khi làm UI thật); Sprint 0 dùng StyleSheet                      | Giảm cấu hình khi chưa có màn hình thật                                     | S0-02 chưa có NativeWind              |
-| 18/11/2026 | Android package `com.engoats.mobile` (bạn đã chốt)                                             | Tên chính thức                                                              | **Không đổi sau khi phát hành**       |
+| Ngày       | Quyết định                                                                                                      | Lý do                                                                       | Ảnh hưởng                             |
+| ---------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------- |
+| 18/11/2026 | Áp dụng BRD v1.1 và Thiết kế kỹ thuật v1.1                                                                      | Cắt phạm vi MVP, sửa rủi ro kỹ thuật                                        | Xem mục 0 của hai tài liệu            |
+| 18/11/2026 | Expo SDK 58, TypeScript 6.0                                                                                     | Bản stable mới nhất; template Expo dùng TS 6.0 (TS 7 chưa an toàn với Expo) | —                                     |
+| 18/11/2026 | Route mobile ở `apps/mobile/src/app`                                                                            | Quy ước của Expo SDK 58                                                     | Khác đường dẫn TK §4                  |
+| 18/11/2026 | Biến môi trường `EXPO_PUBLIC_API_BASE_URL` thay cho `extra` trong app config                                    | Cách chuẩn của Expo, tự nhúng lúc bundle                                    | —                                     |
+| 18/11/2026 | Test API dùng Vitest + `getPlatformProxy()` của wrangler, bỏ `@cloudflare/vitest-pool-workers`                  | Gói này deprecated, không hợp Vitest 5                                      | Test không chạy trong runtime workerd |
+| 18/11/2026 | NativeWind hoãn sang Sprint 1 (khi làm UI thật); Sprint 0 dùng StyleSheet                                       | Giảm cấu hình khi chưa có màn hình thật                                     | S0-02 chưa có NativeWind              |
+| 18/11/2026 | Android package `com.engoats.mobile` (bạn đã chốt)                                                              | Tên chính thức                                                              | **Không đổi sau khi phát hành**       |
+| 23/11/2026 | Thêm cột `phrases.sort_order`, `topics.deleted_at` (khác TK §5)                                                 | Học cụm mới đúng thứ tự biên soạn; ẩn chủ đề bị gỡ khỏi gói                 | Migration `0000_init`                 |
+| 23/11/2026 | Test repository bằng `better-sqlite3` + đúng migration của app; repository nhận kiểu `Db` (Drizzle chế độ sync) | expo-sqlite không chạy trong Node; hai driver cùng chế độ sync              | Không cần giả lập DB trong test       |
+| 23/11/2026 | Trình độ mặc định `B2` (mở toàn bộ nội dung) cho đến khi có bài xếp trình độ                                    | Mặc định A1 chỉ có vài cụm, người học hết bài ngay                          | Sửa khi làm onboarding (Sprint 4)     |
+| 23/11/2026 | Tiếp tục dùng StyleSheet, chưa thêm NativeWind                                                                  | Tránh thêm cấu hình Babel/Metro khi chưa thử được trên máy thật             | Xem lại ở Sprint 4                    |
+| 23/11/2026 | Phiên ôn: thẻ chấm "Quên" quay lại cuối phiên (tối đa 2 lần) dạng lật thẻ                                       | Củng cố ngay trong phiên, không kéo dài vô hạn                              | `features/review/session.ts`          |
 
 ## Nhật ký tuần
 
@@ -408,6 +413,23 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 **Checklist cập nhật:** #1 xong, #10 xong; #4 deploy dev đã làm tay (workflow vẫn cần chạy sau merge).
 
 **Đang chờ bạn:** secret `CLOUDFLARE_API_TOKEN` (#2; Account ID và URL dev đã đưa vào code vì không bí mật), mở PR và merge (#3), keystore (#5), điện thoại thật, 2 khóa LLM, 6 quyết định BRD §10.
+
+### Ngày 23/11/2026 (chiều) – Sprint 1
+
+**Đã làm (nhánh `eng_hungnd`, 3 commit, 63 test mobile xanh):**
+
+- Dữ liệu và logic (`b0ec426`): Drizzle schema + migration, `DbProvider` chạy migration và seed lúc mở app, `lib/day.ts`, `lib/fsrs.ts`, seed theo `contentVersion`, repository vocab/review, đáp án nhiễu. Mọi repository có test trên SQLite thật (`better-sqlite3`).
+- Giao diện (`8d6b81b`): TTS, tab Học → chủ đề → cụm, thẻ cụm từ, 3 bài tập, phiên ôn + màn kết thúc, Trang chủ. Có test component cho 3 bài tập.
+- Nội dung (`9acb97c`): 60 cụm (3 × 20), `contentVersion` 2. **Bản nháp, chưa duyệt.**
+- Test bắt được 1 lỗi thật: thiếu cài đặt `daily_new_limit` → mục tiêu thành 0 (`Number(null) = 0`), đã sửa.
+
+**Còn dở:**
+
+| Mã              | Cần gì                                                                        |
+| --------------- | ----------------------------------------------------------------------------- |
+| `S1-04`         | Người duyệt 60 cụm (IPA, nghĩa, ví dụ) trong `packages/content/data/phrases/` |
+| `S1-01`…`S1-17` | Mở PR `eng_hungnd` → `main`, CI xanh, merge; thử trên máy thật (DoD)          |
+| `S1-18`         | APK + điện thoại, bật chế độ máy bay, học và ôn một phiên → **M1**            |
 
 ---
 
