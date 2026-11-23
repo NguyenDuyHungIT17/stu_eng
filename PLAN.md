@@ -13,15 +13,15 @@ _Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thi
 
 ## Bảng tổng quan
 
-| Sprint  | Mục tiêu           | Ước tính                       | Bắt đầu | Kết thúc | Tiến độ             | Trạng thái                                      |
-| ------- | ------------------ | ------------------------------ | ------- | -------- | ------------------- | ----------------------------------------------- |
-| 0       | Nền móng + spike   | 1,5 tuần                       | 18/11   |          | 9/24 (+12 đang làm) | Chờ keystore, PR vào main, deploy API, máy thật |
-| 1       | Từ vựng và ôn tập  | 2 tuần                         |         |          | 0/18                | Chưa bắt đầu                                    |
-| 2       | Ghi chú và tiến độ | 1 tuần                         |         |          | 0/14                | Chưa bắt đầu                                    |
-| 3a      | Chat bằng chữ      | 1,5 tuần                       |         |          | 0/18                | Chưa bắt đầu                                    |
-| 3b      | Chat bằng giọng    | 1,5 tuần                       |         |          | 0/13                | Chưa bắt đầu                                    |
-| 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17                | Chưa bắt đầu                                    |
-| **MVP** |                    | **~9 tuần (+20–30% dự phòng)** |         |          | **0/104**           |                                                 |
+| Sprint  | Mục tiêu           | Ước tính                       | Bắt đầu | Kết thúc | Tiến độ              | Trạng thái                                          |
+| ------- | ------------------ | ------------------------------ | ------- | -------- | -------------------- | --------------------------------------------------- |
+| 0       | Nền móng + spike   | 1,5 tuần                       | 18/11   |          | 10/24 (+11 đang làm) | Chờ secrets GitHub, PR vào main, keystore, máy thật |
+| 1       | Từ vựng và ôn tập  | 2 tuần                         |         |          | 0/18                 | Chưa bắt đầu                                        |
+| 2       | Ghi chú và tiến độ | 1 tuần                         |         |          | 0/14                 | Chưa bắt đầu                                        |
+| 3a      | Chat bằng chữ      | 1,5 tuần                       |         |          | 0/18                 | Chưa bắt đầu                                        |
+| 3b      | Chat bằng giọng    | 1,5 tuần                       |         |          | 0/13                 | Chưa bắt đầu                                        |
+| 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17                 | Chưa bắt đầu                                        |
+| **MVP** |                    | **~9 tuần (+20–30% dự phòng)** |         |          | **0/104**            |                                                     |
 
 Mốc quan trọng:
 
@@ -64,8 +64,8 @@ Mốc quan trọng:
 - [ ] `S0-09` Tạo keystore, sao lưu 2 nơi, lưu vào GitHub Secrets — TK §10
 - [x] `S0-10` Config plugin `with-release-signing.js` — TK §10
 - [~] `S0-11` `android-apk.yml` build APK release đã ký — TK §10
-- [~] `S0-12` Tạo D1 `dev` và `prod`, migration `0001_usage.sql` — TK §7.2 _(22/11: đã tạo 2 DB; dev đã migrate, prod chưa)_
-- [~] `S0-13` `api-deploy.yml`: migrate D1 + `wrangler deploy` (dev khi merge, prod khi tag) _(22/11: Worker chưa deploy lần nào)_
+- [~] `S0-12` Tạo D1 `dev` và `prod`, migration `0001_usage.sql` — TK §7.2 _(đã tạo 2 DB; dev đã migrate; prod chưa — migrate khi tag đầu tiên)_
+- [~] `S0-13` `api-deploy.yml`: migrate D1 + `wrangler deploy` (dev khi merge, prod khi tag) _(23/11: đã deploy dev bằng tay; workflow chưa chạy — cần secrets + merge)_
 - [x] `S0-14` Config `API_BASE_URL` theo môi trường trong `app.config.ts`
 
 ### Spike (ghi kết quả vào bảng "Kết quả spike")
@@ -73,7 +73,7 @@ Mốc quan trọng:
 - [~] `S0-15` **S1** – Stream SSE bằng `expo/fetch` trên APK release — TK §11.1
 - [~] `S0-16` **S2** – STT tiếng Anh giọng Việt trên 2–3 máy
 - [~] `S0-17` **S3** – TTS tiếng Anh offline, liệt kê giọng
-- [~] `S0-18` **S4** – D1 đếm đúng khi 20 request song song; ghi hạn mức free D1/Workers
+- [x] `S0-18` **S4** – D1 đếm đúng khi 20 request song song; ghi hạn mức free D1/Workers _(23/11: đạt trên D1 thật)_
 - [~] `S0-19` **S5** – Metro + pnpm + `@app/shared` khi build release
 - [~] `S0-20` **S6** – Drizzle migration + FTS5 trên expo-sqlite
 - [ ] `S0-21` **S7** – Hạn mức free và độ trễ token đầu của 2 nhà cung cấp LLM
@@ -244,16 +244,16 @@ Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử
 
 ## Kết quả spike (Sprint 0)
 
-| Spike                  | Kết quả             | Số liệu/ghi chú                                                                                                                                 | Quyết định                                                 |
-| ---------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| S1 – SSE `expo/fetch`  | Chờ máy thật        | Tài liệu SDK 58 xác nhận `expo/fetch` hỗ trợ `body.getReader()`. API có `/dev/stream`; app có nút đo ở màn Kiểm tra kỹ thuật                    |                                                            |
-| S2 – STT trên máy thật | Chờ máy thật        | Máy: ...                                                                                                                                        |                                                            |
-| S3 – TTS offline       | Chờ máy thật        | Giọng có sẵn: ...                                                                                                                               |                                                            |
-| S4 – D1 quota          | Đạt (local)         | 20 request song song → đếm đúng 20 (test `counter.test.ts`, D1 local). Còn: kiểm tra hạn mức free D1 thật                                       |                                                            |
-| S5 – Metro + pnpm      | Đạt (bundle JS)     | `expo export --platform android` bundle được, import `@app/content`/`@app/shared` OK, không cần metro.config. Còn: build native release trên CI | Giữ `node-linker=hoisted`; thêm `ws@8` ở gốc cho Miniflare |
-| S6 – Drizzle + FTS5    | Chờ máy thật (FTS5) | Phần Drizzle migration làm ở S1-01                                                                                                              |                                                            |
-| S7 – Nhà cung cấp LLM  | Chưa làm            | Cần khóa API (P-03)                                                                                                                             |                                                            |
-| S8 – APK ký từ CI      | Chưa làm            | `expo prebuild` chạy được ở máy, plugin ký chèn đúng vào `app/build.gradle`. Cần push lên GitHub + secrets                                      |                                                            |
+| Spike                  | Kết quả                       | Số liệu/ghi chú                                                                                                                                                                                                         | Quyết định                                                                                                       |
+| ---------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| S1 – SSE `expo/fetch`  | Đạt phía server; chờ máy thật | API dev thật: `/dev/stream` byte đầu ~0,25 s, 11 token đến dần trong ~1,9 s (curl). Còn: đo bằng `expo/fetch` trên APK release                                                                                          |                                                                                                                  |
+| S2 – STT trên máy thật | Chờ máy thật                  | Máy: ...                                                                                                                                                                                                                |                                                                                                                  |
+| S3 – TTS offline       | Chờ máy thật                  | Giọng có sẵn: ...                                                                                                                                                                                                       |                                                                                                                  |
+| S4 – D1 quota          | Đạt                           | D1 dev thật (23/11): 20 lệnh `hit()` song song → trả về đúng 1..20, không trùng, tổng 20. Free: Workers 100.000 request/ngày (thấy trên dashboard), CPU 10 ms/request; D1 5 triệu dòng đọc, 100.000 dòng ghi/ngày, 5 GB | Giữ thiết kế đếm bằng 1 câu `INSERT … ON CONFLICT … RETURNING`; mỗi lượt chat tốn ~1–3 dòng ghi → dư sức cho MVP |
+| S5 – Metro + pnpm      | Đạt (bundle JS)               | `expo export --platform android` bundle được, import `@app/content`/`@app/shared` OK, không cần metro.config. Còn: build native release trên CI                                                                         | Giữ `node-linker=hoisted`; thêm `ws@8` ở gốc cho Miniflare                                                       |
+| S6 – Drizzle + FTS5    | Chờ máy thật (FTS5)           | Phần Drizzle migration làm ở S1-01                                                                                                                                                                                      |                                                                                                                  |
+| S7 – Nhà cung cấp LLM  | Chưa làm                      | Cần khóa API (P-03)                                                                                                                                                                                                     |                                                                                                                  |
+| S8 – APK ký từ CI      | Chưa làm                      | `expo prebuild` chạy được ở máy, plugin ký chèn đúng vào `app/build.gradle`. Cần push lên GitHub + secrets                                                                                                              |                                                                                                                  |
 
 ## Kiểm tra nghiệm thu P0 (điền ở Sprint 4)
 
@@ -395,6 +395,19 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 | 13  | Điền bảng "Kết quả spike", cập nhật TK/ADR nếu spike nào thất bại → **M0**                                                                                          | `S0-24`                   | Claude                     |
 
 **Đang chờ bạn:** keystore (#5), secrets GitHub (#2, #5), ít nhất 1 điện thoại thật (#7–9), 2 khóa LLM (#11), 6 quyết định BRD §10.
+
+### Ngày 23/11/2026
+
+**Đã làm:**
+
+- Cloudflare: đăng ký subdomain `nguyenduyhungit17.workers.dev`; deploy API dev bằng tay → `https://english-app-api.nguyenduyhungit17.workers.dev` (`/health` 200, `/dev/stream` chạy).
+- Spike S4 đạt trên D1 thật (`S0-18` xong). Spike S1 đạt phía server.
+- Sửa 2 lỗi nhỏ từ review (bộ đọc SSE, try/catch màn spike) — `a62ddb2`.
+- `apps/mobile/.env.local` (không commit) trỏ app build ở máy tới API dev thật.
+
+**Checklist cập nhật:** #1 xong, #10 xong; #4 deploy dev đã làm tay (workflow vẫn cần chạy sau merge).
+
+**Đang chờ bạn:** GitHub Variable `API_BASE_URL_DEV`, secrets Cloudflare (#2), mở PR và merge (#3), keystore (#5), điện thoại thật, 2 khóa LLM, 6 quyết định BRD §10.
 
 ---
 
