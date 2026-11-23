@@ -7,6 +7,7 @@ import {
   getNote,
   listNotes,
   listTags,
+  saveFromPhrase,
   updateNote,
 } from './repository';
 
@@ -149,5 +150,23 @@ describe('hiệu năng (S2-07, BRD §4.2)', () => {
     expect(r1.length).toBeGreaterThan(0);
     expect(r2.length).toBe(200);
     expect(ms).toBeLessThan(1000);
+  });
+});
+
+describe('saveFromPhrase (S2-05)', () => {
+  it('dòng đầu là câu tiếng Anh, lưu nguồn, không tạo trùng', () => {
+    const db = createTestDb();
+    const phrase = {
+      id: 'p1',
+      text: 'Nice to meet you.',
+      meaningVi: 'Rất vui được gặp bạn.',
+      example: 'Hi!',
+    };
+    const a = saveFromPhrase(db, phrase, 1);
+    expect(a.body).toBe('Nice to meet you.\nRất vui được gặp bạn.\nVí dụ: Hi!');
+    expect(a).toMatchObject({ source: 'vocab', sourceRef: 'p1' });
+    const b = saveFromPhrase(db, { ...phrase, example: null }, 2);
+    expect(b.id).toBe(a.id);
+    expect(listNotes(db)).toHaveLength(1);
   });
 });

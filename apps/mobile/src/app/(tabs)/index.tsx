@@ -6,6 +6,7 @@ import { useColors } from '@/components/theme';
 import { Card, Row } from '@/components/ui';
 import { useDb } from '@/db/client';
 import { getDailyNewLimit, getLevel } from '@/db/settings';
+import { getStreak } from '@/features/progress/streak';
 import { countDueToday, getNewPhrases } from '@/features/review/repository';
 import { useFocusQuery } from '@/lib/use-focus-query';
 
@@ -21,6 +22,7 @@ export default function HomeScreen() {
       // Số cụm mới thực sự còn để học (≤ mục tiêu ngày, ≤ số cụm chưa học).
       newLeft: getNewPhrases(db, now, { dailyNewLimit: limit, level: getLevel(db) }).length,
       limit,
+      streak: getStreak(db, now),
     };
   });
 
@@ -28,6 +30,14 @@ export default function HomeScreen() {
   return (
     <Screen>
       <Title>Hôm nay</Title>
+      {stats ? (
+        <Text style={{ color: c.text, fontSize: 16 }}>
+          🔥 {stats.streak.current} ngày liên tiếp
+          {stats.streak.current > 0 && !stats.streak.todayDone
+            ? ' — học hôm nay để giữ chuỗi!'
+            : ''}
+        </Text>
+      ) : null}
       {stats ? (
         <Row>
           <Stat label="Thẻ cần ôn" value={stats.due} color={c.primary} />

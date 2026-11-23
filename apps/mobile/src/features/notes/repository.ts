@@ -156,3 +156,19 @@ export function findNoteBySource(db: Db, source: NoteSource, sourceRef: string):
     .get();
   return row ? toNote(row) : undefined;
 }
+
+/**
+ * Lưu nhanh một cụm từ vào ghi chú (FR-N-05). Dòng đầu là câu tiếng Anh (để nút "Nghe lại" đọc).
+ * Đã lưu rồi thì trả ghi chú cũ, không tạo trùng.
+ */
+export function saveFromPhrase(
+  db: Db,
+  phrase: { id: string; text: string; meaningVi: string; example: string | null },
+  now: number,
+): Note {
+  const existing = findNoteBySource(db, 'vocab', phrase.id);
+  if (existing) return existing;
+  const lines = [phrase.text, phrase.meaningVi];
+  if (phrase.example) lines.push(`Ví dụ: ${phrase.example}`);
+  return createNote(db, { body: lines.join('\n'), source: 'vocab', sourceRef: phrase.id }, now);
+}
