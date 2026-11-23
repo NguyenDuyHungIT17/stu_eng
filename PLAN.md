@@ -275,24 +275,24 @@ Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử
 
 Ghi mọi thay đổi so với BRD/Thiết kế kỹ thuật phát sinh khi làm.
 
-| Ngày       | Quyết định                                                                                                      | Lý do                                                                       | Ảnh hưởng                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------- |
-| 18/11/2026 | Áp dụng BRD v1.1 và Thiết kế kỹ thuật v1.1                                                                      | Cắt phạm vi MVP, sửa rủi ro kỹ thuật                                        | Xem mục 0 của hai tài liệu            |
-| 18/11/2026 | Expo SDK 58, TypeScript 6.0                                                                                     | Bản stable mới nhất; template Expo dùng TS 6.0 (TS 7 chưa an toàn với Expo) | —                                     |
-| 18/11/2026 | Route mobile ở `apps/mobile/src/app`                                                                            | Quy ước của Expo SDK 58                                                     | Khác đường dẫn TK §4                  |
-| 18/11/2026 | Biến môi trường `EXPO_PUBLIC_API_BASE_URL` thay cho `extra` trong app config                                    | Cách chuẩn của Expo, tự nhúng lúc bundle                                    | —                                     |
-| 18/11/2026 | Test API dùng Vitest + `getPlatformProxy()` của wrangler, bỏ `@cloudflare/vitest-pool-workers`                  | Gói này deprecated, không hợp Vitest 5                                      | Test không chạy trong runtime workerd |
-| 18/11/2026 | NativeWind hoãn sang Sprint 1 (khi làm UI thật); Sprint 0 dùng StyleSheet                                       | Giảm cấu hình khi chưa có màn hình thật                                     | S0-02 chưa có NativeWind              |
-| 18/11/2026 | Android package `com.engoats.mobile` (bạn đã chốt)                                                              | Tên chính thức                                                              | **Không đổi sau khi phát hành**       |
-| 23/11/2026 | Thêm cột `phrases.sort_order`, `topics.deleted_at` (khác TK §5)                                                 | Học cụm mới đúng thứ tự biên soạn; ẩn chủ đề bị gỡ khỏi gói                 | Migration `0000_init`                 |
-| 23/11/2026 | Test repository bằng `better-sqlite3` + đúng migration của app; repository nhận kiểu `Db` (Drizzle chế độ sync) | expo-sqlite không chạy trong Node; hai driver cùng chế độ sync              | Không cần giả lập DB trong test       |
-| 23/11/2026 | Trình độ mặc định `B2` (mở toàn bộ nội dung) cho đến khi có bài xếp trình độ                                    | Mặc định A1 chỉ có vài cụm, người học hết bài ngay                          | Sửa khi làm onboarding (Sprint 4)     |
-| 23/11/2026 | Tiếp tục dùng StyleSheet, chưa thêm NativeWind                                                                  | Tránh thêm cấu hình Babel/Metro khi chưa thử được trên máy thật             | Xem lại ở Sprint 4                    |
-| 23/11/2026 | Phiên ôn: thẻ chấm "Quên" quay lại cuối phiên (tối đa 2 lần) dạng lật thẻ                                       | Củng cố ngay trong phiên, không kéo dài vô hạn                              | `features/review/session.ts`          |
-| 23/11/2026 | Giao diện kiểu lộ trình (chặng = chủ đề, bài = 5 câu), bài học từng bước; bỏ thanh tự chấm 4 mức, mức FSRS suy ra từ số lần sai (0 → Được, 1 → Khó, ≥2 → Quên) | Bạn yêu cầu giao diện thân thiện, bớt thứ thừa | Thay `session.ts`/`exercises.tsx` bằng `features/lesson/*`; mục tiêu "cụm mới/ngày" không còn chặn học |
-| 23/11/2026 | Thêm bài ghép câu (chạm ô chữ) và chọn câu tiếng Anh từ nghĩa | Hợp với câu giao tiếp dài | `ExerciseType` thêm `intro`, `choose_text`, `build_sentence` |
-| 23/11/2026 | Nội dung lên 18 chủ đề / 465 câu (phần lớn 6–15 từ), contentVersion 3 | Bạn yêu cầu thêm nhiều câu dài | **Bản nháp do AI soạn, cần người duyệt** |
-| 23/11/2026 | 4 tab: Học, Luyện nói, Sổ tay, Hồ sơ; trang spike ẩn (nhấn giữ số phiên bản) | Bớt thứ thừa trên màn chính | — |
+| Ngày       | Quyết định                                                                                                                                                     | Lý do                                                                       | Ảnh hưởng                                                                                              |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| 18/11/2026 | Áp dụng BRD v1.1 và Thiết kế kỹ thuật v1.1                                                                                                                     | Cắt phạm vi MVP, sửa rủi ro kỹ thuật                                        | Xem mục 0 của hai tài liệu                                                                             |
+| 18/11/2026 | Expo SDK 58, TypeScript 6.0                                                                                                                                    | Bản stable mới nhất; template Expo dùng TS 6.0 (TS 7 chưa an toàn với Expo) | —                                                                                                      |
+| 18/11/2026 | Route mobile ở `apps/mobile/src/app`                                                                                                                           | Quy ước của Expo SDK 58                                                     | Khác đường dẫn TK §4                                                                                   |
+| 18/11/2026 | Biến môi trường `EXPO_PUBLIC_API_BASE_URL` thay cho `extra` trong app config                                                                                   | Cách chuẩn của Expo, tự nhúng lúc bundle                                    | —                                                                                                      |
+| 18/11/2026 | Test API dùng Vitest + `getPlatformProxy()` của wrangler, bỏ `@cloudflare/vitest-pool-workers`                                                                 | Gói này deprecated, không hợp Vitest 5                                      | Test không chạy trong runtime workerd                                                                  |
+| 18/11/2026 | NativeWind hoãn sang Sprint 1 (khi làm UI thật); Sprint 0 dùng StyleSheet                                                                                      | Giảm cấu hình khi chưa có màn hình thật                                     | S0-02 chưa có NativeWind                                                                               |
+| 18/11/2026 | Android package `com.engoats.mobile` (bạn đã chốt)                                                                                                             | Tên chính thức                                                              | **Không đổi sau khi phát hành**                                                                        |
+| 23/11/2026 | Thêm cột `phrases.sort_order`, `topics.deleted_at` (khác TK §5)                                                                                                | Học cụm mới đúng thứ tự biên soạn; ẩn chủ đề bị gỡ khỏi gói                 | Migration `0000_init`                                                                                  |
+| 23/11/2026 | Test repository bằng `better-sqlite3` + đúng migration của app; repository nhận kiểu `Db` (Drizzle chế độ sync)                                                | expo-sqlite không chạy trong Node; hai driver cùng chế độ sync              | Không cần giả lập DB trong test                                                                        |
+| 23/11/2026 | Trình độ mặc định `B2` (mở toàn bộ nội dung) cho đến khi có bài xếp trình độ                                                                                   | Mặc định A1 chỉ có vài cụm, người học hết bài ngay                          | Sửa khi làm onboarding (Sprint 4)                                                                      |
+| 23/11/2026 | Tiếp tục dùng StyleSheet, chưa thêm NativeWind                                                                                                                 | Tránh thêm cấu hình Babel/Metro khi chưa thử được trên máy thật             | Xem lại ở Sprint 4                                                                                     |
+| 23/11/2026 | Phiên ôn: thẻ chấm "Quên" quay lại cuối phiên (tối đa 2 lần) dạng lật thẻ                                                                                      | Củng cố ngay trong phiên, không kéo dài vô hạn                              | `features/review/session.ts`                                                                           |
+| 23/11/2026 | Giao diện kiểu lộ trình (chặng = chủ đề, bài = 5 câu), bài học từng bước; bỏ thanh tự chấm 4 mức, mức FSRS suy ra từ số lần sai (0 → Được, 1 → Khó, ≥2 → Quên) | Bạn yêu cầu giao diện thân thiện, bớt thứ thừa                              | Thay `session.ts`/`exercises.tsx` bằng `features/lesson/*`; mục tiêu "cụm mới/ngày" không còn chặn học |
+| 23/11/2026 | Thêm bài ghép câu (chạm ô chữ) và chọn câu tiếng Anh từ nghĩa                                                                                                  | Hợp với câu giao tiếp dài                                                   | `ExerciseType` thêm `intro`, `choose_text`, `build_sentence`                                           |
+| 23/11/2026 | Nội dung lên 18 chủ đề / 465 câu (phần lớn 6–15 từ), contentVersion 3                                                                                          | Bạn yêu cầu thêm nhiều câu dài                                              | **Bản nháp do AI soạn, cần người duyệt**                                                               |
+| 23/11/2026 | 4 tab: Học, Luyện nói, Sổ tay, Hồ sơ; trang spike ẩn (nhấn giữ số phiên bản)                                                                                   | Bớt thứ thừa trên màn chính                                                 | —                                                                                                      |
 
 ## Nhật ký tuần
 
@@ -429,11 +429,11 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 
 **Còn dở:**
 
-| Mã              | Cần gì                                                                        |
-| --------------- | ----------------------------------------------------------------------------- |
+| Mã              | Cần gì                                                                         |
+| --------------- | ------------------------------------------------------------------------------ |
 | `S1-04`         | Người duyệt 465 câu (IPA, nghĩa, ví dụ) trong `packages/content/data/phrases/` |
-| `S1-01`…`S1-17` | Mở PR `eng_hungnd` → `main`, CI xanh, merge; thử trên máy thật (DoD)          |
-| `S1-18`         | APK + điện thoại, bật chế độ máy bay, học và ôn một phiên → **M1**            |
+| `S1-01`…`S1-17` | Mở PR `eng_hungnd` → `main`, CI xanh, merge; thử trên máy thật (DoD)           |
+| `S1-18`         | APK + điện thoại, bật chế độ máy bay, học và ôn một phiên → **M1**             |
 
 **Sprint 2 (cùng ngày, sau khi Sprint 1 chạy trên máy ảo):**
 
@@ -442,7 +442,6 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 - Còn: `S2-12` thông báo nhắc học (cần cài `expo-notifications`, build lại native), `S2-13` thử trên 2 máy, `S2-14` APK.
 
 **Thử trên máy ảo (APK release, 23/11):** mở app → migration + seed OK; học 10 cụm mới (1 thẻ Quên quay lại cuối phiên) → màn kết thúc đúng; Trang chủ cập nhật 10 thẻ cần ôn / 0 cụm mới; tab Học hiện 10/20. Phát hiện và sửa: phiên ôn chờ ~5 s vì engine TTS (`6581cdd`), thanh tab thiếu icon.
-
 
 **Tối 23/11 – giao diện mới, nội dung, nhắc học (`7b00bee`, `12670fc`):**
 
