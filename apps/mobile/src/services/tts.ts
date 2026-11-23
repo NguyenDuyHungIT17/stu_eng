@@ -28,19 +28,37 @@ export function stop(): void {
   void Speech.stop();
 }
 
-/** Các giọng tiếng Anh có trên máy, giọng chất lượng cao lên trước. Lỗi thì trả mảng rỗng. */
-export async function listEnglishVoices(): Promise<EnglishVoice[]> {
-  try {
-    const voices = await Speech.getAvailableVoicesAsync();
-    return voices
-      .filter((v) => v.language.toLowerCase().startsWith('en'))
-      .map((v) => ({ id: v.identifier, name: v.name, language: v.language, quality: v.quality }))
-      .sort((a, b) =>
-        a.quality === b.quality ? a.id.localeCompare(b.id) : a.quality === 'Enhanced' ? -1 : 1,
-      );
-  } catch {
-    return [];
-  }
+async function loadEnglishVoices(): Promise<EnglishVoice[]> {
+  const voices = await Speech.getAvailableVoicesAsync();
+  return voices
+    .filter((v) => v.language.toLowerCase().startsWith('en'))
+    .map((v) => ({ id: v.identifier, name: v.name, language: v.language, quality: v.quality }))
+    .sort((a, b) =>
+      a.quality === b.quality ? a.id.localeCompare(b.id) : a.quality === 'Enhanced' ? -1 : 1,
+    );
+}
+
+/** Kết quả đã tải (chỉ giữ khi thành công và có giọng, để máy cài giọng sau vẫn nhận ra). */
+let cached: Promise<EnglishVoice[]> | null = null;
+
+/**
+ * Các giọng tiếng Anh có trên máy, giọng chất lượng cao lên trước. Lỗi thì trả mảng rỗng.
+ * Engine TTS khởi động có thể mất vài giây, nên app gọi hàm này sớm lúc mở (warm-up).
+ */
+export function listEnglishVoices(): Promise<EnglishVoice[]> {
+  if (cached) return cached;
+  const p = loadEnglishVoices().then(
+    (v) => {
+      if (v.length === 0) cached = null;
+      return v;
+    },
+    () => {
+      cached = null;
+      return [];
+    },
+  );
+  cached = p;
+  return p;
 }
 
 /** Máy có giọng tiếng Anh không; quá `timeoutMs` thì coi như không (không chặn giao diện). */
