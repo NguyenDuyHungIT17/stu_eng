@@ -18,7 +18,7 @@ _Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thi
 | 0       | Nền móng + spike   | 1,5 tuần                       | 18/11   |          | 10/24 (+11 đang làm) | Chờ secrets GitHub, PR vào main, keystore, máy thật |
 | 1       | Từ vựng và ôn tập  | 2 tuần                         | 23/11   |          | 0/18 (+17 code xong) | Chờ PR, duyệt nội dung, thử máy thật                |
 | 2       | Ghi chú và tiến độ | 1 tuần                         | 23/11   |          | 0/14 (+12 code xong) | Còn: thử thông báo trên 2 máy, APK                  |
-| 3a      | Chat bằng chữ      | 1,5 tuần                       |         |          | 0/18                 | Chưa bắt đầu                                        |
+| 3a      | Chat bằng chữ      | 1,5 tuần                       | 25/11   |          | 0/18 (+18 code xong) | Chờ khóa LLM (S7), duyệt kịch bản, máy thật         |
 | 3b      | Chat bằng giọng    | 1,5 tuần                       |         |          | 0/13                 | Chưa bắt đầu                                        |
 | 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17                 | Chưa bắt đầu                                        |
 | **MVP** |                    | **~9 tuần (+20–30% dự phòng)** |         |          | **0/104**            |                                                     |
@@ -154,27 +154,27 @@ Mốc quan trọng:
 
 ### Backend
 
-- [ ] `S3a-01` Schema Zod trong `shared`: `ChatRequest`, `ExplainRequest/Response`, `FeedbackRequest/Response`, `QuotaResponse` — TK §7.1
-- [ ] `S3a-02` `providers.ts` đọc `LLM_PROVIDERS` + secrets — TK §7.4
-- [ ] `S3a-03` `sse-parser.ts` parse stream OpenAI-compatible + test (token cắt giữa chunk, `[DONE]`)
-- [ ] `S3a-04` `gateway.streamChat` với fallback chỉ trước token đầu + test — TK §7.4
-- [ ] `S3a-05` `gateway.completeJson` (JSON mode, Zod, thử lại 1 lần) + test
-- [ ] `S3a-06` `quota/counter.ts` + middleware `rate-limit` (thiết bị, IP, toàn cục) + test — TK §7.2
-- [ ] `S3a-07` Middleware `device-id`, `error`; không log nội dung hội thoại — TK §7.6
-- [ ] `S3a-08` Prompt builder: chat, explain, feedback + test — TK §7.5
-- [ ] `S3a-09` Route `POST /chat` (SSE) — TK §7.3
-- [ ] `S3a-10` Route `POST /chat/explain`, `POST /chat/feedback`, `GET /quota` — FR-A-05, FR-A-04, FR-A-07
-- [ ] `S3a-11` Cron Trigger dọn bảng `usage` — TK §7.2
-- [ ] `S3a-12` Nội dung: 3 kịch bản (vai, mục tiêu, từ khóa gợi ý, câu mở đầu), đã duyệt — BRD §6
+- [~] `S3a-01` Schema Zod trong `shared`: `ChatRequest`, `ExplainRequest/Response`, `FeedbackRequest/Response`, `QuotaResponse` — TK §7.1 _(25/11: code (`shared`): đã có từ Sprint 0, thêm `SseParser` dùng chung)_
+- [~] `S3a-02` `providers.ts` đọc `LLM_PROVIDERS` + secrets — TK §7.4 _(25/11: code + test: `llm/providers.ts`; cấu hình sẵn Gemini, Groq trong `wrangler.toml` (**model cần xác nhận ở S7**); chưa có key → dev dùng trả lời giả, prod báo lỗi)_
+- [~] `S3a-03` `sse-parser.ts` parse stream OpenAI-compatible + test (token cắt giữa chunk, `[DONE]`) _(25/11: code + test: `llm/openai-stream.ts` dùng `SseParser` dùng chung)_
+- [~] `S3a-04` `gateway.streamChat` với fallback chỉ trước token đầu + test — TK §7.4 _(25/11: code + test: chỉ chuyển nhà cung cấp trước token đầu)_
+- [~] `S3a-05` `gateway.completeJson` (JSON mode, Zod, thử lại 1 lần) + test _(25/11: code + test: bóc JSON trong `json`, thử lại 1 lần khi JSON sai)_
+- [~] `S3a-06` `quota/counter.ts` + middleware `rate-limit` (thiết bị, IP, toàn cục) + test — TK §7.2 _(25/11: code + test: `middleware.ts` `rateLimit` đếm 3 khóa trong 1 batch D1, trả lại lượt khi LLM lỗi)_
+- [~] `S3a-07` Middleware `device-id`, `error`; không log nội dung hội thoại — TK §7.6 _(25/11: code + test: `requireDeviceId`, lỗi `{error}`, chỉ log mã lỗi)_
+- [~] `S3a-08` Prompt builder: chat, explain, feedback + test — TK §7.5 _(25/11: code + test: `prompts.ts`)_
+- [~] `S3a-09` Route `POST /chat` (SSE) — TK §7.3 _(25/11: code + test; đã deploy dev, gọi thật được (trả lời giả vì chưa có key))_
+- [~] `S3a-10` Route `POST /chat/explain`, `POST /chat/feedback`, `GET /quota` — FR-A-05, FR-A-04, FR-A-07 _(25/11: code + test)_
+- [~] `S3a-11` Cron Trigger dọn bảng `usage` — TK §7.2 _(25/11: đã có từ Sprint 0 (`scheduled` → `purgeBefore`))_
+- [~] `S3a-12` Nội dung: 3 kịch bản (vai, mục tiêu, từ khóa gợi ý, câu mở đầu), đã duyệt — BRD §6 _(25/11: 3 kịch bản có sẵn, **chưa duyệt**)_
 
 ### Mobile
 
-- [ ] `S3a-13` `lib/device-id.ts` (SecureStore), `services/api-client.ts` đọc SSE — TK §6.2
-- [ ] `S3a-14` Tab Chat: danh sách kịch bản, lượt còn lại, trạng thái "cần mạng" — FR-A-02, FR-A-07
-- [ ] `S3a-15` Màn chat gõ chữ: streaming, render theo lô, nút Thử lại khi lỗi — TK §6.2
-- [ ] `S3a-16` Nút "Giải thích tiếng Việt" trên từng câu AI, cache vào DB — FR-A-05
-- [ ] `S3a-17` Lưu câu AI vào ghi chú (`source=chat`) — FR-A-06a
-- [ ] `S3a-18` Kết thúc buổi → màn tổng kết; thông báo hết lượt kèm giờ làm mới → **Mốc M2**
+- [~] `S3a-13` `lib/device-id.ts` (SecureStore), `services/api-client.ts` đọc SSE — TK §6.2 _(25/11: code + test: định danh lưu trong SQLite (không dùng SecureStore), `services/api-client.ts` đọc SSE)_
+- [~] `S3a-14` Tab Chat: danh sách kịch bản, lượt còn lại, trạng thái "cần mạng" — FR-A-02, FR-A-07 _(25/11: code, thử máy ảo: lượt còn lại, báo cần mạng, số lần đã luyện)_
+- [~] `S3a-15` Màn chat gõ chữ: streaming, render theo lô, nút Thử lại khi lỗi — TK §6.2 _(25/11: code, thử máy ảo: stream, cập nhật 50 ms/lần, Thử lại, có cả nút micro)_
+- [~] `S3a-16` Nút "Giải thích tiếng Việt" trên từng câu AI, cache vào DB — FR-A-05 _(25/11: code + test, thử máy ảo)_
+- [~] `S3a-17` Lưu câu AI vào ghi chú (`source=chat`) — FR-A-06a _(25/11: code + test)_
+- [~] `S3a-18` Kết thúc buổi → màn tổng kết; thông báo hết lượt kèm giờ làm mới → **Mốc M2** _(25/11: code + test, thử máy ảo: tổng kết, lưu cụm nên dùng; báo hết lượt kèm giờ làm mới)_
 
 ---
 
@@ -298,6 +298,9 @@ Ghi mọi thay đổi so với BRD/Thiết kế kỹ thuật phát sinh khi làm
 | 23/11/2026 | Giao diện kiểu ứng dụng nhắn tin (bong bóng chat, avatar, màu chàm/san hô, thẻ phẳng đổ bóng nhẹ), bỏ lộ trình kiểu trò chơi                                                    | Bạn muốn khác Duolingo                                                      | Tab: Hội thoại, Nói với AI, Sổ tay, Hồ sơ                                                                                                                  |
 | 23/11/2026 | Trang chính gọn một màn hình (luyện tiếp, ôn lại, chọn trình độ → lưới chủ đề), màn chủ đề 4 tình huống; xem hội thoại: câu hiện dần như tin nhắn, hết đoạn đọc lại được cả bài | Bạn muốn bớt cuộn, tập trung                                                | `topic/[id]`, `ChatReveal`                                                                                                                                 |
 | 23/11/2026 | **Nhập vai nói** cuối mỗi bài: người học tự nói từng câu của mình (nhận diện giọng nói trên máy), chấm độ khớp theo từ (≥70% là đạt), không trừ điểm, có "Bỏ qua"               | Luyện nói thay vì chỉ chọn đáp án                                           | `lib/speech-score.ts`, `services/use-speech-input.ts`; máy không có dịch vụ STT thì không có bước nói. **Chưa thử với giọng thật (máy ảo không có micro)** |
+| 25/11/2026 | Định danh thiết bị lưu trong SQLite (bảng `settings`) thay cho SecureStore                                                                                                      | Không cần thêm native module; ID ẩn danh, mất khi gỡ app giống SecureStore  | TK §7.6 ghi SecureStore                                                                                                                                    |
+| 25/11/2026 | Nhà cung cấp "mock" (trả lời giả) khi chưa có API key, chỉ ở dev/local; prod không có key thì báo `upstream_failed`                                                             | Làm và thử Sprint 3a trước khi có khóa LLM                                  | `llm/mock.ts`                                                                                                                                              |
+| 25/11/2026 | `SseParser` chuyển sang `packages/shared`, dùng chung app và API                                                                                                                | Một bộ đọc SSE đã test kỹ                                                   | —                                                                                                                                                          |
 
 ## Nhật ký tuần
 
@@ -462,6 +465,13 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 - Nội dung: 72 hội thoại / 741 câu, 18 chủ đề × 4 tình huống; mỗi câu then chốt có cụm cần nhớ và (một số) ghi chú cách dùng. **Bản nháp do AI soạn, cần người duyệt.**
 - **Thử trên máy ảo (APK release):** nâng cấp nội dung lên bản 4 OK; trang chính hiện 72 hội thoại; luyện trọn "Chào đồng nghiệp mới": tình huống → nghe cả đoạn (tô sáng câu đang đọc) → nghe-điền 7 câu → nhập vai chọn câu đáp → làm lại câu sai → màn kết thúc liệt kê cụm giao tiếp; trang chính đánh dấu ✓ và hiện 7 câu cần ôn; ôn tập hiện đúng ngữ cảnh; màn xem hội thoại hiện nghĩa từng câu.
 - Sửa: chữ thanh trạng thái màu trắng trên nền sáng.
+
+### Ngày 25/11/2026 – Sprint 3a (chat bằng chữ)
+
+- API: nhà cung cấp LLM có dự phòng, prompt, giới hạn lượt (thiết bị/IP/toàn cục), `/chat` (SSE), `/chat/explain`, `/chat/feedback`, `/quota`. 34 test API xanh. Đã deploy dev; chưa có key nên trả lời giả "(demo)".
+- App: tab Nói với AI (lượt còn lại, báo cần mạng), màn chat (stream, Thử lại, micro để nói thay gõ, nghe lại, dịch & giải thích, lưu câu vào sổ tay), kết thúc buổi → tổng kết, cộng `chatSessions` (tính streak). 107 test mobile xanh.
+- **Thử trên máy ảo (APK release, API dev thật):** gửi câu → AI stream trả lời, lượt giảm 40 → 39; Dịch & giải thích hiện nghĩa; Kết thúc → màn tổng kết; danh sách kịch bản hiện "Đã luyện 1 lần".
+- **Còn để chốt 3a:** khóa LLM (S7) và đặt `wrangler secret put LLM_KEY_GEMINI`/`LLM_KEY_GROQ`, xác nhận model; duyệt 3 kịch bản; thử trên máy thật → **M2**.
 
 ---
 

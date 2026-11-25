@@ -1,4 +1,5 @@
-import { SseParser } from './sse-parser';
+import { describe, expect, it } from 'vitest';
+import { SseParser } from './sse';
 
 describe('SseParser', () => {
   it('tách sự kiện data đơn giản', () => {

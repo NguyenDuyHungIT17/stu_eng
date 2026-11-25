@@ -1,5 +1,7 @@
 // Màn hình kiểm tra kỹ thuật cho Sprint 0 (TK §11.1). Chạy trên máy thật, ghi kết quả vào PLAN.md.
 // Gỡ màn hình này trước bản gửi người thử (S4-15).
+
+import { SseParser } from '@app/shared';
 import { fetch } from 'expo/fetch';
 import * as Speech from 'expo-speech';
 import { ExpoSpeechRecognitionModule, useSpeechRecognitionEvent } from 'expo-speech-recognition';
@@ -10,7 +12,6 @@ import { Button } from '@/components/button';
 import { Body, Screen, Title } from '@/components/screen';
 import { useColors } from '@/components/theme';
 import { API_BASE_URL } from '@/lib/config';
-import { SseParser } from '@/lib/sse-parser';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   const c = useColors();

@@ -13,6 +13,7 @@ export const SettingKey = {
   dailyMinutesGoal: 'daily_minutes_goal',
   reminderEnabled: 'reminder_enabled',
   reminderTime: 'reminder_time',
+  deviceId: 'device_id',
 } as const;
 export type SettingKey = (typeof SettingKey)[keyof typeof SettingKey];
 
