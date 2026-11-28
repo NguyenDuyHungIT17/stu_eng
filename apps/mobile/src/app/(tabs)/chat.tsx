@@ -56,40 +56,48 @@ export default function ChatListScreen() {
         </View>
       ) : null}
 
-      {scenarios.map((s) => {
-        const done = data?.finished[s.id] ?? 0;
-        const open = data?.open.has(s.id);
-        return (
-          <Pressable
-            key={s.id}
-            accessibilityRole="button"
-            accessibilityLabel={`${s.title}. ${s.goalVi}`}
-            onPress={() => router.push({ pathname: '/chat/[id]', params: { id: s.id } })}
-            style={({ pressed }) => [
-              styles.card,
-              { backgroundColor: c.surface, opacity: pressed ? 0.85 : 1 },
-              cardShadow(c),
-            ]}
-          >
-            <View style={styles.cardTop}>
-              <Text style={{ fontSize: 26 }}>🗣️</Text>
-              <Text style={[styles.cardTitle, { color: c.text }]} numberOfLines={1}>
-                {s.title}
+      {scenarios.length === 0 ? (
+        <View style={[styles.card, { backgroundColor: c.surface }, cardShadow(c)]}>
+          <Text style={{ color: c.muted, textAlign: 'center' }}>
+            Chưa có kịch bản hội thoại. Hãy cập nhật ứng dụng.
+          </Text>
+        </View>
+      ) : (
+        scenarios.map((s) => {
+          const done = data?.finished[s.id] ?? 0;
+          const open = data?.open.has(s.id);
+          return (
+            <Pressable
+              key={s.id}
+              accessibilityRole="button"
+              accessibilityLabel={`${s.title}. ${s.goalVi}`}
+              onPress={() => router.push({ pathname: '/chat/[id]', params: { id: s.id } })}
+              style={({ pressed }) => [
+                styles.card,
+                { backgroundColor: c.surface, opacity: pressed ? 0.85 : 1 },
+                cardShadow(c),
+              ]}
+            >
+              <View style={styles.cardTop}>
+                <Text style={{ fontSize: 26 }}>🗣️</Text>
+                <Text style={[styles.cardTitle, { color: c.text }]} numberOfLines={1}>
+                  {s.title}
+                </Text>
+                <Badge text={s.level} color={c.primary} />
+              </View>
+              <Text style={{ color: c.muted, lineHeight: 20 }}>🎯 {s.goalVi}</Text>
+              <Text style={{ color: c.text, fontStyle: 'italic' }} numberOfLines={1}>
+                “{s.opener}”
               </Text>
-              <Badge text={s.level} color={c.primary} />
-            </View>
-            <Text style={{ color: c.muted, lineHeight: 20 }}>🎯 {s.goalVi}</Text>
-            <Text style={{ color: c.text, fontStyle: 'italic' }} numberOfLines={1}>
-              “{s.opener}”
-            </Text>
-            {open || done > 0 ? (
-              <Text style={{ color: open ? c.accent : c.ok, fontSize: 13, fontWeight: '600' }}>
-                {open ? 'Đang trò chuyện dở · chạm để tiếp tục' : `Đã luyện ${done} lần`}
-              </Text>
-            ) : null}
-          </Pressable>
-        );
-      })}
+              {open || done > 0 ? (
+                <Text style={{ color: open ? c.accent : c.ok, fontSize: 13, fontWeight: '600' }}>
+                  {open ? 'Đang trò chuyện dở · chạm để tiếp tục' : `Đã luyện ${done} lần`}
+                </Text>
+              ) : null}
+            </Pressable>
+          );
+        })
+      )}
     </ScrollView>
   );
 }

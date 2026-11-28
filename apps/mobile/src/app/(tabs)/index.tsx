@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { cardShadow, useColors } from '@/components/theme';
 import { ProgressBar } from '@/components/ui';
 import { useDb } from '@/db/client';
-import { getDailyMinutesGoal } from '@/db/settings';
+import { getDailyMinutesGoal, getLevel } from '@/db/settings';
 import {
   type DialogueSummary,
   listSections,
@@ -37,13 +37,13 @@ export default function HomeScreen() {
       due: countDueToday(db, now),
       stats: getStats(db, now),
       minutesGoal: getDailyMinutesGoal(db),
+      userLevel: getLevel(db),
     };
   });
 
   if (!data) return <View style={{ flex: 1, backgroundColor: c.bg }} />;
   const { stats, next } = data;
-  const nextLevel = data.sections.find((s) => s.id === next?.topicId)?.level ?? 'A1';
-  const current = level ?? nextLevel;
+  const current = level ?? data.userLevel;
   const topics = data.sections.filter((s) => s.level === current);
 
   return (
@@ -97,9 +97,15 @@ export default function HomeScreen() {
         contentContainerStyle={styles.grid}
         showsVerticalScrollIndicator={false}
       >
-        {topics.map((t) => (
-          <TopicTile key={t.id} t={t} />
-        ))}
+        {topics.length > 0 ? (
+          topics.map((t) => <TopicTile key={t.id} t={t} />)
+        ) : (
+          <View style={[styles.emptyCard, { backgroundColor: c.surface }, cardShadow(c)]}>
+            <Text style={{ color: c.muted, textAlign: 'center', lineHeight: 21 }}>
+              Chưa có hội thoại cho trình độ {current}. Hãy chọn trình độ khác ở trên nhé.
+            </Text>
+          </View>
+        )}
       </ScrollView>
     </View>
   );
@@ -209,4 +215,5 @@ const styles = StyleSheet.create({
   tileIcon: { fontSize: 26 },
   tileTitle: { fontSize: 14, fontWeight: '600', lineHeight: 19, flex: 1 },
   tileFoot: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  emptyCard: { width: '100%', borderRadius: 16, padding: 18 },
 });

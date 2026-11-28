@@ -20,7 +20,7 @@ _Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thi
 | 2       | Ghi chú và tiến độ | 1 tuần                         | 23/11   |          | 0/14 (+12 code xong) | Còn: thử thông báo trên 2 máy, APK                                               |
 | 3a      | Chat bằng chữ      | 1,5 tuần                       | 25/11   |          | 0/18 (+18 code xong) | Đã chạy thật `/chat`, `/explain`, `/feedback` (S7); còn duyệt kịch bản, máy thật |
 | 3b      | Chat bằng giọng    | 1,5 tuần                       | 28/11   |          | 0/13 (+10 code xong) | Chờ duyệt 10 kịch bản, test 2–3 máy thật & đo 4G                                 |
-| 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17                 | Chưa bắt đầu                                                                     |
+| 4       | Hoàn thiện MVP     | 1,5 tuần                       | 28/11   |          | 0/17 (+12 code xong) | Còn: duyệt nội dung, Maestro e2e, đo máy thật, deploy `prod` `v0.1.0`            |
 | **MVP** |                    | **~9 tuần (+20–30% dự phòng)** |         |          | **0/104**            |                                                                                  |
 
 Mốc quan trọng:
@@ -246,28 +246,28 @@ Danh sách việc ưu tiên theo đúng thứ tự để đóng xong Sprint 0 �
 
 ### Onboarding
 
-- [ ] `S4-01` Màn chào + thông báo quyền riêng tư — FR-U-02
-- [ ] `S4-02` Chọn mục tiêu (công việc, du lịch, đời sống) và thời gian học/ngày — FR-P-02
-- [ ] `S4-03` Kiểm tra giọng TTS, hướng dẫn tải nếu thiếu — TK §6.3
-- [ ] `S4-04` Nội dung: ~30 câu xếp trình độ A1–B2, đã duyệt
-- [ ] `S4-05` Xếp trình độ: tự đánh giá + trắc nghiệm thích ứng + test — FR-P-01a, TK §6.4
-- [ ] `S4-06` Đặt giờ nhắc học lần đầu — FR-P-04
+- [~] `S4-01` Màn chào + thông báo quyền riêng tư — FR-U-02 _(28/11: `onboarding.tsx` bước 1)_
+- [~] `S4-02` Chọn mục tiêu (công việc, du lịch, đời sống) và thời gian học/ngày — FR-P-02 _(28/11: `onboarding.tsx` bước 2)_
+- [~] `S4-03` Kiểm tra giọng TTS, hướng dẫn tải nếu thiếu — TK §6.3 _(28/11: `onboarding.tsx` bước 3)_
+- [~] `S4-04` Nội dung: ~30 câu xếp trình độ A1–B2, đã duyệt _(28/11: 32 câu (8 × 4 mức) qua `validate`, **chờ người duyệt**)_
+- [~] `S4-05` Xếp trình độ: tự đánh giá + trắc nghiệm thích ứng + test — FR-P-01a, TK §6.4 _(28/11: code + test `placement.ts` 12 câu thích ứng)_
+- [~] `S4-06` Đặt giờ nhắc học lần đầu — FR-P-04 _(28/11: `onboarding.tsx` bước 5)_
 
 ### Cài đặt và dữ liệu
 
-- [ ] `S4-07` Cài đặt: trình độ, mục tiêu, giọng đọc, tốc độ đọc, sáng/tối, giờ nhắc — FR-U-01
-- [ ] `S4-08` Xóa toàn bộ dữ liệu (có xác nhận) — FR-U-05
+- [~] `S4-07` Cài đặt: trình độ, mục tiêu, giọng đọc, tốc độ đọc, sáng/tối, giờ nhắc — FR-U-01 _(28/11: code xong trong `settings.tsx` + `ThemePreferenceProvider`)_
+- [~] `S4-08` Xóa toàn bộ dữ liệu (có xác nhận) — FR-U-05 _(28/11: code + test `reset.ts`, xác nhận trong `settings.tsx`)_
 
 ### Chất lượng
 
-- [ ] `S4-09` Màn hình trống và màn hình lỗi cho mọi tab
-- [ ] `S4-10` Dark mode rà toàn bộ màn hình
-- [ ] `S4-11` Nội dung: tăng lên ~200 cụm từ, đã duyệt — BRD §6
+- [~] `S4-09` Màn hình trống và màn hình lỗi cho mọi tab _(28/11: rà đủ 4 tab)_
+- [~] `S4-10` Dark mode rà toàn bộ màn hình _(28/11: toàn bộ màn dùng `useColors()`, hỗ trợ chọn Sáng/Tối/Theo máy)_
+- [~] `S4-11` Nội dung: tăng lên ~200 cụm từ, đã duyệt — BRD §6 _(đã có 72 hội thoại / 741 câu trong `dialogues/`, **chờ người duyệt**)_
 - [ ] `S4-12` Maestro e2e: onboarding, học + ôn 1 thẻ, tạo/tìm ghi chú, chat gõ chữ (API giả lập) — TK §9
 - [ ] `S4-13` Đo thời gian mở app (< 3 giây trên máy tầm trung)
 - [ ] `S4-14` Rà soát BRD: mọi yêu cầu P0 đã đạt tiêu chí nghiệm thu (bảng bên dưới)
 - [ ] `S4-15` Deploy API `prod`, tag `v0.1.0`, build APK release
-- [ ] `S4-16` Mẫu khảo sát cho người thử (độ tự tin khi nói, lỗi gặp phải) — BRD §7
+- [~] `S4-16` Mẫu khảo sát cho người thử (độ tự tin khi nói, lỗi gặp phải) — BRD §7 _(28/11: `docs/khao-sat-nguoi-thu.md`)_
 - [ ] `S4-17` Gửi APK cho 5–10 người thử → **Mốc M4**
 
 ---
@@ -529,6 +529,7 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 - Nội dung: tăng từ 3 lên 10 kịch bản (`packages/content/data/scenarios.json`, A1–B2; **7 kịch bản mới chờ người duyệt**).
 - Còn để chốt 3b: test trên 2–3 máy Android thật (`S3b-12`), đo độ trễ 4G ≤ 3 s (`S3b-11`), duyệt 10 kịch bản, build APK (`S3b-13`) → **M3**.
 - API/LLM (28/11 tối): đã nạp `LLM_KEY_GEMINI` + `LLM_KEY_GROQ` trên Cloudflare dev; cập nhật model trong `wrangler.toml` (`gemini-3.5-flash-lite` + `openai/gpt-oss-20b`), `gateway.ts` fallback cả khi stream rỗng (0 token) và log mã lỗi khi chuyển nhà cung cấp; test thật `/chat` (TTFB 2,54 s), `/chat/explain` (2,11 s), `/chat/feedback` (1,90 s) đều HTTP 200.
+- Sprint 4 (28/11 tối – code trước phần logic/UI): Onboarding 5 bước (`onboarding.tsx`, quyền riêng tư, mục tiêu, kiểm tra giọng TTS, xếp trình độ thích ứng 12 câu với 32 câu hỏi trong `placement.json`, đặt giờ nhắc học lần đầu), Cài đặt đầy đủ (`settings.tsx`: trình độ, mục tiêu, giọng/tốc độ đọc, giao diện Sáng/Tối/Theo máy qua `ThemePreferenceProvider`, xóa toàn bộ dữ liệu `reset.ts`), rà trạng thái trống 4 tab, mẫu khảo sát `docs/khao-sat-nguoi-thu.md`. Còn: test máy thật, Maestro e2e, duyệt nội dung, nạp secret `--env prod` & `API_BASE_URL_PROD`, tag `v0.1.0` → **M4**.
 
 ---
 

@@ -37,6 +37,15 @@ export async function requestPermission(): Promise<boolean> {
   return (await Notifications.requestPermissionsAsync()).granted;
 }
 
+/** Hủy toàn bộ thông báo nhắc học đã lên lịch (dùng khi xóa dữ liệu). */
+export async function cancelAllReminders(): Promise<void> {
+  try {
+    await Notifications.cancelAllScheduledNotificationsAsync();
+  } catch {
+    // bỏ qua nếu chưa cấp quyền
+  }
+}
+
 /** Hủy lịch cũ và lên lịch lại theo cài đặt. Lỗi (không có quyền…) thì bỏ qua lặng lẽ. */
 export async function syncReminders(db: Db, opts: { ask?: boolean } = {}): Promise<boolean> {
   try {

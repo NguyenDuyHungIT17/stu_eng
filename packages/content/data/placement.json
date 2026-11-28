@@ -9,6 +9,79 @@
     "answerIndex": 1
   },
   {
+    "id": "pl-a1-2",
+    "level": "A1",
+    "kind": "listen_choose",
+    "prompt": "Nice to meet you.",
+    "questionVi": "Người nói vừa nói gì?",
+    "options": ["Tạm biệt nhé", "Rất vui được gặp bạn", "Cảm ơn nhiều", "Chúc ngủ ngon"],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-a1-3",
+    "level": "A1",
+    "kind": "read_choose",
+    "prompt": "How much is this?",
+    "questionVi": "Người nói muốn hỏi điều gì?",
+    "options": [
+      "Cái này giá bao nhiêu?",
+      "Cái này màu gì?",
+      "Cái này nặng không?",
+      "Cái này ở đâu?"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "pl-a1-4",
+    "level": "A1",
+    "kind": "listen_choose",
+    "prompt": "I'd like a cup of coffee, please.",
+    "questionVi": "Người nói đang gọi gì?",
+    "options": ["Một cốc trà đá", "Một tách cà phê", "Một chai nước lọc", "Một phần bánh mì"],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-a1-5",
+    "level": "A1",
+    "kind": "read_choose",
+    "prompt": "Sorry, I don't understand.",
+    "questionVi": "Câu này dùng khi nào?",
+    "options": [
+      "Khi đồng ý ngay",
+      "Khi muốn cảm ơn",
+      "Khi chưa hiểu lời đối phương",
+      "Khi muốn thanh toán"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "pl-a1-6",
+    "level": "A1",
+    "kind": "listen_choose",
+    "prompt": "Can you speak more slowly?",
+    "questionVi": "Người nói đang nhờ điều gì?",
+    "options": ["Nói to hơn chút", "Nói chậm hơn chút", "Viết ra giấy", "Đợi một lát"],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-a1-7",
+    "level": "A1",
+    "kind": "read_choose",
+    "prompt": "What time is it?",
+    "questionVi": "Câu này hỏi về điều gì?",
+    "options": ["Ngày tháng", "Thời tiết", "Mấy giờ rồi", "Địa chỉ"],
+    "answerIndex": 2
+  },
+  {
+    "id": "pl-a1-8",
+    "level": "A1",
+    "kind": "listen_choose",
+    "prompt": "Excuse me, where is the restroom?",
+    "questionVi": "Người nói đang tìm gì?",
+    "options": ["Nhà vệ sinh", "Quầy thu ngân", "Bến xe buýt", "Cổng ra"],
+    "answerIndex": 0
+  },
+  {
     "id": "pl-a2-1",
     "level": "A2",
     "kind": "listen_choose",
@@ -16,6 +89,94 @@
     "questionVi": "Người nói đang muốn gì?",
     "options": ["Gọi thêm món", "Đặt bàn", "Xin hoá đơn", "Hỏi đường"],
     "answerIndex": 2
+  },
+  {
+    "id": "pl-a2-2",
+    "level": "A2",
+    "kind": "read_choose",
+    "prompt": "I'm looking for a larger size.",
+    "questionVi": "Người nói đang cần gì khi mua đồ?",
+    "options": ["Màu tối hơn", "Cỡ lớn hơn", "Giảm giá thêm", "Đổi sang món khác"],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-a2-3",
+    "level": "A2",
+    "kind": "listen_choose",
+    "prompt": "Turn left at the traffic lights.",
+    "questionVi": "Hướng dẫn đi đường là gì?",
+    "options": [
+      "Đi thẳng qua đèn đỏ",
+      "Rẽ phải ở ngã tư",
+      "Rẽ trái ở chỗ đèn giao thông",
+      "Quay đầu lại"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "id": "pl-a2-4",
+    "level": "A2",
+    "kind": "read_choose",
+    "prompt": "What do you recommend here?",
+    "questionVi": "Câu này dùng trong tình huống nào?",
+    "options": [
+      "Hỏi nhân viên xem món nào ngon/nên chọn",
+      "Than phiền đồ ăn nguội",
+      "Xin đổi chỗ ngồi",
+      "Hỏi giờ đóng cửa"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "pl-a2-5",
+    "level": "A2",
+    "kind": "listen_choose",
+    "prompt": "I have a reservation under Minh.",
+    "questionVi": "Người nói đang làm gì?",
+    "options": ["Hủy đặt chỗ", "Đọc tên đã đặt bàn/phòng trước", "Hỏi giá phòng", "Nhờ gọi taxi"],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-a2-6",
+    "level": "A2",
+    "kind": "read_choose",
+    "prompt": "How long have you worked here?",
+    "questionVi": "Câu này hỏi đồng nghiệp điều gì?",
+    "options": [
+      "Bạn làm ở đây bao lâu rồi?",
+      "Bạn thích công việc này không?",
+      "Mấy giờ bạn tan làm?",
+      "Phòng bạn ở tầng nào?"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "pl-a2-7",
+    "level": "A2",
+    "kind": "listen_choose",
+    "prompt": "Let's meet around three o'clock.",
+    "questionVi": "Hai người hẹn nhau thế nào?",
+    "options": [
+      "Gặp lúc 3 giờ sáng",
+      "Gặp vào khoảng 3 giờ",
+      "Họp trực tuyến 30 phút",
+      "Dời sang ngày mai"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-a2-8",
+    "level": "A2",
+    "kind": "read_choose",
+    "prompt": "Could you give me a hand with this?",
+    "questionVi": "Người nói đang nhờ gì?",
+    "options": [
+      "Chụp giúp tấm ảnh",
+      "Giúp một tay với việc này",
+      "Chỉ đường ra ga",
+      "Giữ hộ túi đồ"
+    ],
+    "answerIndex": 1
   },
   {
     "id": "pl-b1-1",
@@ -27,12 +188,203 @@
     "answerIndex": 1
   },
   {
+    "id": "pl-b1-2",
+    "level": "B1",
+    "kind": "listen_choose",
+    "prompt": "Something urgent came up, so we need to reschedule.",
+    "questionVi": "Lý do cuộc hẹn thay đổi là gì?",
+    "options": [
+      "Khách hàng hủy hợp đồng",
+      "Có việc gấp phát sinh nên cần dời lịch",
+      "Phòng họp bị khóa",
+      "Trời mưa lớn"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b1-3",
+    "level": "B1",
+    "kind": "read_choose",
+    "prompt": "I'm currently blocked by the API update.",
+    "questionVi": "Trong buổi họp nhóm, câu này nghĩa là gì?",
+    "options": [
+      "Tôi đã làm xong phần API",
+      "Tôi đang bị kẹt vì chờ bản cập nhật API",
+      "Tôi muốn bỏ qua phần API",
+      "Tôi sẽ tự viết lại API"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b1-4",
+    "level": "B1",
+    "kind": "listen_choose",
+    "prompt": "Would tomorrow afternoon work for you?",
+    "questionVi": "Người nói đang hỏi điều gì?",
+    "options": [
+      "Chiều mai bạn có rảnh/tiện không?",
+      "Hôm qua bạn làm xong chưa?",
+      "Cuộc họp kéo dài bao lâu?",
+      "Bạn thích làm sáng hay tối?"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "id": "pl-b1-5",
+    "level": "B1",
+    "kind": "read_choose",
+    "prompt": "I'd appreciate it if you could double-check the numbers.",
+    "questionVi": "Sắc thái câu này là gì?",
+    "options": [
+      "Trách móc gay gắt",
+      "Nhờ lịch sự kiểm tra lại số liệu",
+      "Từ chối nhận báo cáo",
+      "Khen ngợi kết quả"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b1-6",
+    "level": "B1",
+    "kind": "listen_choose",
+    "prompt": "To be honest, I'm still getting used to the new system.",
+    "questionVi": "Người nói cảm thấy thế nào?",
+    "options": [
+      "Rất thành thạo hệ thống mới",
+      "Đang dần làm quen với hệ thống mới",
+      "Muốn quay lại hệ thống cũ",
+      "Chưa từng dùng hệ thống nào"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b1-7",
+    "level": "B1",
+    "kind": "read_choose",
+    "prompt": "Could we wrap up a few minutes early?",
+    "questionVi": "Người nói đề nghị điều gì?",
+    "options": ["Bắt đầu sớm hơn", "Kết thúc sớm vài phút", "Gói quà lại", "Nghỉ giải lao 15 phút"],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b1-8",
+    "level": "B1",
+    "kind": "listen_choose",
+    "prompt": "I see your point, though we might run out of time.",
+    "questionVi": "Ý của người nói là gì?",
+    "options": [
+      "Không hiểu ý bạn",
+      "Hiểu ý bạn nhưng lo không kịp thời gian",
+      "Hoàn toàn phản đối",
+      "Muốn kéo dài thêm thời hạn"
+    ],
+    "answerIndex": 1
+  },
+  {
     "id": "pl-b2-1",
     "level": "B2",
     "kind": "listen_choose",
     "prompt": "I'm not entirely convinced this is the best way forward.",
     "questionVi": "Thái độ của người nói là gì?",
     "options": ["Hoàn toàn đồng ý", "Còn nghi ngờ, chưa đồng ý hẳn", "Tức giận", "Không quan tâm"],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b2-2",
+    "level": "B2",
+    "kind": "read_choose",
+    "prompt": "We may need to compromise on the timeline to keep the quality.",
+    "questionVi": "Người nói đang đề xuất hướng xử lý nào?",
+    "options": [
+      "Cắt giảm chất lượng để kịp hạn",
+      "Nhượng bộ về tiến độ để giữ chất lượng",
+      "Tăng thêm nhân sự ngay",
+      "Hủy bỏ dự án"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b2-3",
+    "level": "B2",
+    "kind": "listen_choose",
+    "prompt": "Let's make sure we're on the same page before signing off.",
+    "questionVi": "Người nói muốn làm gì trước khi chốt?",
+    "options": [
+      "In cùng một trang tài liệu",
+      "Đảm bảo mọi người hiểu thống nhất trước khi phê duyệt",
+      "Đổi người ký hợp đồng",
+      "Hoãn sang tuần sau"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b2-4",
+    "level": "B2",
+    "kind": "read_choose",
+    "prompt": "That raises a valid concern about long-term maintenance.",
+    "questionVi": "Câu này có ý nghĩa gì?",
+    "options": [
+      "Bác bỏ hoàn toàn lo ngại đó",
+      "Ghi nhận đó là mối lo hợp lý về bảo trì lâu dài",
+      "Không muốn nhắc tới chi phí",
+      "Đề nghị chuyển sang chủ đề khác"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b2-5",
+    "level": "B2",
+    "kind": "listen_choose",
+    "prompt": "From a practical standpoint, the simpler option makes more sense.",
+    "questionVi": "Kết luận của người nói là gì?",
+    "options": [
+      "Chọn phương án phức tạp hơn",
+      "Xét thực tế thì phương án đơn giản hợp lý hơn",
+      "Chưa thể so sánh hai phương án",
+      "Cần khảo sát thêm một tháng"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b2-6",
+    "level": "B2",
+    "kind": "read_choose",
+    "prompt": "I'd rather flag this risk early than scramble at the last minute.",
+    "questionVi": "Người nói muốn làm gì?",
+    "options": [
+      "Giấu rủi ro đến phút chót",
+      "Báo sớm rủi ro còn hơn cuống cuồng vào phút cuối",
+      "Chuyển trách nhiệm cho nhóm khác",
+      "Bỏ qua giai đoạn kiểm thử"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b2-7",
+    "level": "B2",
+    "kind": "listen_choose",
+    "prompt": "Could you walk me through the reasoning behind that estimate?",
+    "questionVi": "Người nói đang yêu cầu điều gì?",
+    "options": [
+      "Đi dạo cùng nhau sau giờ làm",
+      "Giải thích rõ cách tính/lý do của con số ước lượng đó",
+      "Giảm một nửa ước lượng",
+      "Gửi lại email cũ"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "id": "pl-b2-8",
+    "level": "B2",
+    "kind": "read_choose",
+    "prompt": "All things considered, the rollout went remarkably smoothly.",
+    "questionVi": "Đánh giá chung của người nói về đợt triển khai là gì?",
+    "options": [
+      "Gặp rất nhiều sự cố nghiêm trọng",
+      "Xét mọi mặt thì đợt triển khai diễn ra khá suôn sẻ",
+      "Phải làm lại từ đầu",
+      "Chưa triển khai được gì"
+    ],
     "answerIndex": 1
   }
 ]

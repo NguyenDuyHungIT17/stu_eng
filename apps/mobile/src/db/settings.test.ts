@@ -5,12 +5,16 @@ import {
   DEFAULT_REMINDER,
   getDailyMinutesGoal,
   getDailyNewLimit,
+  getLearningGoal,
   getLevel,
   getReminderPrefs,
   getSetting,
+  getThemeMode,
   getTtsPrefs,
+  hasOnboardingDone,
   hasPrivacyAck,
   SettingKey,
+  setOnboardingDone,
   setPrivacyAck,
   setReminderPrefs,
   setSetting,
@@ -67,5 +71,19 @@ describe('settings', () => {
     expect(hasPrivacyAck(db)).toBe(false);
     setPrivacyAck(db);
     expect(hasPrivacyAck(db)).toBe(true);
+  });
+
+  it('onboarding, mục tiêu học và giao diện sáng/tối', () => {
+    const db = createTestDb();
+    expect(hasOnboardingDone(db)).toBe(false);
+    expect(getLearningGoal(db)).toBe('life');
+    expect(getThemeMode(db)).toBe('system');
+
+    setOnboardingDone(db);
+    setSetting(db, SettingKey.learningGoal, 'work');
+    setSetting(db, SettingKey.themeMode, 'dark');
+    expect(hasOnboardingDone(db)).toBe(true);
+    expect(getLearningGoal(db)).toBe('work');
+    expect(getThemeMode(db)).toBe('dark');
   });
 });

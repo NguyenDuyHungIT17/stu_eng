@@ -15,6 +15,9 @@ export const SettingKey = {
   reminderTime: 'reminder_time',
   deviceId: 'device_id',
   privacyAck: 'privacy_ack',
+  onboardingDone: 'onboarding_done',
+  learningGoal: 'learning_goal',
+  themeMode: 'theme_mode',
 } as const;
 export type SettingKey = (typeof SettingKey)[keyof typeof SettingKey];
 
@@ -104,4 +107,36 @@ export function hasPrivacyAck(db: Db): boolean {
 
 export function setPrivacyAck(db: Db): void {
   setSetting(db, SettingKey.privacyAck, '1');
+}
+
+export function hasOnboardingDone(db: Db): boolean {
+  return getSetting(db, SettingKey.onboardingDone) === '1';
+}
+
+export function setOnboardingDone(db: Db): void {
+  setSetting(db, SettingKey.onboardingDone, '1');
+}
+
+export const LEARNING_GOALS = [
+  { id: 'work', label: '💼 Công việc' },
+  { id: 'travel', label: '✈️ Du lịch' },
+  { id: 'life', label: '💬 Đời sống' },
+] as const;
+export type LearningGoal = (typeof LEARNING_GOALS)[number]['id'];
+
+export function getLearningGoal(db: Db): LearningGoal {
+  const v = getSetting(db, SettingKey.learningGoal);
+  return v === 'work' || v === 'travel' || v === 'life' ? v : 'life';
+}
+
+export const THEME_MODES = [
+  { id: 'system', label: 'Theo máy' },
+  { id: 'light', label: 'Sáng' },
+  { id: 'dark', label: 'Tối' },
+] as const;
+export type ThemeMode = (typeof THEME_MODES)[number]['id'];
+
+export function getThemeMode(db: Db): ThemeMode {
+  const v = getSetting(db, SettingKey.themeMode);
+  return v === 'light' || v === 'dark' || v === 'system' ? v : 'system';
 }
