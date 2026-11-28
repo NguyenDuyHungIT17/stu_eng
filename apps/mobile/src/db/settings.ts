@@ -14,6 +14,7 @@ export const SettingKey = {
   reminderEnabled: 'reminder_enabled',
   reminderTime: 'reminder_time',
   deviceId: 'device_id',
+  privacyAck: 'privacy_ack',
 } as const;
 export type SettingKey = (typeof SettingKey)[keyof typeof SettingKey];
 
@@ -94,4 +95,13 @@ export function setReminderPrefs(db: Db, prefs: ReminderPrefs): void {
   setSetting(db, SettingKey.reminderEnabled, prefs.enabled ? '1' : '0');
   const mm = String(prefs.minute).padStart(2, '0');
   setSetting(db, SettingKey.reminderTime, `${prefs.hour}:${mm}`);
+}
+
+/** Người dùng đã đọc thông báo quyền riêng tư trước khi dùng hội thoại AI chưa (FR-U-02, S3b-09). */
+export function hasPrivacyAck(db: Db): boolean {
+  return getSetting(db, SettingKey.privacyAck) === '1';
+}
+
+export function setPrivacyAck(db: Db): void {
+  setSetting(db, SettingKey.privacyAck, '1');
 }

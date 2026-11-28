@@ -11,6 +11,28 @@
     "opener": "Hi there! I don't think we've met. Are you new here?"
   },
   {
+    "id": "coffee-shop",
+    "title": "Gọi đồ uống ở quán cà phê",
+    "level": "A1",
+    "aiRole": "a friendly barista at a neighborhood cafe",
+    "userRole": "a customer ordering a drink and a snack",
+    "goalVi": "Chọn đồ uống, chọn cỡ cốc, ít đá và thanh toán",
+    "setting": "A cozy morning coffee shop counter.",
+    "keywords": ["iced latte", "medium size", "less ice", "pay by card"],
+    "opener": "Good morning! What can I get started for you today?"
+  },
+  {
+    "id": "ask-directions",
+    "title": "Hỏi đường đi tàu điện",
+    "level": "A1",
+    "aiRole": "a helpful local commuter on the street",
+    "userRole": "a visitor trying to find the nearest metro station",
+    "goalVi": "Hỏi đường đi bộ tới ga tàu và xác nhận hướng rẽ",
+    "setting": "A busy sidewalk downtown near a shopping street.",
+    "keywords": ["nearest station", "turn left", "how far", "thank you"],
+    "opener": "Hi! You look a little lost. Are you trying to find somewhere?"
+  },
+  {
     "id": "restaurant-order",
     "title": "Gọi món ở nhà hàng",
     "level": "A2",
@@ -22,6 +44,39 @@
     "opener": "Good evening! Welcome in. Can I get you something to drink first?"
   },
   {
+    "id": "hotel-checkin",
+    "title": "Nhận phòng khách sạn",
+    "level": "A2",
+    "aiRole": "a polite front-desk receptionist at a city hotel",
+    "userRole": "a traveler arriving to check in",
+    "goalVi": "Đọc tên đặt phòng, hỏi giờ ăn sáng, mật khẩu Wi-Fi",
+    "setting": "The hotel reception desk in the afternoon.",
+    "keywords": ["reservation", "breakfast", "Wi-Fi", "check-out time"],
+    "opener": "Good afternoon and welcome! Do you have a reservation with us?"
+  },
+  {
+    "id": "shopping-return",
+    "title": "Đổi trả món đồ đã mua",
+    "level": "A2",
+    "aiRole": "a customer service clerk at a clothing store",
+    "userRole": "a shopper who wants to exchange a jacket for a different size",
+    "goalVi": "Trình bày lý do đổi áo, đưa hóa đơn và chọn cỡ vừa hơn",
+    "setting": "The return counter at a casual clothing store.",
+    "keywords": ["receipt", "exchange", "larger size", "fit well"],
+    "opener": "Hi there! How can I help you at the customer service desk today?"
+  },
+  {
+    "id": "doctor-visit",
+    "title": "Khám bệnh và mua thuốc",
+    "level": "B1",
+    "aiRole": "a clinic doctor doing a quick check-up",
+    "userRole": "a patient with a sore throat and mild fever",
+    "goalVi": "Mô tả triệu chứng từ bao giờ, hỏi cách uống thuốc và nghỉ ngơi",
+    "setting": "A neighborhood clinic consultation room.",
+    "keywords": ["sore throat", "for two days", "allergic", "how often"],
+    "opener": "Hello, please have a seat. What brings you in to see me today?"
+  },
+  {
     "id": "job-interview",
     "title": "Phỏng vấn xin việc",
     "level": "B1",
@@ -31,5 +86,27 @@
     "setting": "A video job interview for a junior marketing position.",
     "keywords": ["experience", "strengths", "teamwork", "why this company"],
     "opener": "Thanks for joining us today. Could you start by telling me a little about yourself?"
+  },
+  {
+    "id": "team-standup",
+    "title": "Họp nhanh đầu ngày với nhóm",
+    "level": "B1",
+    "aiRole": "a supportive team lead in a daily standup",
+    "userRole": "a team member sharing progress and a blocker",
+    "goalVi": "Báo cáo việc đã làm hôm qua, kế hoạch hôm nay và nhờ hỗ trợ vướng mắc",
+    "setting": "A 15-minute morning team call on video chat.",
+    "keywords": ["yesterday", "today I'm working on", "blocked by", "could we sync"],
+    "opener": "Morning everyone! Let's do a quick round. How did your task go yesterday?"
+  },
+  {
+    "id": "reschedule-meeting",
+    "title": "Xin dời lịch họp với đối tác",
+    "level": "B2",
+    "aiRole": "a busy client who expected a project review this afternoon",
+    "userRole": "a project coordinator proposing a new time politely",
+    "goalVi": "Xin lỗi khéo, giải thích ngắn gọn và đề xuất 2 khung giờ thay thế",
+    "setting": "A quick phone call before an afternoon project review.",
+    "keywords": ["apologize for", "something urgent", "would tomorrow work", "send an invite"],
+    "opener": "Hi, thanks for calling. Are we still good for our 3 PM review today?"
   }
 ]

@@ -9,7 +9,9 @@ import {
   getReminderPrefs,
   getSetting,
   getTtsPrefs,
+  hasPrivacyAck,
   SettingKey,
+  setPrivacyAck,
   setReminderPrefs,
   setSetting,
 } from './settings';
@@ -58,5 +60,12 @@ describe('settings', () => {
     expect(getReminderPrefs(db)).toEqual({ enabled: false, hour: 7, minute: 5 });
     setSetting(db, SettingKey.reminderTime, '25:00');
     expect(getReminderPrefs(db)).toMatchObject({ hour: 20, minute: 0 });
+  });
+
+  it('quyền riêng tư chat: mặc định chưa xác nhận, lưu xong thì true', () => {
+    const db = createTestDb();
+    expect(hasPrivacyAck(db)).toBe(false);
+    setPrivacyAck(db);
+    expect(hasPrivacyAck(db)).toBe(true);
   });
 });
