@@ -46,8 +46,8 @@ Danh sách việc ưu tiên theo đúng thứ tự để đóng xong Sprint 0 �
 
 ### 2. Tạo keystore release & nạp GitHub Repository secrets (`S0-09`)
 
-- [ ] Tạo `release.keystore` ngoài thư mục repo (`keytool.exe` trong `C:\Program Files\Android\Android Studio\jbr\bin\keytool.exe`, alias `english-app`) và **sao lưu ít nhất 2 nơi an toàn**
-- [ ] Thêm 4 secret `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD` vào **Repository secrets** trên GitHub (cùng chỗ `CLOUDFLARE_API_TOKEN`; **không** đặt ở Environment secrets vì `android-apk.yml` chưa khai báo `environment:`)
+- [~] Đã tạo `C:\Users\Admin\keys\release.keystore` (nhớ **sao lưu file + mật khẩu ít nhất 2 nơi an toàn**)
+- [x] Đã thêm 4 secret `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD` vào **Repository secrets** trên GitHub (`28/11`)
 
 ### 3. Merge PR `eng_hungnd` → `main` & build APK release từ CI
 
@@ -103,7 +103,7 @@ Danh sách việc ưu tiên theo đúng thứ tự để đóng xong Sprint 0 �
 ### CI/CD
 
 - [x] `S0-08` `ci.yml`: install, Biome, typecheck, test, validate content — TK §10 _(PR #1 và `main` chạy xanh ngày 23/11)_
-- [ ] `S0-09` Tạo keystore, sao lưu 2 nơi, lưu vào GitHub Secrets — TK §10
+- [~] `S0-09` Tạo keystore, sao lưu 2 nơi, lưu vào GitHub Secrets — TK §10 _(28/11: đã tạo `release.keystore` và thêm 4 secret lên GitHub; nhớ sao lưu 2 nơi và chạy thử `android-apk`)_
 - [x] `S0-10` Config plugin `with-release-signing.js` — TK §10
 - [~] `S0-11` `android-apk.yml` build APK release đã ký — TK §10
 - [~] `S0-12` Tạo D1 `dev` và `prod`, migration `0001_usage.sql` — TK §7.2 _(đã tạo 2 DB; dev đã migrate; prod chưa — migrate khi tag đầu tiên)_
@@ -536,15 +536,15 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 
 Danh sách tổng hợp những thứ ngoài code cần có. Đánh dấu khi đã có.
 
-| #   | Cần có                                                                      | Dùng cho                                 | Sprint       | Đã có            |
-| --- | --------------------------------------------------------------------------- | ---------------------------------------- | ------------ | ---------------- |
-| 1   | Quyết định BRD §10 + tên package Android                                    | Toàn dự án, keystore                     | 0            | [~] package xong |
-| 2   | Repo GitHub (free)                                                          | CI, build APK                            | 0            | [x]              |
-| 3   | Tài khoản Cloudflare (free)                                                 | API, D1                                  | 0, 3a        | [x]              |
-| 4   | Android Studio (JDK 17 + Android SDK)                                       | Build và chạy app trên máy               | 0 → 4        | [x]              |
-| 5   | 1 điện thoại Android (tốt nhất 2–3 máy khác hãng)                           | Spike, kiểm tra từng sprint              | 0 → 4        | [ ]              |
-| 6   | Keystore + mật khẩu, sao lưu 2 nơi                                          | Ký APK phát hành                         | 0            | [ ]              |
-| 7   | 2 khóa API AI miễn phí                                                      | Spike S7, hội thoại AI                   | 0, 3a        | [x]              |
-| 8   | Người duyệt nội dung tiếng Anh                                              | Duyệt cụm từ, kịch bản, câu xếp trình độ | 1, 3a, 3b, 4 | [ ]              |
-| 9   | Nội dung: 60 cụm (S1) → 200 cụm (S4); 3 → 10 kịch bản; ~30 câu xếp trình độ | Học, chat, onboarding                    | 1, 3a, 3b, 4 | [ ]              |
-| 10  | 5–10 người thử + mẫu khảo sát                                               | Mốc M4                                   | 4            | [ ]              |
+| #   | Cần có                                                                      | Dùng cho                                 | Sprint       | Đã có                                      |
+| --- | --------------------------------------------------------------------------- | ---------------------------------------- | ------------ | ------------------------------------------ |
+| 1   | Quyết định BRD §10 + tên package Android                                    | Toàn dự án, keystore                     | 0            | [~] package xong                           |
+| 2   | Repo GitHub (free)                                                          | CI, build APK                            | 0            | [x]                                        |
+| 3   | Tài khoản Cloudflare (free)                                                 | API, D1                                  | 0, 3a        | [x]                                        |
+| 4   | Android Studio (JDK 17 + Android SDK)                                       | Build và chạy app trên máy               | 0 → 4        | [x]                                        |
+| 5   | 1 điện thoại Android (tốt nhất 2–3 máy khác hãng)                           | Spike, kiểm tra từng sprint              | 0 → 4        | [ ]                                        |
+| 6   | Keystore + mật khẩu, sao lưu 2 nơi                                          | Ký APK phát hành                         | 0            | [~] đã tạo & nạp GitHub; nhớ sao lưu 2 nơi |
+| 7   | 2 khóa API AI miễn phí                                                      | Spike S7, hội thoại AI                   | 0, 3a        | [x]                                        |
+| 8   | Người duyệt nội dung tiếng Anh                                              | Duyệt cụm từ, kịch bản, câu xếp trình độ | 1, 3a, 3b, 4 | [ ]                                        |
+| 9   | Nội dung: 60 cụm (S1) → 200 cụm (S4); 3 → 10 kịch bản; ~30 câu xếp trình độ | Học, chat, onboarding                    | 1, 3a, 3b, 4 | [ ]                                        |
+| 10  | 5–10 người thử + mẫu khảo sát                                               | Mốc M4                                   | 4            | [ ]                                        |
