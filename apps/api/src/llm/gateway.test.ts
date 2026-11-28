@@ -108,6 +108,15 @@ describe('streamChat', () => {
     expect(out.join('')).toMatch(/^\(demo\) /);
     expect(fetchFn).not.toHaveBeenCalled();
   });
+
+  it('stream kết thúc rỗng (0 token) → chuyển sang nhà cung cấp sau', async () => {
+    const fetchFn = vi
+      .fn<typeof fetch>()
+      .mockResolvedValueOnce(new Response(streamOf('data: [DONE]\n\n')))
+      .mockResolvedValueOnce(new Response(streamOf(delta('OK'), 'data: [DONE]\n\n')));
+    expect(await collect(streamChat(env(), msgs, fetchFn))).toEqual(['OK']);
+    expect(fetchFn).toHaveBeenCalledTimes(2);
+  });
 });
 
 describe('completeJson', () => {

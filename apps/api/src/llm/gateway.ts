@@ -41,7 +41,7 @@ export async function* streamChat(
     try {
       const res = await post(
         p,
-        { messages, stream: true, temperature: 0.7, max_tokens: 300 },
+        { messages, stream: true, temperature: 0.7, max_tokens: 800 },
         fetchFn,
       );
       if (!res.ok || !res.body) throw new LlmError(`${p.name}:${res.status}`);
@@ -49,9 +49,11 @@ export async function* streamChat(
         started = true;
         yield token;
       }
+      if (!started) throw new LlmError(`${p.name}:empty`);
       return;
     } catch (e) {
       if (started) throw e;
+      console.warn('[llm] fallback', p.name, e instanceof Error ? e.message : 'error');
       lastError = e;
     }
   }
@@ -101,6 +103,7 @@ export async function completeJson<S extends z.ZodType>(
         lastError = new LlmError(`${p.name}:bad_json`);
       } catch (e) {
         lastError = e;
+        console.warn('[llm] json fallback', p.name, e instanceof Error ? e.message : 'error');
         // Lỗi mạng/HTTP: không thử lại cùng nhà cung cấp, chuyển luôn.
         if (!(e instanceof SyntaxError)) break;
       }

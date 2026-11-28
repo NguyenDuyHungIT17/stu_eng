@@ -13,15 +13,15 @@ _Kế hoạch triển khai và theo dõi tiến độ. Đi kèm BRD v1.1 và Thi
 
 ## Bảng tổng quan
 
-| Sprint  | Mục tiêu           | Ước tính                       | Bắt đầu | Kết thúc | Tiến độ              | Trạng thái                                                                                         |
-| ------- | ------------------ | ------------------------------ | ------- | -------- | -------------------- | -------------------------------------------------------------------------------------------------- |
-| 0       | Nền móng + spike   | 1,5 tuần                       | 18/11   |          | 11/24 (+10 đang làm) | Đã merge Sprint 0 (`main`) & có `CLOUDFLARE_API_TOKEN`; còn keystore, 2 khóa LLM, máy thật         |
-| 1       | Từ vựng và ôn tập  | 2 tuần                         | 23/11   |          | 0/18 (+17 code xong) | Chờ PR `eng_hungnd` → `main`, duyệt nội dung, thử máy thật                                         |
-| 2       | Ghi chú và tiến độ | 1 tuần                         | 23/11   |          | 0/14 (+12 code xong) | Còn: thử thông báo trên 2 máy, APK                                                                 |
-| 3a      | Chat bằng chữ      | 1,5 tuần                       | 25/11   |          | 0/18 (+18 code xong) | Đã có `LLM_KEY_GEMINI` nhưng đang lỗi `gemini:403`; thiếu `LLM_KEY_GROQ`, duyệt kịch bản, máy thật |
-| 3b      | Chat bằng giọng    | 1,5 tuần                       | 28/11   |          | 0/13 (+10 code xong) | Chờ khóa LLM (S7), duyệt 10 kịch bản, test 2–3 máy thật & đo 4G                                    |
-| 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17                 | Chưa bắt đầu                                                                                       |
-| **MVP** |                    | **~9 tuần (+20–30% dự phòng)** |         |          | **0/104**            |                                                                                                    |
+| Sprint  | Mục tiêu           | Ước tính                       | Bắt đầu | Kết thúc | Tiến độ              | Trạng thái                                                                       |
+| ------- | ------------------ | ------------------------------ | ------- | -------- | -------------------- | -------------------------------------------------------------------------------- |
+| 0       | Nền móng + spike   | 1,5 tuần                       | 18/11   |          | 12/24 (+9 đang làm)  | Đã xong Spike S7 (2 khóa LLM chạy thật); còn keystore, máy thật                  |
+| 1       | Từ vựng và ôn tập  | 2 tuần                         | 23/11   |          | 0/18 (+17 code xong) | Chờ PR `eng_hungnd` → `main`, duyệt nội dung, thử máy thật                       |
+| 2       | Ghi chú và tiến độ | 1 tuần                         | 23/11   |          | 0/14 (+12 code xong) | Còn: thử thông báo trên 2 máy, APK                                               |
+| 3a      | Chat bằng chữ      | 1,5 tuần                       | 25/11   |          | 0/18 (+18 code xong) | Đã chạy thật `/chat`, `/explain`, `/feedback` (S7); còn duyệt kịch bản, máy thật |
+| 3b      | Chat bằng giọng    | 1,5 tuần                       | 28/11   |          | 0/13 (+10 code xong) | Chờ duyệt 10 kịch bản, test 2–3 máy thật & đo 4G                                 |
+| 4       | Hoàn thiện MVP     | 1,5 tuần                       |         |          | 0/17                 | Chưa bắt đầu                                                                     |
+| **MVP** |                    | **~9 tuần (+20–30% dự phòng)** |         |          | **0/104**            |                                                                                  |
 
 Mốc quan trọng:
 
@@ -39,9 +39,9 @@ Danh sách việc ưu tiên theo đúng thứ tự để đóng xong Sprint 0 �
 
 ### 1. Sửa khóa AI & hoàn tất Spike S7 (Cloudflare Workers)
 
-- [ ] Kiểm tra/tạo lại key Gemini mới tại `aistudio.google.com/apikey` (key `LLM_KEY_GEMINI` hiện trên Cloudflare dev đang bị Google trả `gemini:403`) và nạp lại: `pnpm exec wrangler secret put LLM_KEY_GEMINI` (trong `apps/api`)
-- [ ] Đăng ký API key miễn phí thứ 2 tại `console.groq.com` và nạp dự phòng: `pnpm exec wrangler secret put LLM_KEY_GROQ` (`P-03`)
-- [ ] Test lại `POST /chat` và `POST /chat/explain` trên API dev chạy thật (hết `upstream_failed`), đo độ trễ token đầu và điền vào bảng **Spike S7** (`S0-21`)
+- [x] Kiểm tra/tạo lại key Gemini mới và nạp: `pnpm exec wrangler secret put LLM_KEY_GEMINI`
+- [x] Đăng ký API key Groq và nạp dự phòng: `pnpm exec wrangler secret put LLM_KEY_GROQ` (`P-03`)
+- [x] Cập nhật model (`gemini-3.5-flash-lite`, `openai/gpt-oss-20b`) & test thật `/chat` (2,54 s), `/chat/explain` (2,11 s), `/chat/feedback` (1,90 s) → đạt **Spike S7** (`S0-21`)
 - [ ] _(Tùy chọn)_ Tạo `apps/api/.dev.vars` chứa 2 key trên nếu muốn chạy `pnpm dev` ở máy với LLM thật
 
 ### 2. Tạo keystore release & nạp GitHub Repository secrets (`S0-09`)
@@ -77,12 +77,12 @@ Danh sách việc ưu tiên theo đúng thứ tự để đóng xong Sprint 0 �
 
 ## Việc trước khi code
 
-| Mã   | Việc                                                     | Trạng thái                                                                          |
-| ---- | -------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| P-01 | Xác nhận 6 quyết định tạm ở BRD §10                      | [~] đã chốt package `com.engoats.mobile`; còn 6 quyết định BRD §10                  |
-| P-02 | Tạo tài khoản GitHub repo, Cloudflare                    | [x] repo `stu_eng`, Cloudflare đã `wrangler login`, `CLOUDFLARE_API_TOKEN` đã đặt   |
-| P-03 | Đăng ký khóa API miễn phí của ít nhất 2 nhà cung cấp LLM | [~] đã có `LLM_KEY_GEMINI` trên Cloudflare dev (đang lỗi 403); thiếu `LLM_KEY_GROQ` |
-| P-04 | Chuẩn bị 2–3 điện thoại Android khác hãng để test        | [ ]                                                                                 |
+| Mã   | Việc                                                     | Trạng thái                                                                                                      |
+| ---- | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| P-01 | Xác nhận 6 quyết định tạm ở BRD §10                      | [~] đã chốt package `com.engoats.mobile`; còn 6 quyết định BRD §10                                              |
+| P-02 | Tạo tài khoản GitHub repo, Cloudflare                    | [x] repo `stu_eng`, Cloudflare đã `wrangler login`, `CLOUDFLARE_API_TOKEN` đã đặt                               |
+| P-03 | Đăng ký khóa API miễn phí của ít nhất 2 nhà cung cấp LLM | [x] đã nạp `LLM_KEY_GEMINI` + `LLM_KEY_GROQ` trên Cloudflare dev; `/chat`, `/explain`, `/feedback` đều HTTP 200 |
+| P-04 | Chuẩn bị 2–3 điện thoại Android khác hãng để test        | [ ]                                                                                                             |
 
 ---
 
@@ -118,7 +118,7 @@ Danh sách việc ưu tiên theo đúng thứ tự để đóng xong Sprint 0 �
 - [x] `S0-18` **S4** – D1 đếm đúng khi 20 request song song; ghi hạn mức free D1/Workers _(23/11: đạt trên D1 thật)_
 - [x] `S0-19` **S5** – Metro + pnpm + `@app/shared` khi build release _(23/11: build release ở máy đạt)_
 - [~] `S0-20` **S6** – Drizzle migration + FTS5 trên expo-sqlite
-- [ ] `S0-21` **S7** – Hạn mức free và độ trễ token đầu của 2 nhà cung cấp LLM
+- [x] `S0-21` **S7** – Hạn mức free và độ trễ token đầu của 2 nhà cung cấp LLM _(28/11: đạt với `gemini-3.5-flash-lite` + `openai/gpt-oss-20b`; `/chat` TTFB 2,54 s)_
 - [ ] `S0-22` **S8** – APK ký từ CI cài được trên máy thật, gọi `/health`
 
 ### Tổng kết sprint
@@ -286,16 +286,16 @@ Chia việc chi tiết cho Sprint 5 sau khi có phản hồi từ người thử
 
 ## Kết quả spike (Sprint 0)
 
-| Spike                  | Kết quả                   | Số liệu/ghi chú                                                                                                                                                                                                         | Quyết định                                                                                                                                 |
-| ---------------------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| S1 – SSE `expo/fetch`  | Đạt (máy ảo, APK release) | 23/11, máy ảo API 37, APK release build ở máy: token đầu 259 ms, tổng 1,9 s, 12 chunk, nhận dần. Còn: 1 máy thật                                                                                                        | Giữ `expo/fetch` + bộ đọc SSE tự viết                                                                                                      |
-| S2 – STT trên máy thật | Chờ máy thật              | Máy: ...                                                                                                                                                                                                                |                                                                                                                                            |
-| S3 – TTS offline       | Đạt (máy ảo)              | Máy ảo: 473 giọng, 51 giọng tiếng Anh, có giọng `-local` (offline). Engine khởi động lần đầu ~2–5 s. Còn: máy thật ở chế độ máy bay                                                                                     | Không chặn giao diện chờ engine TTS (timeout 2 s)                                                                                          |
-| S4 – D1 quota          | Đạt                       | D1 dev thật (23/11): 20 lệnh `hit()` song song → trả về đúng 1..20, không trùng, tổng 20. Free: Workers 100.000 request/ngày (thấy trên dashboard), CPU 10 ms/request; D1 5 triệu dòng đọc, 100.000 dòng ghi/ngày, 5 GB | Giữ thiết kế đếm bằng 1 câu `INSERT … ON CONFLICT … RETURNING`; mỗi lượt chat tốn ~1–3 dòng ghi → dư sức cho MVP                           |
-| S5 – Metro + pnpm      | Đạt                       | 23/11: `expo run:android --variant release` build native release ở máy (Windows) thành công, app chạy, import `@app/*` và migration `.sql` OK. Lần đầu ~20 phút (C++ 4 ABI)                                             | Giữ `node-linker=hoisted`; thêm `metro.config.js` (đuôi .sql) và `babel.config.js` (inline-import)                                         |
-| S6 – Drizzle + FTS5    | Đạt (máy ảo)              | Drizzle migration + seed chạy lúc mở app (APK release). expo-sqlite: SQLite 3.53.3, FTS5 hoạt động                                                                                                                      | MVP tìm ghi chú bằng cột `search_text` chuẩn hóa (bỏ dấu, đ→d) + `LIKE`: tìm không dấu, 1.000 ghi chú < 1 s. FTS5 để dành khi cần xếp hạng |
-| S7 – Nhà cung cấp LLM  | Chưa làm                  | Cần khóa API (P-03)                                                                                                                                                                                                     |                                                                                                                                            |
-| S8 – APK ký từ CI      | Một phần                  | APK release build ở máy cài lên máy ảo, gọi `/health` → 200 (lần đầu 2,1 s). Còn: chạy `android-apk.yml` + cài lên máy thật                                                                                             |                                                                                                                                            |
+| Spike                  | Kết quả                   | Số liệu/ghi chú                                                                                                                                                                                                                                          | Quyết định                                                                                                                                 |
+| ---------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| S1 – SSE `expo/fetch`  | Đạt (máy ảo, APK release) | 23/11, máy ảo API 37, APK release build ở máy: token đầu 259 ms, tổng 1,9 s, 12 chunk, nhận dần. Còn: 1 máy thật                                                                                                                                         | Giữ `expo/fetch` + bộ đọc SSE tự viết                                                                                                      |
+| S2 – STT trên máy thật | Chờ máy thật              | Máy: ...                                                                                                                                                                                                                                                 |                                                                                                                                            |
+| S3 – TTS offline       | Đạt (máy ảo)              | Máy ảo: 473 giọng, 51 giọng tiếng Anh, có giọng `-local` (offline). Engine khởi động lần đầu ~2–5 s. Còn: máy thật ở chế độ máy bay                                                                                                                      | Không chặn giao diện chờ engine TTS (timeout 2 s)                                                                                          |
+| S4 – D1 quota          | Đạt                       | D1 dev thật (23/11): 20 lệnh `hit()` song song → trả về đúng 1..20, không trùng, tổng 20. Free: Workers 100.000 request/ngày (thấy trên dashboard), CPU 10 ms/request; D1 5 triệu dòng đọc, 100.000 dòng ghi/ngày, 5 GB                                  | Giữ thiết kế đếm bằng 1 câu `INSERT … ON CONFLICT … RETURNING`; mỗi lượt chat tốn ~1–3 dòng ghi → dư sức cho MVP                           |
+| S5 – Metro + pnpm      | Đạt                       | 23/11: `expo run:android --variant release` build native release ở máy (Windows) thành công, app chạy, import `@app/*` và migration `.sql` OK. Lần đầu ~20 phút (C++ 4 ABI)                                                                              | Giữ `node-linker=hoisted`; thêm `metro.config.js` (đuôi .sql) và `babel.config.js` (inline-import)                                         |
+| S6 – Drizzle + FTS5    | Đạt (máy ảo)              | Drizzle migration + seed chạy lúc mở app (APK release). expo-sqlite: SQLite 3.53.3, FTS5 hoạt động                                                                                                                                                       | MVP tìm ghi chú bằng cột `search_text` chuẩn hóa (bỏ dấu, đ→d) + `LIKE`: tìm không dấu, 1.000 ghi chú < 1 s. FTS5 để dành khi cần xếp hạng |
+| S7 – Nhà cung cấp LLM  | Đạt (API dev thật)        | 28/11: đã nạp `LLM_KEY_GEMINI` + `LLM_KEY_GROQ`. `gemini-2.5-flash` và `llama-3.3-70b-versatile` bị 404 (ngừng phục vụ); đổi sang `gemini-3.5-flash-lite` + `openai/gpt-oss-20b` → `/chat` TTFB 2,54 s, `/explain` 2,11 s, `/feedback` 1,90 s (HTTP 200) | Dùng `gemini-3.5-flash-lite` làm chính và `openai/gpt-oss-20b` (Groq) dự phòng; thêm fallback khi stream 0 token                           |
+| S8 – APK ký từ CI      | Một phần                  | APK release build ở máy cài lên máy ảo, gọi `/health` → 200 (lần đầu 2,1 s). Còn: chạy `android-apk.yml` + cài lên máy thật                                                                                                                              |                                                                                                                                            |
 
 ## Kiểm tra nghiệm thu P0 (điền ở Sprint 4)
 
@@ -527,7 +527,8 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 
 - Mobile: `services/stt.ts`, `voice-controller.ts`, `sentence-splitter.ts`, `tts-queue.ts`, `voice-ui.tsx` (`PrivacyModal`, `MicRationaleModal`, `VoiceControlBar`), tích hợp đầy đủ vào màn `chat/[id].tsx` và lưu `privacy_ack` trong `settings.ts`.
 - Nội dung: tăng từ 3 lên 10 kịch bản (`packages/content/data/scenarios.json`, A1–B2; **7 kịch bản mới chờ người duyệt**).
-- Còn để chốt 3b: khóa LLM thật (S7), test trên 2–3 máy Android thật (`S3b-12`), đo độ trễ 4G ≤ 3 s (`S3b-11`), build APK (`S3b-13`) → **M3**.
+- Còn để chốt 3b: test trên 2–3 máy Android thật (`S3b-12`), đo độ trễ 4G ≤ 3 s (`S3b-11`), duyệt 10 kịch bản, build APK (`S3b-13`) → **M3**.
+- API/LLM (28/11 tối): đã nạp `LLM_KEY_GEMINI` + `LLM_KEY_GROQ` trên Cloudflare dev; cập nhật model trong `wrangler.toml` (`gemini-3.5-flash-lite` + `openai/gpt-oss-20b`), `gateway.ts` fallback cả khi stream rỗng (0 token) và log mã lỗi khi chuyển nhà cung cấp; test thật `/chat` (TTFB 2,54 s), `/chat/explain` (2,11 s), `/chat/feedback` (1,90 s) đều HTTP 200.
 
 ---
 
@@ -535,15 +536,15 @@ Mỗi ngày làm việc thêm một mục: đã làm gì, còn dở gì (ghi rõ
 
 Danh sách tổng hợp những thứ ngoài code cần có. Đánh dấu khi đã có.
 
-| #   | Cần có                                                                      | Dùng cho                                 | Sprint       | Đã có                                         |
-| --- | --------------------------------------------------------------------------- | ---------------------------------------- | ------------ | --------------------------------------------- |
-| 1   | Quyết định BRD §10 + tên package Android                                    | Toàn dự án, keystore                     | 0            | [~] package xong                              |
-| 2   | Repo GitHub (free)                                                          | CI, build APK                            | 0            | [x]                                           |
-| 3   | Tài khoản Cloudflare (free)                                                 | API, D1                                  | 0, 3a        | [x]                                           |
-| 4   | Android Studio (JDK 17 + Android SDK)                                       | Build và chạy app trên máy               | 0 → 4        | [x]                                           |
-| 5   | 1 điện thoại Android (tốt nhất 2–3 máy khác hãng)                           | Spike, kiểm tra từng sprint              | 0 → 4        | [ ]                                           |
-| 6   | Keystore + mật khẩu, sao lưu 2 nơi                                          | Ký APK phát hành                         | 0            | [ ]                                           |
-| 7   | 2 khóa API AI miễn phí                                                      | Spike S7, hội thoại AI                   | 0, 3a        | [~] có `LLM_KEY_GEMINI` (lỗi 403), thiếu Groq |
-| 8   | Người duyệt nội dung tiếng Anh                                              | Duyệt cụm từ, kịch bản, câu xếp trình độ | 1, 3a, 3b, 4 | [ ]                                           |
-| 9   | Nội dung: 60 cụm (S1) → 200 cụm (S4); 3 → 10 kịch bản; ~30 câu xếp trình độ | Học, chat, onboarding                    | 1, 3a, 3b, 4 | [ ]                                           |
-| 10  | 5–10 người thử + mẫu khảo sát                                               | Mốc M4                                   | 4            | [ ]                                           |
+| #   | Cần có                                                                      | Dùng cho                                 | Sprint       | Đã có            |
+| --- | --------------------------------------------------------------------------- | ---------------------------------------- | ------------ | ---------------- |
+| 1   | Quyết định BRD §10 + tên package Android                                    | Toàn dự án, keystore                     | 0            | [~] package xong |
+| 2   | Repo GitHub (free)                                                          | CI, build APK                            | 0            | [x]              |
+| 3   | Tài khoản Cloudflare (free)                                                 | API, D1                                  | 0, 3a        | [x]              |
+| 4   | Android Studio (JDK 17 + Android SDK)                                       | Build và chạy app trên máy               | 0 → 4        | [x]              |
+| 5   | 1 điện thoại Android (tốt nhất 2–3 máy khác hãng)                           | Spike, kiểm tra từng sprint              | 0 → 4        | [ ]              |
+| 6   | Keystore + mật khẩu, sao lưu 2 nơi                                          | Ký APK phát hành                         | 0            | [ ]              |
+| 7   | 2 khóa API AI miễn phí                                                      | Spike S7, hội thoại AI                   | 0, 3a        | [x]              |
+| 8   | Người duyệt nội dung tiếng Anh                                              | Duyệt cụm từ, kịch bản, câu xếp trình độ | 1, 3a, 3b, 4 | [ ]              |
+| 9   | Nội dung: 60 cụm (S1) → 200 cụm (S4); 3 → 10 kịch bản; ~30 câu xếp trình độ | Học, chat, onboarding                    | 1, 3a, 3b, 4 | [ ]              |
+| 10  | 5–10 người thử + mẫu khảo sát                                               | Mốc M4                                   | 4            | [ ]              |

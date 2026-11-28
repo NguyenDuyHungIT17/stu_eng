@@ -12,7 +12,7 @@ REQ_PER_IP = "150"
 GLOBAL_DAILY = "1500"
 # Nhà cung cấp LLM theo thứ tự ưu tiên; key đặt bằng `wrangler secret put LLM_KEY_GEMINI` (…GROQ).
 # Chưa có key nào: dev/local dùng trả lời giả (mock); prod trả lỗi upstream_failed.
-LLM_PROVIDERS = '''[{"name":"gemini","baseUrl":"https://generativelanguage.googleapis.com/v1beta/openai","model":"gemini-2.5-flash","keyVar":"LLM_KEY_GEMINI","supportsJsonMode":true},{"name":"groq","baseUrl":"https://api.groq.com/openai/v1","model":"llama-3.3-70b-versatile","keyVar":"LLM_KEY_GROQ","supportsJsonMode":true}]'''
+LLM_PROVIDERS = '''[{"name":"gemini","baseUrl":"https://generativelanguage.googleapis.com/v1beta/openai","model":"gemini-3.5-flash-lite","keyVar":"LLM_KEY_GEMINI","supportsJsonMode":true},{"name":"groq","baseUrl":"https://api.groq.com/openai/v1","model":"openai/gpt-oss-20b","keyVar":"LLM_KEY_GROQ","supportsJsonMode":true}]'''
 
 [[d1_databases]]
 binding = "DB"
@@ -25,7 +25,7 @@ crons = ["0 18 * * *"] # 01:00 giờ Việt Nam: dọn bảng usage
 
 [env.prod]
 name = "english-app-api-prod"
-vars = { APP_ENV = "prod", CHAT_PER_DEVICE = "40", ASSIST_PER_DEVICE = "20", REQ_PER_IP = "150", GLOBAL_DAILY = "1500", LLM_PROVIDERS = '''[{"name":"gemini","baseUrl":"https://generativelanguage.googleapis.com/v1beta/openai","model":"gemini-2.5-flash","keyVar":"LLM_KEY_GEMINI","supportsJsonMode":true},{"name":"groq","baseUrl":"https://api.groq.com/openai/v1","model":"llama-3.3-70b-versatile","keyVar":"LLM_KEY_GROQ","supportsJsonMode":true}]''' }
+vars = { APP_ENV = "prod", CHAT_PER_DEVICE = "40", ASSIST_PER_DEVICE = "20", REQ_PER_IP = "150", GLOBAL_DAILY = "1500", LLM_PROVIDERS = '''[{"name":"gemini","baseUrl":"https://generativelanguage.googleapis.com/v1beta/openai","model":"gemini-3.5-flash-lite","keyVar":"LLM_KEY_GEMINI","supportsJsonMode":true},{"name":"groq","baseUrl":"https://api.groq.com/openai/v1","model":"openai/gpt-oss-20b","keyVar":"LLM_KEY_GROQ","supportsJsonMode":true}]''' }
 d1_databases = [
   { binding = "DB", database_name = "english-app-quota-prod", database_id = "ebbe30e7-5094-48c6-8f5a-d97730350d23", migrations_dir = "migrations" }
 ]
